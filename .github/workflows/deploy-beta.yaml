@@ -1,0 +1,31 @@
+name: Deploy beta
+# site:
+#   use_directory_urls: false
+#   siteUrl: https://bonkers-ie.github.io/bonkers-ui/
+#   site_url: https://bonkers-ie.github.io/bonkers-ui/
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint:script
+      - run: yarn lint:style
+      - run: yarn test
+      - run: yarn build-storybook
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
+          cname: https://bonkers-ie.github.io/bonkers-ui/
