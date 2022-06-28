@@ -1,6 +1,6 @@
 {
-	"name": "bonkers-ui",
-	"package-name": "bonkers-ui",
+	"name": "bonkers-test",
+	"version": "0.0.0",
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
