@@ -1,0 +1,41 @@
+@layer base {
+	:root {
+		/* colors */
+		--color-white: white;
+		--color-black: black;
+		--color-current: currentcolor;
+		--color-transparent: transparent;
+
+		/* colors/primary */
+		--color-primary-300: #9bdd9f;
+		--color-primary-400: #79d27e;
+		--color-primary-500: #55c65d;
+		--color-primary-600: #439f49;
+		--color-primary-700: #317735;
+		--color-primary: var(--color-primary-500);
+
+		/* colors/secondary */
+		--color-secondary-300: #858894;
+		--color-secondary-400: #5b5f70;
+		--color-secondary-500: #2e344a;
+		--color-secondary-600: #232839;
+		--color-secondary-700: #181b29;
+		--color-secondary: var(--color-secondary-500);
+
+		/* colors/error */
+		--color-error-300: #f7999e;
+		--color-error-400: #f5777d;
+		--color-error-500: #f2535b;
+		--color-error-600: #c34147;
+		--color-error-700: #922e34;
+		--color-error: var(--color-error-500);
+
+		/* colors/warning */
+		--color-warning-300: #ffbd9c;
+		--color-warning-400: #ffa77b;
+		--color-warning-500: #ff9058;
+		--color-warning-600: #cd7345;
+		--color-warning-700: #9a5532;
+		--color-warning: var(--color-warning-500);
+	}
+}
