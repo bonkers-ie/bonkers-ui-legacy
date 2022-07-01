@@ -1,4 +1,4 @@
-import UiButton from "./ui-button.vue";
+import UiButton from "../ui-button";
 import { EButtonSizes, EButtonTypes } from "./_typings";
 import { Story } from "@storybook/vue3"
 
@@ -22,19 +22,27 @@ export default {
 			options: Object.values(EButtonSizes),
 			description: "The button sizes",
 		},
+		fullWidth: {
+			control: { type: "boolean" },
+			description: "The full width size",
+		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "Disabled state",
+		},
 		slot: {
 			control: { type: "text" },
 			description: "The slot text or component",
 		}
 	},
-	args:{
+	args: {
 		slot: "default text",
 	},
 };
 
 type MyComponentProps = InstanceType<typeof UiButton>["$props"];
 
-const Template: Story<MyComponentProps> = (args) => ({
+const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 	// Components used in your story `template` are defined in the `components` object
 	components: { UiButton },
 	// The story's `args` need to be mapped into the template through the `setup()` method
@@ -42,7 +50,43 @@ const Template: Story<MyComponentProps> = (args) => ({
 		return { args };
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
-	template: `<ui-button v-bind="args">${args.slot}</ui-button>`,
+	template: `
+		<ui-button :classes="args.classes"
+				   :kind="args.kind"
+				   :size="args.size"
+				   :fullWidth="args.fullWidth"
+				   :disabled="args.disabled"
+		>
+		${args.slot}
+		</ui-button>`,
+});
+const TemplateAll: Story<MyComponentProps> = () => ({
+	components: { UiButton },
+
+	setup() {
+		return { EButtonSizes, EButtonTypes };
+	},
+
+	template: `
+		<div :style="{
+			display: 'flex',
+			flexWrap: 'wrap'
+		}"
+		>
+		<div
+			:style="{margin: '10px'}"
+			v-for="kind in EButtonTypes"
+			:key="kind"
+		>
+			<ui-button
+				:kind="kind"
+				:size="EButtonSizes.MEDIUM"
+			>
+				{{ kind }}
+			</ui-button>
+		</div>
+		</div>
+	`,
 });
 
 export const Primary = Template.bind({});
@@ -52,5 +96,11 @@ Primary.args = {
 	...Primary,
 	classes: "medium",
 	kind: EButtonTypes.PRIMARY,
-	size: EButtonSizes.MEDIUM
+	size: EButtonSizes.MEDIUM,
+	fullWidth: false,
+	disabled: false,
 }
+export const Buttons = TemplateAll.bind({});
+// More on args: https://storybook.js.org/docs/vue/writing-stories/args
+
+Buttons.args = {}

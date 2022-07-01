@@ -2,7 +2,7 @@
 	<h2 class="font-bold">
 		Base colors:
 	</h2>
-	<ul class="colors grid gap-4">
+	<ul class="colors grid gap-md">
 		<li
 			v-for="(value, key, index) in colors"
 			:key="key"
@@ -15,7 +15,7 @@
 				</h2>
 
 				<ul
-					class="colors grid gap-4"
+					class="colors grid gap-md"
 				>
 					<li
 						v-for="(value2, key2, index2) in value"
@@ -24,7 +24,7 @@
 					>
 						<span
 							ref="colorRefs2"
-							class="block h-24 w-24 rounded-full relative"
+							class="block h-xxl w-xxl rounded-full relative"
 							:style="{
 								backgroundColor: value2
 							}"
@@ -44,7 +44,7 @@
 			<div v-else>
 				<span
 					ref="colorRefs"
-					class="block h-24 w-24 rounded-full relative"
+					class="block h-xxl w-xxl rounded-full relative"
 					:style="{
 						backgroundColor: value
 					}"
