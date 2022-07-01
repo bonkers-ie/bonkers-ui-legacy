@@ -70,8 +70,8 @@
 		}
 	},
 	"lint-staged": {
-		"*.{ts,vue}": "eslint --fix && typecheck && test",
-		"*.{css,scss,vue,ts}": "stylelint --fix"
+		"*.{ts,vue}": "eslint --fix",
+		"*.{css,vue,ts}": "stylelint --fix"
 	},
 	"license": "MIT"
 }

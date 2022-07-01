@@ -83,22 +83,25 @@
 	.colors {
 		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 	}
-	.grid_inner{
-		grid-column: 1/-1
+
+	.grid_inner {
+		grid-column: 1/-1;
 	}
-	h2{
+
+	h2 {
 		font-size: 30px;
 		margin: 20px 0;
 	}
-	.rounded-full::before{
-		content: '';
+
+	.rounded-full::before {
+		content: "";
 		display: block;
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
-		border: 2px dotted rgba(0, 0, 0, 0.41);
+		border: 2px dotted rgb(0 0 0 / 41%);
 		border-radius: 50%;
 		transform: scale(1.05);
 		z-index: -1;
