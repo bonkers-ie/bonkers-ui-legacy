@@ -1,7 +1,6 @@
 import UiButton from "../ui-button";
 import { EButtonSizes, EButtonTypes } from "./_typings";
 import { Story } from "@storybook/vue3";
-import { TProps } from "./ui-button.vue"
 
 export default {
 	title: "Components/ui-button",
@@ -41,7 +40,9 @@ export default {
 	},
 };
 
-const Template: Story<TProps & InstanceType<typeof UiButton>> = (args) => ({
+type TComponentProps = InstanceType<typeof UiButton>["$props"];
+
+const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
 	components: { UiButton },
 	// The story's `args` need to be mapped into the template through the `setup()` method
@@ -59,7 +60,7 @@ const Template: Story<TProps & InstanceType<typeof UiButton>> = (args) => ({
 		${args.slot}
 		</ui-button>`,
 });
-const TemplateAll: Story<TProps> = () => ({
+const TemplateAll: Story<TComponentProps> = () => ({
 	components: { UiButton },
 
 	setup() {

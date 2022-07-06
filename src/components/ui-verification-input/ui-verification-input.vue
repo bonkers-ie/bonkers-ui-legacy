@@ -77,23 +77,25 @@
 </script>
 
 <style scoped>
-	.inputs{
+	.inputs {
 		grid-template-columns: repeat(auto-fill, 38px);
 		grid-gap: 24px;
 	}
-	.inputs .input-wrapper{
+
+	.inputs .input-wrapper {
 		position: relative;
 		height: 58px;
 	}
 
-	.inputs input{
+	.inputs input {
 		width: 100%;
 		border: none;
 		text-align: center;
 		font-size: 36px;
 		font-weight: bold;
 		outline: none;
-		/*caret-color:  var(--color-transparent);*/
+
+		/* caret-color:  var(--color-transparent); */
 	}
 
 	.inputs .input-wrapper .bottom-wrapper {
@@ -103,10 +105,10 @@
 		height: 5px;
 		background-color: var(--color-secondary-300);
 		border-radius: 3px;
-		transition: background-color .3s ease-in-out;
+		transition: background-color 0.3s ease-in-out;
 	}
 
-	.inputs input:focus ~ .bottom-wrapper{
+	.inputs input:focus ~ .bottom-wrapper {
 		background-color: var(--color-primary);
 	}
 
@@ -115,10 +117,10 @@
 		color: var(--color-secondary-300);
 		opacity: 1;
 		transform: scale(1);
-		transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+		transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 	}
 
-	.inputs input:focus::placeholder{
+	.inputs input:focus::placeholder {
 		opacity: 0;
 		transform: scale(0);
 	}

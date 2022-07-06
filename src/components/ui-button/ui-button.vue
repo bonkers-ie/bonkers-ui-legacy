@@ -28,7 +28,6 @@
 
 <script lang="ts" setup>
 	import { EButtonSizes, EButtonTypes } from "./_typings";
-
 	export type TProps = {
 		classes?: string;
 		kind?: EButtonTypes;
@@ -36,6 +35,7 @@
 		fullWidth?: boolean;
 		disabled?: boolean;
 	}
+
 	const primaryColor = "bg-primary disabled:bg-primary-300";
 	const primaryColorHover = "hover:bg-primary-600 ";
 	const primaryColorActive = "active:bg-primary-700 ";
