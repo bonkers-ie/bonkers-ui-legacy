@@ -76,7 +76,7 @@
 		if (element) {
 			return window.getComputedStyle(element, null).getPropertyValue("background-color");
 		}
-	}
+	};
 </script>
 
 <style scoped>

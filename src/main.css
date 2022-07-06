@@ -17,6 +17,6 @@ body {
 	font-family: museo-sans, sans-serif;
 }
 
-body * {
+* {
 	line-height: var(--base-line-height);
 }

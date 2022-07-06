@@ -22,7 +22,7 @@ export default {
 			defaultValue: "text"
 		},
 	},
-}
+};
 
 type MyComponentProps = InstanceType<typeof UiVerificationInput>["$props"];
 
@@ -33,7 +33,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 	setup() {
 		const filedHandler = (payload: string)=>{
 			console.log("=--->",payload);
-		}
+		};
 		return { args, filedHandler };
 	},
 	template: `

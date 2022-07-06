@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="text-base text-white rounded-md whitespace-nowrap"
+		class="text-base text-white rounded-md whitespace-nowrap font-bold leading-none"
 		:disabled="disabled"
 		:class="[
 			(!kind || kind === EButtonTypes.PRIMARY) && [primaryColor, primaryColorHover, primaryColorActive].join(' '),
@@ -15,8 +15,9 @@
 				&& 'text-warning border border-warning hover:bg-warning-600 hover:border-transparent hover:text-white active:bg-warning-700 active:border-transparent active:text-white disabled:text-warning-300 disabled:border-warning-300',
 			kind === EButtonTypes.ERROR_OVERLAY
 				&& 'text-error border border-error hover:bg-error-600 hover:border-transparent hover:text-white active:bg-error-700 active:border-transparent active:text-white disabled:text-error-300 disabled:border-error-300',
-			(!size || size === EButtonSizes.MEDIUM) && 'py-xs px-sm',
-			size === EButtonSizes.LARGE && 'py-xs px-md',
+			(!size || size === EButtonSizes.MEDIUM) && 'py-sm px-md',
+			size === EButtonSizes.SMALL && 'py-xs px-md',
+			size === EButtonSizes.LARGE && 'py-md px-md',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',
 			classes
@@ -28,7 +29,7 @@
 
 <script lang="ts" setup>
 	import { EButtonSizes, EButtonTypes } from "./_typings";
-	export type TProps = {
+	type TProps = {
 		classes?: string;
 		kind?: EButtonTypes;
 		size?: EButtonSizes;

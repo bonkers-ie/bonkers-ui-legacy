@@ -33,14 +33,14 @@
 	}
 
 	const props = defineProps<TProps>();
-	const emit = defineEmits(["onFiled"])
+	const emit = defineEmits(["onFiled"]);
 
 	const inputsRefs = ref<Array<HTMLInputElement | null>>([]);
 
 	const doSubmit = ()=>{
 		const generateString = inputsRefs.value.map(input => input?.value).join("");
 		emit("onFiled", generateString);
-	}
+	};
 
 	const inputHandler = (event:InputEvent, index:number)=>{
 		if(index < props.inputsCount){
@@ -50,13 +50,13 @@
 		if(index === props.inputsCount - 1){
 			doSubmit();
 		}
-	}
+	};
 
 	const focusHandler = (e:InputEvent) => {
 		if(e.target){
 			(e.target as HTMLInputElement).select();
 		}
-	}
+	};
 
 	const handlePaste = (e:ClipboardEvent) => {
 		e.preventDefault();
@@ -72,7 +72,7 @@
 			doSubmit();
 		}
 
-	}
+	};
 
 </script>
 

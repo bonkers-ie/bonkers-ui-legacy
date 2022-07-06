@@ -99,8 +99,8 @@ Primary.args = {
 	size: EButtonSizes.MEDIUM,
 	fullWidth: false,
 	disabled: false,
-}
+};
 export const Buttons = TemplateAll.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 
-Buttons.args = {}
+Buttons.args = {};
