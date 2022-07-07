@@ -17,6 +17,8 @@ body {
 	font-family: museo-sans, sans-serif;
 }
 
-* {
-	line-height: var(--base-line-height);
-}
+/** { */
+
+/*	line-height: var(--base-line-height); */
+
+/* } */
