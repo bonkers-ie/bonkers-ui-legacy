@@ -102,5 +102,3 @@ Primary.args = {
 };
 export const Buttons = TemplateAll.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-
-Buttons.args = {};
