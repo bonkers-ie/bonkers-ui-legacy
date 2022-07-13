@@ -4,8 +4,8 @@
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"lint:script": "eslint --ext .ts,vue,js --ignore-path .gitignore .",
-		"lint:style": "stylelint ./src/**/*.{css,scss,vue}",
+		"lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
+		"lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
 		"lint:markup": "vue-tsc --noEmit",
 		"test": "jest",
 		"deploy": "gh-pages -d storybook-static",

@@ -13,15 +13,17 @@ export default {
 		inputsCount: {
 			control: { type: "number" },
 			description: "Number of inputs",
-			defaultValue: 4,
 		},
 		type: {
 			control: { type: "select" },
 			options: ["text"],
 			description: "Inputs type",
-			defaultValue: "text"
 		},
 	},
+	args:{
+		inputsCount: 4,
+		type: "text"
+	}
 };
 
 type MyComponentProps = InstanceType<typeof UiVerificationInput>["$props"];

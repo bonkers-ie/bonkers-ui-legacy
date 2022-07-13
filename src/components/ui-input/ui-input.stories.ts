@@ -16,7 +16,6 @@ export default {
 		placeholder: {
 			control: { type: "text" },
 			description: "Placeholder",
-			defaultValue: "Placeholder",
 		},
 		kind: {
 			control: { type: "select" },
@@ -26,9 +25,12 @@ export default {
 		fullWidth: {
 			control: { type: "boolean" },
 			description: "The full width size",
-			defaultValue: false
 		},
 	},
+	args: {
+		placeholder: "Placeholder",
+		fullWidth: false
+	}
 };
 
 type MyComponentProps = InstanceType<typeof UiInput>["$props"];
@@ -55,8 +57,11 @@ const TemplateAll: Story<MyComponentProps> = (args: MyComponentProps) => ({
 		Icon
 	},
 	setup(){
+		const valueModel = ref("");
+
 		return{
-			args
+			args,
+			valueModel
 		};
 	},
 	template: `
@@ -64,15 +69,15 @@ const TemplateAll: Story<MyComponentProps> = (args: MyComponentProps) => ({
 			display: 'grid',
 			gridGap: '12px'
 		}">
-			<ui-input :classes="args.classes" v-bind="args">
+			<ui-input v-bind="args" v-model="valueModel">
 				<template v-slot:prefix-icon> € </template>
 			</ui-input>
-			<ui-input :classes="args.classes" v-bind="args">
+			<ui-input v-bind="args" v-model="valueModel">
 				<template v-slot:prefix-icon>
 					<icon :size="16" />
 				</template>
 			</ui-input>
-			<ui-input :classes="args.classes" v-bind="args">
+			<ui-input v-bind="args" v-model="valueModel">
 				<template v-slot:postfix-icon>
 					<icon :size="16" />
 				</template>

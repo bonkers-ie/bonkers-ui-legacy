@@ -63,7 +63,8 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: `
 		<ui-typography v-bind="args">
 			${args.slot}
-		</ui-typography>`,
+		</ui-typography>
+	`,
 });
 
 export const Default = Template.bind({});

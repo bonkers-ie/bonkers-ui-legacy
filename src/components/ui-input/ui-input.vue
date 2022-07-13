@@ -27,7 +27,7 @@
 	import { EInputTypes } from "./_typings";
 
 	defineProps<{
-		placeholder: string;
+		placeholder?: string;
 		modelValue: string;
 		disabled?: boolean;
 		fullWidth?: boolean;
