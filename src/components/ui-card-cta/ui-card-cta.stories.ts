@@ -21,11 +21,16 @@ export default {
 			control: { type: "boolean" },
 			description: "The full width size",
 		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The full width size",
+		},
 	},
 	args: {
 		slot: "Some text",
 		invertOrder: false,
-		fullWidth: false
+		fullWidth: false,
+		disabled: false
 	},
 };
 

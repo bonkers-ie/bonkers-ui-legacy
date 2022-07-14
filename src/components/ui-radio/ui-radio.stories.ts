@@ -17,15 +17,15 @@ export default {
 			options: Object.values(ECheckboxJustify),
 			description: "The Element justify",
 		},
-		// size: {
-		// 	control: { type: "select" },
-		// 	options: Object.values(ETypographySizes),
-		// 	description: "The Element sizes",
-		// },
+		invertOrder: {
+			control: { type: "boolean" },
+			description: "The Element order",
+		},
 	},
 	args: {
 		slot: "Some text",
 		justify: ECheckboxJustify.START,
+		invertOrder: false,
 	},
 };
 

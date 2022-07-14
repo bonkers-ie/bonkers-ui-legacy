@@ -21,7 +21,10 @@
 			class="appearance-none absolute"
 			@input="$emit('update:modelValue', $event.target.value)"
 		>
-		<span class="ui-radio_custom block w-md h-md border border-2 border-primary rounded-full relative">
+		<span
+			class="ui-radio_custom block w-md h-md border border-2 border-primary rounded-full relative"
+			:class="invertOrder && 'order-last'"
+		>
 			<span class="ui-radio__dot absolute w-xs h-xs block bg-primary rounded-full" />
 		</span>
 		<slot />
@@ -38,6 +41,7 @@
 		name: string;
 		value: string;
 		justify?: ECheckboxJustify;
+		invertOrder?: boolean;
 	}>();
 
 	defineEmits(["update:modelValue"]);

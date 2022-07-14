@@ -15,6 +15,7 @@
 				&& 'text-warning border border-warning hover:bg-warning-600 hover:border-transparent hover:text-white active:bg-warning-700 active:border-transparent active:text-white disabled:text-warning-300 disabled:border-warning-300',
 			kind === EButtonTypes.ERROR_OVERLAY
 				&& 'text-error border border-error hover:bg-error-600 hover:border-transparent hover:text-white active:bg-error-700 active:border-transparent active:text-white disabled:text-error-300 disabled:border-error-300',
+			kind === EButtonTypes.LINK && 'text-accent-alt hover:text-accent-alt-600 active:text-accent-alt-700 disabled:text-accent-alt-300',
 			(!size || size === EButtonSizes.MEDIUM) && 'py-sm px-md',
 			size === EButtonSizes.SMALL && 'py-xs px-md',
 			size === EButtonSizes.LARGE && 'py-md px-md',

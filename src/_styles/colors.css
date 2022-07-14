@@ -37,5 +37,12 @@
 		--color-warning-600: #cd7345;
 		--color-warning-700: #9a5532;
 		--color-warning: var(--color-warning-500);
+
+		/* colors/accent-alt */
+		--accent-alt-300: #8e8efa;
+		--accent-alt-500: #6236ff;
+		--accent-alt-600: #3535c6;
+		--accent-alt-700: #282894;
+		--accent-alt: var(--accent-alt-500);
 	}
 }

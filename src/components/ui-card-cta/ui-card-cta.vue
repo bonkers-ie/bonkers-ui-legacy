@@ -4,6 +4,7 @@
 		:class="[
 			invertOrder && 'ui-card-cta_inverted',
 			!fullWidth && 'ui-card-cta_cropped',
+			disabled && 'opacity-50',
 			classes
 		]"
 	>
@@ -42,6 +43,7 @@
 		classes?: string;
 		invertOrder?: boolean;
 		fullWidth?: boolean;
+		disabled?: boolean;
 	}>();
 
 </script>

@@ -7,6 +7,7 @@ export enum EButtonTypes {
 	SECONDARY_OVERLAY = "secondary-overlay",
 	ERROR_OVERLAY = "error-overlay",
 	WARNING_OVERLAY = "warning-overlay",
+	LINK = "link",
 }
 export enum EButtonSizes {
 	SMALL = "sm",
