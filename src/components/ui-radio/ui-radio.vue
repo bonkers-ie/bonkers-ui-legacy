@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="ui-radio grid"
+		class="ui-radio grid cursor-pointer"
 		:class="[
 			slots.default && 'items-center gap-xs',
 			(!justify || justify === ECheckboxJustify.START) && 'justify-start',

@@ -1,4 +1,4 @@
-import UiCheckbox from "./ui-test.vue";
+import UiCheckbox from "./ui-checkbox.vue";
 import { Story } from "@storybook/vue3";
 import { ref } from "vue";
 import { ECheckboxJustify } from "../../_types/align";

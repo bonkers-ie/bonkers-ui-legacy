@@ -16,9 +16,28 @@
 			size === ETypographySizes.XXXXXL && 'text-5xl',
 
 			kind === ETypographyColors.PRIMARY && 'text-primary',
+			kind === ETypographyColors.PRIMARY_300 && 'text-primary-300',
+			kind === ETypographyColors.PRIMARY_400 && 'text-primary-400',
+			kind === ETypographyColors.PRIMARY_600 && 'text-primary-600',
+			kind === ETypographyColors.PRIMARY_700 && 'text-primary-700',
+
 			kind === ETypographyColors.SECONDARY && 'text-secondary',
+			kind === ETypographyColors.SECONDARY_300 && 'text-secondary-300',
+			kind === ETypographyColors.SECONDARY_400 && 'text-secondary-400',
+			kind === ETypographyColors.SECONDARY_600 && 'text-secondary-600',
+			kind === ETypographyColors.SECONDARY_700 && 'text-secondary-700',
+
 			kind === ETypographyColors.WARNING && 'text-warning',
+			kind === ETypographyColors.WARNING_300 && 'text-warning-300',
+			kind === ETypographyColors.WARNING_400 && 'text-warning-400',
+			kind === ETypographyColors.WARNING_600 && 'text-warning-600',
+			kind === ETypographyColors.WARNING_700 && 'text-warning-700',
+
 			kind === ETypographyColors.ERROR && 'text-error',
+			kind === ETypographyColors.ERROR_300 && 'text-error-300',
+			kind === ETypographyColors.ERROR_400 && 'text-error-400',
+			kind === ETypographyColors.ERROR_600 && 'text-error-600',
+			kind === ETypographyColors.ERROR_700 && 'text-error-700',
 
 			weight === ETextWeight.LIGHT && 'font-light',
 			weight === ETextWeight.REGULAR && 'font-medium',
