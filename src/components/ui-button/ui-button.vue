@@ -21,7 +21,7 @@
 			size === EButtonSizes.LARGE && 'py-md px-md',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',
-			classes
+			className
 		]"
 	>
 		<slot />
@@ -31,7 +31,7 @@
 <script lang="ts" setup>
 	import { EButtonSizes, EButtonTypes } from "./_typings";
 	type TProps = {
-		classes?: string;
+		className?: string;
 		kind?: EButtonTypes;
 		size?: EButtonSizes;
 		fullWidth?: boolean;

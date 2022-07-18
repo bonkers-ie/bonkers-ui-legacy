@@ -4,7 +4,7 @@
 	</h2>
 	<ul class="colors grid gap-md">
 		<li
-			v-for="(value, key, index) in colors"
+			v-for="(value, key) in colors"
 			:key="key"
 			class="grid"
 			:class="typeof value === 'object' && 'grid_inner'"
@@ -18,45 +18,37 @@
 					class="colors grid gap-md"
 				>
 					<li
-						v-for="(value2, key2, index2) in value"
+						v-for="(value2, key2) in value"
 						:key="key2"
 						class="grid"
 					>
 						<span
-							ref="colorRefs2"
 							class="block h-xxl w-xxl rounded-full relative"
 							:style="{
 								backgroundColor: value2
 							}"
 						/>
-						<p>
+						<b :style="{margin: '15px 0', display: 'block'}">
 							{{ key2 }}
-						</p>
+						</b>
 						<p>
-							{{ getBackgroundColor(index2, colorRefs2) }}
-						</p>
-						<p>
-							{{ value2 }}
+							{{ value2 }};
 						</p>
 					</li>
 				</ul>
 			</div>
 			<div v-else>
 				<span
-					ref="colorRefs"
 					class="block h-xxl w-xxl rounded-full relative"
 					:style="{
 						backgroundColor: value
 					}"
 				/>
-				<p>
+				<b :style="{margin: '15px 0', display: 'block'}">
 					{{ key }}
-				</p>
+				</b>
 				<p>
-					{{ getBackgroundColor(index, colorRefs) }}
-				</p>
-				<p>
-					{{ value }}
+					{{ value }};
 				</p>
 			</div>
 		</li>
@@ -64,19 +56,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref } from "vue";
 	import colors from "../../_colors.json";
-
-	const colorRefs = ref<Array<Element | null>>([]);
-	const colorRefs2 = ref<Array<Element | null>>([]);
-
-	const getBackgroundColor = (index: number, ref: Element[]) => {
-		const element = ref[index];
-
-		if (element) {
-			return window.getComputedStyle(element, null).getPropertyValue("background-color");
-		}
-	};
 </script>
 
 <style scoped>

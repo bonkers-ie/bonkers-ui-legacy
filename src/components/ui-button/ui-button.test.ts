@@ -3,11 +3,11 @@ import UiButton from "./ui-button.vue";
 
 describe("VButton.test.ts", () => {
 	it("renders props.msg when passed", () => {
-		const classes = "message";
+		const className = "message";
 		const wrapper = mount(UiButton, {
-			props: { classes, },
-		},);
+			props: { className },
+		});
 
-		expect(wrapper.classes(),).toContain(classes,);
+		expect(wrapper.classes()).toContain(className);
 	},);
 },);

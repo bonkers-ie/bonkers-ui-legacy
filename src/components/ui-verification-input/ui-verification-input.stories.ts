@@ -6,7 +6,7 @@ export default {
 	component: UiVerificationInput,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		classes: {
+		className: {
 			control: { type: "text" },
 			description: "Inputs custom classes",
 		},
@@ -39,7 +39,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 		return { args, filedHandler };
 	},
 	template: `
-		<ui-verification-input @onFiled="filedHandler" :classes="args.classes" :inputsCount="args.inputsCount" :type="args.type"/>
+		<ui-verification-input @onFiled="filedHandler" :className="args.className" :inputsCount="args.inputsCount" :type="args.type"/>
 	`
 });
 

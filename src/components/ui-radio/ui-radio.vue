@@ -9,7 +9,7 @@
 			justify === ECheckboxJustify.BETWEEN && 'justify-between',
 			justify === ECheckboxJustify.EVENLY && 'justify-evenly',
 			justify === ECheckboxJustify.CENTER && 'justify-center',
-			classes
+			className
 		]"
 	>
 		<input
@@ -37,7 +37,7 @@
 	const slots = useSlots();
 	const props = defineProps<{
 		modelValue: string;
-		classes?: string;
+		className?: string;
 		name: string;
 		value: string;
 		justify?: ECheckboxJustify;

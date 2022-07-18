@@ -8,7 +8,7 @@ export default {
 	component: UiCardCta,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		classes: {
+		className: {
 			control: { type: "text" },
 			description: "The Element classes",
 		},
@@ -48,7 +48,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		<ui-card-cta v-bind="args">
 			<template v-slot:icon>
 				<div class="p-sm bg-primary rounded-2xl text-white">
-					<ui-icon size="32" />
+					<ui-icon :size="32" />
 				</div>
 			</template>
 

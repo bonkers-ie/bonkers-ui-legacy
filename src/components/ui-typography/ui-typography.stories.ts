@@ -7,7 +7,7 @@ export default {
 	component: UiTypography,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		classes: {
+		className: {
 			control: { type: "text" },
 			description: "The Element classes",
 		},

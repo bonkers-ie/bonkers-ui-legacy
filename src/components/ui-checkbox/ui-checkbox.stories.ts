@@ -8,7 +8,7 @@ export default {
 	component: UiCheckbox,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		classes: {
+		className: {
 			control: { type: "text" },
 			description: "The Element classes",
 		},
@@ -21,11 +21,22 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element order",
 		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
+		modelValue: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
+
 	},
 	args: {
 		slot: "Some text",
 		justify: ECheckboxJustify.START,
-		invertOrder: false
+		invertOrder: false,
+		disabled: false,
+		modelValue: false,
 	},
 };
 
@@ -42,9 +53,10 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<ui-checkbox v-bind="args" v-model="modelValue">
+		<ui-checkbox v-bind="args" v-model:modelValue="args.modelValue">
 			${args.slot}
-		</ui-checkbox>`,
+		</ui-checkbox>
+	`,
 });
 
 export const Default = Template.bind({});

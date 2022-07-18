@@ -53,7 +53,7 @@
 
 			lineHeight && 'ui-typography_line-height',
 
-			classes
+			className
 		]"
 	>
 		<slot />
@@ -65,7 +65,7 @@
 	import { ETextAlign, ETextTransform, ETextWeight, ETypographyColors, ETypographySizes } from "./_typings";
 
 	defineProps<{
-		classes?: string;
+		className?: string;
 		align?: ETextAlign;
 		size?: ETypographySizes;
 		kind?: ETypographyColors;

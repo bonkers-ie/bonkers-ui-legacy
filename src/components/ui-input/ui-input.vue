@@ -4,7 +4,7 @@
 		:class="[
 			kind === EInputTypes.PRIMARY && 'border-primary',
 			fullWidth && 'max-w-full',
-			classes,
+			className,
 		]"
 	>
 		<div class="icon-wrapper">
@@ -32,7 +32,7 @@
 		disabled?: boolean;
 		fullWidth?: boolean;
 		kind?: EInputTypes;
-		classes?: string;
+		className?: string;
 	}>();
 
 	defineEmits(["update:modelValue"]);

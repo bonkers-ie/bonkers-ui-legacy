@@ -39,10 +39,19 @@
 		--color-warning: var(--color-warning-500);
 
 		/* colors/accent-alt */
-		--accent-alt-300: #8e8efa;
-		--accent-alt-500: #6236ff;
-		--accent-alt-600: #3535c6;
-		--accent-alt-700: #282894;
-		--accent-alt: var(--accent-alt-500);
+		--color-accent-alt-300: #8e8efa;
+		--color-accent-alt-500: #6236ff;
+		--color-accent-alt-600: #3535c6;
+		--color-accent-alt-700: #282894;
+		--color-accent-alt: var(--color-accent-alt-500);
+
+		/* colors/secondary-alt */
+		--color-secondary-alt-200: #f4f5f8;
+		--color-secondary-alt-300: #dfe1e9;
+		--color-secondary-alt-400: #b4b8cd;
+		--color-secondary-alt-500: #949ab7;
+		--color-secondary-alt-600: #767b92;
+		--color-secondary-alt-700: #595c6e;
+		--color-secondary-alt: var(--color-secondary-alt-500);
 	}
 }

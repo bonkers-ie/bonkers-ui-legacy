@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="inputs grid"
-		:class="classes"
+		:class="className"
 	>
 		<div
 			v-for="(_, index) in inputsCount"
@@ -27,7 +27,7 @@
 	import { ref } from "vue";
 
 	type TProps = {
-		classes?: string;
+		className?: string;
 		inputsCount: number;
 		type?: "text";
 	}

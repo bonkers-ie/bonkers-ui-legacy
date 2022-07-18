@@ -5,7 +5,7 @@
 			invertOrder && 'ui-card-cta_inverted',
 			!fullWidth && 'ui-card-cta_cropped',
 			disabled && 'opacity-50',
-			classes
+			className
 		]"
 	>
 		<slot name="icon" />
@@ -17,7 +17,7 @@
 			<ui-typography
 				:kind="ETypographyColors.SECONDARY"
 				:weight="ETextWeight.SEMI_BOLD"
-				classes="mb-xxs"
+				class-name="mb-xxs"
 			>
 				<slot name="title" />
 			</ui-typography>
@@ -40,7 +40,7 @@
 	const slots = useSlots();
 
 	defineProps<{
-		classes?: string;
+		className?: string;
 		invertOrder?: boolean;
 		fullWidth?: boolean;
 		disabled?: boolean;
