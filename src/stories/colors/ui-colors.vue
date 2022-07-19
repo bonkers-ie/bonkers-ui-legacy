@@ -32,6 +32,9 @@
 							{{ key2 }}
 						</b>
 						<p>
+							({{ getCssVariableValue(value2) }})
+						</p>
+						<p>
 							{{ value2 }};
 						</p>
 					</li>
@@ -48,6 +51,9 @@
 					{{ key }}
 				</b>
 				<p>
+					({{ getCssVariableValue(value) }})
+				</p>
+				<p>
 					{{ value }};
 				</p>
 			</div>
@@ -57,6 +63,7 @@
 
 <script lang="ts" setup>
 	import colors from "../../_colors.json";
+	import { getCssVariableValue } from "../helper";
 </script>
 
 <style scoped>
