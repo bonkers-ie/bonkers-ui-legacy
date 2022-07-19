@@ -27,7 +27,7 @@ export default {
 		},
 	},
 	args: {
-		slot: "Some text",
+		slot: "Description",
 		invertOrder: false,
 		fullWidth: false,
 		disabled: false
@@ -57,7 +57,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			</template>
 
 			<template v-slot:description>
-				description
+				{{args.slot}}
 			</template>
 		</ui-card-cta>
 		`

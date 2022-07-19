@@ -1,0 +1,4 @@
+{
+	"m": "var(--shadow-size-m)",
+	"border-primary": "var(--shadow-border-primary)"
+}

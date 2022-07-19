@@ -91,7 +91,7 @@
 
 	input + .ui-checkbox_custom:active,
 	input:focus + .ui-checkbox_custom {
-		box-shadow: 0 0 0 4px var(--color-primary-300);
+		box-shadow: var(--shadow-border-primary);
 	}
 
 	input:disabled + .ui-checkbox_custom {

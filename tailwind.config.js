@@ -1,6 +1,7 @@
 const colors = require("./src/_colors.json");
 const fontSize = require("./src/_font-sizes.json");
 const spacing = require("./src/_spacing.json");
+const boxShadow = require("./src/_shadow.json");
 
 module.exports = {
 	darkMode: "class",
@@ -9,6 +10,7 @@ module.exports = {
 		colors,
 		spacing,
 		fontSize,
+		boxShadow,
 		extend: {},
 	},
 	plugins: [],
