@@ -27,6 +27,13 @@
 			kind === EColors.PRIMARY_600 && 'text-primary-600',
 			kind === EColors.PRIMARY_700 && 'text-primary-700',
 
+			kind === EColors.PRIMARY_ALT && 'text-primary',
+			kind === EColors.PRIMARY_ALT_300 && 'text-primary-300',
+			kind === EColors.PRIMARY_ALT_400 && 'text-primary-400',
+			kind === EColors.PRIMARY_ALT_500 && 'text-primary-500',
+			kind === EColors.PRIMARY_ALT_600 && 'text-primary-600',
+			kind === EColors.PRIMARY_ALT_700 && 'text-primary-700',
+
 			kind === EColors.SECONDARY && 'text-secondary',
 			kind === EColors.SECONDARY_300 && 'text-secondary-300',
 			kind === EColors.SECONDARY_400 && 'text-secondary-400',
@@ -48,11 +55,14 @@
 			kind === EColors.ERROR_600 && 'text-error-600',
 			kind === EColors.ERROR_700 && 'text-error-700',
 
+			kind === EColors.ACCENT && 'text-accent',
+			kind === EColors.ACCENT_300 && 'text-accent-300',
+			kind === EColors.ACCENT_500 && 'text-accent-500',
+			kind === EColors.ACCENT_600 && 'text-accent-600',
+			kind === EColors.ACCENT_700 && 'text-accent-700',
+
 			kind === EColors.ACCENT_ALT && 'text-accent-alt',
-			kind === EColors.ACCENT_ALT_300 && 'text-accent-alt-300',
 			kind === EColors.ACCENT_ALT_500 && 'text-accent-alt-500',
-			kind === EColors.ACCENT_ALT_600 && 'text-accent-alt-600',
-			kind === EColors.ACCENT_ALT_700 && 'text-accent-alt-700',
 
 			kind === EColors.SECONDARY_ALT && 'text-secondary-alt',
 			kind === EColors.SECONDARY_ALT_200 && 'text-secondary-alt-200',
