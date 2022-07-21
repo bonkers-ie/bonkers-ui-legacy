@@ -1,0 +1,70 @@
+@layer base {
+	:root {
+		/* colors */
+		--color-white: white;
+		--color-black: black;
+		--color-current: currentcolor;
+		--color-transparent: transparent;
+
+		/* colors/primary */
+		--color-primary-300: #9adc9e;
+		--color-primary-400: #78d17d;
+		--color-primary-500: #56c55d;
+		--color-primary-600: #459e4a;
+		--color-primary-700: #347638;
+		--color-primary: var(--color-primary-500);
+
+		/* colors/primary-alt */
+		--color-primary-alt-300: #83e4ad;
+		--color-primary-alt-400: #5adb92;
+		--color-primary-alt-500: #31d277;
+		--color-primary-alt-600: #27a85f;
+		--color-primary-alt-700: #1d7e47;
+		--color-primary-alt: var(--color-primary-500);
+
+		/* colors/secondary */
+		--color-secondary-300: #848793;
+		--color-secondary-400: #5b5f6f;
+		--color-secondary-500: #32374b;
+		--color-secondary-600: #282c3c;
+		--color-secondary-700: #1e212d;
+		--color-secondary: var(--color-secondary-500);
+
+		/* colors/error */
+		--color-error-300: #f7989d;
+		--color-error-400: #f5767c;
+		--color-error-500: #f2545b;
+		--color-error-600: #c24349;
+		--color-error-700: #913237;
+		--color-error: var(--color-error-500);
+
+		/* colors/warning */
+		--color-warning-300: #ffbc9b;
+		--color-warning-400: #ffa57a;
+		--color-warning-500: #ff8f59;
+		--color-warning-600: #cc7247;
+		--color-warning-700: #995635;
+		--color-warning: var(--color-warning-500);
+
+		/* colors/accent */
+		--color-accent-300: #8e8efa;
+		--color-accent-400: #6868f9;
+		--color-accent-500: #4242f7;
+		--color-accent-600: #3535c6;
+		--color-accent-700: #282894;
+		--color-accent: var(--color-accent-500);
+
+		/* colors/accent-alt */
+		--color-accent-alt-500: #6236ff;
+		--color-accent-alt: var(--color-accent-alt-500);
+
+		/* colors/secondary-alt */
+		--color-secondary-alt-200: #f4f5f8;
+		--color-secondary-alt-300: #dfe1e9;
+		--color-secondary-alt-400: #b4b8cd;
+		--color-secondary-alt-500: #949ab7;
+		--color-secondary-alt-600: #767b92;
+		--color-secondary-alt-700: #595c6e;
+		--color-secondary-alt: var(--color-secondary-alt-500);
+	}
+}

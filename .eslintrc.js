@@ -66,5 +66,6 @@ module.exports = {
 				"maxEOF": 0
 			}
 		],
+		semi: ["error", "always"]
 	}
-}
+};
