@@ -42,20 +42,19 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<div :style="{display: 'grid', gridGap: '3px'}"
-		>
-		<ui-radio v-bind="args" name="radio" value="value1" v-model="modelValue">
-			{{args.slot}}
-		</ui-radio>
-		<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
-			{{args.slot}}
-		</ui-radio>
-		<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
-			{{args.slot}}
-		</ui-radio>
-		<ui-radio v-bind="args" name="radio" value="value4" v-model="modelValue">
-			{{args.slot}}
-		</ui-radio>
+		<div :style="{display: 'grid', gridGap: '3px'}">
+			<ui-radio v-bind="args" name="radio" value="value1" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" value="value4" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
 		</div>
 	`,
 });

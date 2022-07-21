@@ -25,7 +25,7 @@
 			class="ui-radio_custom block w-md h-md border border-2 border-primary rounded-full relative"
 			:class="invertOrder && 'order-last'"
 		>
-			<span class="ui-radio__dot absolute w-xs h-xs block bg-primary rounded-full" />
+			<span class="ui-radio__dot absolute top-2/4 left-2/4 w-xs h-xs block bg-primary rounded-full" />
 		</span>
 		<slot />
 	</label>
@@ -61,8 +61,6 @@
 	}
 
 	.ui-radio__dot {
-		top: 50%;
-		left: 50%;
 		transform: translate3d(-50%, -50%, 0) scale(0);
 		transition: transform 0.2s ease-in-out;
 	}

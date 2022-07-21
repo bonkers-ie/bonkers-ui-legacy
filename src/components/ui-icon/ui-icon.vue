@@ -1,5 +1,6 @@
 <template>
 	<font-awesome-icon
+		class="ui-icon"
 		:icon="iconName"
 		:class="[
 			size === ESize.XXS && 'h-xxs w-xxs',
@@ -17,13 +18,12 @@
 
 <script lang="ts" setup>
 	import { ESize } from "../../_types/sizing";
-
-	type TIconPrefix = "fab" | "far" | "fas" | "fal" | "fad" | "fat";
+	import { TIconName } from "./_typings";
 
 	defineProps<{
 		className?: string;
 		hasWrapper?: boolean;
 		size: ESize;
-		iconName: [TIconPrefix, string];
+		iconName: TIconName;
 	}>();
 </script>
