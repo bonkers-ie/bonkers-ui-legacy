@@ -1,6 +1,7 @@
-import { ETypographySizes, ETypographyColors, ETextWeight, ETextAlign, ETextTransform } from "./_typings";
+import { ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./_typings";
 import UiTypography from "./ui-typography.vue";
 import { Story } from "@storybook/vue3";
+import { EColors } from "../../_types/colors";
 
 export default {
 	title: "Components/ui-typography",
@@ -17,7 +18,7 @@ export default {
 		},
 		kind: {
 			control: { type: "select" },
-			options: Object.values(ETypographyColors),
+			options: Object.values(EColors),
 			description: "The Element kinds",
 		},
 		weight: {
@@ -74,5 +75,6 @@ Default.args = {
 	weight: ETextWeight.REGULAR,
 	align: ETextAlign.LEFT,
 	lineHeight: true,
+	kind: EColors.PRIMARY,
 	is: "p",
 };

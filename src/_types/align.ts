@@ -1,4 +1,4 @@
-export enum ECheckboxJustify {
+export enum EJustify {
 	START = "start",
 	END = "end",
 	CENTER = "center",

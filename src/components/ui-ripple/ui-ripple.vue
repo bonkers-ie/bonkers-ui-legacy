@@ -31,7 +31,6 @@
 
 <script lang="ts" setup>
 	import { ref } from "vue";
-	import { v4 as uuidv4 } from "uuid";
 
 	const ripples = ref<{x:number, y:number, id:string}[]>([]);
 	const tiBtn = ref<HTMLDivElement>();
@@ -48,7 +47,7 @@
 			ripples.value.push({
 				x: e.clientX - pos.left,
 				y: e.clientY - pos.top,
-				id: uuidv4(),
+				id: Math.random().toString(36).substr(2, 9)
 			});
 		}
 	};

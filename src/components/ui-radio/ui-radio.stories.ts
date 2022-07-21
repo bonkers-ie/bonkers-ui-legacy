@@ -1,7 +1,7 @@
 import UiRadio from "./ui-radio.vue";
 import { Story } from "@storybook/vue3";
 import { ref } from "vue";
-import { ECheckboxJustify } from "../../_types/align";
+import { EJustify } from "../../_types/align";
 
 export default {
 	title: "Components/ui-radio",
@@ -14,7 +14,7 @@ export default {
 		},
 		justify: {
 			control: { type: "select" },
-			options: Object.values(ECheckboxJustify),
+			options: Object.values(EJustify),
 			description: "The Element justify",
 		},
 		invertOrder: {
@@ -24,7 +24,7 @@ export default {
 	},
 	args: {
 		slot: "Some text",
-		justify: ECheckboxJustify.START,
+		justify: EJustify.START,
 		invertOrder: false,
 	},
 };

@@ -3,12 +3,12 @@
 		class="ui-checkbox grid cursor-pointer"
 		:class="[
 			slots.default && 'items-center gap-sm',
-			(!justify || justify === ECheckboxJustify.START) && 'justify-start',
-			justify === ECheckboxJustify.END && 'justify-end',
-			justify === ECheckboxJustify.AROUND && 'justify-around',
-			justify === ECheckboxJustify.BETWEEN && 'justify-between',
-			justify === ECheckboxJustify.EVENLY && 'justify-evenly',
-			justify === ECheckboxJustify.CENTER && 'justify-center',
+			(!justify || justify === EJustify.START) && 'justify-start',
+			justify === EJustify.END && 'justify-end',
+			justify === EJustify.AROUND && 'justify-around',
+			justify === EJustify.BETWEEN && 'justify-between',
+			justify === EJustify.EVENLY && 'justify-evenly',
+			justify === EJustify.CENTER && 'justify-center',
 			disabled && 'ui-checkbox_disabled',
 			className
 		]"
@@ -52,14 +52,14 @@
 
 <script lang="ts" setup>
 	import { useSlots } from "vue";
-	import { ECheckboxJustify } from "../../_types/align";
+	import { EJustify } from "../../_types/align";
 
 	const slots = useSlots();
 
 	defineProps<{
 		modelValue: boolean;
 		className?: string;
-		justify?: ECheckboxJustify;
+		justify?: EJustify;
 		invertOrder?: boolean;
 		disabled?: boolean;
 	}>();
