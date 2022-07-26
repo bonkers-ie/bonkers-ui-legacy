@@ -26,7 +26,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - After you ready to push just `merge`(not `rebase`) develop to current branch 
 - Fix merge conflicts if you have
 - Next create pull request to develop (you can do squash when merging)
-- After pull request is merged to develop you can see it in staging [-----]()
+- After pull request is merged to develop you can see it in staging [https://bonkers-ie.github.io/bonkers-ui](https://bonkers-ie.github.io/bonkers-ui/?path=/story/example-introduction--page)
 - Only after test staging you can create merge request from `develop` to `master`
 - After merge to master patch version will up x.x.^x and you can use this version in package
 
