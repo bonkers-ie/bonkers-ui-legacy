@@ -2,13 +2,12 @@
 	<button
 		class="ui-card-cta outline-0 border border-secondary-alt-500 rounded-2xl p-sm shadow-m hover:border-secondary-700 focus:shadow-border-primary active:bg-secondary-alt-200 disabled:bg-secondary-alt-200"
 		:disabled="disabled"
-		:class="[!fullWidth && 'ui-card-cta_cropped']"
+		:class="[!fullWidth && 'ui-card-cta_cropped', className]"
 	>
 		<span
 			class="ui-card-cta__wrapper grid gap-sm items-center"
 			:class="[
 				invertOrder && 'ui-card-cta_inverted',
-				className
 			]"
 		>
 			<slot name="icon" />

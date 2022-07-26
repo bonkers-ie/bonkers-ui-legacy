@@ -28,7 +28,6 @@
 		"@storybook/builder-vite": "^0.1.36",
 		"@storybook/vue3": "^6.5.9",
 		"@types/jest": "^28.1.3",
-		"@types/uuid": "^8.3.4",
 		"@typescript-eslint/eslint-plugin": "^5.29.0",
 		"@typescript-eslint/parser": "^5.29.0",
 		"@vitejs/plugin-vue": "^2.3.3",
@@ -77,7 +76,8 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx,vue}": [
-			"eslint --fix"
+			"eslint --fix",
+			"bash -c 'yarn typecheck'"
 		],
 		"*.{css,vue,tsx}": "stylelint --fix"
 	},
