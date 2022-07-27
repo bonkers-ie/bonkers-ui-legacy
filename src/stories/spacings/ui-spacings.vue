@@ -38,7 +38,7 @@
 	import spacings from "../../_spacing.json";
 	import { getCssVariableValue } from "../helper";
 
-	const spacingKeys = Object.keys(spacings);
+	const spacingKeys = Object.keys(spacings) as Array<keyof typeof spacings>;
 
 </script>
 

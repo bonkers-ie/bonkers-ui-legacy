@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 	import { ESize } from "../../_types/sizing";
-	import { TIconName } from "./_typings";
+	import type { TIconName } from "./_typings";
 
 	defineProps<{
 		className?: string;

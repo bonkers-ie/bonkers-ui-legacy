@@ -10,11 +10,15 @@
 		"resolveJsonModule": true,
 		"useDefineForClassFields": true,
 		"jsx": "preserve",
+		"noImplicitThis": true,
 		"isolatedModules": true,
+		"preserveValueImports": true,
+		"importsNotUsedAsValues": "error",
 		"importHelpers": true,
 		"moduleResolution": "node",
 		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
 		"sourceMap": true,
 		"baseUrl": ".",
@@ -22,7 +26,6 @@
 			"esnext",
 			"dom",
 			"dom.iterable",
-			"scripthost"
 		]
 	},
 	"include": [

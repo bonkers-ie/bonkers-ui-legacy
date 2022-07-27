@@ -9,7 +9,7 @@
 		"lint:markup": "vue-tsc --noEmit",
 		"test": "jest",
 		"deploy": "gh-pages -d storybook-static",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsc --noEmit && vue-tsc --noEmit",
 		"i": "yarn install --frozen-lockfile"
 	},
 	"dependencies": {
@@ -54,7 +54,7 @@
 		"vite": "^2.9.12",
 		"vue-eslint-parser": "^9.0.3",
 		"vue-loader": "^17.0.0",
-		"vue-tsc": "^0.38.1"
+		"vue-tsc": "^0.39.0"
 	},
 	"jest": {
 		"preset": "ts-jest",

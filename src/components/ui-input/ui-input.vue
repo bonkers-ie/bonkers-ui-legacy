@@ -15,7 +15,7 @@
 			type="text"
 			:placeholder="placeholder"
 			:value="modelValue"
-			@input="$emit('update:modelValue', $event.target.value)"
+			@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 		>
 		<div class="icon-wrapper">
 			<slot name="postfix-icon" />
