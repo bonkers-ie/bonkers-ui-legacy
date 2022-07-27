@@ -19,7 +19,7 @@
 			:name="name"
 			:value="value"
 			class="appearance-none absolute"
-			@input="$emit('update:modelValue', $event.target.value)"
+			@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 		>
 		<span
 			class="ui-radio_custom block w-md h-md border border-2 border-primary rounded-full relative"

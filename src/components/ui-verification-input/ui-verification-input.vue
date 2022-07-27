@@ -42,7 +42,7 @@
 		emit("onFiled", generateString);
 	};
 
-	const inputHandler = (event:InputEvent, index:number)=>{
+	const inputHandler = (event:Event, index:number)=>{
 		if(index < props.inputsCount){
 			inputsRefs.value[index + 1]?.focus();
 		}
@@ -52,7 +52,7 @@
 		}
 	};
 
-	const focusHandler = (e:InputEvent) => {
+	const focusHandler = (e:FocusEvent) => {
 		if(e.target){
 			(e.target as HTMLInputElement).select();
 		}

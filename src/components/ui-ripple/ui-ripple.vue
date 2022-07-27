@@ -30,11 +30,11 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref } from "vue";
+	import { ref, type VNodeRef } from "vue";
 
 	const ripples = ref<{x:number, y:number, id:string}[]>([]);
 	const tiBtn = ref<HTMLDivElement>();
-	const inputsRefs = ref<Array<HTMLSpanElement | null>>([]);
+	const inputsRefs = ref<VNodeRef>();
 
 	defineProps<{
 		className?: string;

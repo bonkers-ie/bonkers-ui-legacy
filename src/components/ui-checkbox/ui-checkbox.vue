@@ -18,7 +18,7 @@
 			class="appearance-none absolute"
 			type="checkbox"
 			:disabled="disabled"
-			@input="$emit('update:modelValue', $event.target.checked)"
+			@input="$emit('update:modelValue', !!($event.target as HTMLInputElement)?.value)"
 		>
 		<span
 			class="ui-checkbox_custom w-md h-md flex items-center justify-center border border-secondary-alt-500 rounded relative hover:border-secondary-alt-700"

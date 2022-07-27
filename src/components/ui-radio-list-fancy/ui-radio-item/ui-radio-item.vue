@@ -12,7 +12,7 @@
 			:name="name"
 			:value="value"
 			class="appearance-none absolute"
-			@input="$emit('update:modelValue', $event.target.value)"
+			@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 		>
 
 		<ui-icon
@@ -33,7 +33,7 @@
 <script lang="ts" setup>
 	import { computed, ref, watch } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../../ui-typography";
-	import UiIcon, { TIconName } from "../../ui-icon";
+	import UiIcon, { type TIconName } from "../../ui-icon";
 	import { ESize } from "../../../_types/sizing";
 	import { EColors } from "../../../_types/colors";
 

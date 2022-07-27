@@ -17,7 +17,7 @@
 				:class="invertOrder && 'order-first'"
 			>
 				<ui-typography
-					:kind="ETypographyColors.SECONDARY"
+					:kind="EColors.SECONDARY"
 					:weight="ETextWeight.SEMI_BOLD"
 					class-name="mb-xxs"
 				>
@@ -25,7 +25,7 @@
 				</ui-typography>
 
 				<ui-typography
-					:kind="ETypographyColors.SECONDARY_300"
+					:kind="EColors.SECONDARY_300"
 					:size="ETypographySizes.SM"
 				>
 					<slot name="description" />
@@ -39,6 +39,7 @@
 	import { useSlots } from "vue";
 	import UiTypography from "../ui-typography";
 	import { ETypographyColors, ETypographySizes, ETextWeight } from "../ui-typography/_typings";
+	import { EColors } from "../../_types/colors";
 
 	const slots = useSlots();
 
