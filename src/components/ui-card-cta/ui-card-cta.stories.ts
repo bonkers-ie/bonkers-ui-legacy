@@ -1,8 +1,8 @@
-import UiCardCta from "./ui-card-cta.vue";
+import UiCardCta from "../ui-card-cta";
 import UiIcon from "../ui-icon";
 import { ESize } from "../../_types/sizing";
 import UiTypography from "../ui-typography";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-card-cta",

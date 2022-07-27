@@ -1,5 +1,5 @@
 import UiRadio from "./ui-radio.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import { ref } from "vue";
 import { EJustify } from "../../_types/align";
 

@@ -38,7 +38,7 @@
 <script lang="ts" setup>
 	import { useSlots } from "vue";
 	import UiTypography from "../ui-typography";
-	import { ETypographyColors, ETypographySizes, ETextWeight } from "../ui-typography/_typings";
+	import { ETypographySizes, ETextWeight } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
 
 	const slots = useSlots();

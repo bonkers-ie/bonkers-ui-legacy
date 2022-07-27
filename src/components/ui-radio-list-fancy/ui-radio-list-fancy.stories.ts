@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import UiRadioFancy from "./ui-radio-list-fancy.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-radio-list-fancy",

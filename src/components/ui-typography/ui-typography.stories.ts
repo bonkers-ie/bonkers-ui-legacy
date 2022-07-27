@@ -1,6 +1,6 @@
 import { ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./_typings";
 import UiTypography from "./ui-typography.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import { EColors } from "../../_types/colors";
 
 export default {

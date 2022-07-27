@@ -94,7 +94,6 @@
 </template>
 
 <script lang="ts" setup>
-	import type { Component } from "vue";
 	import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from "./_typings";
 	import { EColors } from "../../_types/colors";
 
@@ -106,7 +105,7 @@
 		weight?: ETextWeight;
 		lineHeight?: boolean;
 		textTransform?: ETextTransform;
-		is?: string | Component;
+		is?: string;
 	}>();
 </script>
 

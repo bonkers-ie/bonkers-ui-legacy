@@ -1,6 +1,6 @@
 import UiButton from "../ui-button";
 import { EButtonSizes, EButtonTypes } from "./_typings";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-button",

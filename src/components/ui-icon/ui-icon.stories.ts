@@ -1,5 +1,5 @@
 import UiIcon from "./ui-icon.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import { ESize } from "../../_types/sizing";
 
 export default {
