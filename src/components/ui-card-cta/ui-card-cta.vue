@@ -1,8 +1,8 @@
 <template>
 	<button
-		class="ui-card-cta outline-0 border border-secondary-alt-500 rounded-2xl p-sm shadow-m hover:border-secondary-700 focus:shadow-border-primary active:bg-secondary-alt-200 disabled:bg-secondary-alt-200"
+		class="ui-card-cta outline-0 border border-secondary-alt-500 rounded-2xl p-sm shadow-md hover:border-secondary-700 focus:shadow-border-primary active:bg-secondary-alt-200 disabled:bg-secondary-alt-200"
 		:disabled="disabled"
-		:class="[!fullWidth && 'ui-card-cta_cropped', className]"
+		:class="[className]"
 	>
 		<span
 			class="ui-card-cta__wrapper grid gap-sm items-center"
@@ -46,7 +46,6 @@
 	defineProps<{
 		className?: string;
 		invertOrder?: boolean;
-		fullWidth?: boolean;
 		disabled?: boolean;
 	}>();
 
@@ -73,10 +72,6 @@
 
 	.ui-card-cta__text-wrapper {
 		width: 100%;
-	}
-
-	.ui-card-cta_cropped {
-		max-width: 382px;
 	}
 
 	.ui-card-cta_inverted {

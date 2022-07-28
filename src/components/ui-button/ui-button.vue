@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="text-base text-white rounded-md whitespace-nowrap font-bold leading-none"
+		class="text-base text-white rounded-md whitespace-nowrap font-bold leading-none touch-manipulation"
 		:disabled="disabled"
 		:class="[
 			(!kind || kind === EButtonTypes.PRIMARY) && [primaryColor, primaryColorHover, primaryColorActive].join(' '),

@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="ui-radio-item block p-sm border border-secondary-alt rounded-2xl hover:border-primary hover:text-primary cursor-pointer"
+		class="ui-radio-item block p-sm border border-secondary-alt rounded-2xl hover:border-primary cursor-pointer"
 		:class="[
 			isActive && 'bg-primary text-white pointer-events-none',
 		]"
@@ -37,7 +37,7 @@
 	import { ESize } from "../../../_types/sizing";
 	import { EColors } from "../../../_types/colors";
 
-	const props = defineProps< {
+	const props = defineProps<{
 		className?: string;
 		modelValue: string;
 		name: string;

@@ -71,7 +71,7 @@ const Template: Story<TComponentProps> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-	size: ETypographySizes.M,
+	size: ETypographySizes.MD,
 	weight: ETextWeight.REGULAR,
 	align: ETextAlign.LEFT,
 	lineHeight: true,

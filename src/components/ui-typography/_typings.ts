@@ -2,7 +2,7 @@ export enum ETypographySizes {
 	XXS = "xxs",
 	XS = "xs",
 	SM = "sm",
-	M = "m",
+	MD = "m",
 	LG = "lg",
 	XL = "xl",
 	XXL = "2xl",
