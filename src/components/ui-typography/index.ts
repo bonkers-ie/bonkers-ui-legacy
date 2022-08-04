@@ -1,2 +1,2 @@
 export { default } from "./ui-typography.vue";
-export { ETypographySizes, ETextWeight, ETextAlign } from "./_typings";
+export { ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./_typings";

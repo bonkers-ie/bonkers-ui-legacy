@@ -10,9 +10,23 @@ export default {
 			control: { type: "text" },
 			description: "The Element classes",
 		},
+		min:{
+			control: { type: "number" },
+			description: "The Element min value",
+		},
+		max:{
+			control: { type: "number" },
+			description: "The Element max value",
+		},
+		step:{
+			control: { type: "number" },
+			description: "The Element max value",
+		}
 	},
 	args: {
-		hasWrapper: false,
+		min: 0,
+		max: 100,
+		step: 1,
 	},
 };
 
@@ -26,7 +40,8 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, modelValue };
 	},
 	template: `
-		<ui-input-range v-bind="args" min="0" max="100" step="1" v-model:modelValue="modelValue"/>
+		<ui-input-range v-bind="args" v-model:modelValue="modelValue"/>
+		<div>{{ modelValue }}</div>
 	`,
 });
 

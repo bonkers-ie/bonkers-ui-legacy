@@ -1,5 +1,8 @@
 <template>
-	<div class="ui-input-range relative h-lg">
+	<div
+		class="ui-input-range relative h-lg"
+		:class="className"
+	>
 		<input
 			class="appearance-none cursor-pointer bg-transparent w-full h-full"
 			type="range"
@@ -28,7 +31,6 @@
 		max: string | number;
 		step: string | number;
 		className?: string;
-		disabled?: boolean;
 	}>();
 
 	defineEmits<{
