@@ -6,11 +6,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 /* import specific icons */
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 
 /* add icons to the library */
-library.add(faUserSecret, faFaceSmile);
+library.add(faFaceSmile);
 
 import '../src/main.css';
 

@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="text-base text-white rounded-md whitespace-nowrap font-bold leading-none touch-manipulation"
+		class="ui-button justify-center grid text-base text-white rounded-md whitespace-nowrap font-bold leading-none touch-manipulation"
 		:disabled="disabled"
 		:class="[
 			(!kind || kind === EButtonTypes.PRIMARY) && [primaryColor, primaryColorHover, primaryColorActive].join(' '),
@@ -24,12 +24,31 @@
 			className
 		]"
 	>
-		<slot />
+		<span
+			v-if="slots.prefix"
+			class="ui-button__prefix"
+			:class="(slots.default || slots.postfix) && 'mr-sm'"
+		>
+			<slot name="prefix" />
+		</span>
+
+		<span>
+			<slot />
+		</span>
+
+		<span
+			v-if="slots.postfix"
+			class="ui-button__postfix"
+			:class="(slots.default || slots.prefix) && 'ml-sm'"
+		>
+			<slot name="postfix" />
+		</span>
 	</button>
 </template>
 
 <script lang="ts" setup>
 	import { EButtonSizes, EButtonTypes } from "./_typings";
+	import { useSlots } from "vue";
 	type TProps = {
 		className?: string;
 		kind?: EButtonTypes;
@@ -38,9 +57,17 @@
 		disabled?: boolean;
 	}
 
+	const slots = useSlots();
+
 	const primaryColor = "bg-primary disabled:bg-primary-300";
 	const primaryColorHover = "hover:bg-primary-600 ";
 	const primaryColorActive = "active:bg-primary-700 ";
 
 	defineProps<TProps>();
 </script>
+
+<style>
+	.ui-button {
+		grid-template-columns: auto auto auto;
+	}
+</style>

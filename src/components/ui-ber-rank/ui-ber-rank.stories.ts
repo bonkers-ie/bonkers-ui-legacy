@@ -15,7 +15,6 @@ export default {
 		}
 	},
 	args: {
-		hasWrapper: false,
 		rank: 0,
 	},
 };

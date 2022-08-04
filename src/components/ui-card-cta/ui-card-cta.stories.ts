@@ -18,10 +18,6 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element order",
 		},
-		fullWidth: {
-			control: { type: "boolean" },
-			description: "The full width size",
-		},
 		disabled: {
 			control: { type: "boolean" },
 			description: "The full width size",
@@ -30,7 +26,6 @@ export default {
 	args: {
 		slot: "Description",
 		invertOrder: false,
-		fullWidth: false,
 		disabled: false
 	},
 };
@@ -45,7 +40,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: `
 		<ui-card-cta v-bind="args">
 			<template v-slot:icon>
-				<ui-icon :size="ESize.MD" has-wrapper class-name="text-white" :icon-name="['fas', 'fa-user-secret']" />
+				<ui-icon :size="ESize.MD" has-wrapper class-name="text-white" :icon-name="['far', 'fa-face-smile']" />
 			</template>
 
 			<template v-slot:title>

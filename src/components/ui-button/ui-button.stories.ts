@@ -1,7 +1,8 @@
 import UiButton from "../ui-button";
+import UiIcon from "../ui-icon";
+import { ESize } from "../../_types/sizing";
 import { EButtonSizes, EButtonTypes } from "./_typings";
 import type { Story } from "@storybook/vue3";
-
 export default {
 	title: "Components/ui-button",
 	component: UiButton,
@@ -33,10 +34,18 @@ export default {
 		slot: {
 			control: { type: "text" },
 			description: "The slot text or component",
+		},
+		hasPrefix:{
+			control: { type: "boolean" },
+		},
+		hasPostfix:{
+			control: { type: "boolean" },
 		}
 	},
 	args: {
 		slot: "default text",
+		hasPrefix: false,
+		hasPostfix: false,
 	},
 };
 
@@ -44,10 +53,10 @@ type TComponentProps = InstanceType<typeof UiButton>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiButton },
+	components: { UiButton, UiIcon },
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		return { args };
+		return { args, ESize };
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
@@ -57,7 +66,19 @@ const Template: Story<TComponentProps> = (args) => ({
 				   :fullWidth="args.fullWidth"
 				   :disabled="args.disabled"
 		>
-		${args.slot}
+			<template #prefix v-if="args.hasPrefix">
+				<ui-icon
+					:icon-name="['far', 'face-smile']"
+				 	:size="ESize.SM"
+				/>
+			</template>
+			${args.slot}
+			<template #postfix v-if="args.hasPostfix">
+				<ui-icon
+					:icon-name="['far', 'face-smile']"
+					:size="ESize.SM"
+				/>
+			</template>
 		</ui-button>`,
 });
 const TemplateAll: Story<TComponentProps> = () => ({

@@ -39,7 +39,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<ui-icon v-bind="args" :icon-name="['fas', 'fa-user-secret']" />
+		<ui-icon v-bind="args" :icon-name="['far', 'fa-face-smile']" />
 	`,
 });
 
