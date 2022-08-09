@@ -62,7 +62,7 @@
 </template>
 
 <script lang="ts" setup>
-	import colors from "../../_colors.json";
+	import colors from "../../_styles/classTypes/_colors.json";
 	import { getCssVariableValue } from "../helper";
 </script>
 

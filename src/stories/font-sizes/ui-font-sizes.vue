@@ -8,7 +8,6 @@
 		>
 			{{ getCssVariableValue(value) }}
 			<br>
-			some test text
 			<br>
 			{{ key }}
 			<br>
@@ -18,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-	import fontSizes from "../../_font-sizes.json";
+	import fontSizes from "../../_styles/classTypes/_font-sizes.json";
 	import { getCssVariableValue } from "../helper";
 </script>
 

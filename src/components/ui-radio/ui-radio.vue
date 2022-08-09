@@ -48,7 +48,7 @@
 
 	const localValue = ref(props.modelValue);
 
-	watch(()=>props.modelValue, (newValue)=>{
+	watch(() => props.modelValue, (newValue) => {
 		if(newValue !== localValue.value){
 			localValue.value = newValue;
 		}
