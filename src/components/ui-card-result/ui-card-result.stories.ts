@@ -50,7 +50,7 @@ const Template: Story<TComponentProps> = (args) => ({
 				: undefined"
 		>
 			<template #sidebar>
-				<ui-typography :size='ETypographySizes.XXS'>
+				<ui-typography :size='ETypographySizes.XXS' line-height>
 					Special offer text
 				</ui-typography>
 			</template>
