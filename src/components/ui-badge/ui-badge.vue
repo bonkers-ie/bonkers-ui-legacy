@@ -23,6 +23,8 @@
 		<ui-typography
 			is="span"
 			:size="getBadgeSize"
+			:weight="ETextWeight.SEMI_BOLD"
+			class-name="whitespace-nowrap"
 		>
 			<slot />
 		</ui-typography>
@@ -34,7 +36,7 @@
 	import { EBadgeKind, EBadgeSize } from "./_typings";
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
-	import UiTypography, { ETypographySizes } from "../ui-typography";
+	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	const props = defineProps<{
 		className?: string;

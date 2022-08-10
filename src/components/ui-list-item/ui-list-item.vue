@@ -18,8 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-	import type { TIconName } from "../ui-icon";
-	import UiIcon from "../ui-icon";
+	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
