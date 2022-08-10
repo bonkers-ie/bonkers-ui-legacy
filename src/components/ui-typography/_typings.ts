@@ -38,10 +38,10 @@ export enum ETypographyColors {
 }
 
 export enum ETextWeight {
-	LIGHT = "light",
-	REGULAR = "regular",
-	SEMI_BOLD = "semi_bold",
-	BOLD = "bold",
+	LIGHT = "light", // 300
+	REGULAR = "regular", // 400
+	SEMI_BOLD = "semi_bold", // 600
+	BOLD = "bold", // 900
 }
 
 export enum ETextAlign {

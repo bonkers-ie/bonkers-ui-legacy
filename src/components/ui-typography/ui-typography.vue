@@ -85,6 +85,7 @@
 			textTransform === ETextTransform.UPPERCASE && 'uppercase',
 
 			lineHeight && 'ui-typography_line-height',
+			underline && 'underline',
 
 			className
 		]"
@@ -105,6 +106,7 @@
 		weight?: ETextWeight;
 		lineHeight?: boolean;
 		textTransform?: ETextTransform;
+		underline?: boolean;
 		is?: string;
 	}>();
 </script>
