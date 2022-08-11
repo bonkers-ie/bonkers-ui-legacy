@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-card-simple rounded-3xl shadow-md py-md px-sm"
+		class="ui-card-simple rounded-3xl shadow-md py-md px-sm bg-white"
 		:class="className"
 	>
 		<ui-typography
