@@ -13,11 +13,16 @@ export default {
 		disabled: {
 			control: { type: "boolean" },
 			description: "The Element disabled state",
+		},
+		invertOrder: {
+			control: { type: "boolean" },
+			description: "The Element order state",
 		}
 	},
 	args: {
 		slot: "default text",
 		disabled: false,
+		invertOrder: false,
 	},
 };
 
@@ -31,9 +36,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, modelValue };
 	},
 	template: `
-		<ui-toggle v-bind="args" v-model:model-value="modelValue">
-			{{ args.slot }}
-		</ui-toggle>
+		<ui-toggle v-bind="args" v-model:model-value="modelValue" header="Header" :title="args.slot" />
 	`,
 });
 
