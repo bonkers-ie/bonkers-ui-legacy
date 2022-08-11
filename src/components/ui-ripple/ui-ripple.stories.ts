@@ -2,7 +2,7 @@ import UiRipple from "./ui-ripple.vue";
 import UiButton from "../ui-button";
 import UiTypography from "../ui-typography";
 
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-ripple",

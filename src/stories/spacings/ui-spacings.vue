@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-	import spacings from "../../_spacing.json";
+	import spacings from "../../_styles/classTypes/_spacing.json";
 	import { getCssVariableValue } from "../helper";
 
 	const spacingKeys = Object.keys(spacings) as Array<keyof typeof spacings>;

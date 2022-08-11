@@ -1,4 +1,4 @@
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import UiInput from "./ui-input.vue";
 import Icon from "../../_samples/icon.vue";
 import { ref } from "vue";
@@ -26,10 +26,16 @@ export default {
 			control: { type: "boolean" },
 			description: "The full width size",
 		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
 	},
 	args: {
 		placeholder: "Placeholder",
-		fullWidth: false
+		fullWidth: false,
+		kind: undefined,
+		disabled: false,
 	}
 };
 
@@ -47,7 +53,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 		};
 	},
 	template: `
-		<ui-input v-bind="args" v-model="valueModel" />
+		<ui-input v-bind="args" v-model="valueModel" heading="heading" sub-label="subLabel" />
 	`
 });
 

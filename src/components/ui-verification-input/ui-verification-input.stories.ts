@@ -1,5 +1,4 @@
 import UiVerificationInput from "./ui-verification-input.vue";
-import { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-verification-input",
@@ -28,7 +27,7 @@ export default {
 
 type MyComponentProps = InstanceType<typeof UiVerificationInput>["$props"];
 
-const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
+const Template = (args: MyComponentProps) => ({
 	components:{
 		UiVerificationInput
 	},

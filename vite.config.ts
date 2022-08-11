@@ -6,7 +6,9 @@ export default defineConfig({
 	resolve: {
 		alias: {}
 	},
-	plugins: [vue({
-		reactivityTransform: true
-	})]
+	plugins: [
+		vue({
+			reactivityTransform: true
+		}),
+	],
 });

@@ -1,7 +1,0 @@
-@layer base {
-	:root {
-		/* shadow sizes */
-		--shadow-size-m: 0 2px 4px 0 rgb(180 184 205 / 50%);
-		--shadow-border-primary: 0 0 0 4px var(--color-primary-300);
-	}
-}

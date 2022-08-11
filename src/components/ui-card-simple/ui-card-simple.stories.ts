@@ -1,5 +1,5 @@
 import UiCardSimple from "./ui-card-simple.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-card-simple",

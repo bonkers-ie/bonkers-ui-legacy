@@ -1,6 +1,6 @@
 import { ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./_typings";
 import UiTypography from "./ui-typography.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import { EColors } from "../../_types/colors";
 
 export default {
@@ -40,6 +40,10 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element line height 1.6",
 		},
+		underline: {
+			control: { type: "boolean" },
+			description: "The Element underline",
+		},
 		size: {
 			control: { type: "select" },
 			options: Object.values(ETypographySizes),
@@ -48,6 +52,7 @@ export default {
 	},
 	args: {
 		slot: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+		underline: false
 	},
 };
 
@@ -71,7 +76,7 @@ const Template: Story<TComponentProps> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-	size: ETypographySizes.M,
+	size: ETypographySizes.MD,
 	weight: ETextWeight.REGULAR,
 	align: ETextAlign.LEFT,
 	lineHeight: true,

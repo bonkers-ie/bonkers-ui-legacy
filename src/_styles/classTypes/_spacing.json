@@ -1,4 +1,5 @@
 {
+	"0": "var(--zero)",
 	"xxs": "var(--xxs)",
 	"xs": "var(--xs)",
 	"sm": "var(--sm)",

@@ -4,7 +4,7 @@
 		class="ui-typography"
 		:class="[
 			'leading-none',
-			(!size || size === ETypographySizes.M) && 'text-m',
+			(!size || size === ETypographySizes.MD) && 'text-md',
 			size === ETypographySizes.XXS && 'text-xxs',
 			size === ETypographySizes.XS && 'text-xs',
 			size === ETypographySizes.SM && 'text-sm',
@@ -85,6 +85,7 @@
 			textTransform === ETextTransform.UPPERCASE && 'uppercase',
 
 			lineHeight && 'ui-typography_line-height',
+			underline && 'underline',
 
 			className
 		]"
@@ -94,7 +95,6 @@
 </template>
 
 <script lang="ts" setup>
-	import type { Component } from "vue";
 	import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from "./_typings";
 	import { EColors } from "../../_types/colors";
 
@@ -106,7 +106,8 @@
 		weight?: ETextWeight;
 		lineHeight?: boolean;
 		textTransform?: ETextTransform;
-		is?: string | Component;
+		underline?: boolean;
+		is?: string;
 	}>();
 </script>
 

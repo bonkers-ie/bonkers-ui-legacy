@@ -1,5 +1,5 @@
 import UiRadio from "./ui-radio.vue";
-import { Story } from "@storybook/vue3";
+import type { Story } from "@storybook/vue3";
 import { ref } from "vue";
 import { EJustify } from "../../_types/align";
 
@@ -21,11 +21,16 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element order",
 		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
 	},
 	args: {
 		slot: "Some text",
 		justify: EJustify.START,
 		invertOrder: false,
+		disabled: false,
 	},
 };
 
@@ -36,7 +41,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	components: { UiRadio },
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		const modelValue = ref("value2");
+		const modelValue = ref("value4");
 
 		return { args, modelValue };
 	},
@@ -52,7 +57,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
-			<ui-radio v-bind="args" name="radio" value="value4" v-model="modelValue">
+			<ui-radio v-bind="args" name="radio" disabled value="value4" v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
 		</div>
