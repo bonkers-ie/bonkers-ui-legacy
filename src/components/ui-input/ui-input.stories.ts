@@ -26,10 +26,16 @@ export default {
 			control: { type: "boolean" },
 			description: "The full width size",
 		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
 	},
 	args: {
 		placeholder: "Placeholder",
-		fullWidth: false
+		fullWidth: false,
+		kind: undefined,
+		disabled: false,
 	}
 };
 
@@ -47,7 +53,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 		};
 	},
 	template: `
-		<ui-input v-bind="args" v-model="valueModel" />
+		<ui-input v-bind="args" v-model="valueModel" heading="heading" sub-label="subLabel" />
 	`
 });
 
