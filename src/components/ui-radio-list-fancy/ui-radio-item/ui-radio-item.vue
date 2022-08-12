@@ -18,7 +18,7 @@
 		<ui-icon
 			:icon-name="iconName"
 			:size="ESize.MD"
-			class-name="mb-md"
+			class="mb-md"
 		/>
 		<ui-typography
 			:size="ETypographySizes.SM"
@@ -38,7 +38,6 @@
 	import { EColors } from "../../../_types/colors";
 
 	const props = defineProps<{
-		className?: string;
 		modelValue: string;
 		name: string;
 		value: string;

@@ -3,7 +3,7 @@
 		<ui-typography
 			v-if="heading"
 			:weight="ETextWeight.BOLD"
-			class-name="mb-sm"
+			class="mb-sm"
 		>
 			{{ heading }}
 		</ui-typography>
@@ -17,7 +17,6 @@
 				disabled && 'border-secondary-alt-300 bg-secondary-alt-200',
 
 				fullWidth && 'max-w-full',
-				className,
 			]"
 		>
 			<div class="icon-wrapper">
@@ -37,7 +36,7 @@
 		<ui-typography
 			v-if="subLabel"
 			:size="ETypographySizes.SM"
-			class-name="mt-sm"
+			class="mt-sm"
 		>
 			{{ subLabel }}
 		</ui-typography>
@@ -54,7 +53,6 @@
 		disabled?: boolean;
 		fullWidth?: boolean;
 		kind?: EInputTypes;
-		className?: string;
 		heading?: string;
 		subLabel?: string;
 	}>();

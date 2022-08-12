@@ -2,7 +2,7 @@
 	<li class="ui-icon-list">
 		<ui-icon
 			v-if="icon"
-			class-name="mr-xs"
+			class="mr-xs"
 			:size="ESize.SM"
 			:icon-name="icon"
 		/>

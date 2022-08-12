@@ -1,11 +1,10 @@
 <template>
 	<div
 		class="ui-toggle"
-		:class="className"
 	>
 		<ui-typography
 			:weight="ETextWeight.BOLD"
-			class-name="mb-sm"
+			class="mb-sm"
 		>
 			{{ header }}
 		</ui-typography>
@@ -49,7 +48,7 @@
 
 			<ui-typography
 				:size="ETypographySizes.SM"
-				class-name="w-full"
+				class="w-full"
 				line-height
 			>{{ title }}</ui-typography>
 		</label>
@@ -60,7 +59,6 @@
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	defineProps<{
-		className?: string;
 		header?: string;
 		title?: string;
 		modelValue: boolean;

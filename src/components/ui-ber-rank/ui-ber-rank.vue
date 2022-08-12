@@ -18,7 +18,7 @@
 				:weight="ETextWeight.BOLD"
 				:size="ETypographySizes.XXXL"
 				:text-transform="ETextTransform.UPPERCASE"
-				class-name="absolute top-0 left-0 w-full h-full flex justify-center items-center"
+				class="absolute top-0 left-0 w-full h-full flex justify-center items-center"
 			>
 				ber
 			</ui-typography>
@@ -45,7 +45,7 @@
 				:weight="ETextWeight.BOLD"
 				:size="ETypographySizes.XXXL"
 				:text-transform="ETextTransform.UPPERCASE"
-				class-name="absolute top-0 left-0 w-full h-full flex justify-center items-center"
+				class="absolute top-0 left-0 w-full h-full flex justify-center items-center"
 			>
 				{{ berRankDictionary[+rank]?.text || berRankDictionary[0].text }}
 			</ui-typography>

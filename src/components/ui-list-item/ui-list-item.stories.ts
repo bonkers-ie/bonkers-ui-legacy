@@ -4,12 +4,7 @@ import type { Story } from "@storybook/vue3";
 export default {
 	title: "Components/ui-list-item",
 	component: UiIconList,
-	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-	},
+	argTypes: {},
 	args: {
 		slot: "default text",
 	}

@@ -6,10 +6,6 @@ export default {
 	title: "Components/ui-badge",
 	component: UiBadge,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		kind: {
 			control: { type: "select" },
 			options: Object.values(EBadgeKind),

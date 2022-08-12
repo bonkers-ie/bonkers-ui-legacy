@@ -10,7 +10,6 @@
 			justify === EJustify.EVENLY && 'justify-evenly',
 			justify === EJustify.CENTER && 'justify-center',
 			disabled && 'pointer-events-none',
-			className
 		]"
 	>
 		<input
@@ -39,7 +38,6 @@
 	const slots = useSlots();
 	const props = defineProps<{
 		modelValue: string;
-		className?: string;
 		name: string;
 		value: string;
 		justify?: EJustify;

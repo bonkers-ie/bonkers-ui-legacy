@@ -8,12 +8,7 @@ export default {
 	title: "Components/ui-ripple",
 	component: UiRipple,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-	},
+	argTypes: {},
 	args: {
 		// slot: "Some text",
 	},
@@ -45,7 +40,7 @@ const Template2: Story<TComponentProps> = (args) => ({
 	},
 	template: `
 		<div class="flex">
-		<ui-button class-name="relative">
+		<ui-button class="relative">
 			<ui-typography is="div">
 				<ui-ripple v-bind="args" />
 				hello world

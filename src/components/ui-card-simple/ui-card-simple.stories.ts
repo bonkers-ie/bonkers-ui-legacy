@@ -4,13 +4,7 @@ import type { Story } from "@storybook/vue3";
 export default {
 	title: "Components/ui-card-simple",
 	component: UiCardSimple,
-	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-
-	},
+	argTypes: {},
 	args: {
 		slot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 	},

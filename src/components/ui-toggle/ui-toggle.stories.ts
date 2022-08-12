@@ -6,10 +6,6 @@ export default {
 	title: "Components/ui-toggle",
 	component: UiToggle,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		disabled: {
 			control: { type: "boolean" },
 			description: "The Element disabled state",

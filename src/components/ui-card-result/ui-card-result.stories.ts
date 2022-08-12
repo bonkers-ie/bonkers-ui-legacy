@@ -11,10 +11,6 @@ export default {
 	title: "Components/ui-card-result",
 	component: UiCardResult,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		exclusiveText: {
 			control: { type: "boolean" },
 			description: "Whether to show the exclusive text",
@@ -69,7 +65,7 @@ const Template: Story<TComponentProps> = (args) => ({
 				<ul>
 					<ui-list-item
 						v-for="item in 5"
-						class-name="mb-xs"
+						class="mb-xs"
 						:key="item"
 						:icon="['far', 'face-smile']"
 					>
@@ -81,7 +77,7 @@ const Template: Story<TComponentProps> = (args) => ({
 					:weight="ETextWeight.BOLD"
 					:size="ETypographySizes.LG"
 					:align="ETextAlign.RIGHT"
-					class-name="mb-xs"
+					class="mb-xs"
 				>
 					€1004.63 p/m
 				</ui-typography>

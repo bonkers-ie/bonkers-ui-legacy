@@ -2,7 +2,6 @@
 	<div
 		ref="tiBtn"
 		class="ui-ripple"
-		:class="className"
 		@click="animateRipple"
 	>
 		<slot />
@@ -35,10 +34,6 @@
 	const ripples = ref<{x:number, y:number, id:string}[]>([]);
 	const tiBtn = ref<HTMLDivElement>();
 	const inputsRefs = ref<VNodeRef>();
-
-	defineProps<{
-		className?: string;
-	}>();
 
 	const animateRipple = (e:MouseEvent)=> {
 		if(tiBtn.value){

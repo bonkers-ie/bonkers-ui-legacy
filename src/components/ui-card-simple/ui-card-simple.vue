@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="ui-card-simple rounded-3xl shadow-md py-md px-sm bg-white"
-		:class="className"
 	>
 		<ui-typography
 			v-if="slots.title"
@@ -28,8 +27,4 @@
 	import { useSlots } from "vue";
 
 	const slots = useSlots();
-
-	defineProps<{
-		className? : string;
-	}>();
 </script>

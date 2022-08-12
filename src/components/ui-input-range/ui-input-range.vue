@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="ui-input-range relative h-lg"
-		:class="className"
 	>
 		<input
 			class="appearance-none cursor-pointer bg-transparent w-full h-full"
@@ -30,7 +29,6 @@
 		min: string | number;
 		max: string | number;
 		step: string | number;
-		className?: string;
 	}>();
 
 	defineEmits<{

@@ -5,10 +5,6 @@ export default {
 	component: UiVerificationInput,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "Inputs custom classes",
-		},
 		inputsCount: {
 			control: { type: "number" },
 			description: "Number of inputs",

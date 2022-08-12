@@ -6,10 +6,6 @@ export default {
 	title: "Components/ui-input-range",
 	component: UiInputRange,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		min:{
 			control: { type: "number" },
 			description: "The Element min value",

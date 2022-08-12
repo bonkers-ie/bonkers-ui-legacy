@@ -2,7 +2,6 @@
 	<button
 		class="ui-card-cta outline-0 border border-secondary-alt-500 rounded-2xl p-sm shadow-md hover:border-secondary-700 focus:shadow-border-primary active:bg-secondary-alt-200 disabled:bg-secondary-alt-200"
 		:disabled="disabled"
-		:class="[className]"
 	>
 		<span
 			class="ui-card-cta__wrapper grid gap-sm items-center"
@@ -19,7 +18,7 @@
 				<ui-typography
 					:kind="EColors.SECONDARY"
 					:weight="ETextWeight.SEMI_BOLD"
-					class-name="mb-xxs"
+					class="mb-xxs"
 				>
 					<slot name="title" />
 				</ui-typography>
@@ -44,7 +43,6 @@
 	const slots = useSlots();
 
 	defineProps<{
-		className?: string;
 		invertOrder?: boolean;
 		disabled?: boolean;
 	}>();

@@ -2,7 +2,6 @@
 	<span
 		class="ui-badge rounded-full inline-flex items-center"
 		:class="[
-			className,
 			(!size || size === EBadgeSize.SMALL) && 'px-xs py-xxs',
 			(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-alt-300 text-primary-alt-700',
 
@@ -15,7 +14,7 @@
 	>
 		<ui-icon
 			v-if="icon"
-			class-name="mr-xxs"
+			class="mr-xxs"
 			:size="ESize.SM"
 			:icon-name="icon"
 		/>
@@ -24,7 +23,7 @@
 			is="span"
 			:size="getBadgeSize"
 			:weight="ETextWeight.SEMI_BOLD"
-			class-name="whitespace-nowrap"
+			class="whitespace-nowrap"
 		>
 			<slot />
 		</ui-typography>
@@ -39,7 +38,6 @@
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	const props = defineProps<{
-		className?: string;
 		size?: EBadgeSize;
 		kind?: EBadgeKind;
 		icon?: TIconName;

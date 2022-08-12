@@ -5,9 +5,11 @@ describe("VButton.test.ts", () => {
 	it("renders props.msg when passed", () => {
 		const className = "message";
 		const wrapper = mount(UiButton, {
-			props: { className },
+			propsData: {
+				class: className
+			}
 		});
 
 		expect(wrapper.classes()).toContain(className);
-	},);
-},);
+	});
+});
