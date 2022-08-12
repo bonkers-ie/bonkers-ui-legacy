@@ -21,7 +21,6 @@
 			size === EButtonSizes.LARGE && 'py-md px-md',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',
-			className
 		]"
 	>
 		<span
@@ -50,7 +49,6 @@
 	import { EButtonSizes, EButtonTypes } from "./_typings";
 	import { useSlots } from "vue";
 	type TProps = {
-		className?: string;
 		kind?: EButtonTypes;
 		size?: EButtonSizes;
 		fullWidth?: boolean;

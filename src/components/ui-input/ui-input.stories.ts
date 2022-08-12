@@ -9,10 +9,6 @@ export default {
 	component: UiInput,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "Custom class",
-		},
 		placeholder: {
 			control: { type: "text" },
 			description: "Placeholder",

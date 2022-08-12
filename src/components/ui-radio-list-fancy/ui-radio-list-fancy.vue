@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="ui-radio-fancy grid gap-sm"
-		:class="className"
 	>
 		<ui-radio-item
 			v-for="(item, index) in items"
@@ -10,7 +9,7 @@
 			:title="item.title"
 			:value="String(index)"
 			:name="name"
-			:icon-name="['far','face-smile']"
+			:icon-name="[EIconType.FAR,'face-smile']"
 			@update:model-value="$emit('update:modelValue', $event)"
 		/>
 	</div>
@@ -19,9 +18,9 @@
 <script lang="ts" setup>
 	import UiRadioItem from "./ui-radio-item";
 	import { ref, watch } from "vue";
+	import { EIconType } from "../ui-icon/_typings";
 
 	const props = defineProps< {
-		className? : string;
 		name: string;
 		modelValue: string;
 	}>();
@@ -31,15 +30,15 @@
 	const items = [
 		{
 			title: "title",
-			iconName: ["far", "face-smile"],
+			iconName: [EIconType.FAR, "face-smile"],
 		},
 		{
 			title: "title",
-			iconName: ["far", "face-smile"],
+			iconName: [EIconType.FAR, "face-smile"],
 		},
 		{
 			title: "title",
-			iconName: ["far", "face-smile"],
+			iconName: [EIconType.FAR, "face-smile"],
 		},
 	];
 

@@ -6,13 +6,7 @@ export default {
 	title: "Components/ui-radio-list-fancy",
 	component: UiRadioFancy,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-
-	},
+	argTypes: {},
 	args: {},
 };
 

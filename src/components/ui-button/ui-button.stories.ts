@@ -8,11 +8,6 @@ export default {
 	component: UiButton,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		className: {
-			control: { type: "select" },
-			options: ["small", "medium", "large"],
-			description: "The button size",
-		},
 		kind: {
 			control: { type: "select" },
 			options: Object.values(EButtonTypes),
@@ -60,8 +55,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<ui-button :className="args.className"
-				   :kind="args.kind"
+		<ui-button :kind="args.kind"
 				   :size="args.size"
 				   :fullWidth="args.fullWidth"
 				   :disabled="args.disabled"
@@ -115,7 +109,6 @@ export const Primary = Template.bind({});
 
 Primary.args = {
 	...Primary,
-	className: "medium",
 	kind: EButtonTypes.PRIMARY,
 	size: EButtonSizes.MEDIUM,
 	fullWidth: false,

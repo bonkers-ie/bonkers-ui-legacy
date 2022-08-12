@@ -5,7 +5,7 @@
 			class="ui-card-result__exclusive bg-primary rounded-2xl px-sm pb-lg -mb-lg"
 		>
 			<ui-typography
-				class-name="py-xs"
+				class="py-xs"
 				line-height
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
@@ -27,7 +27,7 @@
 			<main class="p-sm bg-white w-full">
 				<ui-typography
 					v-if="header"
-					class-name="mb-xs"
+					class="mb-xs"
 					:size="ETypographySizes.SM"
 					:weight="ETextWeight.SEMI_BOLD"
 				>
@@ -42,7 +42,7 @@
 			class="ui-card-result__exclusive_bottom bg-secondary rounded-2xl px-sm pt-lg -mt-lg"
 		>
 			<ui-typography
-				class-name="py-xs"
+				class="py-xs"
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
 				:align="ETextAlign.CENTER"

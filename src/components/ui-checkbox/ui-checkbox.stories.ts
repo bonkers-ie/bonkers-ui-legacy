@@ -8,10 +8,6 @@ export default {
 	component: UiCheckbox,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		justify: {
 			control: { type: "select" },
 			options: Object.values(EJustify),

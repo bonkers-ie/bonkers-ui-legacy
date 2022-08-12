@@ -86,8 +86,6 @@
 
 			lineHeight && 'ui-typography_line-height',
 			underline && 'underline',
-
-			className
 		]"
 	>
 		<slot />
@@ -99,7 +97,6 @@
 	import { EColors } from "../../_types/colors";
 
 	defineProps<{
-		className?: string;
 		align?: ETextAlign;
 		size?: ETypographySizes;
 		kind?: EColors;

@@ -1,3 +1,10 @@
-export type TIconPrefix = "fab" | "far" | "fas" | "fal" | "fad" | "fat";
+export enum EIconType {
+	FAR = "far",
+	FAS = "fas",
+	FAB = "fab",
+	FAL = "fal",
+	FAD = "fad",
+	FAT = "fat",
+}
 
-export type TIconName = [TIconPrefix, string];
+export type TIconName = [EIconType, string];

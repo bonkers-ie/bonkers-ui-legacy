@@ -11,7 +11,6 @@
 			size === ESize.XL && 'h-xl w-xl',
 			size === ESize.XXL && 'h-xxl w-xxl',
 			hasWrapper && 'p-sm bg-primary rounded-2xl',
-			className
 		]"
 	/>
 </template>
@@ -21,7 +20,6 @@
 	import type { TIconName } from "./_typings";
 
 	defineProps<{
-		className?: string;
 		hasWrapper?: boolean;
 		size: ESize;
 		iconName: TIconName;

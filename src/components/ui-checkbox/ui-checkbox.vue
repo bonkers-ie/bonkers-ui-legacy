@@ -10,7 +10,6 @@
 			justify === EJustify.EVENLY && 'justify-evenly',
 			justify === EJustify.CENTER && 'justify-center',
 			disabled && 'ui-checkbox_disabled',
-			className
 		]"
 	>
 		<input
@@ -58,7 +57,6 @@
 
 	defineProps<{
 		modelValue: boolean;
-		className?: string;
 		justify?: EJustify;
 		invertOrder?: boolean;
 		disabled?: boolean;

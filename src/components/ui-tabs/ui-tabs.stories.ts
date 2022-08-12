@@ -5,12 +5,7 @@ import type { Story } from "@storybook/vue3";
 export default {
 	title: "Components/ui-tabs",
 	component: UiTabs,
-	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-	},
+	argTypes: {},
 };
 
 type TComponentProps = InstanceType<typeof UiTabs>["$props"];

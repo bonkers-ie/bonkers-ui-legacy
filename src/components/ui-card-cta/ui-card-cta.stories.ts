@@ -9,11 +9,6 @@ export default {
 	component: UiCardCta,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
-
 		invertOrder: {
 			control: { type: "boolean" },
 			description: "The Element order",
@@ -40,7 +35,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: `
 		<ui-card-cta v-bind="args">
 			<template v-slot:icon>
-				<ui-icon :size="ESize.MD" has-wrapper class-name="text-white" :icon-name="['far', 'fa-face-smile']" />
+				<ui-icon :size="ESize.MD" has-wrapper class="text-white" :icon-name="['far', 'fa-face-smile']" />
 			</template>
 
 			<template v-slot:title>

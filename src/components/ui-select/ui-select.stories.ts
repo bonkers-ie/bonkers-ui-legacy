@@ -6,10 +6,6 @@ export default {
 	title: "Components/ui-select",
 	component: UiSelect,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		disabled: {
 			control: { type: "boolean" },
 			description: "The Element disabled state",

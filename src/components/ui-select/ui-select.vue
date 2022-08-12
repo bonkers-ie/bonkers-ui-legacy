@@ -3,7 +3,7 @@
 		<ui-typography
 			v-if="heading"
 			:weight="ETextWeight.SEMI_BOLD"
-			class-name="mb-sm"
+			class="mb-sm"
 		>
 			{{ heading }}
 		</ui-typography>
@@ -32,7 +32,7 @@
 		<ui-typography
 			v-if="subLabel"
 			:size="ETypographySizes.SM"
-			class-name="mt-sm"
+			class="mt-sm"
 		>
 			{{ subLabel }}
 		</ui-typography>

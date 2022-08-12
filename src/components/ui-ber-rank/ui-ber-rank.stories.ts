@@ -5,10 +5,6 @@ export default {
 	title: "Components/ui-ber-rank",
 	component: UiBerRank,
 	argTypes: {
-		className: {
-			control: { type: "text" },
-			description: "The Element classes",
-		},
 		rank:{
 			control: { type: "number" },
 			description: "The Element rank from 0 to 15",
