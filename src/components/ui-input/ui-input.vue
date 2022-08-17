@@ -23,7 +23,7 @@
 				<slot name="prefix-icon" />
 			</div>
 			<input
-				class="bg-transparent border-0 outline-0"
+				class="bg-transparent border-0 outline-none"
 				type="text"
 				:placeholder="placeholder"
 				:value="modelValue"
