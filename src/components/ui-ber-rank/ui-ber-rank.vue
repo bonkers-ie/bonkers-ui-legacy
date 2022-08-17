@@ -64,7 +64,7 @@
 	type TPropString = `${TPropNumber}`;
 
 	defineProps<{
-		rank: TPropNumber | TPropString; // from 0 to 15
+		rank: TPropNumber | TPropString | number; // from 0 to 15
 	}>();
 
 	const berRankDictionary = [
