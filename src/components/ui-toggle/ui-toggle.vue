@@ -14,9 +14,12 @@
 			:class="[
 				disabled && 'pointer-events-none ui-toggle_disabled',
 				invertOrder && 'flex-row-reverse',
+				alignCenter && 'items-center'
 			]"
 		>
-			<span class="ui-input__input-wrapper block relative h-md">
+			<span
+				class="ui-input__input-wrapper block relative h-md"
+			>
 				<input
 					type="checkbox"
 					class="appearance-none absolute w-0 h-0 border-0"
@@ -64,6 +67,7 @@
 		modelValue: boolean;
 		disabled?: boolean;
 		invertOrder?: boolean;
+		alignCenter?: boolean;
 	}>();
 
 	defineEmits<{

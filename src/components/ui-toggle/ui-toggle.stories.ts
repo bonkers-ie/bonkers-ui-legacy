@@ -10,6 +10,10 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element disabled state",
 		},
+		alignCenter: {
+			control: { type: "boolean" },
+			description: "The Elements center align state",
+		},
 		invertOrder: {
 			control: { type: "boolean" },
 			description: "The Element order state",
@@ -19,6 +23,7 @@ export default {
 		slot: "default text",
 		disabled: false,
 		invertOrder: false,
+		alignCenter: false,
 	},
 };
 

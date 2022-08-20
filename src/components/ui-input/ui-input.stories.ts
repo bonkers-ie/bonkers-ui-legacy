@@ -18,10 +18,6 @@ export default {
 			options: Object.values(EInputTypes),
 			description: "The input kinds",
 		},
-		fullWidth: {
-			control: { type: "boolean" },
-			description: "The full width size",
-		},
 		disabled: {
 			control: { type: "boolean" },
 			description: "The Element disabled state",
@@ -29,7 +25,6 @@ export default {
 	},
 	args: {
 		placeholder: "Placeholder",
-		fullWidth: false,
 		kind: undefined,
 		disabled: false,
 	}
