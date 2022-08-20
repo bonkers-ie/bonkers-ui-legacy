@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="ui-button justify-center grid text-base rounded-lg whitespace-nowrap font-bold leading-none touch-manipulation"
+		class="ui-button justify-center grid text-base rounded-lg whitespace-nowrap font-bold leading-none touch-manipulation items-center"
 		:disabled="disabled"
 		:class="[
 			(!kind || kind === EButtonTypes.PRIMARY) && [primaryColor, primaryColorHover, primaryColorActive].join(' '),
@@ -16,8 +16,9 @@
 			kind === EButtonTypes.ERROR_OVERLAY
 				&& 'text-error border border-error hover:bg-error-600 hover:border-transparent hover:text-white active:bg-error-700 active:border-transparent active:text-white disabled:text-error-300 disabled:border-error-300',
 			kind === EButtonTypes.LINK && 'text-accent-alt hover:text-accent-alt-600 active:text-accent-alt-700 disabled:text-accent-alt-300',
-			(!size || size === EButtonSizes.MEDIUM) && 'py-sm px-md',
+			(!size || size === EButtonSizes.DEFAULT) && 'py-sm px-md',
 			size === EButtonSizes.SMALL && 'py-xs px-md',
+			size === EButtonSizes.MEDIUM && 'py-xs px-xs',
 			size === EButtonSizes.LARGE && 'py-md px-md',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',

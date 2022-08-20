@@ -10,6 +10,7 @@ export enum EButtonTypes {
 	LINK = "link",
 }
 export enum EButtonSizes {
+	DEFAULT = "default",
 	SMALL = "sm",
 	MEDIUM = "md",
 	LARGE = "lg"
