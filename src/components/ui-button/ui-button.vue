@@ -18,7 +18,7 @@
 			kind === EButtonTypes.LINK && 'text-accent-alt hover:text-accent-alt-600 active:text-accent-alt-700 disabled:text-accent-alt-300',
 			(!size || size === EButtonSizes.DEFAULT) && 'py-sm px-md',
 			size === EButtonSizes.SMALL && 'py-xs px-md',
-			size === EButtonSizes.MEDIUM && 'py-xs px-xs',
+			size === EButtonSizes.MEDIUM && 'py-sm px-sm',
 			size === EButtonSizes.LARGE && 'py-md px-md',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',

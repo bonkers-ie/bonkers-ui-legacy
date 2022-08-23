@@ -37,7 +37,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, modelValue };
 	},
 	template: `
-		<ui-toggle v-bind="args" v-model:model-value="modelValue" header="Header" :title="args.slot" />
+		<ui-toggle v-bind="args" v-model="modelValue" header="Header" :title="args.slot" />
 	`,
 });
 

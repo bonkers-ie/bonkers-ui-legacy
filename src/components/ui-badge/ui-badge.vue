@@ -1,6 +1,6 @@
 <template>
-	<span
-		class="ui-badge rounded-full inline-flex items-center"
+	<div
+		class="ui-badge rounded-full flex items-center content-center gap-xxs"
 		:class="[
 			(!size || size === EBadgeSize.SMALL) && 'px-xs py-xxs',
 			(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-alt-300 text-primary-alt-700',
@@ -14,24 +14,23 @@
 	>
 		<ui-icon
 			v-if="icon"
-			class="mr-xxs"
 			:size="ESize.SM"
 			:icon-name="icon"
 		/>
 
 		<ui-typography
-			is="span"
+			v-if="slots.default"
 			:size="getBadgeSize"
 			:weight="ETextWeight.SEMI_BOLD"
 			class="whitespace-nowrap"
 		>
 			<slot />
 		</ui-typography>
-	</span>
+	</div>
 </template>
 
 <script lang="ts" setup>
-	import { computed } from "vue";
+	import { computed, useSlots } from "vue";
 	import { EBadgeKind, EBadgeSize } from "./_typings";
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
@@ -42,6 +41,8 @@
 		kind?: EBadgeKind;
 		icon?: TIconName;
 	}>();
+
+	const slots = useSlots();
 
 	const getBadgeSize = computed(()=>{
 		switch (props.size) {

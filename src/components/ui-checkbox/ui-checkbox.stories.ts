@@ -49,7 +49,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<ui-checkbox v-bind="args" v-model:modelValue="args.modelValue">
+		<ui-checkbox v-bind="args" v-model="modelValue">
 			${args.slot}
 		</ui-checkbox>
 	`,

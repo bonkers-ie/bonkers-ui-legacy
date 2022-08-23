@@ -21,10 +21,10 @@
 				class="ui-input__input-wrapper block relative h-md"
 			>
 				<input
+					v-model="checkboxModel"
 					type="checkbox"
 					class="appearance-none absolute w-0 h-0 border-0"
-					:checked="modelValue"
-					@input="$emit('update:modelValue', !!($event.target as HTMLInputElement)?.value)"
+					:value="value"
 				>
 
 				<span class="ui-toggle__bg-block w-lg h-md bg-secondary-alt block rounded-full" />
@@ -60,19 +60,30 @@
 
 <script lang="ts" setup>
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import { computed } from "vue";
 
-	defineProps<{
+	const props = defineProps<{
 		header?: string;
 		title?: string;
-		modelValue: boolean;
+		modelValue: boolean | unknown[];
 		disabled?: boolean;
 		invertOrder?: boolean;
 		alignCenter?: boolean;
+		value?: string;
 	}>();
 
-	defineEmits<{
-		(e: "update:modelValue", state: boolean): void
+	const emit = defineEmits<{
+		(e: "update:modelValue", state: unknown): void
 	}>();
+
+	const checkboxModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
+		}
+	});
 </script>
 
 <style scoped>

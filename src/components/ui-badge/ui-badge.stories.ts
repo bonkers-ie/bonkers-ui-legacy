@@ -32,7 +32,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args };
 	},
 	template: `
-		<ui-badge :icon="['far', 'face-smile']" v-bind="args">
+		<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
 			{{ args.slot }}
 		</ui-badge>
 	`,
