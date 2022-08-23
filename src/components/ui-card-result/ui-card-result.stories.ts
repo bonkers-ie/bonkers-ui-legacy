@@ -68,9 +68,8 @@ const Template: Story<TComponentProps> = (args) => ({
 						class="mb-xs"
 						:key="item"
 						:icon="['far', 'face-smile']"
-					>
-						Feature item {{ item }}
-					</ui-list-item>
+						:title="'Feature item ' + item"
+					/>
 				</ul>
 
 				<ui-typography

@@ -1,33 +1,37 @@
-import UiIconList from "./ui-list-item.vue";
+import UiListItem from "./ui-list-item.vue";
 import type { Story } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-list-item",
-	component: UiIconList,
-	argTypes: {},
+	component: UiListItem,
+	argTypes: {
+		description: {
+			control: { type: "text" },
+			title: "The Element title",
+		}
+	},
 	args: {
-		slot: "default text",
+		slot: "some description text: lorem",
+		title: "default text",
 	}
 };
 
-type TComponentProps = InstanceType<typeof UiIconList>["$props"];
+type TComponentProps = InstanceType<typeof UiListItem>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiIconList },
+	components: { UiListItem },
 	setup() {
 		return { args };
 	},
 	template: `
-		<ul>
-			<ui-icon-list :icon="['far', 'face-smile']">
+		<ul class="grid gap-sm">
+			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
+			</ui-list-item>
+			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
 				{{args.slot}}
-			</ui-icon-list>
-			<ui-icon-list :icon="['far', 'face-smile']">
-				{{args.slot}}
-			</ui-icon-list>
-			<ui-icon-list :icon="['far', 'face-smile']">
-				{{args.slot}}
-			</ui-icon-list>
+			</ui-list-item>
+			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
+			</ui-list-item>
 		</ul>
 	`
 });

@@ -13,11 +13,11 @@
 		]"
 	>
 		<input
-			:checked="modelValue"
+			v-model="checkboxModel"
 			class="appearance-none absolute"
 			type="checkbox"
+			:value="value"
 			:disabled="disabled"
-			@input="$emit('update:modelValue', !!($event.target as HTMLInputElement)?.value)"
 		>
 		<span
 			class="ui-checkbox_custom w-md h-md flex items-center justify-center border border-secondary-alt-500 rounded relative hover:border-secondary-alt-700"
@@ -50,21 +50,32 @@
 </template>
 
 <script lang="ts" setup>
-	import { useSlots } from "vue";
+	import { useSlots, computed } from "vue";
 	import { EJustify } from "../../_types/align";
 
 	const slots = useSlots();
 
-	defineProps<{
-		modelValue: boolean;
+	const props = defineProps<{
+		modelValue: boolean | unknown[];
 		justify?: EJustify;
 		invertOrder?: boolean;
 		disabled?: boolean;
+		value?: string;
 	}>();
 
-	defineEmits<{
-		(e: "update:modelValue", state: boolean): void
+	const emit = defineEmits<{
+		(e: "update:modelValue", state: unknown): void
 	}>();
+
+	const checkboxModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
+		}
+	});
+
 </script>
 
 <style scoped>
