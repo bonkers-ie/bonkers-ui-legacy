@@ -18,3 +18,17 @@
 body {
 	font-family: var(--base-font);
 }
+
+*:focus,
+*:active {
+	outline: none;
+}
+
+input,
+textarea,
+button,
+select,
+label,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
