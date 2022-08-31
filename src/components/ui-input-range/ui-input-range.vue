@@ -3,7 +3,7 @@
 		class="ui-input-range relative h-lg"
 	>
 		<input
-			class="appearance-none cursor-pointer bg-transparent w-full h-full"
+			class="appearance-none absolute cursor-pointer bg-transparent w-full h-full"
 			type="range"
 			:min="min"
 			:max="max"
