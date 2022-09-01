@@ -23,7 +23,7 @@
 		/>
 
 		<div
-			class="ui-input-range__thumb bg-primary absolute border-8 border-white rounded-full box-content -translate-y-1/2 -translate-x-1/2"
+			class="ui-input-range__thumb bg-primary absolute border-8 border-white rounded-full box-content -translate-y-1/2 -translate-x-1/2 pointer-events-none"
 			:style="{left: getPercentage + '%'}"
 		/>
 	</div>
