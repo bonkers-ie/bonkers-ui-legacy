@@ -97,6 +97,13 @@
 		box-shadow: none;
 	}
 
+	input[type="range"]::-moz-range-thumb {
+		appearance: none;
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
+	}
+
 	.ui-input-range__line {
 		top: 50%;
 	}
