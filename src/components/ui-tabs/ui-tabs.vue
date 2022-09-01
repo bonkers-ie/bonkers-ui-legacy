@@ -10,7 +10,7 @@
 				<input
 					v-model="localValue"
 					type="radio"
-					class="appearance-none"
+					class="appearance-none absolute"
 					:value="tab"
 					:name="name || 'default'"
 					@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
