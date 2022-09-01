@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-input-range relative h-xl mx-xs"
+		class="ui-input-range relative h-xl mx-xs -my-md"
 	>
 		<input
 			ref="track"
