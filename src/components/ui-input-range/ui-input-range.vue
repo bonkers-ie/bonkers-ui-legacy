@@ -5,7 +5,7 @@
 		<input
 			ref="track"
 			v-model="rangeModel"
-			class="appearance-none absolute cursor-pointer bg-transparent w-full h-full"
+			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
 			type="range"
 			:min="min"
 			:max="max"
