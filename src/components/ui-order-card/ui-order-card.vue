@@ -1,59 +1,52 @@
 <template>
-	<div
-		class="ui-order-card-success rounded-lg shadow-md py-md px-sm bg-primary-300"
-	>
-		<div
-			align-items="absolute-center"
-			color="bg-primary-300"
-			class="ui-order-card-icon"
-			height="40px"
-			width="40px"
+	<div class="ui-order-card">
+		<ui-icon
+			kind="default-success"
+			class="rounded-md-white bg-primary-300"
 		/>
-		
-		<ui-typography
-			v-if="slots.title"
-			:weight="ETextWeight.BOLD"
-			:align="ETextAlign.CENTER"
-			class="pb-md"
-		>
-			<slot name="title" />
-		</ui-typography>
-
-		<slot />
+		<slot name="icon" />
 
 		<ui-typography
-			v-if="slots.footerSubtitle"
 			:align="ETextAlign.CENTER"
+			class="rounded-lg shadow-md py-md px-sm bg-primary-300"
 		>
-			<slot name="footerSubtitle" />
-		</ui-typography>
-	</div>
-	<div class="ui-order-card-warning rounded-lg shadow-md py-md px-sm bg-warning-300">
-		<ui-typography
-			v-if="slots.title"
-			:weight="ETextWeight.BOLD"
-			:align="ETextAlign.CENTER"
-			class="pb-md"
-		>
-			<slot name="title" />
-		</ui-typography>
+			<ui-typography
+				v-if="slots.title"
+				class="pb-md"
+				:size="ETypographySizes.LG"
+				:weight="ETextWeight.BOLD"
+				
+			>
+				<slot name="title" />
+			</ui-typography>
+			
+			<ui-typography
+				v-if="slots.textBody"
+				class="pb-md"
+				:size="ETypographySizes.MD"
+				:weight="ETextWeight.REGULAR"
+			>
+				<slot name="textBody" />
+			</ui-typography>
 
-		<slot />
-
-		<ui-typography
-			v-if="slots.footerSubtitle"
-			:align="ETextAlign.CENTER"
-		>
-			<slot name="footerSubtitle" />
+			<footer>
+				<ui-typography
+					v-if="slots.footerSubtitle"
+					class="pb-md"
+					:size="ETypographySizes.SM"
+					:weight="ETextWeight.REGULAR"
+				>
+					<slot name="footerSubtitle" />
+				</ui-typography>
+			</footer>
 		</ui-typography>
 	</div>
 </template>
-		<script
-			lang="ts"
-			setup
-		>
-	import uiTypography, { ETextAlign, ETextWeight } from "../ui-typography";
+
+<script lang="ts" setup>
+	import uiTypography, { ETextAlign, ETextWeight, ETypographySizes } from "../ui-typography";
 	import { useSlots } from "vue";
+	import UiTypography from "../ui-typography/ui-typography.vue";
 
 	const slots = useSlots();
-		</script>
+</script>
