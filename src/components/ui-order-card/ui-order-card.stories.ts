@@ -24,9 +24,22 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 
 	template: `
-		<ui-order-card v-bind="args">
-			${args.slot}
+	<ui-order-card v-bind="args">
+			
+			<template v-slot:title>
+				Title
+			</template>
+
+			<template v-slot:textBody>
+				this is the textbody
+			</template>
+
+			<template v-slot:footerSubtitle>
+				this is the footer
+			</template>
 		</ui-order-card>
+
+		
 	`,
 });
 
