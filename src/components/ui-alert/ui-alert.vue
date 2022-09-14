@@ -5,8 +5,7 @@
 			(!kind || kind === EAlertTypes.PRIMARY) && 'border-primary',
 			kind === EAlertTypes.WARNING && 'border-warning',
 			kind === EAlertTypes.ERROR && 'border-error',
-			kind === EAlertTypes.SECONDARY && 'border-secondary',
-			kind === EAlertTypes.PRIMARY && 'border-white'
+			kind === EAlertTypes.SECONDARY && 'border-secondary'
 		]"
 	>
 		<ui-icon

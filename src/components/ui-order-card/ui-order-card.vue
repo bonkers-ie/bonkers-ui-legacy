@@ -1,11 +1,17 @@
 <template>
-	<div class="ui-order-card">	
-		<ui-icon
-			:icon-name="iconName"
-			:size="ESize.LG"
-			:items="CENTER"
-			class="bg-primary-300 rounded-full border-white"
-		/>
+	<div class="ui-order-card pt-md relative">
+		<div class="ui-order-card__icon-wrapper left-1/2 -translate-x-1/2 -translate-y-1/2 flex absolute bg-primary-300 rounded-full border-4 border-white">
+
+			<ui-icon
+				:icon-name="iconName"
+				:size="ESize.MD"
+				class="-m-px"
+				:class="[
+					(!kind || kind === EAlertTypes.PRIMARY) && 'text-white',
+					kind === EAlertTypes.WARNING && 'text-warning-700'
+				]"
+			/>
+		</div>
 			
 		<ui-typography
 			:align="ETextAlign.CENTER"
@@ -22,7 +28,7 @@
 			
 			<ui-typography
 				v-if="slots.textBody"
-				class="pb-md"
+				class="pb-md text-primary-700"
 				:size="ETypographySizes.MD"
 				:weight="ETextWeight.REGULAR"
 			>
@@ -49,10 +55,12 @@
 	import { useSlots } from "vue";
 	import type { TIconName } from "../ui-icon";
 	import UiIcon from "../ui-icon";
+	import { EAlertTypes } from "../ui-alert";
 
 	defineProps<{
 		hasWrapper?: boolean;
 		iconName: TIconName;
+		kind?:EAlertTypes;
 	}>();
 
 	const slots = useSlots();
