@@ -1,20 +1,11 @@
 <template>
 	<div class="ui-order-card">	
-		<font-awesome-icon
-			class="ui-icon"
-			:icon="iconName"
-			:class="[
-				size === ESize.XXS && 'h-xxs w-xxs',
-				size === ESize.XS && 'h-xs w-xs',
-				size === ESize.SM && 'h-sm w-sm',
-				size === ESize.MD && 'h-md w-md',
-				size === ESize.LG && 'h-lg w-lg',
-				size === ESize.XL && 'h-xl w-xl',
-				size === ESize.XXL && 'h-xxl w-xxl',
-				hasWrapper && 'p-sm bg-primary rounded-2xl',
-				
-				
-			]"/>
+		<ui-icon
+			:icon-name="iconName"
+			:size="ESize.LG"
+			:items="CENTER"
+			class="bg-primary-300 rounded-full border-white"
+		/>
 			
 		<ui-typography
 			:align="ETextAlign.CENTER"
@@ -56,11 +47,12 @@
 	import { ESize } from "../../_types/sizing";
 	import UiTypography, { ETextAlign, ETextWeight, ETypographySizes } from "../ui-typography";
 	import { useSlots } from "vue";
-	
+	import type { TIconName } from "../ui-icon";
+	import UiIcon from "../ui-icon";
 
 	defineProps<{
 		hasWrapper?: boolean;
-		size: ESize;
+		iconName: TIconName;
 	}>();
 
 	const slots = useSlots();

@@ -1,5 +1,7 @@
 import UiOrderCard from "./ui-order-card.vue";
 import type { Story } from "@storybook/vue3";
+import UiIcon from "../ui-icon";
+import { ESize } from "../../_types/sizing";
 
 export default {
 	title: "Components/ui-order-cards",
@@ -24,8 +26,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 
 	template: `
-	<ui-order-card v-bind="args">
-			
+	<ui-order-card v-bind="args" :iconName="['far', 'fa-face-smile']">
 			<template v-slot:title>
 				Title
 			</template>
