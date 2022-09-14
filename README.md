@@ -6,7 +6,9 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - [webstorm](https://www.jetbrains.com/webstorm/)
 - [VS Code](https://code.visualstudio.com/)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+  - [Volar-ts](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
   - [editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+  - [tilewind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
 ## Setup project
 - `yarn i` to install all dependencies
