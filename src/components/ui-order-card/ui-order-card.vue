@@ -8,7 +8,7 @@
 				class="-m-px"
 				:class="[
 					(!kind || kind === EAlertTypes.PRIMARY) && 'text-white',
-					kind === EAlertTypes.WARNING && 'text-warning-700'
+					kind === EAlertTypes.WARNING && 'bg-warning-300'
 				]"
 			/>
 		</div>

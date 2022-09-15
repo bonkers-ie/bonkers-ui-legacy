@@ -4,7 +4,7 @@ import UiIcon from "../ui-icon";
 import { ESize } from "../../_types/sizing";
 
 export default {
-	title: "Components/ui-order-cards",
+	title: "Components/ui-order-card",
 	component: UiOrderCard,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
