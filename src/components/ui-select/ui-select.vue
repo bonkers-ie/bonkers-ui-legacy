@@ -13,7 +13,7 @@
 		>
 			<select
 				v-model="localModel"
-				class="appearance-none absolute bg-transparent border-0 m-0 outline-0 w-full p-sm cursor-pointer italic text-secondary-alt"
+				class="appearance-none bg-transparent border-0 m-0 outline-0 w-full p-sm cursor-pointer italic text-secondary-alt"
 				@change=" $emit('update:value', ($event.target as HTMLTextAreaElement)?.value)"
 			>
 				<option
