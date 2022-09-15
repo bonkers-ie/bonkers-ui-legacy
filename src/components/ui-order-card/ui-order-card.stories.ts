@@ -8,7 +8,7 @@ export default {
 	component: UiOrderCard,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-
+		warning: {},
 	},
 
 	args: {
@@ -25,7 +25,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args };
 	},
 
-	template: `
+	template: /*html*/`
 	<ui-order-card v-bind="args" :iconName="['far', 'fa-face-smile']">
 			<template v-slot:title>
 				Title
@@ -35,7 +35,7 @@ const Template: Story<TComponentProps> = (args) => ({
 				this is the textbody
 			</template>
 
-			<template v-slot:footerSubtitle>
+			<template v-slot:footer>
 				this is the footer
 			</template>
 		</ui-order-card>
@@ -45,3 +45,4 @@ const Template: Story<TComponentProps> = (args) => ({
 });
 
 export const Default = Template.bind({});
+
