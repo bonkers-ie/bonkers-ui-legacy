@@ -1,11 +1,11 @@
 <template>
 	<div
-		class="ui-input-range relative h-xl mx-xs"
+		class="ui-input-range relative h-lg mx-xs py-xs box-content"
 	>
 		<input
 			ref="track"
 			v-model="rangeModel"
-			class="appearance-none absolute cursor-pointer bg-transparent w-full h-full"
+			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
 			type="range"
 			:min="min"
 			:max="max"

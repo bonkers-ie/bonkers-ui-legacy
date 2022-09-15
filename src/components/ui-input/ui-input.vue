@@ -1,4 +1,4 @@
-<template>
+EInputKinds<template>
 	<div class="ui-input">
 		<ui-typography
 			v-if="heading"
@@ -11,22 +11,23 @@
 			class="ui-input__wrapper flex w-full rounded-lg border bg-white items-center p-sm gap-xs"
 			:class="[
 				!kind && 'border-secondary-alt-500 hover:border-secondary-alt-700',
-				kind === EInputTypes.PRIMARY && 'border-primary',
-				kind === EInputTypes.ERROR && 'border-error',
+				kind === EInputKinds.PRIMARY && 'border-primary',
+				kind === EInputKinds.ERROR && 'border-error',
 
 				disabled && 'border-secondary-alt-300 bg-secondary-alt-200',
 			]"
 		>
 			<slot name="prefix-icon" />
-			
+
 			<input
 				class="bg-transparent border-0 outline-none w-full"
-				type="text"
+				:type="type || 'text'"
 				:placeholder="placeholder"
 				:value="modelValue"
+				:pattern="pattern"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 			>
-			
+
 			<slot name="postfix-icon" />
 		</div>
 		<ui-typography
@@ -40,16 +41,18 @@
 </template>
 
 <script lang="ts" setup>
-	import { EInputTypes } from "./_typings";
+	import { EInputKinds, EInputType } from "./_typings";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	defineProps<{
 		placeholder?: string;
 		modelValue: string;
 		disabled?: boolean;
-		kind?: EInputTypes;
+		kind?: EInputKinds;
 		heading?: string;
 		subLabel?: string;
+		type?: EInputType;
+		pattern?: string;
 	}>();
 
 	defineEmits(["update:modelValue"]);

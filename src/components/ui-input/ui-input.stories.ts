@@ -2,7 +2,7 @@ import type { Story } from "@storybook/vue3";
 import UiInput from "./ui-input.vue";
 import Icon from "../../_samples/icon.vue";
 import { ref } from "vue";
-import { EInputTypes } from "./_typings";
+import { EInputKinds, EInputType } from "./_typings";
 
 export default {
 	title: "Components/ui-input",
@@ -15,8 +15,13 @@ export default {
 		},
 		kind: {
 			control: { type: "select" },
-			options: Object.values(EInputTypes),
+			options: Object.values(EInputKinds),
 			description: "The input kinds",
+		},
+		type: {
+			control: { type: "select" },
+			options: Object.values(EInputType),
+			description: "The input type",
 		},
 		disabled: {
 			control: { type: "boolean" },
@@ -27,6 +32,7 @@ export default {
 		placeholder: "Placeholder",
 		kind: undefined,
 		disabled: false,
+		type: EInputType.TEXT
 	}
 };
 
