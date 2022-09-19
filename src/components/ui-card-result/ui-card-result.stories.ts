@@ -34,7 +34,8 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args, ETypographySizes, ETextWeight, ETextAlign, EButtonTypes, ESize };
 	},
-	template: `
+	template:
+	/*html*/`
 		<ui-card-result
 			v-bind="args"
 			header="Some header"
@@ -96,6 +97,7 @@ const Template: Story<TComponentProps> = (args) => ({
 
 			</template>
 		</ui-card-result>
+
 		`,
 });
 
