@@ -10,7 +10,8 @@
 			size === ESize.LG && 'h-lg w-lg',
 			size === ESize.XL && 'h-xl w-xl',
 			size === ESize.XXL && 'h-xxl w-xxl',
-			hasWrapper && 'p-sm bg-primary rounded-2xl',
+			hasWrapper && 'p-sm bg-primary rounded-3xl',
+			hasGreyWrapper && 'p-sm bg-secondary-alt-200 rounded-3xl'
 		]"
 	/>
 </template>
@@ -21,6 +22,7 @@
 
 	defineProps<{
 		hasWrapper?: boolean;
+		hasGreyWrapper?: boolean;
 		size: ESize;
 		iconName: TIconName;
 	}>();
