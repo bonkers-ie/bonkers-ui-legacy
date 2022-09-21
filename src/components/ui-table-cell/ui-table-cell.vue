@@ -1,35 +1,33 @@
 <template>
-	<td
+	<ui-typography
+		is="td"
+		:size="ETypographySizes.SM"
+		:align="align"
+		:weight="weight"
 		class="p-sm"
-		:class="[leftEdge && 'left-edge', rightEdge && 'right-edge', bold && 'font-bold']"
 	>
 		<slot />
-		<slot name="subtext" />
-	</td>
+
+		<ui-typography
+			v-if="$slots.subtext"
+			:size="ETypographySizes.XXS"
+			:weight="ETextWeight.SEMI_BOLD"
+			class="flex flex-col gap-xxs"
+			:kind="EColors.PRIMARY_ALT_700"
+			:class="$slots.default && 'pt-sm'"
+		>
+			<slot name="subtext" />
+		</ui-typography>
+	</ui-typography>
 </template>
 
 <script lang="ts" setup>
+	import { EColors } from "../../_types/colors";
+	import UiTypography, { ETypographySizes, ETextAlign, ETextWeight } from "../ui-typography";
 
 	defineProps<{
-		leftEdge?: boolean;
-		rightEdge?: boolean;
-		bold?: boolean;
+		align: ETextAlign;
+		weight?: ETextWeight;
 	}>();
 
 </script>
-
-<style scoped>
-
-.left-edge {
-	border-bottom-left-radius: 20px;
-	border-top-left-radius: 20px;
-	text-align: left;
-}
-
-.right-edge {
-	border-bottom-right-radius: 20px;
-	border-top-right-radius: 20px;
-	text-align: right;
-}
-
-</style>

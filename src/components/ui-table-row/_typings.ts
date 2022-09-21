@@ -1,3 +1,4 @@
-export enum ERowKinds {
-	PRIMARY = "primary"
+export enum ERowKind {
+	PRIMARY = "primary",
+	GREYED = "greyed"
 }

@@ -1,7 +1,7 @@
 import type { Story } from "@storybook/vue3";
 import UiTableRow from "../ui-table-row";
 import UiTableCell from "../ui-table-cell";
-import { ERowKinds } from "./_typings";
+import { ERowKind } from "./_typings";
 
 export default {
 	title: "Components/ui-table-row",
@@ -28,7 +28,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 	setup(){
 		return{
 			args,
-			ERowKinds
+			ERowKind
 		};
 	},
 	template:
