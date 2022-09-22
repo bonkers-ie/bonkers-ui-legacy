@@ -1,7 +1,7 @@
 <template>
 	<tr
 		class="ui-table-row text-center"
-		:class="[greyed && 'bg-secondary-alt-200']"
+		:class="[kind === ERowKind.SECONDARY && 'bg-secondary-alt-200']"
 	>
 		<slot />
 	</tr>
@@ -11,8 +11,6 @@
 	import { ERowKind } from "./_typings";
 
 	defineProps<{
-		greyed?: boolean;
-		rounded?: boolean;
 		kind?: ERowKind;
 	}>();
 

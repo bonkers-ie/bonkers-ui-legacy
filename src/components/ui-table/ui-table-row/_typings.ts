@@ -1,4 +1,4 @@
 export enum ERowKind {
 	PRIMARY = "primary",
-	GREYED = "greyed"
+	SECONDARY = "secondary"
 }

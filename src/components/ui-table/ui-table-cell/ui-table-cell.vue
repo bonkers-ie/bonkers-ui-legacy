@@ -22,11 +22,11 @@
 </template>
 
 <script lang="ts" setup>
-	import { EColors } from "../../_types/colors";
-	import UiTypography, { ETypographySizes, ETextAlign, ETextWeight } from "../ui-typography";
+	import { EColors } from "../../../_types/colors";
+	import UiTypography, { ETypographySizes, ETextAlign, ETextWeight } from "../../ui-typography";
 
 	defineProps<{
-		align: ETextAlign;
+		align?: ETextAlign;
 		weight?: ETextWeight;
 	}>();
 
