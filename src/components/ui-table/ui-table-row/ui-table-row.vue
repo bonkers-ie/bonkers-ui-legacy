@@ -20,12 +20,12 @@
 	.ui-table-row ::v-deep(td:first-child) {
 		border-top-left-radius: var(--xs);
 		border-bottom-left-radius: var(--xs);
-		text-align:left;
+		text-align: left;
 	}
 
 	.ui-table-row ::v-deep(td:last-child) {
 		border-top-right-radius: var(--xs);
 		border-bottom-right-radius: var(--xs);
-		text-align:right;
+		text-align: right;
 	}
 </style>
