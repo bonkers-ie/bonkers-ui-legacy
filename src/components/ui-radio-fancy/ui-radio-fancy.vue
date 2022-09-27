@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="ui-radio-item block p-sm border rounded-2xl hover:border-primary cursor-pointer"
+		class="ui-radio-item block p-sm border rounded-2xl hover:border-primary cursor-pointer bg-white"
 		:class="[
 			isActive ? 'border-primary pointer-events-none':'border-secondary-alt',
 		]"
@@ -57,9 +57,3 @@
 
 	const isActive = computed(()=>props.modelValue === props.value);
 </script>
-
-<style>
-	.ui-radio-item input:checked + .ui-radio-custom {
-		background-color: #f5f5f5;
-	}
-</style>
