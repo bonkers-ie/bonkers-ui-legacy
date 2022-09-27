@@ -21,6 +21,7 @@
 		"vue": "^3.2.38"
 	},
 	"devDependencies": {
+		"postinstall": "husky install",
 		"@storybook/addon-actions": "^6.5.10",
 		"@storybook/addon-essentials": "^6.5.10",
 		"@storybook/addon-links": "^6.5.10",
