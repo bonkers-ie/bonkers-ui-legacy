@@ -1,40 +1,37 @@
 import UiRedBadge from "../ui-red-badge";
-import { ESize } from "../../_types/sizing";
-import UiTypography from "../ui-typography";
 import type { Story } from "@storybook/vue3";
+import { EBadgeOrigin } from "./_types";
 
 export default {
 	title: "Components/ui-red-badge",
 	component: UiRedBadge,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		invertOrder: {
-			control: { type: "boolean" },
-			description: "The Element order",
-		},
-		disabled: {
-			control: { type: "boolean" },
-			description: "The full width size",
-		},
+		origin: {
+			control: { type: "select" },
+			options: Object.values(EBadgeOrigin),
+			description: "The Element origin",
+		}
 	},
 	args: {
-		slot: "Description",
-		invertOrder: false,
-		disabled: false
+		slot: "10",
+		origin: EBadgeOrigin.DEFAULT,
 	},
 };
 
 type TComponentProps = InstanceType<typeof UiRedBadge>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiRedBadge, UiTypography },
+	components: { UiRedBadge },
 	setup() {
-		return { args, ESize };
+		return { args };
 	},
-	template: `
-		<ui-red-badge v-bind="args" number=1>
-
-		</ui-red-badge>
+	template: /*html*/`
+		<div class="relative bg-primary w-lg h-lg">
+			<ui-red-badge :origin="args.origin">
+				{{args.slot}}
+			</ui-red-badge>
+		</div>
 		`
 });
 
