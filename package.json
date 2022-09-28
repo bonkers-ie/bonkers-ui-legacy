@@ -1,6 +1,7 @@
 {
 	"name": "bonkers-ui",
 	"version": "1.0.0",
+	"private": false,
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",

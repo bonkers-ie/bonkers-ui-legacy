@@ -4,21 +4,20 @@
 			v-for="tab in tabs"
 			:key="tab"
 			class="rounded-full text-center"
-			:class="[localValue === tab && 'bg-white']"
+			:class="[tabsModel === tab && 'bg-white']"
 		>
 			<label class="block cursor-pointer py-xs px-md">
 				<input
-					v-model="localValue"
+					v-model="tabsModel"
 					type="radio"
 					class="appearance-none absolute"
 					:value="tab"
-					:name="name || 'default'"
-					@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
+					:name="name"
 				>
 				<ui-typography
 					is="span"
 					:size="ETypographySizes.XS"
-					:kind="localValue === tab?EColors.SECONDARY_500:EColors.SECONDARY_400"
+					:kind="tabsModel === tab ? EColors.SECONDARY_500 : EColors.SECONDARY_400"
 					:weight="ETextWeight.SEMI_BOLD"
 				>
 					{{ tab }}
@@ -29,23 +28,26 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref, watch } from "vue";
+	import { computed } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
 
-	const props = defineProps<{
+	const props = withDefaults(defineProps<{
 		tabs: string[];
 		modelValue: string;
-		name: string;
-	}>();
+		name?: string;
+	}>(), {
+		name: "default"
+	});
 
-	defineEmits(["update:modelValue"]);
+	const emit = defineEmits(["update:modelValue"]);
 
-	const localValue = ref(props.modelValue);
-
-	watch(() => props.modelValue, (newValue) => {
-		if(newValue !== localValue.value){
-			localValue.value = newValue;
+	const tabsModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
 		}
 	});
 
