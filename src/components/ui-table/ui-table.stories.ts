@@ -7,7 +7,7 @@ export default {
 	argTypes: {
 		kind: {
 			control: { type: "select" },
-			options: Object.values(ERowKind),
+			options: ["empty"].concat(Object.values(ERowKind)),
 			description: "The row kind",
 		},
 	},
