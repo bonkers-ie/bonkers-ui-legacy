@@ -1,11 +1,11 @@
-import UiRadio from "../ui-radio";
+import UiPlainRadio from "./ui-plain-radio.vue";
 import type { Story } from "@storybook/vue3";
 import { ref } from "vue";
 import { EJustify } from "../../_types/align";
 
 export default {
-	title: "Components/ui-radio",
-	component: UiRadio,
+	title: "Components/ui-plain-radio",
+	component: UiPlainRadio,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		justify: {
@@ -28,13 +28,14 @@ export default {
 		invertOrder: false,
 		disabled: false,
 	},
+
 };
 
-type TComponentProps = InstanceType<typeof UiRadio>["$props"];
+type TComponentProps = InstanceType<typeof UiPlainRadio>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiRadio },
+	components: { UiPlainRadio },
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
 		const modelValue = ref("value4");
@@ -44,9 +45,11 @@ const Template: Story<TComponentProps> = (args) => ({
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
 		<div :style="{display: 'grid', gridGap: '3px'}">
+		<label class="wrapper border p-md">
 			<ui-radio v-bind="args" name="radio" value="value1" v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
+		</label>
 			<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
