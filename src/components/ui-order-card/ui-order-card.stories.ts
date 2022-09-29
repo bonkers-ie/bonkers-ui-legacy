@@ -1,18 +1,22 @@
 import UiOrderCard from "./ui-order-card.vue";
 import type { Story } from "@storybook/vue3";
-import UiIcon from "../ui-icon";
-import { ESize } from "../../_types/sizing";
+import { EOrderCardTypes } from "./_types";
 
 export default {
 	title: "Components/ui-order-card",
 	component: UiOrderCard,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		warning: {},
+		kind: {
+			control: { type: "select" },
+			options: Object.values(EOrderCardTypes),
+			description: "The Element kinds",
+		},
 	},
 
 	args: {
-		slot: "Some text",
+		slot: "But we still need your gas and electricity meter readings before processing it.",
+		kind: EOrderCardTypes.DEFAULT
 	},
 };
 
@@ -26,17 +30,17 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 
 	template: /*html*/`
-	<ui-order-card v-bind="args" :iconName="['far', 'fa-face-smile']">
-			<template v-slot:title>
-				Title
+		<ui-order-card v-bind="args" :iconName="['far', 'fa-face-smile']">
+			<template #title>
+				Thank you for your order!
 			</template>
 
-			<template v-slot:textBody>
-				this is the textbody
+			<template #textBody>
+				{{args.slot}}
 			</template>
 
-			<template v-slot:footer>
-				this is the footer
+			<template #footer>
+				We’ll send a confirmation email to william.moran@bonkers.ie
 			</template>
 		</ui-order-card>
 
@@ -45,4 +49,3 @@ const Template: Story<TComponentProps> = (args) => ({
 });
 
 export const Default = Template.bind({});
-

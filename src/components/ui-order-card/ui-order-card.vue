@@ -1,80 +1,83 @@
 <template>
-	<div class="ui-order-card pt-md relative">
-		<div class="ui-order-card__icon-wrapper left-1/2 -translate-x-1/2 -translate-y-1/2 flex absolute bg-primary-300 rounded-full border-4 border-white">
-			<ui-icon
-				:icon-name="iconName"
-				:size="ESize.MD"
-				class="-m-px"
-				:class="[
-					kind === EAlertTypes.PRIMARY && 'text-white',
-					kind === EAlertTypes.WARNING && 'bg-warning-300 text-warning-700'
-				]"
-			/>
-		</div>
-	
-		<slot name="warning" />
+	<div
+		class="ui-order-card relative text-center rounded-md pt-md mt-sm"
+		:class="[
+			kind === EOrderCardTypes.DEFAULT && 'text-white bg-primary-300',
+			kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-warning-700'
+		]"
+	>
+		<ui-icon
+			:icon-name="iconName"
+			:size="ESize.LG"
+			class="absolute top-0 left-1/2 bg-primary-300 rounded-full -translate-x-1/2 -translate-y-1/2"
+			:class="[
+				kind === EOrderCardTypes.DEFAULT && 'text-white',
+				kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-white'
+			]"
+		/>
+		<ui-typography
+			v-if="$slots.title"
+			class="pt-sm"
+			:class="[
+				kind === EOrderCardTypes.DEFAULT && 'text-primary-700',
+				kind === EOrderCardTypes.WARNING && 'text-warning-700'
+			]"
+			:kind="pickKind"
+			:size="ETypographySizes.XL"
+			:weight="ETextWeight.BOLD"
+		>
+			<slot name="title" />
+		</ui-typography>
+			
+		<ui-typography
+			v-if="$slots.textBody"
+			class="mb-sm p-sm"
+			:class="[
+				kind === EOrderCardTypes.DEFAULT && 'text-primary-700',
+				kind === EOrderCardTypes.WARNING && 'text-warning-700'
+			]"
+			:size="ETypographySizes.MD"
+			:weight="ETextWeight.REGULAR"
+		>
+			<slot name="textBody" />  
+		</ui-typography>
 
 		<ui-typography
-			:align="ETextAlign.CENTER"
-			class="rounded-lg shadow-md pt-md bg-primary-300"
+			v-if="$slots.footer"
+			class="py-sm text-white rounded-b-lg"
+			:class="[
+				kind === EOrderCardTypes.DEFAULT && 'bg-primary-700',
+				kind === EOrderCardTypes.WARNING && 'bg-warning-700'
+			]"
+			:size="ETypographySizes.XXS"
+			:weight="ETextWeight.REGULAR"
 		>
-			<ui-typography
-				v-if="slots.title"
-				class="pb-md"
-				:kind="pickKind(kind)"
-				:size="ETypographySizes.LG"
-				:weight="ETextWeight.BOLD"
-			>
-				<slot name="title" />
-			</ui-typography>
-			
-			<ui-typography
-				v-if="slots.textBody"
-				class="pb-md text-primary-700"
-				:size="ETypographySizes.MD"
-				:weight="ETextWeight.REGULAR"
-			>
-				<slot name="textBody" />  
-			</ui-typography>
-
-			<footer>
-				<ui-typography
-					v-if="slots.footer"
-					class="py-sm bg-primary-700 text-secondary-alt-200 rounded-b-lg"
-					:size="ETypographySizes.SM"
-					:weight="ETextWeight.REGULAR"
-				>
-					<slot name="footer" /> 
-				</ui-typography>
-			</footer>
+			<slot name="footer" /> 
 		</ui-typography>
 	</div>
 </template>
 
 <script lang="ts" setup>
+	import { computed } from "vue";
 	import { ESize } from "../../_types/sizing";
 	import { EColors } from "../../_types/colors";
-	import UiTypography, { ETextAlign, ETextWeight, ETypographySizes } from "../ui-typography";
-	import { useSlots } from "vue";
+	import UiTypography, { ETextWeight, ETypographySizes } from "../ui-typography";
 	import type { TIconName } from "../ui-icon";
 	import UiIcon from "../ui-icon";
-	import { EAlertTypes } from "../ui-alert";
+	import { EOrderCardTypes } from "./_types";
 
-	withDefaults(defineProps<{
-		hasWrapper?: boolean;
+	const props = withDefaults(defineProps<{
 		iconName: TIconName;
-		kind?:EAlertTypes;
+		kind?: EOrderCardTypes;
 	}>(), {
-		kind: EAlertTypes.PRIMARY
+		kind: EOrderCardTypes.DEFAULT
 	});
 
-	const slots = useSlots();
-
-	const pickKind = (kind: EAlertTypes)=>{
-		switch(kind){
-			case EAlertTypes.WARNING: return EColors.SECONDARY_ALT_700;
+	const pickKind = computed(()=>{
+		switch(props.kind){
+			case EOrderCardTypes.WARNING: return EColors.WARNING_700;
 			default: return EColors.PRIMARY_700;
 		}
-	};
+	});
 
 </script>
