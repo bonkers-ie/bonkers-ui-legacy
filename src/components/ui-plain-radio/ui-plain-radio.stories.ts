@@ -1,0 +1,64 @@
+import UiRadio from "../ui-radio";
+import type { Story } from "@storybook/vue3";
+import { ref } from "vue";
+import { EJustify } from "../../_types/align";
+
+export default {
+	title: "Components/ui-radio",
+	component: UiRadio,
+	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+	argTypes: {
+		justify: {
+			control: { type: "select" },
+			options: Object.values(EJustify),
+			description: "The Element justify",
+		},
+		invertOrder: {
+			control: { type: "boolean" },
+			description: "The Element order",
+		},
+		disabled: {
+			control: { type: "boolean" },
+			description: "The Element disabled state",
+		},
+	},
+	args: {
+		slot: "Some text",
+		justify: EJustify.START,
+		invertOrder: false,
+		disabled: false,
+	},
+};
+
+type TComponentProps = InstanceType<typeof UiRadio>["$props"];
+
+const Template: Story<TComponentProps> = (args) => ({
+	// Components used in your story `template` are defined in the `components` object
+	components: { UiRadio },
+	// The story's `args` need to be mapped into the template through the `setup()` method
+	setup() {
+		const modelValue = ref("value4");
+
+		return { args, modelValue };
+	},
+	// And then the `args` are bound to your component with `v-bind="args"`
+	template: `
+		<div :style="{display: 'grid', gridGap: '3px'}">
+			<ui-radio v-bind="args" name="radio" value="value1" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+			<ui-radio v-bind="args" name="radio" disabled value="value4" v-model="modelValue">
+				{{args.slot}}
+			</ui-radio>
+		</div>
+	`,
+});
+
+export const Default = Template.bind({});
+
