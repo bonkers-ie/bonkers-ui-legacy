@@ -1,5 +1,7 @@
 {
 	"0": "var(--zero)",
+	"px": "var(--px)",
+	"auto": "var(--auto)",
 	"xxs": "var(--xxs)",
 	"xs": "var(--xs)",
 	"sm": "var(--sm)",

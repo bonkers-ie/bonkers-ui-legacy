@@ -41,6 +41,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			<template v-slot:title>
 				Title
 			</template>
+			
 
 			<template v-slot:description>
 				{{args.slot}}
