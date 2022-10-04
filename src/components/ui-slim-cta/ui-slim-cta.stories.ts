@@ -14,15 +14,10 @@ export default {
 			control: { type: "boolean" },
 			description: "The Element order",
 		},
-		disabled: {
-			control: { type: "boolean" },
-			description: "The full width size",
-		},
 	},
 	args: {
 		slot: "Description",
 		invertOrder: false,
-		disabled: false,
 	},
 };
 
@@ -36,21 +31,25 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: `
 		<ui-slim-cta v-bind="args">
 			<template #slot1>
-				<ui-icon :size="ESize.LG" has-wrapper class="text-white" :icon-name="['far', 'fa-smile']"/>
+				<ui-icon :size="ESize.LG" has-green-wrapper :icon-name="['far', 'fa-smile']"/>
 			</template>
 			<template #slot2>
-				<ui-icon :size="ESize.MD" has-grey-wrapper class="text-black" :icon-name="['far', 'fa-smile']" />
+				<ui-icon :size="ESize.MD" has-grey-wrapper :icon-name="['far', 'fa-smile']" />
 			</template>
 			<template #slot3>
-				<div class="relative">
-					<ui-icon :size="ESize.MD" has-grey-wrapper class="text-black" :icon-name="['far', 'fa-smile']" />
-					<ui-red-badge number=1 />
+				<div class=" max-w-max relative">
+					<ui-icon :size="ESize.MD" has-grey-wrapper :icon-name="['far', 'fa-smile']" />
+					<ui-red-badge>
+					1
+					</ui-red-badge>
 				</div>
 			</template>
 			<template #slot4>
-				<div class="relative">
-					<ui-icon :size="ESize.MD" has-grey-wrapper class="text-black" :icon-name="['far', 'fa-smile']" />
-					<ui-red-badge number=1 />
+				<div class=" max-w-max relative">
+					<ui-icon :size="ESize.MD" has-grey-wrapper :icon-name="['far', 'fa-smile']" />
+					<ui-red-badge :origin="args.origin">
+				       1
+					</ui-red-badge>
 				</div>
 			</template>
 		</ui-slim-cta>

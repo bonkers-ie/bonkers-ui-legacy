@@ -7,7 +7,7 @@ export default {
 	component: UiIcon,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		hasWrapper:{
+		hasGreenWrapper:{
 			control: { type: "boolean" },
 			description: "The Icon show wrapper",
 		},
@@ -20,7 +20,7 @@ export default {
 	},
 	args: {
 		size: ESize.LG,
-		hasWrapper: false,
+		hasGreenWrapper: false,
 	},
 };
 

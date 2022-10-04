@@ -14,8 +14,8 @@ export default {
 		}
 	},
 	args: {
-		slot: "10",
-		origin: EBadgeOrigin.DEFAULT,
+		slot: "1",
+		origin: EBadgeOrigin.OFFSET_TOP_RIGHT,
 	},
 };
 
@@ -27,7 +27,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args };
 	},
 	template: /*html*/`
-		<div class="relative bg-primary w-lg h-lg">
+		<div class="relative rounded-full bg-primary w-lg h-lg">
 			<ui-red-badge :origin="args.origin">
 				{{args.slot}}
 			</ui-red-badge>
