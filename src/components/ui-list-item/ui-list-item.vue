@@ -16,6 +16,10 @@
 			<p
 				v-if="$slots.default"
 				class="mt-xs"
+				:class="[
+					kind === EListItemTypes.DEFAULT && 'mt-xs',
+					kind === EListItemTypes.COMPACT && 'mt-xxs'
+				]"
 			>
 				<slot />
 			</p>
@@ -27,10 +31,12 @@
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import UiTypography, { ETextWeight } from "../ui-typography";
+	import { EListItemTypes } from "./_types";
 
 	defineProps<{
 		icon?: TIconName;
 		title?: string;
+		kind?:EListItemTypes;
 	}>();
 
 </script>

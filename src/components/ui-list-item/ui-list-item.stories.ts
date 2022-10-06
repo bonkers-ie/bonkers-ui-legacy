@@ -1,5 +1,6 @@
 import UiListItem from "./ui-list-item.vue";
 import type { Story } from "@storybook/vue3";
+import { EListItemTypes } from "./_types";
 
 export default {
 	title: "Components/ui-list-item",
@@ -13,6 +14,7 @@ export default {
 	args: {
 		slot: "some description text: lorem",
 		title: "default text",
+		kind: EListItemTypes.DEFAULT
 	}
 };
 
