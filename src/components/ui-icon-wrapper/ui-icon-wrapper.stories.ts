@@ -27,9 +27,13 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args, ESize, EBadgeOrigin };
 	},
-	template: `
-		<ui-icon-wrapper v-bind="args">
-			<p> helloo </p>
+	template: /*html*/`
+		<ui-icon-wrapper kind="primary" fitContent badge v-bind="args">
+			<UiRedBadge slot="badge" :origin=EBadgeOrigin.OFFSET_TOP_RIGHT :value="10" />
+			<p slot="default"> helloo </p>
+		</ui-icon-wrapper>
+		<ui-icon-wrapper kind="secondary" v-bind="args">
+			<img slot="default" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Emblem-person-blue.svg/640px-Emblem-person-blue.svg.png" width="20" height="20" />
 		</ui-icon-wrapper>
 		`
 });
