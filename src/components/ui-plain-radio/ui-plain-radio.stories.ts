@@ -1,34 +1,26 @@
 import UiPlainRadio from "./ui-plain-radio.vue";
+import { ETypographySizes } from "../ui-typography";
+import  EColors  from "../ui-typography";
 import type { Story } from "@storybook/vue3";
 import { ref } from "vue";
-import { EJustify } from "../../_types/align";
+
 
 export default {
 	title: "Components/ui-plain-radio",
-	component: UiPlainRadio,
+	component: UiPlainRadio, ETypographySizes, EColors,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		justify: {
-			control: { type: "select" },
-			options: Object.values(EJustify),
-			description: "The Element justify",
-		},
-		invertOrder: {
-			control: { type: "boolean" },
-			description: "The Element order",
-		},
+
 		disabled: {
 			control: { type: "boolean" },
-			description: "The Element disabled state",
-		},
+		}
+
 	},
 	args: {
-		slot: "Some text",
-		justify: EJustify.START,
-		invertOrder: false,
+		slot: "Header",
+		slotSub: "Subtitle",
 		disabled: false,
 	},
-
 };
 
 type TComponentProps = InstanceType<typeof UiPlainRadio>["$props"];
@@ -38,30 +30,28 @@ const Template: Story<TComponentProps> = (args) => ({
 	components: { UiPlainRadio },
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		const modelValue = ref("value4");
+		const modelValue = ref("value");
 
-		return { args, modelValue };
+		return { modelValue, args, ETypographySizes, EColors,};
+
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
-	template: `
-		<div :style="{display: 'grid', gridGap: '3px'}">
-		<label class="wrapper border p-md">
-			<ui-radio v-bind="args" name="radio" value="value1" v-model="modelValue">
-				{{args.slot}}
-			</ui-radio>
-		</label>
-			<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
-				{{args.slot}}
-			</ui-radio>
-			<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
-				{{args.slot}}
-			</ui-radio>
-			<ui-radio v-bind="args" name="radio" disabled value="value4" v-model="modelValue">
-				{{args.slot}}
-			</ui-radio>
+	template: /*html*/ `
+		<div :style="{display: 'grid', gridGap: '5px'}">
+			<ui-plain-radio v-bind="args" name="plain-radio" value="value1" v-model="modelValue">
+			<p class="text-sm">{{args.slot}}</p>
+				<span></span>
+			<p class="text-xs text-secondary-alt-500">{{args.slotSub}}<p>
+			</ui-plain-radio>
+
+			<ui-plain-radio v-bind="args" name="plain-radio" value="value2" v-model="modelValue">
+			<p class="text-sm">{{args.slot}}</p>
+				<span></span>
+			<p class="text-xs text-secondary-alt-500">{{args.slotSub}}<p>
+			</ui-plain-radio>
+
 		</div>
 	`,
 });
 
 export const Default = Template.bind({});
-

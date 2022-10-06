@@ -3,8 +3,7 @@
 		:is="is || 'p'"
 		class="ui-typography"
 		:class="[
-			'leading-none',
-			(!size || size === ETypographySizes.MD) && 'text-md',
+			size === ETypographySizes.MD && 'text-md',
 			size === ETypographySizes.XXS && 'text-xxs',
 			size === ETypographySizes.XS && 'text-xs',
 			size === ETypographySizes.SM && 'text-sm',
