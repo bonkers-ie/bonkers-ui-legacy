@@ -1,38 +1,46 @@
 <template>
 	<label
-		class="ui-plain-radio grid border p-sm rounded-lg"
+		class="ui-plain-radio grid grid-flow-col justify-start items-center gap-sm border p-sm rounded-lg cursor-pointer"
 		:class="[
-			slots.default && 'items-center gap-xs justify-start',
 			isActive ? 'border-primary':'border-secondary-alt',
-
+			disabled && 'pointer-events-none border-secondary-alt-400'
 		]"
 	>
-		<input
+		<ui-radio
 			v-model="radioModel"
-			type="radio"
 			:name="name"
 			:value="value"
 			:disabled="disabled"
-			class="appearance-none absolute"
+		/>
 
+		<span class="text-wrapper">
+			<ui-typography
+				:size="ETypographySizes.SM"
+				:kind="EColors.SECONDARY"
+				:weight="ETextWeight.SEMI_BOLD"
+			>
+				{{ header }}
+			</ui-typography>
 
-		>
-		<span
-			class="ui-plain-radio_custom block w-md h-md border border-secondary-alt rounded-full relative hover:border-secondary-alt-700 focus:border-secondary-alt-700"
-
-		>
-			<span class="ui-plain-radio__dot absolute top-2/4 left-2/4 w-xs h-xs block bg-primary rounded-full" />
+			<ui-typography
+				:size="ETypographySizes.XS"
+				:kind="EColors.SECONDARY_ALT"
+			>
+				{{ subHeader }}
+			</ui-typography>
 		</span>
-		<slot />
 	</label>
 </template>
 
 <script lang="ts" setup>
-	import { computed, useSlots } from "vue";
+	import { computed } from "vue";
+	import UiRadio from "../ui-radio";
+	import UiTypography, { ETypographySizes, EColors, ETextWeight } from "../ui-typography";
 
-	const slots = useSlots();
 	const props = defineProps<{
 		modelValue: string;
+		header: string;
+		subHeader: string;
 		name: string;
 		value: string;
 		disabled?: boolean;
@@ -46,50 +54,8 @@
 		},
 		set(value) {
 			emit ("update:modelValue", value);
-
 		}
 	});
 
-	const isActive = computed(()=>props.modelValue === props.value);
+	const isActive = computed(() => props.modelValue === props.value);
 </script>
-
-<style>
-	.ui-plain-radio {
-		grid-template-columns: auto auto;
-	}
-
-	.ui-plain-radio__dot {
-		transform: translate3d(-50%, -50%, 0) scale(0);
-		transition: transform 0.2s ease-in-out;
-	}
-
-	input:disabled + .ui-plain-radio_custom {
-		border: 1px solid var(--color-secondary-alt-400);
-		background-color: var(--color-secondary-alt-200);
-	}
-
-	input:checked + .ui-plain-radio_custom {
-		border: 2px solid var(--color-primary);
-	}
-
-	input:checked + .ui-plain-radio_custom .ui-plain-radio__dot {
-		transform: translate3d(-50%, -50%, 0) scale(1);
-	}
-
-	input:checked + .ui-plain-radio_custom:hover {
-		border: 2px solid var(--color-primary-600);
-	}
-
-	input:checked + .ui-plain-radio_custom:hover .ui-plain-radio__dot {
-		background-color: var(--color-primary-600);
-	}
-
-	input:checked:disabled + .ui-plain-radio_custom {
-		border: 2px solid var(--color-primary-300);
-		background-color: var(--color-white);
-	}
-
-	input:checked:disabled + .ui-plain-radio_custom .ui-plain-radio__dot {
-		background-color: var(--color-primary-300);
-	}
-</style>
