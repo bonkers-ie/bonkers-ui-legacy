@@ -5,15 +5,14 @@
 		<li class="ui-icon-list flex">
 			<ui-icon
 				v-if="icon"
-				:class="[
-					kind === EListItemTypes.DEFAULT && 'ml-sm',
-					kind === EListItemTypes.COMPACT && 'ml-xs'
-				]"
 				:kind="pickKind"
 				:icon-name="icon"
 				:size="ESize.SM"
+				:class="[
+					kind === EListItemTypes.DEFAULT && 'mr-xs ml-sm',
+					kind === EListItemTypes.COMPACT && 'mr-xs ml-xs'
+				]"
 			/>
-
 			<div>
 				<ui-typography
 					:weight="ETextWeight.SEMI_BOLD"
@@ -32,7 +31,7 @@
 					v-if="$slots.compact"
 					class="mt-xs"
 					:class="[
-						kind === EListItemTypes.COMPACT && 'mt-xs'
+						kind === EListItemTypes.COMPACT && 'mt-xs mb-xs'
 					]"
 				>	
 					<slot name="compact" />
@@ -49,7 +48,6 @@
 	import { EListItemTypes } from "./_types";
 	import { computed } from "vue";
 
-	const newLocal = "\u0075\u0069\u002d\u006c\u0069\u0073\u0074\u002d\u0069\u0074\u0065\u006d";
 	const props = withDefaults(defineProps<{
 		icon: TIconName;
 		title: string;
@@ -60,8 +58,8 @@
 
 	const pickKind = computed(()=>{
 		switch(props.kind){
-			case EListItemTypes.DEFAULT: return EListItemTypes.DEFAULT;
-			default: return EListItemTypes.COMPACT;
+			case EListItemTypes.COMPACT: return EListItemTypes.COMPACT;
+			default: return EListItemTypes.DEFAULT;
 		}
 	});
 
