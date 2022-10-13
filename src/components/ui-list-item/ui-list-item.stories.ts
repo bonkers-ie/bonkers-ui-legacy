@@ -13,7 +13,7 @@ export default {
 		}
 	},
 	args: {
-		slot: "some description text: lorem",
+		slot: "some description",
 		title: "default text",
 		kind: EListItemTypes.DEFAULT
 	},
@@ -27,19 +27,17 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args };
 	},
 	template:`
-	<div class="ui-list-item">
-		<li class="ui-icon-list flex">
-			<ul class="grid gap-sm">
+			<ul>
 				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.slot }}
 				</ui-list-item>
-			<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
-				{{args.slot}}
-			</ui-list-item>
-			<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
-			</ui-list-item>
+				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
+				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
 			</ul>
-		</ui-list-item>
-	</div>
 	`,
 });
 
