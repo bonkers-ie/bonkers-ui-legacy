@@ -1,0 +1,6 @@
+export enum EModalTypes {
+	PRIMARY = "PRIMARY",
+	SECONDARY = "SECONDARY",
+	ERROR = "ERROR",
+	WARNING = "WARNING",
+}
