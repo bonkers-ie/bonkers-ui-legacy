@@ -6,10 +6,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 /* import specific icons */
-import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
+import { faFaceSmile, faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 /* add icons to the library */
-library.add(faFaceSmile);
+library.add(faFaceSmile, faCircleCheck);
 
 import '../src/main.css';
 
