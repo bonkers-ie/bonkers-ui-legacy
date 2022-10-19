@@ -2,7 +2,8 @@
 	<li
 		class="ui-icon-list flex place-items-center"
 		:class="[kind === EListItemTypes.DEFAULT && 'mb-sm',
-			kind === EListItemTypes.COMPACT && 'mb-xs']"
+			kind === EListItemTypes.COMPACT && 'mb-xs', 
+			kind === EListItemTypes.PROGRESS &&'mb-md']"
 	>
 		<ui-icon
 			v-if="icon"
@@ -39,6 +40,7 @@
 	const pickKind = computed(()=>{
 		switch(props.kind){
 			case EListItemTypes.COMPACT: return EListItemTypes.COMPACT;
+			case EListItemTypes.PROGRESS: return EListItemTypes.PROGRESS;
 			default: return EListItemTypes.DEFAULT;
 		}
 	});

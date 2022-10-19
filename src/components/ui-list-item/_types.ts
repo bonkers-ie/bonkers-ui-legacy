@@ -1,4 +1,5 @@
 export enum EListItemTypes {
     DEFAULT = "DEFAULT",
-    COMPACT = "COMPACT"
+    COMPACT = "COMPACT", 
+    PROGRESS = "PROGRESS"
 }
