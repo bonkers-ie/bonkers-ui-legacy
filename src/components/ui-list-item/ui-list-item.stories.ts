@@ -26,16 +26,19 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args };
 	},
-	template:`
+	template:/*html*/`
 			<ul>
 				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
+				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
+				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
+				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
 					{{ args.slot }}
-				</ui-list-item>
-				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
-					{{ args.title }}
-				</ui-list-item>
-				<ui-list-item :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
-					{{ args.title }}
 				</ui-list-item>
 			</ul>
 	`,

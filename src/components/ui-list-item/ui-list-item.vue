@@ -1,10 +1,15 @@
 <template>
 	<li
-		class="ui-icon-list flex place-items-center"
-		:class="[kind === EListItemTypes.DEFAULT && 'mb-sm',
-			kind === EListItemTypes.COMPACT && 'mb-xs', 
-			kind === EListItemTypes.PROGRESS &&'mb-md']"
+		class="ui-icon-list relative flex place-items-center"
+		:class="[kind === EListItemTypes.DEFAULT && 'pb-sm',
+			kind === EListItemTypes.COMPACT && 'pb-xs', 
+			kind === EListItemTypes.PROGRESS &&'pb-md']"
 	>
+		<div
+			class="ui-progress-start h-full w-xxs bg-primary rounded absolute left-15 -z-10 -translate-y-1/2"
+			:style="{left: '6px', top: 'calc(100% - 8px)', height: '100%'}"
+		/>
+
 		<ui-icon
 			v-if="icon"
 			:kind="pickKind"
