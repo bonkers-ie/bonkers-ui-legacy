@@ -11,7 +11,7 @@
 		>
 			<slot name="icon" />
 			<span
-				v-if="slots.title && slots.description"
+				v-if="$slots.title && $slots.description"
 				class="ui-card-cta__text-wrapper"
 				:class="invertOrder && 'order-first'"
 			>
@@ -35,12 +35,9 @@
 </template>
 
 <script lang="ts" setup>
-	import { useSlots } from "vue";
 	import UiTypography from "../ui-typography";
 	import { ETypographySizes, ETextWeight } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
-
-	const slots = useSlots();
 
 	defineProps<{
 		invertOrder?: boolean;

@@ -36,20 +36,20 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: /*html*/ `
 		<ui-card-cta v-bind="args">
 			<template #icon>
-				<UiIconWrapper>
-					<UiIcon :icon-name="['far', 'fa-face-smile']" :size=ESize.MD />
-				</UiIconWrapper>
+				<ui-icon-wrapper>
+					<ui-icon :icon-name="['far', 'fa-face-smile']" :size=ESize.MD />
+				</ui-icon-wrapper>
 			</template>
-				<template v-slot:title>
+				<template #title>
 					Title
 				</template>
-				<template v-slot:description>
+				<template #description>
 					{{args.slot}}
 				</template>
-			<template v-slot:title>
+			<template #title>
 				Title
 			</template>
-			<template v-slot:description>
+			<template #description>
 				{{args.slot}}
 			</template>
 		</ui-card-cta>
