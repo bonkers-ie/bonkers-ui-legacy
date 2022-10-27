@@ -11,7 +11,14 @@ module.exports = {
 		spacing,
 		fontSize,
 		boxShadow,
-		extend: {},
+		extend: {
+			minHeight: (theme) => ({
+				...theme("spacing"),
+			}),
+			minWidth: (theme) => ({
+				...theme("spacing"),
+			}),
+		},
 	},
 	plugins: [],
 };
