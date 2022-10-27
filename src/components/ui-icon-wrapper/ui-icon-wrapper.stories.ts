@@ -34,14 +34,14 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, ESize, EBadgeOrigin };
 	},
 	template: /*html*/`
-		<ui-icon-wrapper kind="primary" v-bind="args">
+		<ui-icon-wrapper kind="primary" v-bind="args" class="mb-sm">
 			<p> ${args.slot} </p>
 			<UiNotificationBadge :origin=EBadgeOrigin.OFFSET_TOP_RIGHT>
 				1
 			</UiNotificationBadge>
 		</ui-icon-wrapper>
 
-		<ui-icon-wrapper kind="secondary" v-bind="args">
+		<ui-icon-wrapper kind="secondary" v-bind="args" class="mb-sm">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Emblem-person-blue.svg/640px-Emblem-person-blue.svg.png" width="20" height="20" />
 		</ui-icon-wrapper>
 

@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="icon-wrapper w-fit h-fit grid place-items-center relative mb-sm rounded-full"
+		class="icon-wrapper w-fit h-fit grid place-items-center relative rounded-3xl"
 		:class="[
-			kind === EIconWrapperTypes.PRIMARY && 'text-white bg-primary-300',
+			kind === EIconWrapperTypes.PRIMARY && 'text-white bg-primary',
 			kind === EIconWrapperTypes.SECONDARY && 'text-black bg-secondary-alt-200',
 			size === EIconWrapperSizes.DEFAULT && 'py-sm px-sm',
 			size === EIconWrapperSizes.SMALL && 'py-xs px-xs',
