@@ -1,6 +1,7 @@
 {
 	"name": "bonkers-ui",
 	"version": "1.0.0",
+	"private": false,
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
@@ -10,7 +11,8 @@
 		"test": "jest",
 		"deploy": "gh-pages -d storybook-static",
 		"typecheck": "tsc --noEmit && vue-tsc --noEmit",
-		"i": "yarn install --frozen-lockfile"
+		"i": "yarn install --frozen-lockfile",
+		"postinstall": "husky install"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.2.0",
