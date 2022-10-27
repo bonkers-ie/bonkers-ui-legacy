@@ -40,15 +40,11 @@ const Template: Story<TComponentProps> = (args) => ({
 					<ui-icon :icon-name="['far', 'fa-face-smile']" :size=ESize.MD />
 				</ui-icon-wrapper>
 			</template>
-				<template #title>
-					Title
-				</template>
-				<template #description>
-					{{args.slot}}
-				</template>
+
 			<template #title>
 				Title
 			</template>
+
 			<template #description>
 				{{args.slot}}
 			</template>
