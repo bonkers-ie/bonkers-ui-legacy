@@ -30,15 +30,14 @@
 </script>
 
 <style scoped>
+	.icon-wrapper_offset-md :deep(.notification-badge) {
+		top: 4px;
+		right: 4px;
+	}
 
-.icon-wrapper_offset-md :deep(.notification-badge) {
-	top: 4px;
-	right: 4px;
-}
-
-.icon-wrapper_offset-lg :deep(.notification-badge) {
-	top: 8px;
-	right: 8px;
-}
+	.icon-wrapper_offset-lg :deep(.notification-badge) {
+		top: 8px;
+		right: 8px;
+	}
 
 </style>
