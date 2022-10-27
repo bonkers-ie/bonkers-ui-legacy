@@ -17,7 +17,8 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args };
 	},
-	template: `
+	template: /*html*/`
+
 		<ui-card-simple>
 			<template v-slot:title>
 				I want to borrow for

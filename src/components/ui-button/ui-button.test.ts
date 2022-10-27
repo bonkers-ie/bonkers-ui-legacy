@@ -1,4 +1,4 @@
-import { mount, } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import UiButton from "./ui-button.vue";
 
 describe("VButton.test.ts", () => {

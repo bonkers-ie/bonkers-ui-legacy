@@ -14,13 +14,12 @@
 	>
 		<input
 			:id="value"
-			v-model="localValue"
+			v-model="radioModel"
 			type="radio"
 			:name="name"
 			:value="value"
 			:disabled="disabled"
 			class="appearance-none absolute"
-			@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 		>
 		<span
 			class="ui-radio_custom block w-md h-md border border-secondary-alt rounded-full relative hover:border-secondary-alt-700 focus:border-secondary-alt-700"
@@ -33,7 +32,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref, useSlots, watch } from "vue";
+	import { computed, useSlots } from "vue";
 	import { EJustify } from "../../_types/align";
 	const slots = useSlots();
 	const props = defineProps<{
@@ -45,13 +44,14 @@
 		disabled?: boolean;
 	}>();
 
-	defineEmits(["update:modelValue"]);
+	const emit = defineEmits(["update:modelValue"]);
 
-	const localValue = ref(props.modelValue);
-
-	watch(() => props.modelValue, (newValue) => {
-		if(newValue !== localValue.value){
-			localValue.value = newValue;
+	const radioModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
 		}
 	});
 </script>

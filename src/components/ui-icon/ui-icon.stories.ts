@@ -7,10 +7,6 @@ export default {
 	component: UiIcon,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
-		hasWrapper:{
-			control: { type: "boolean" },
-			description: "The Icon show wrapper",
-		},
 		size: {
 			control: { type: "select" },
 			options: Object.values(ESize),
@@ -20,7 +16,6 @@ export default {
 	},
 	args: {
 		size: ESize.LG,
-		hasWrapper: false,
 	},
 };
 
