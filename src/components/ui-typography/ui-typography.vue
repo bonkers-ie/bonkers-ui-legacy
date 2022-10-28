@@ -73,7 +73,7 @@
 			kind === EColors.SECONDARY_ALT_700 && 'text-secondary-alt-700',
 
 			weight === ETextWeight.LIGHT && 'font-light',
-			weight === ETextWeight.REGULAR && 'font-medium',
+			weight === ETextWeight.REGULAR && 'font-normal',
 			weight === ETextWeight.SEMI_BOLD && 'font-bold',
 			weight === ETextWeight.BOLD && 'font-black',
 

@@ -19,6 +19,7 @@
 					:kind="EColors.SECONDARY"
 					:weight="ETextWeight.SEMI_BOLD"
 					class="mb-xxs"
+					line-height
 				>
 					<slot name="title" />
 				</ui-typography>
@@ -26,6 +27,7 @@
 				<ui-typography
 					:kind="EColors.SECONDARY_300"
 					:size="ETypographySizes.SM"
+					line-height
 				>
 					<slot name="description" />
 				</ui-typography>

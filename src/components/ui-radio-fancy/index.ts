@@ -1,1 +1,1 @@
-export { default } from "./ui-radio-list-fancy.vue";
+export { default } from "./ui-radio-fancy.vue";
