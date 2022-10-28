@@ -4,13 +4,13 @@
 		class="ui-typography"
 		:class="[
 			'leading-none',
-			(!size || size === ETypographySizes.MD) && 'text-md',
-			size === ETypographySizes.XXS && 'text-xxs',
+			size === ETypographySizes.MD && 'text-md',
 			size === ETypographySizes.XS && 'text-xs',
 			size === ETypographySizes.SM && 'text-sm',
 			size === ETypographySizes.LG && 'text-lg',
 			size === ETypographySizes.XL && 'text-xl',
 			size === ETypographySizes.XXL && 'text-2xl',
+			size === ETypographySizes.XXS && 'text-xxs',
 			size === ETypographySizes.XXXL && 'text-3xl',
 			size === ETypographySizes.XXXXL && 'text-4xl',
 			size === ETypographySizes.XXXXXL && 'text-5xl',
@@ -73,7 +73,7 @@
 			kind === EColors.SECONDARY_ALT_700 && 'text-secondary-alt-700',
 
 			weight === ETextWeight.LIGHT && 'font-light',
-			weight === ETextWeight.REGULAR && 'font-medium',
+			weight === ETextWeight.REGULAR && 'font-normal',
 			weight === ETextWeight.SEMI_BOLD && 'font-bold',
 			weight === ETextWeight.BOLD && 'font-black',
 

@@ -15,13 +15,7 @@
 				v-model="radioModel"
 				class="appearance-none bg-transparent border-0 m-0 outline-0 w-full p-sm cursor-pointer italic text-secondary-alt"
 			>
-				<option
-					v-for="item in list"
-					:key="item"
-					:value="item"
-				>
-					{{ item }}
-				</option>
+				<slot />
 			</select>
 
 			<div class="ui-select__icon-wrapper absolute right-sm">
@@ -43,7 +37,6 @@
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	const props = defineProps<{
-		list: string[];
 		modelValue: string;
 		heading?: string;
 		subLabel?: string;

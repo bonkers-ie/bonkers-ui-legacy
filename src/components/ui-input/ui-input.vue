@@ -25,6 +25,8 @@
 				:placeholder="placeholder"
 				:value="modelValue"
 				:pattern="pattern"
+				:maxlength="maxlength"
+				:minlength="minlength"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 			>
 
@@ -53,6 +55,8 @@
 		subLabel?: string;
 		type?: EInputType;
 		pattern?: string;
+		maxlength?: string;
+		minlength?: string;
 	}>();
 
 	defineEmits(["update:modelValue"]);
