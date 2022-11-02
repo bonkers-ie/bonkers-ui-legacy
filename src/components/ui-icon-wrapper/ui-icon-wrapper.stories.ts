@@ -19,11 +19,7 @@ export default {
 			control: { type: "select" },
 			options: Object.values(EIconWrapperSizes),
 			description: "The Icon Wrapper sizes",
-		},
-		slot: {
-			control: { type: "text" },
-			description: "The slot text or component",
-		},
+		}
 	},
 	args: {
 		slot: "icon",
@@ -38,20 +34,22 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, ESize, EBadgeOrigin };
 	},
 	template: /*html*/`
-		<ui-icon-wrapper kind="primary" v-bind="args">
-			<UiNotificationBadge slot="badge" :origin=EBadgeOrigin.OFFSET_TOP_RIGHT>
-			 1
+		<ui-icon-wrapper kind="primary" v-bind="args" class="mb-sm">
+			<p> ${args.slot} </p>
+			<UiNotificationBadge :origin=EBadgeOrigin.OFFSET_TOP_RIGHT>
+				1
 			</UiNotificationBadge>
-			<p slot="default"> ${args.slot} </p>
 		</ui-icon-wrapper>
-		<ui-icon-wrapper kind="secondary" v-bind="args">
-			<img slot="default" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Emblem-person-blue.svg/640px-Emblem-person-blue.svg.png" width="20" height="20" />
+
+		<ui-icon-wrapper kind="secondary" v-bind="args" class="mb-sm">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Emblem-person-blue.svg/640px-Emblem-person-blue.svg.png" width="20" height="20" />
 		</ui-icon-wrapper>
+
 		<ui-icon-wrapper kind="primary"  v-bind="args">
-			<UiNotificationBadge slot="badge" :origin=EBadgeOrigin.DEFAULT>
-			1
-			</UiNotificationBadge>
 			<ui-icon :icon-name="['far', 'fa-face-smile']" :size=ESize.LG />
+			<UiNotificationBadge slot="badge" :origin=EBadgeOrigin.DEFAULT>
+			2
+			</UiNotificationBadge>
 		</ui-icon-wrapper>
 		`
 });

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="notification-badge absolute min-w-sm min-h-sm font-bold text-center text-xxs rounded-full border text-white border-white bg-error flex items-center justify-center"
+		class="notification-badge absolute min-w-sm h-sm font-bold text-xxs rounded-full border border-white text-white bg-error text-center leading-none"
 		:class="[
 			origin === EBadgeOrigin.DEFAULT && 'top-0 right-0',
 			origin === EBadgeOrigin.OFFSET_TOP_RIGHT && '-top-xxs -right-xxs',
@@ -22,5 +22,7 @@
 </script>
 
 <style>
-
+	.notification-badge {
+		padding: 2px;
+	}
 </style>

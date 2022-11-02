@@ -1,7 +1,9 @@
 @layer base {
 	:root {
 		/* spacing */
+		--auto: auto;
 		--zero: 0;
+		--px: 1px;
 		--xxs: 4px;
 		--xs: 8px;
 		--sm: 16px;

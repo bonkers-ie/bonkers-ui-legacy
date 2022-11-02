@@ -1,4 +1,4 @@
-EInputKinds<template>
+<template>
 	<div class="ui-input">
 		<ui-typography
 			v-if="heading"
@@ -7,7 +7,7 @@ EInputKinds<template>
 		>
 			{{ heading }}
 		</ui-typography>
-		<div
+		<label
 			class="ui-input__wrapper flex w-full rounded-lg border bg-white items-center p-sm gap-xs"
 			:class="[
 				!kind && 'border-secondary-alt-500 hover:border-secondary-alt-700',
@@ -25,11 +25,13 @@ EInputKinds<template>
 				:placeholder="placeholder"
 				:value="modelValue"
 				:pattern="pattern"
+				:maxlength="maxlength"
+				:minlength="minlength"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 			>
 
 			<slot name="postfix-icon" />
-		</div>
+		</label>
 		<ui-typography
 			v-if="subLabel"
 			:size="ETypographySizes.SM"
@@ -53,6 +55,8 @@ EInputKinds<template>
 		subLabel?: string;
 		type?: EInputType;
 		pattern?: string;
+		maxlength?: string;
+		minlength?: string;
 	}>();
 
 	defineEmits(["update:modelValue"]);

@@ -12,17 +12,10 @@
 			:class="[disabled && 'pointer-events-none bg-secondary-alt-200 border-secondary-alt-300']"
 		>
 			<select
-				v-model="localModel"
+				v-model="radioModel"
 				class="appearance-none bg-transparent border-0 m-0 outline-0 w-full p-sm cursor-pointer italic text-secondary-alt"
-				@change=" $emit('update:value', ($event.target as HTMLTextAreaElement)?.value)"
 			>
-				<option
-					v-for="item in list"
-					:key="item"
-					:value="item"
-				>
-					{{ item }}
-				</option>
+				<slot />
 			</select>
 
 			<div class="ui-select__icon-wrapper absolute right-sm">
@@ -40,23 +33,25 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref, watch } from "vue";
+	import { computed } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
 	const props = defineProps<{
-		list: string[];
-		value: string;
+		modelValue: string;
 		heading?: string;
 		subLabel?: string;
 		disabled?: boolean;
 	}>();
 
-	defineEmits(["update:value"]);
+	const emit = defineEmits(["update:modelValue"]);
 
-	const localModel = ref(props.value);
-
-	watch(() => props.value, (value) => {
-		localModel.value = value;
+	const radioModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
+		}
 	});
 </script>
 
