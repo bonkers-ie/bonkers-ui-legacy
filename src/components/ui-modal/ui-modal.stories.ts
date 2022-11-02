@@ -2,7 +2,9 @@ import UiModal from "./ui-modal.vue";
 import type { Story } from "@storybook/vue3";
 import { EModalTypes } from "./_types";
 import { ESize } from "../../_types/sizing";
-import UiButton, { EButtonSizes, EButtonTypes } from "../ui-button";
+import UiButton from "../ui-button";
+import UiIcon from "../ui-icon";
+import UiTypography from "../ui-typography";
 import { reactive, toRefs } from "vue";
 
 export default {
@@ -18,19 +20,6 @@ export default {
 			control: { type: "text" },
 			description: "The modal title text",
 		},
-		description: {
-			control: { type: "text" },
-			description: "The modal description text",
-		},
-		icon: {
-			control: { type: "select" },
-			options: ["circle-check", "face-smile" ]
-		},
-		iconSize: {
-			control: { type: "select" },
-			options: Object.values(ESize),
-			description: "Icon size for modal",
-		},
 		modalSize: {
 			control: { type: "select" },
 			options: Object.values(ESize),
@@ -40,18 +29,12 @@ export default {
 			control: { type: "boolean" },
 			description: "Control Modal Visibility",
 		},
-		secondaryBtn: {
-			control: { type: "select" },
-			options: [null,...Object.values(EButtonTypes)],
-			description: "Optionally add a secondary button to the modal, specifying button type",
-		},
 
 	},
 	args: {
 		title: "Password Updated",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+		body: "You can now use your new security info to sign in to your account",
 		kind: EModalTypes.PRIMARY,
-		secondaryBtn: EButtonTypes.SECONDARY_OVERLAY ,
 		icon: "circle-check",
 		iconSize: ESize.XL,
 		modalSize: ESize.SM,
@@ -62,7 +45,7 @@ export default {
 type TComponentProps = InstanceType<typeof UiModal>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiModal, UiButton },
+	components: { UiModal, UiButton, UiIcon, UiTypography },
 	setup() {
 
 		const state = reactive({
@@ -74,33 +57,36 @@ const Template: Story<TComponentProps> = (args) => ({
 		const closeModal = () => {
 			state.modalVisible = false;
 		};
-		const handlePrimaryClick = () => {
-			closeModal();
-		};
-		const handleSecondaryClick = () => {
-			closeModal();
-		};
 
-		return { args, showModal, closeModal, handlePrimaryClick, handleSecondaryClick, ...toRefs(state) };
+		return { args, showModal, closeModal, ...toRefs(state) };
 	},
-	template:`
+	template:/*html*/`
 			<div>
 				<ui-modal
 					:kind="args.kind"
-					:icon="['far', args.icon]"
-					:iconSize="args.iconSize"
+					:title="args.title"
 					:modalVisible.sync="modalVisible"
 					:modalSize="args.modalSize"
-					:secondaryBtn="args.secondaryBtn"
-					@modal-primary-click="handlePrimaryClick"
-					@modal-secondary-click="handleSecondaryClick"
+					@closeModal="closeModal"
 				>
-					<template v-slot:title>
-						{{args.title}}
+					<template #icon>
+						<ui-icon  :icon-name="['far', args.icon]" :size="args.iconSize"  />
 					</template>
-					<template v-slot:description>
-						{{args.description}}
+					<template #title>
+						<ui-typography class="text-2xl font-bold">{{ args.title }}</ui-typography>
 					</template>
+
+					<template #body>
+						{{args.body}}
+					</template>
+					<template #footer>
+						<ui-button
+							fullWidth
+							@click="closeModal"
+						>
+							Ok
+						</ui-button>
+						</template>
 				</ui-modal>
 
 				<div class="absolute" style="top: calc(50vh - 2rem); left: calc(50vw - 4rem)">
