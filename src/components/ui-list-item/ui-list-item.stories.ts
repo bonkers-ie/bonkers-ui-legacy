@@ -27,7 +27,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	template:/*html*/`
 			<ul>
-				<ui-list-item v-for= "item in 5" :key="item" :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+				<ui-list-item v-for= "item in 5" :key="item" :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind" class="pb-md">
 					{{ args.title }}
 				</ui-list-item>
 			</ul>
