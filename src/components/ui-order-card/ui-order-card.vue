@@ -28,7 +28,7 @@
 		>
 			<slot name="title" />
 		</ui-typography>
-			
+
 		<ui-typography
 			v-if="$slots.textBody"
 			class="mb-sm p-sm"
@@ -39,7 +39,7 @@
 			:size="ETypographySizes.MD"
 			:weight="ETextWeight.REGULAR"
 		>
-			<slot name="textBody" />  
+			<slot name="textBody" />
 		</ui-typography>
 
 		<ui-typography
@@ -52,7 +52,7 @@
 			:size="ETypographySizes.XXS"
 			:weight="ETextWeight.REGULAR"
 		>
-			<slot name="footer" /> 
+			<slot name="footer" />
 		</ui-typography>
 	</div>
 </template>

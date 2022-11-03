@@ -1,19 +1,21 @@
 import UiListItem from "./ui-list-item.vue";
 import type { Story } from "@storybook/vue3";
+import { EListItemTypes } from "./_types";
 
 export default {
 	title: "Components/ui-list-item",
 	component: UiListItem,
 	argTypes: {
-		description: {
-			control: { type: "text" },
-			title: "The Element title",
+		kind: {
+			control: { type: "select" },
+			options: Object.values(EListItemTypes),
+			description: "The Element title",
 		}
 	},
 	args: {
-		slot: "some description text: lorem",
 		title: "default text",
-	}
+		kind: EListItemTypes.DEFAULT
+	},
 };
 
 type TComponentProps = InstanceType<typeof UiListItem>["$props"];
@@ -23,17 +25,13 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args };
 	},
-	template: `
-		<ul class="grid gap-sm">
-			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
-			</ui-list-item>
-			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
-				{{args.slot}}
-			</ui-list-item>
-			<ui-list-item :icon="['far', 'face-smile']" :title="args.title">
-			</ui-list-item>
-		</ul>
-	`
+	template:/*html*/`
+			<ul>
+				<ui-list-item v-for= "item in 5" :key="item" :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind">
+					{{ args.title }}
+				</ui-list-item>
+			</ul>
+	`,
 });
 
 export const Default = Template.bind({});
