@@ -8,20 +8,17 @@
 			mode="out-in"
 			enter-active-class="transition delay-100"
 			enter-from-class="opacity-0 translate-y-1/4"
+			enter-to-class="opacity-100 translate-y-0"
 			leave-active-class="transition"
 			leave-to-class="opacity-0 translate-y-1/4"
+			leave-from-class="opacity-100 translate-y-0"
 		>
 			<div
 				v-if="modalVisible"
 				:class="[
-					'absolute grid grid-rows-8 gap-4 z-10 opacity-100 inset-0 m-auto place-items-center rounded-3xl shadow-md p-md bg-white ',
-					modalSize === ESize.XXS && 'h-[12rem] w-[12rem]',
-					modalSize === ESize.XS && 'h-[18rem] w-[18rem]',
-					modalSize === ESize.SM && 'h-[24rem] w-[24rem]',
-					modalSize === ESize.MD && 'h-[24rem] w-[36rem]',
-					modalSize === ESize.LG && 'h-[24rem] w-[48rem]',
-					modalSize === ESize.XL && 'h-[24rem] w-[60rem]',
-					modalSize === ESize.XXL && 'h-[24rem] w-[72rem]',
+					'absolute grid grid-rows-8 gap-4 z-10 opacity-0 inset-0 place-items-center rounded-3xl shadow-md p-md bg-white ',
+					modalSize === ESize.SM ? 'h-[24rem] w-[24rem] m-auto' : 'h-full w-full m-md'
+
 				]"
 			>
 				<div
@@ -51,7 +48,7 @@
 					:weight="ETextWeight.REGULAR"
 					:align="ETextAlign.CENTER"
 					line-height
-					class="row-start-5 row-span-2 text-secondary"
+					class="row-start-5 row-span-2 text-secondary overflow-scroll"
 				>
 					<slot name="body" />
 				</ui-typography>
@@ -61,34 +58,13 @@
 			</div>
 		</transition>
 	</div>
-	<transition
-		name="ui-backdrop"
-		mode="out-in"
-		enter-active-class="transition-opacity"
-		enter-from-class="opacity-0"
-		leave-active-class="transition-opacity"
-		leave-to-class="opacity-0 delay-200"
-	>
-		<div
-			v-if="modalVisible"
-			class="
-				ui-modal-backdrop
-				absolute
-				overflow-y-auto
-				h-full
-				w-full
-				bg-black
-				opacity-60
-				flex
-				z-0
-			"
-		/>
-	</transition>
+	<ui-backdrop :visible="modalVisible" />
 </template>
 <script lang="ts" setup>
 	import { vOnClickOutside } from "@vueuse/components";
 	import { ETypographySizes } from "../ui-typography/";
 	import UiTypography, { ETextWeight, ETextAlign } from "../ui-typography";
+	import uiBackdrop from "../ui-backdrop";
 	import { ESize } from "../../_types/sizing";
 	import { EModalTypes } from "./_types";
 
@@ -97,16 +73,10 @@
 			title: string,
 			modalVisible: boolean,
 			modalSize?: ESize,
-			kind?:EModalTypes
+			kind?:EModalTypes,
+			closeModal: () => void
 		}>(), {
 			modalSize: ESize.SM,
 			kind: EModalTypes.PRIMARY
 		});
-
-	const emit = defineEmits<{
-		(e: "closeModal", state: boolean): void
-	}>();
-	function closeModal() {
-		emit("closeModal", false);
-	}
 </script>

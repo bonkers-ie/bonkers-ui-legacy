@@ -5,7 +5,7 @@ import { ESize } from "../../_types/sizing";
 import UiButton from "../ui-button";
 import UiIcon from "../ui-icon";
 import UiTypography from "../ui-typography";
-import { reactive, toRefs } from "vue";
+import { ref } from "vue";
 
 export default {
 	title: "Components/ui-modal",
@@ -35,10 +35,7 @@ export default {
 		title: "Password Updated",
 		body: "You can now use your new security info to sign in to your account",
 		kind: EModalTypes.PRIMARY,
-		icon: "circle-check",
-		iconSize: ESize.XL,
 		modalSize: ESize.SM,
-		modalVisible: false,
 	}
 };
 
@@ -47,30 +44,29 @@ type TComponentProps = InstanceType<typeof UiModal>["$props"];
 const Template: Story<TComponentProps> = (args) => ({
 	components: { UiModal, UiButton, UiIcon, UiTypography },
 	setup() {
+		const isVisible = ref(false);
 
-		const state = reactive({
-			modalVisible: false
-		});
 		const showModal = () => {
-			state.modalVisible = true;
-		};
-		const closeModal = () => {
-			state.modalVisible = false;
+			isVisible.value = true;
 		};
 
-		return { args, showModal, closeModal, ...toRefs(state) };
+		const closeModal = () => {
+			isVisible.value = false;
+		};
+
+		return { args, showModal, closeModal, isVisible, ESize };
 	},
 	template:/*html*/`
-			<div>
+
 				<ui-modal
 					:kind="args.kind"
 					:title="args.title"
-					:modalVisible.sync="modalVisible"
+					:modalVisible="isVisible"
 					:modalSize="args.modalSize"
-					@closeModal="closeModal"
+					:closeModal="closeModal"
 				>
 					<template #icon>
-						<ui-icon  :icon-name="['far', args.icon]" :size="args.iconSize"  />
+						<ui-icon  :icon-name="['far', 'circle-check']" :size=ESize.XL  />
 					</template>
 					<template #title>
 						<ui-typography class="text-2xl font-bold">{{ args.title }}</ui-typography>
@@ -90,13 +86,24 @@ const Template: Story<TComponentProps> = (args) => ({
 				</ui-modal>
 
 				<div class="absolute" style="top: calc(50vh - 2rem); left: calc(50vw - 4rem)">
-					<ui-button
-					@click="showModal">
+
+					<ui-button @click="showModal">
 					Toggle Modal
 					</ui-button>
 				</div>
-			</div>
 			`
 });
 
 export const Default = Template.bind({});
+Default.parameters = {
+	backgrounds: {
+		default: "Bonkers",
+		values: [
+			{
+				name: "Bonkers",
+				value: "url(https://web-assets.bonkers.ie/maverick/img/about.0ed347c.png)",
+			},
+		],
+	},
+	layout: "padded",
+};

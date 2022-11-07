@@ -1,24 +1,21 @@
 <template>
-	<div
-		class="ui-backdrop"
-	>
+	<div class="ui-backdrop">
 		<transition
-			name="ui-backdrop"
-			enter-active-class="transition-opacity"
+			name="fade"
+			enter-active-class="transition-opacity duration-300"
+			leave-active-class="transition-opacity duration-300 opacity-0"
 			enter-from-class="opacity-0"
-			leave-active-class="transition-opacity"
-			leave-to-class="opacity-0 delay-400"
+			leave-to-class="opacity-0"
 		>
 			<div
 				v-if="visible"
 				class="
-				absolute
-				overflow-y-auto
-				h-full
-				w-full
-				bg-black
-				opacity-60
-				flex
+				fixed
+				backdrop-blur-sm
+				bg-secondary-300
+				transition-all
+				opacity-50
+				inset-0
 				z-0
 				"
 			/>
