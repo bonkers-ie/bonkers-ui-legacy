@@ -13,13 +13,14 @@
 			:size="ESize.SM"
 		/>
 
-		<slot>
+		<div>
 			<ui-typography
 				:weight="ETextWeight.SEMI_BOLD"
 			>
 				{{ title }}
 			</ui-typography>
-		</slot>
+			<slot />
+		</div>
 	</li>
 </template>
 

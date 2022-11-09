@@ -20,14 +20,13 @@
 			<slot name="prefix-icon" />
 
 			<input
-				class="bg-transparent border-0 outline-none w-full"
+				v-model="inputModel"
+				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
 				:type="type || 'text'"
 				:placeholder="placeholder"
-				:value="modelValue"
 				:pattern="pattern"
 				:maxlength="maxlength"
 				:minlength="minlength"
-				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
 			>
 
 			<slot name="postfix-icon" />
@@ -43,10 +42,11 @@
 </template>
 
 <script lang="ts" setup>
+	import { computed } from "vue";
 	import { EInputKinds, EInputType } from "./_typings";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
-	defineProps<{
+	const props = defineProps<{
 		placeholder?: string;
 		modelValue: string;
 		disabled?: boolean;
@@ -59,12 +59,15 @@
 		minlength?: string;
 	}>();
 
-	defineEmits(["update:modelValue"]);
-</script>
+	const emit = defineEmits(["update:modelValue"]);
 
-<style scoped>
-	.ui-input__wrapper input::placeholder {
-		color: var(--color-secondary-alt-500);
-		font-style: italic;
-	}
-</style>
+	const inputModel = computed({
+		get() {
+			return props.modelValue;
+		},
+		set(value) {
+			emit("update:modelValue", value);
+		}
+	});
+
+</script>
