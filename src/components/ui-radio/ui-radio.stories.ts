@@ -50,7 +50,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			<ui-radio v-bind="args" name="radio" value="value2" v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
-			<ui-radio v-bind="args" name="radio" value="value3" v-model="modelValue">
+			<ui-radio v-bind="args" name="radio" value="value3"  v-model="modelValue">
 				{{args.slot}}
 			</ui-radio>
 			<ui-radio v-bind="args" name="radio" disabled value="value4" v-model="modelValue">
@@ -58,6 +58,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			</ui-radio>
 		</div>
 	`,
+
 });
 
 export const Default = Template.bind({});

@@ -1,31 +1,30 @@
 <template>
 	<label
-		class="ui-radio-item block p-sm border rounded-2xl hover:border-primary cursor-pointer bg-white"
-		:class="[
-			isActive ? 'border-primary pointer-events-none':'border-secondary-alt',
-		]"
+		class="ui-radio-fancy"
+		:class="disabled && 'pointer-events-none opacity-50'"
 	>
 		<input
 			v-model="radioModel"
 			type="radio"
 			:name="name"
 			:value="value"
-			class="appearance-none absolute"
+			class="peer fixed w-0"
+			:class="disabled && 'pointer-events-none opacity-50'"
 		>
-
-		<ui-icon
-			:icon-name="iconName"
-			:size="ESize.MD"
-			class="mb-md"
-			:class="isActive && 'text-primary'"
-		/>
-		<ui-typography
-			:size="ETypographySizes.SM"
-			:kind="EColors.SECONDARY"
-			:weight="ETextWeight.SEMI_BOLD"
-		>
-			{{ title }}
-		</ui-typography>
+		<div class="ui-radio-fancy__content w-full py-sm px-sm border border-secondary-300 hover:border-secondary-alt-700 cursor-pointer rounded-xl hover:shadow-md active:bg-secondary-alt-200 active:outline active:outline-primary-300 peer-checked:border-primary">
+			<ui-icon
+				:icon-name="iconName"
+				:size="ESize.MD"
+				class="mb-md"
+			/>
+			<ui-typography
+				:size="ETypographySizes.SM"
+				:kind="EColors.SECONDARY"
+				:weight="ETextWeight.SEMI_BOLD"
+			>
+				<slot />
+			</ui-typography>
+		</div>
 	</label>
 </template>
 
@@ -40,8 +39,9 @@
 		modelValue: string;
 		name: string;
 		value: string | number;
-		title: string;
+		id: string;
 		iconName: TIconName;
+		disabled?: boolean;
 	}>();
 
 	const emit = defineEmits(["update:modelValue"]);
@@ -55,5 +55,10 @@
 		}
 	});
 
-	const isActive = computed(()=>props.modelValue === props.value);
 </script>
+
+<style scoped>
+	/* input[type="radio"]:checked + .ui-radio-fancy__content {
+    border: 1px solid var(--color-primary-500)
+} */
+</style>
