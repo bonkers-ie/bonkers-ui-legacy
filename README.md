@@ -34,3 +34,4 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## Flow to deploy github
 - To deploy github-pages use `yarn build-storybook` + `yarn deploy`
+v.1.0
