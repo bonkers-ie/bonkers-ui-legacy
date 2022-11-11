@@ -42,18 +42,19 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	template:/*html*/`
 			<ul>
-				<ui-list-item :icon="['far', 'face-smile']" title="title only" :kind="args.kind" :size="args.size">
+				<ui-list-item v-bind="args" :icon="['far', 'face-smile']" title="title only">
 					{{args.slot}}
 				</ui-list-item>
 
-				<ui-list-item :icon="['far', 'face-smile']" :kind="args.kind" :size="args.size">
+				<ui-list-item v-bind="args" :icon="['far', 'face-smile']">
 					text only
 				</ui-list-item>
 
-				<ui-list-item v-for= "item in 5" :key="item" :icon="['far', 'face-smile']" :title="args.title" :kind="args.kind" :size="args.size">
+				<ui-list-item v-bind="args" v-for= "item in 5" :key="item" :icon="['far', 'face-smile']">
 					{{ args.title }}
 				</ui-list-item>
-				<ui-list-item class="compact-list-item"  :icon="['far', 'face-smile']" :size="args.size" :title="args.title">
+
+				<ui-list-item v-bind="args" class="compact-list-item"  :icon="['far', 'face-smile']">
 			</ul>
 	`,
 });
