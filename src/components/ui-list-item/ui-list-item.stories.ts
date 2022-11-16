@@ -54,7 +54,7 @@ const Template: Story<TComponentProps> = (args) => ({
 					{{ args.title }}
 				</ui-list-item>
 
-				<ui-list-item v-bind="args" class="compact-list-item"  :icon="['far', 'face-smile']">
+				<ui-list-item v-bind="args" class="compact-list-item"  :icon="['far', 'face-smile']" />
 			</ul>
 	`,
 });
