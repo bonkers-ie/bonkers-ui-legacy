@@ -16,8 +16,10 @@
 			<div
 				v-if="modalVisible"
 				:class="[
-					'absolute grid grid-rows-8 gap-4 z-10 opacity-0 inset-0 place-items-center rounded-3xl shadow-md p-md bg-white ',
-					modalSize === ESize.SM ? 'h-[24rem] w-[24rem] m-auto' : 'h-full w-full m-md'
+					`fixed flex flex-col items-center justify-between
+					z-10 opacity-0 inset-0 rounded-2xl shadow-md p-md
+					bg-white overflow-y-scroll`,
+					modalSize === ESize.SM ? 'h-[24rem] w-[24rem] m-auto' : 'h-5/6 w-11/12 m-auto'
 
 				]"
 			>
@@ -28,7 +30,7 @@
 						kind === EModalTypes.ERROR && 'text-error',
 						kind === EModalTypes.SECONDARY && 'text-secondary',
 					]"
-					class="row-start-1 row-span-3"
+					class="row-start-1 row-span-3 my-md"
 				>
 					<slot
 						name="icon"
@@ -36,7 +38,7 @@
 				</div>
 				<ui-typography
 					v-if="title"
-					class="row-start-4 row-span-1"
+					class="row-start-4 row-span-1 my-xs"
 					:weight="ETextWeight.BOLD"
 					:align="ETextAlign.CENTER"
 					:size="ETypographySizes.LG"
@@ -48,11 +50,12 @@
 					:weight="ETextWeight.REGULAR"
 					:align="ETextAlign.CENTER"
 					line-height
-					class="row-start-5 row-span-2 text-secondary overflow-scroll"
+					class="row-start-5 row-span-2 text-secondary my-sm"
 				>
 					<slot name="body" />
 				</ui-typography>
-				<div class="w-full row-start-7 row-span-1 self-end">
+
+				<div class="w-full grow-0 row-start-auto row-span-1 self-end">
 					<slot name="footer" />
 				</div>
 			</div>

@@ -22,7 +22,7 @@ export default {
 		},
 		modalSize: {
 			control: { type: "select" },
-			options: Object.values(ESize),
+			options: [ESize.SM, "Responsive"],
 			description: "The modal kinds",
 		},
 		modalVisible: {
