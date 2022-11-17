@@ -13,11 +13,24 @@ const Template = (args) => ({
 		return { args };
 	},
 	template:/*html*/`
-        <ui-result-card-range v-bind="args" />
+        <ui-result-card-range v-bind="args" :icon-name="['far', 'fa-face-smile']"/>
+    `,
+});
+
+const TemplateAll = (args) => ({
+	components: { UiResultCardRange },
+	setup() {
+		return { args };
+	},
+	template:/*html*/`
+    <div class="ui-result-card-range grid grid-rows-2 gap-sm w-full">
+        <UiResultCardRange v-bind="args" :title="title" :icon-name="['far', 'fa-face-smile']"/>
+        <UiResultCardRange />
+        <UiResultCardRange />
+    </div>
     `,
 });
 
 export const Default = Template.bind({});
 
-export const Ranged = Template.bind({});
-export const Double = Template.bind({});
+export const FullCard = TemplateAll.bind({});

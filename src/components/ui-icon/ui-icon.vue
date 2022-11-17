@@ -18,8 +18,10 @@
 	import { ESize } from "../../_types/sizing";
 	import type { TIconName } from "./_typings";
 
-	defineProps<{
-		size: ESize;
+	withDefaults(defineProps<{
+		size?: ESize;
 		iconName: TIconName;
-	}>();
+	}>(), {
+		size: ESize.SM
+	});	
 </script>
