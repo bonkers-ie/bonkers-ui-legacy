@@ -1,28 +1,24 @@
-import UiModal from "./ui-modal.vue";
+import { ref } from "vue";
 import type { Story } from "@storybook/vue3";
-import { EModalTypes } from "./_types";
-import { ESize } from "../../_types/sizing";
+import UiModal from "./ui-modal.vue";
 import UiButton from "../ui-button";
+import UiBackdrop from "../ui-backdrop";
 import UiIcon from "../ui-icon";
 import UiTypography from "../ui-typography";
-import { ref } from "vue";
+import { ESize } from "../../_types/sizing";
+import { EModalSizes } from "./_typings";
 
 export default {
 	title: "Components/ui-modal",
 	component: UiModal,
 	argTypes: {
-		kind: {
-			control: { type: "select" },
-			options: Object.values(EModalTypes),
-			description: "The modal kinds",
-		},
 		title: {
 			control: { type: "text" },
 			description: "The modal title text",
 		},
 		modalSize: {
 			control: { type: "select" },
-			options: [ESize.SM, "Responsive"],
+			options: Object.values(EModalSizes),
 			description: "The modal kinds",
 		},
 		modalVisible: {
@@ -34,7 +30,6 @@ export default {
 	args: {
 		title: "Password Updated",
 		body: "You can now use your new security info to sign in to your account",
-		kind: EModalTypes.PRIMARY,
 		modalSize: ESize.SM,
 	}
 };
@@ -42,7 +37,7 @@ export default {
 type TComponentProps = InstanceType<typeof UiModal>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiModal, UiButton, UiIcon, UiTypography },
+	components: { UiModal, UiBackdrop, UiButton, UiIcon, UiTypography },
 	setup() {
 		const isVisible = ref(false);
 
@@ -57,22 +52,31 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, showModal, closeModal, isVisible, ESize };
 	},
 	template:/*html*/`
-
+			<transition
+				name="ui-modal"
+				mode="out-in"
+				appear
+				enter-active-class="transition delay-100"
+				enter-from-class="opacity-0 translate-y-1/4"
+				enter-to-class="opacity-100 translate-y-0"
+				leave-active-class="transition"
+				leave-to-class="opacity-0 translate-y-1/4"
+				leave-from-class="opacity-100 translate-y-0"
+			>
 				<ui-modal
-					:kind="args.kind"
+					v-if="isVisible"
 					:title="args.title"
-					:modalVisible="isVisible"
 					:modalSize="args.modalSize"
 					:closeModal="closeModal"
 				>
 					<template #icon>
-						<ui-icon  :icon-name="['far', 'circle-check']" :size=ESize.XL  />
+						<ui-icon class="text-primary"  :icon-name="['far', 'circle-check']" :size=ESize.XL  />
 					</template>
 					<template #title>
 						<ui-typography class="text-2xl font-bold">{{ args.title }}</ui-typography>
 					</template>
 
-					<template #body>
+					<template #default >
 						{{args.body}}
 					</template>
 					<template #footer>
@@ -84,26 +88,16 @@ const Template: Story<TComponentProps> = (args) => ({
 						</ui-button>
 						</template>
 				</ui-modal>
+			</transition>
 
-				<div class="absolute" style="top: calc(50vh - 2rem); left: calc(50vw - 4rem)">
+			<ui-backdrop v-if="isVisible" />
 
-					<ui-button @click="showModal">
+			<div class="absolute" style="top: calc(50vh - 2rem); left: calc(50vw - 4rem)">
+				<ui-button @click="showModal">
 					Toggle Modal
-					</ui-button>
-				</div>
+				</ui-button>
+			</div>
 			`
 });
 
 export const Default = Template.bind({});
-Default.parameters = {
-	backgrounds: {
-		default: "Bonkers",
-		values: [
-			{
-				name: "Bonkers",
-				value: "url(https://web-assets.bonkers.ie/maverick/img/about.0ed347c.png)",
-			},
-		],
-	},
-	layout: "padded",
-};
