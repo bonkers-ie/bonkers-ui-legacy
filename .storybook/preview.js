@@ -19,6 +19,24 @@ export const parameters = {
 	darkMode: false,
 	stylePreview: true,
 	actions: {argTypesRegex: "^on[A-Z].*"},
+	backgrounds: {
+		default: "Bonkers",
+		values: [
+			{
+				name: "Bonkers",
+				value: "url(https://web-assets.bonkers.ie/maverick/img/about.0ed347c.png)",
+			},
+			{
+				name: "Light",
+				value: "#ffffff"
+			},
+			{
+				name: "Dark",
+				value: "#202124"
+			}
+		],
+	},
+	layout: "padded",
 	controls: {
 		matchers: {
 			color: /(background|color)$/i,
