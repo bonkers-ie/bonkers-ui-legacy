@@ -4,7 +4,11 @@ export default {
 	title: "Components/ui-result-card-range",
 	component: UiResultCardRange,
 	argTypes: {},
-	args: {},
+	args: {
+		title: "This is a Title",
+		body: "This is the body",
+		kind: UiResultCardRange.DEFAULT,
+	},
 };
 
 const Template = (args) => ({
@@ -13,7 +17,8 @@ const Template = (args) => ({
 		return { args };
 	},
 	template:/*html*/`
-        <ui-result-card-range v-bind="args" :icon-name="['far', 'fa-face-smile']"/>
+        <ui-result-card-range :icon-name="['far', 'fa-face-smile']">
+		</ui-result-card-range>
     `,
 });
 
@@ -23,14 +28,15 @@ const TemplateAll = (args) => ({
 		return { args };
 	},
 	template:/*html*/`
-    <div class="ui-result-card-range grid grid-rows-2 gap-sm w-full">
-        <UiResultCardRange v-bind="args" :title="title" :icon-name="['far', 'fa-face-smile']"/>
-        <UiResultCardRange />
-        <UiResultCardRange />
+    <div class="ui-result-card-range grid grid-flow-row grid-cols-2 grid-rows-1 gap-sm w-full">
+	<ui-result-card-range :icon-name="['far', 'fa-face-smile']" title="Hello World" body="Hello Body">
+	</ui-result-card-range>
     </div>
     `,
 });
 
-export const Default = Template.bind({});
+export const Default = Template.bind({
+	
+});
 
 export const FullCard = TemplateAll.bind({});

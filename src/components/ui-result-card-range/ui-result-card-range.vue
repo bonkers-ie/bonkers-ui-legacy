@@ -1,26 +1,27 @@
 <template>
-	<div class="ui-result-card-range border-1 border-secondary-alt-300 bg-secondary-alt-200 rounded text-secondary-500 h-full">
-		hello
-
+	<div class="ui-result-card-range flex flex-col items-center justify-evenly h-fit border-1 border-secondary-alt-300 bg-secondary-alt-200 rounded text-secondary-500 p-md">
 		<ui-icon
-			class="fa-regular fa-flag rounded bg-secondary-alt-300 secondary-alt-200 mt-sm -translate-x-1/2 -translate-y-1/2"
+			class="fa-regular fa-flag rounded-full bg-secondary-alt-300 secondary-alt-200 mb-md"
 			:size="ESize.MD"
 			:icon-name="iconName"
 		/>
 		<ui-typography 
-			v-if="$slots.title"
-			class="secondary-alt-200 content-center"
+			v-if="title"
+			class="secondary-alt-200 place content-center mb-xs"
 			:size="ETypographySizes.MD"
 			:weight="ETextWeight.BOLD"
-		/>
-		<slot class="title" />
+		>
+			{{ title }}
+		</ui-typography>
 		<ui-typography 
-			v-if="$slots.textBody"
-			class="secondary-alt-200 content-center m-auto"
+			v-if="body"
+			class="secondary-alt-200 place-content-even"
 			:size="ETypographySizes.SM"
 			:weight="ETextWeight.REGULAR"
-		/>
-		<slot class="textBody" />
+		>
+			{{ body }}
+		</ui-typography>
+		<slot />
 	</div>
 </template>
 
@@ -31,8 +32,9 @@
 	defineProps<{
 		iconName: TIconName;
 		title: "title";
+		body: "body";
 		size: "default";
-
+		description: "default";
 	}>();
 
 </script>
