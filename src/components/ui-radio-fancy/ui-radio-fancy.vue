@@ -19,6 +19,7 @@
 				py-sm px-sm
 				border
 				border-secondary-alt-500
+				bg-white
 				hover:border-secondary-alt-700
 				cursor-pointer
 				rounded-xl
@@ -63,7 +64,6 @@
 		modelValue: string;
 		name: string;
 		value: string | number;
-		id: string;
 		iconName: TIconName;
 		disabled?: boolean;
 	}>();
