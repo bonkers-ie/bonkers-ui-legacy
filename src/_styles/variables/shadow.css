@@ -3,6 +3,8 @@
 		/* shadow sizes */
 		--shadow-size-md: 0 2px 4px 0 rgb(180 184 205 / 50%);
 		--shadow-border-primary: 0 0 0 4px rgb(69 158 74 / 50%);
+		--shadow-border-selected: 0 0 0 4px rgb(69 158 74 / 100%);
+		--shadow-selected-shadow: 0 0 0 4px var(--color-primary-500);
 		--shadow-border-secondary: 0 0 0 4px rgb(223 225 233 / 50%);
 	}
 }

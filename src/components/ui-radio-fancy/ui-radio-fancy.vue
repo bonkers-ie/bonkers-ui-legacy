@@ -1,31 +1,55 @@
 <template>
 	<label
-		class="ui-radio-item block p-sm border rounded-2xl hover:border-primary cursor-pointer bg-white"
-		:class="[
-			isActive ? 'border-primary pointer-events-none':'border-secondary-alt',
-		]"
+		class="ui-radio-fancy"
+		:class="disabled && 'pointer-events-none opacity-50'"
 	>
 		<input
 			v-model="radioModel"
 			type="radio"
 			:name="name"
 			:value="value"
-			class="appearance-none absolute"
+			class="peer group fixed w-0"
+			:class="disabled && 'pointer-events-none opacity-50'"
 		>
-
-		<ui-icon
-			:icon-name="iconName"
-			:size="ESize.MD"
-			class="mb-md"
-			:class="isActive && 'text-primary'"
-		/>
-		<ui-typography
-			:size="ETypographySizes.SM"
-			:kind="EColors.SECONDARY"
-			:weight="ETextWeight.SEMI_BOLD"
+		<div
+			class="
+				ui-radio-fancy__content
+				box-border
+				w-full
+				py-sm px-sm
+				border
+				border-secondary-alt-500
+				hover:border-secondary-alt-700
+				cursor-pointer
+				rounded-xl
+				active:border-sm
+				active:bg-secondary-alt-200
+				peer-checked:active:outline-4
+				peer-checked:active:outline
+				peer-checked:active:outline-offset-4
+				peer-checked:border-transparent
+				active:outline
+				active:outline-4
+				active:outline-primary
+				active:border-secondary-alt
+				peer-checked:hover:shadow-border-selected
+				peer-checked:shadow-selected-shadow"
+			:class="disabled && 'pointer-events-none opacity-50'"
 		>
-			{{ title }}
-		</ui-typography>
+			<ui-icon
+				:icon-name="iconName"
+				:size="ESize.MD"
+				class="mb-md group-checked:text-primary-500"
+				:class="value === modelValue && 'text-primary'"
+			/>
+			<ui-typography
+				:size="ETypographySizes.SM"
+				:kind="EColors.SECONDARY"
+				:weight="ETextWeight.SEMI_BOLD"
+			>
+				<slot />
+			</ui-typography>
+		</div>
 	</label>
 </template>
 
@@ -35,17 +59,15 @@
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import { EColors } from "../../_types/colors";
-
 	const props = defineProps<{
 		modelValue: string;
 		name: string;
 		value: string | number;
-		title: string;
+		id: string;
 		iconName: TIconName;
+		disabled?: boolean;
 	}>();
-
 	const emit = defineEmits(["update:modelValue"]);
-
 	const radioModel = computed({
 		get() {
 			return props.modelValue;
@@ -54,6 +76,4 @@
 			emit("update:modelValue", value);
 		}
 	});
-
-	const isActive = computed(()=>props.modelValue === props.value);
 </script>
