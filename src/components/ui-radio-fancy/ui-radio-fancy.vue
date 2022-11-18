@@ -8,7 +8,7 @@
 			type="radio"
 			:name="name"
 			:value="value"
-			class="peer group fixed w-0"
+			class="peer group appearance-none absolute"
 			:class="disabled && 'pointer-events-none opacity-50'"
 		>
 		<div
