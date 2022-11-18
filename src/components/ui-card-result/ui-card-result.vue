@@ -24,7 +24,7 @@
 				<slot name="sidebar" />
 			</div>
 
-			<main class="p-sm bg-white w-full">
+			<main class="p-sm bg-white w-full overflow-hidden">
 				<ui-typography
 					v-if="header"
 					class="mb-xs"

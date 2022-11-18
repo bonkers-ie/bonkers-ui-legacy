@@ -11,8 +11,7 @@
 		"test": "jest",
 		"deploy": "gh-pages -d storybook-static",
 		"typecheck": "tsc --noEmit && vue-tsc --noEmit",
-		"i": "yarn install --frozen-lockfile",
-		"postinstall": "husky install"
+		"i": "yarn install --frozen-lockfile"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -22,6 +21,7 @@
 		"@fortawesome/vue-fontawesome": "^3.0.1",
 		"@vueuse/components": "^9.4.0",
 		"@vueuse/core": "^9.4.0",
+		"husky": "4.3.8",
 		"vue": "^3.2.41"
 	},
 	"devDependencies": {
@@ -42,7 +42,6 @@
 		"eslint": "8.26.0",
 		"eslint-plugin-vue": "^9.6.0",
 		"gh-pages": "^4.0.0",
-		"husky": "^8.0.1",
 		"jest": "27.3.1",
 		"lint-staged": "^13.0.2",
 		"postcss": "^8.4.18",
@@ -85,6 +84,11 @@
 			"bash -c 'yarn typecheck'"
 		],
 		"*.{css,vue,tsx}": "stylelint --fix"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn typecheck && yarn lint-staged && yarn test"
+		}
 	},
 	"license": "MIT"
 }
