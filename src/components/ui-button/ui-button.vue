@@ -1,10 +1,11 @@
 <template>
 	<button
-		class="ui-button justify-center grid text-base rounded-lg whitespace-nowrap font-bold leading-none touch-manipulation items-center"
+		class="ui-button grid justify-center items-center grid-flow-col text-base rounded-lg whitespace-nowrap font-bold leading-none touch-manipulation "
 		:disabled="disabled"
 		:class="[
 			(!kind || kind === EButtonTypes.PRIMARY) && [primaryColor, primaryColorHover, primaryColorActive].join(' '),
-			kind === EButtonTypes.SECONDARY && 'text-white bg-secondary hover:bg-secondary-600 active:bg-secondary-700 disabled:bg-secondary-300',
+			kind === EButtonTypes.SECONDARY
+				&& 'text-white bg-secondary hover:bg-secondary-600 active:bg-secondary-700 disabled:bg-secondary-300',
 			kind === EButtonTypes.WARNING && 'text-white bg-warning hover:bg-warning-600 active:bg-warning-700 disabled:bg-warning-300',
 			kind === EButtonTypes.ERROR && 'text-white bg-error hover:bg-error-600 active:bg-error-700 disabled:bg-error-300',
 			kind === EButtonTypes.PRIMARY_OVERLAY
@@ -20,35 +21,22 @@
 			size === EButtonSizes.SMALL && 'py-xs px-md',
 			size === EButtonSizes.MEDIUM && 'py-sm px-sm',
 			size === EButtonSizes.LARGE && 'py-md px-md',
+			($slots.default || $slots.postfix) && 'gap-sm',
 			fullWidth && 'w-full',
 			disabled && 'pointer-events-none',
 		]"
 	>
-		<span
-			v-if="slots.prefix"
-			class="ui-button__prefix"
-			:class="(slots.default || slots.postfix) && 'mr-sm'"
-		>
-			<slot name="prefix" />
-		</span>
+		<slot name="prefix" />
 
-		<span>
-			<slot />
-		</span>
+		<slot />
 
-		<span
-			v-if="slots.postfix"
-			class="ui-button__postfix"
-			:class="(slots.default || slots.prefix) && 'ml-sm'"
-		>
-			<slot name="postfix" />
-		</span>
+		<slot name="postfix" />
 	</button>
 </template>
 
 <script lang="ts" setup>
 	import { EButtonSizes, EButtonTypes } from "./_typings";
-	import { useSlots } from "vue";
+
 	type TProps = {
 		kind?: EButtonTypes;
 		size?: EButtonSizes;
@@ -56,17 +44,14 @@
 		disabled?: boolean;
 	}
 
-	const slots = useSlots();
-
 	const primaryColor = "text-white bg-primary disabled:bg-primary-300";
 	const primaryColorHover = "hover:bg-primary-600 ";
 	const primaryColorActive = "active:bg-primary-700 ";
 
-	defineProps<TProps>();
+	withDefaults( defineProps<TProps>(), {
+		kind: EButtonTypes.PRIMARY,
+		size: EButtonSizes.DEFAULT,
+		fullWidth: false,
+		disabled: false,
+	});
 </script>
-
-<style>
-	.ui-button {
-		grid-template-columns: auto auto auto;
-	}
-</style>
