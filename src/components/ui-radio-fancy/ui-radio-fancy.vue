@@ -9,7 +9,6 @@
 			:name="name"
 			:value="value"
 			class="peer group appearance-none absolute"
-			:class="disabled && 'pointer-events-none opacity-50'"
 		>
 		<div
 			class="
