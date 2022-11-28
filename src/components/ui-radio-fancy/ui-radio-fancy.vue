@@ -27,15 +27,24 @@
 				peer-checked:active:shadow-border-primary
 				peer-checked:hover:shadow-border-selected
 				peer-checked:shadow-selected-shadow
-				peer-checked:before:absolute
-				peer-checked:before:-top-xs
-				peer-checked:before:-bottom-xs
-				peer-checked:before:-left-xs
-				peer-checked:before:-right-xs
-				peer-checked:before:bg-primary-300
-				peer-checked:before:rounded-[20px]
-				peer-checked:before:box-border
-				peer-checked:before:-z-10
+				peer-focus:before:absolute
+				peer-focus:before:-top-xs
+				peer-focus:before:-bottom-xs
+				peer-focus:before:-left-xs
+				peer-focus:before:-right-xs
+				peer-focus:before:bg-primary-300
+				peer-focus:before:rounded-[20px]
+				peer-focus:before:box-border
+				peer-focus:before:-z-10
+				peer-active:before:absolute
+				peer-active:before:-top-xxs
+				peer-active:before:-bottom-xxs
+				peer-active:before:-left-xxs
+				peer-active:before:-right-xxs
+				peer-active:before:bg-primary-300
+				peer-active:before:rounded-[16px]
+				peer-active:before:box-border
+				peer-active:before:-z-10
 			"
 			:class="disabled && 'pointer-events-none'"
 		>

@@ -34,10 +34,10 @@
 				bg-white
 				peer-disabled:border-secondary-alt-400
 				peer-disabled:bg-secondary-alt-200
-				peer-focus:shadow-border-primary
 				peer-checked:border-primary
 				peer-checked:border-2
 				peer-checked:hover:border-primary-600
+				peer-focus:shadow-border-primary
 				group-hover:border-secondary-alt-700
 				group-focus:border-secondary-alt-700"
 			:class="invertOrder && 'order-last'"
