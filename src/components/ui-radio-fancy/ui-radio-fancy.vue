@@ -22,7 +22,6 @@
 				hover:border-secondary-alt-700
 				cursor-pointer
 				rounded-xl
-				active:bg-secondary-alt-200
 				peer-checked:border-transparent
 				peer-checked:active:shadow-border-primary
 				peer-checked:hover:shadow-border-selected
@@ -45,6 +44,16 @@
 				peer-active:before:rounded-[16px]
 				peer-active:before:box-border
 				peer-active:before:-z-10
+				active:bg-secondary-alt-200
+				active:before:absolute
+				active:before:-top-xs
+				active:before:-bottom-xs
+				active:before:-left-xs
+				active:before:-right-xs
+				active:before:bg-primary-300
+				active:before:rounded-[20px]
+				active:before:box-border
+				active:before:-z-10
 			"
 			:class="disabled && 'pointer-events-none'"
 		>
