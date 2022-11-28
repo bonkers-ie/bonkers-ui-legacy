@@ -1,7 +1,7 @@
 <template>
 	<label
-		class="ui-radio-fancy"
-		:class="disabled && 'pointer-events-none opacity-50'"
+		class="ui-radio-fancy relative"
+		:class="disabled && 'pointer-events-none'"
 	>
 		<input
 			v-model="radioModel"
@@ -22,19 +22,22 @@
 				hover:border-secondary-alt-700
 				cursor-pointer
 				rounded-xl
-				active:border-sm
 				active:bg-secondary-alt-200
-				peer-checked:active:outline-4
-				peer-checked:active:outline
-				peer-checked:active:outline-offset-4
 				peer-checked:border-transparent
-				active:outline
-				active:outline-4
-				active:outline-primary
-				active:border-secondary-alt
+				peer-checked:active:shadow-border-primary
 				peer-checked:hover:shadow-border-selected
-				peer-checked:shadow-selected-shadow"
-			:class="disabled && 'pointer-events-none opacity-50'"
+				peer-checked:shadow-selected-shadow
+				peer-checked:before:absolute
+				peer-checked:before:-top-xs
+				peer-checked:before:-bottom-xs
+				peer-checked:before:-left-xs
+				peer-checked:before:-right-xs
+				peer-checked:before:bg-primary-300
+				peer-checked:before:rounded-[20px]
+				peer-checked:before:box-border
+				peer-checked:before:-z-10
+			"
+			:class="disabled && 'pointer-events-none'"
 		>
 			<ui-icon
 				:icon-name="iconName"
