@@ -12,22 +12,27 @@
 			class="ui-list-item__line bg-primary-300 h-full absolute w-xxs left-xs -translate-x-2/4 top-sm group-last:hidden"
 		/>
 
-		<ui-icon
-			v-if="icon"
-			class="bg-white text-primary"
-			:icon-name="icon"
-			:size="ESize.SM"
-		/>
+		<span>
+			<slot name="icon">
+				<ui-icon
+					v-if="icon"
+					class="bg-white"
+					:icon-name="icon"
+					:size="ESize.SM"
+				/>
+			</slot>
+		</span>
 
-		<div>
+		<span class="leading-4">
 			<ui-typography
 				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
+				line-height
 			>
 				{{ title }}
 			</ui-typography>
 			<slot />
-		</div>
+		</span>
 	</li>
 </template>
 
