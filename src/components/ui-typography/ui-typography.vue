@@ -84,7 +84,7 @@
 			textTransform === ETextTransform.LOWERCASE && 'lowercase',
 			textTransform === ETextTransform.UPPERCASE && 'uppercase',
 
-			lineHeight && 'ui-typography_line-height',
+			lineHeight && 'leading-4',
 			underline && 'underline',
 		]"
 	>
@@ -107,9 +107,3 @@
 		is?: string;
 	}>();
 </script>
-
-<style scoped>
-	.ui-typography_line-height {
-		line-height: var(--base-line-height);
-	}
-</style>
