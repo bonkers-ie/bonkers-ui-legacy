@@ -3,7 +3,6 @@
 		:is="is || 'p'"
 		class="ui-typography"
 		:class="[
-			'leading-none',
 			size === ETypographySizes.MD && 'text-md',
 			size === ETypographySizes.XS && 'text-xs',
 			size === ETypographySizes.SM && 'text-sm',
@@ -84,7 +83,7 @@
 			textTransform === ETextTransform.LOWERCASE && 'lowercase',
 			textTransform === ETextTransform.UPPERCASE && 'uppercase',
 
-			lineHeight && 'leading-4',
+			lineHeight ? 'leading-normal' : 'leading-none',
 			underline && 'underline',
 		]"
 	>
