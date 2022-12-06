@@ -8,13 +8,14 @@
 			type="radio"
 			:name="name"
 			:value="value"
-			class="peer group appearance-none absolute"
+			class="peer group appearance-none absolute invisible"
 		>
 		<div
 			class="
 				ui-radio-fancy__content
 				box-border
 				w-full
+				h-full
 				py-sm px-sm
 				border
 				border-secondary-alt-500
