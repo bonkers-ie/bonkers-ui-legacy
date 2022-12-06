@@ -5,7 +5,7 @@ export enum EIconType {
 	FAL = "fal",
 	FAD = "fad",
 	FAT = "fat",
-	BRAND = "brand",
+	BRANDS = "brands",
 }
 
 export type TIconName = [EIconType, string];
