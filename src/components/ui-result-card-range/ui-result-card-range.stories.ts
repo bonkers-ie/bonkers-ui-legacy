@@ -25,7 +25,7 @@ const Template = (args) => ({
 		return { args };
 	},
 	template:/*html*/`
-		<ui-result-card-range :icon-name="['far', 'fa-face-smile']" :title="args.title">
+		<ui-result-card-range :icon-name="['far', 'face-smile']" :title="args.title">
 			{{args.slot}}
 		</ui-result-card-range>
     `,
@@ -38,18 +38,18 @@ const TemplateAll = (args) => ({
 	},
 	template:/*html*/`
     <div class="ui-result-card-range grid gap-sm w-full">
-		
+
 		<ui-result-card-range style="grid-column: 1 / 1"
-		 	:icon-name="['far', 'fa-face-smile']" :title="args.title">
+		 	:icon-name="['far', 'face-smile']" :title="args.title">
 			{{args.slot}}
 		</ui-result-card-range>
 
 		<ui-result-card-range style="grid-column: 2 / 2"
-			 :icon-name="['far', 'fa-face-smile']" :title="args.title">
+			 :icon-name="['far', 'face-smile']" :title="args.title">
 			 {{args.slot}}
 
 		</ui-result-card-range>
-		
+
 		<ui-result-card-range style="grid-column: 1 / 3; flex-direction: row; justify-content: space-between;">
 
 				<b>25/02/2022</b>
@@ -62,7 +62,7 @@ const TemplateAll = (args) => ({
 });
 
 export const singleCard = Template.bind({
-	
+
 });
 
 export const FullCard = TemplateAll.bind({});

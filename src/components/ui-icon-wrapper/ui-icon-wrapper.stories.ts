@@ -46,7 +46,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		</ui-icon-wrapper>
 
 		<ui-icon-wrapper kind="primary"  v-bind="args">
-			<ui-icon :icon-name="['far', 'fa-face-smile']" :size=ESize.LG />
+			<ui-icon :icon-name="['far', 'face-smile']" :size=ESize.LG />
 			<UiNotificationBadge slot="badge" :origin=EBadgeOrigin.DEFAULT>
 			2
 			</UiNotificationBadge>
