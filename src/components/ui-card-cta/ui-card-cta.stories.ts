@@ -37,7 +37,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		<ui-card-cta v-bind="args">
 			<template #icon>
 				<ui-icon-wrapper>
-					<ui-icon :icon-name="['far', 'fa-face-smile']" :size=ESize.MD />
+					<ui-icon :icon-name="['far', 'face-smile']" :size=ESize.MD />
 				</ui-icon-wrapper>
 			</template>
 

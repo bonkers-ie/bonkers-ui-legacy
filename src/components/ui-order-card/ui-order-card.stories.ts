@@ -30,7 +30,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 
 	template: /*html*/`
-		<ui-order-card v-bind="args" :iconName="['far', 'fa-face-smile']">
+		<ui-order-card v-bind="args" :iconName="['far', 'face-smile']">
 			<template #title>
 				Thank you for your order!
 			</template>
@@ -44,7 +44,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			</template>
 		</ui-order-card>
 
-		
+
 	`,
 });
 

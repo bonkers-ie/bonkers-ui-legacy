@@ -15,7 +15,7 @@
 		<slot name="icon">
 			<ui-icon
 				v-if="icon"
-				class="bg-white"
+				class="bg-white z-[1] mt-[0.2em]"
 				:icon-name="icon"
 				:size="ESize.SM"
 			/>

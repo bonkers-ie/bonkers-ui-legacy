@@ -1,6 +1,10 @@
 <template>
 	<label
-		class="ui-radio-fancy relative"
+		class="
+			ui-radio-fancy
+			relative
+
+		"
 		:class="disabled && 'pointer-events-none'"
 	>
 		<input
@@ -8,7 +12,7 @@
 			type="radio"
 			:name="name"
 			:value="value"
-			class="peer group appearance-none absolute invisible"
+			class="peer group appearance-none absolute"
 		>
 		<div
 			class="
@@ -23,38 +27,32 @@
 				hover:border-secondary-alt-700
 				cursor-pointer
 				rounded-xl
+
+				before:absolute
+				before:-z-10
+				before:box-border
+				before:rounded-[16px]
+				before:bg-primary-300
+
 				peer-checked:border-transparent
 				peer-checked:active:shadow-border-primary
+				peer-checked:active:before:-top-xs
+				peer-checked:active:before:-bottom-xs
+				peer-checked:active:before:-left-xs
+				peer-checked:active:before:-right-xs
+
 				peer-checked:hover:shadow-border-selected
 				peer-checked:shadow-selected-shadow
-				peer-focus:before:absolute
-				peer-focus:before:-top-xs
-				peer-focus:before:-bottom-xs
-				peer-focus:before:-left-xs
-				peer-focus:before:-right-xs
-				peer-focus:before:bg-primary-300
-				peer-focus:before:rounded-[20px]
-				peer-focus:before:box-border
-				peer-focus:before:-z-10
-				peer-active:before:absolute
+
 				peer-active:before:-top-xxs
 				peer-active:before:-bottom-xxs
 				peer-active:before:-left-xxs
 				peer-active:before:-right-xxs
-				peer-active:before:bg-primary-300
-				peer-active:before:rounded-[16px]
-				peer-active:before:box-border
-				peer-active:before:-z-10
-				active:bg-secondary-alt-200
-				active:before:absolute
-				active:before:-top-xs
-				active:before:-bottom-xs
-				active:before:-left-xs
-				active:before:-right-xs
-				active:before:bg-primary-300
-				active:before:rounded-[20px]
-				active:before:box-border
-				active:before:-z-10
+
+				peer-focus:before:-top-xs
+				peer-focus:before:-bottom-xs
+				peer-focus:before:-left-xs
+				peer-focus:before:-right-xs
 			"
 			:class="disabled && 'pointer-events-none'"
 		>
