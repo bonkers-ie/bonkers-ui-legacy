@@ -1,7 +1,10 @@
 import { mount } from "@vue/test-utils";
 import UiButton from "./ui-button.vue";
+import { test, expect } from "vitest";
 
-describe("VButton.test.ts", () => {
+test("VButton.test.ts", async () => {
+	expect(UiButton).toBeTruthy();
+
 	it("renders props.msg when passed", () => {
 		const className = "message";
 		const wrapper = mount(UiButton, {
@@ -12,4 +15,5 @@ describe("VButton.test.ts", () => {
 
 		expect(wrapper.classes()).toContain(className);
 	});
+
 });
