@@ -27,6 +27,36 @@
 			{{ title }}
 		</ui-typography>
 	</label>
+	<div>
+		<label
+			class="ui-radio-item grid grid-flow-col justify-start gap-sm p-sm border rounded-2xl hover:border-primary cursor-pointer bg-white"
+			:class="[
+				isActive ? 'border-primary pointer-events-none':'border-secondary-alt',
+			]"
+		>
+			<input
+				v-model="radioModel"
+				type="radio"
+				:name="name"
+				:value="value"
+				class="appearance-none absolute"
+			>
+
+			<ui-icon
+				:icon-name="iconName"
+				:size="ESize.MD"
+				:class="isActive && 'text-primary'"
+			/>
+			<ui-typography
+				:size="ETypographySizes.SM"
+				:kind="EColors.SECONDARY"
+				:weight="ETextWeight.SEMI_BOLD"
+			>
+				{{ title }}
+			</ui-typography>
+
+		</label>
+	</div>
 </template>
 
 <script lang="ts" setup>
