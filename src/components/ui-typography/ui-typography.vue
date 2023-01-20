@@ -10,6 +10,7 @@
 			size === ETypographySizes.LG && 'text-lg',
 			size === ETypographySizes.XL && 'text-xl',
 			size === ETypographySizes.XXL && 'text-2xl',
+			size === ETypographySizes.XXS && 'text-xxs',
 			size === ETypographySizes.XXXL && 'text-3xl',
 			size === ETypographySizes.XXXXL && 'text-4xl',
 			size === ETypographySizes.XXXXXL && 'text-5xl',
@@ -72,7 +73,7 @@
 			kind === EColors.SECONDARY_ALT_700 && 'text-secondary-alt-700',
 
 			weight === ETextWeight.LIGHT && 'font-light',
-			weight === ETextWeight.REGULAR && 'font-medium',
+			weight === ETextWeight.REGULAR && 'font-normal',
 			weight === ETextWeight.SEMI_BOLD && 'font-bold',
 			weight === ETextWeight.BOLD && 'font-black',
 
@@ -83,7 +84,7 @@
 			textTransform === ETextTransform.LOWERCASE && 'lowercase',
 			textTransform === ETextTransform.UPPERCASE && 'uppercase',
 
-			lineHeight && 'ui-typography_line-height',
+			lineHeight ? 'leading-normal' : 'leading-none',
 			underline && 'underline',
 		]"
 	>
@@ -106,9 +107,3 @@
 		is?: string;
 	}>();
 </script>
-
-<style scoped>
-	.ui-typography_line-height {
-		line-height: var(--base-line-height);
-	}
-</style>

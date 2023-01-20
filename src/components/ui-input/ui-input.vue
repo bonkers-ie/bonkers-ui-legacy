@@ -20,12 +20,15 @@
 			<slot name="prefix-icon" />
 
 			<input
-				class="bg-transparent border-0 outline-none w-full"
-				:type="type || 'text'"
-				:placeholder="placeholder"
 				:value="modelValue"
 				:pattern="pattern"
+				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
+				:type="type || 'text'"
+				:placeholder="placeholder"
+				:maxlength="maxlength"
+				:minlength="minlength"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
+				@focus="focusHandler"
 			>
 
 			<slot name="postfix-icon" />
@@ -44,7 +47,7 @@
 	import { EInputKinds, EInputType } from "./_typings";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 
-	defineProps<{
+	withDefaults(defineProps<{
 		placeholder?: string;
 		modelValue: string;
 		disabled?: boolean;
@@ -53,14 +56,13 @@
 		subLabel?: string;
 		type?: EInputType;
 		pattern?: string;
-	}>();
+		maxlength?: string;
+		minlength?: string;
+		focusHandler?: (e:FocusEvent) => void;
+	}>(), {
+		modelValue: ""
+	});
 
 	defineEmits(["update:modelValue"]);
-</script>
 
-<style scoped>
-	.ui-input__wrapper input::placeholder {
-		color: var(--color-secondary-alt-500);
-		font-style: italic;
-	}
-</style>
+</script>

@@ -54,7 +54,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		return { args, ESize };
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
-	template: `
+	template: /*html*/`
 		<ui-button :kind="args.kind"
 				   :size="args.size"
 				   :fullWidth="args.fullWidth"
@@ -82,7 +82,7 @@ const TemplateAll: Story<TComponentProps> = () => ({
 		return { EButtonSizes, EButtonTypes };
 	},
 
-	template: `
+	template: /*html*/`
 		<div :style="{
 			display: 'flex',
 			flexWrap: 'wrap'

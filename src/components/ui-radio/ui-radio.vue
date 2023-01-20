@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="ui-radio grid cursor-pointer"
+		class="ui-radio grid cursor-pointer group grid-flow-col"
 		:class="[
 			slots.default && 'items-center gap-xs',
 			(!justify || justify === EJustify.START) && 'justify-start',
@@ -19,13 +19,41 @@
 			:name="name"
 			:value="value"
 			:disabled="disabled"
-			class="appearance-none absolute"
+			class="appearance-none absolute peer"
 		>
 		<span
-			class="ui-radio_custom block w-md h-md border border-secondary-alt rounded-full relative hover:border-secondary-alt-700 focus:border-secondary-alt-700"
+			class="
+				ui-radio_custom
+				relative
+				block
+				w-md
+				h-md
+				border
+				border-secondary-alt
+				rounded-full
+				bg-white
+				peer-disabled:border-secondary-alt-400
+				peer-disabled:bg-secondary-alt-200
+				peer-checked:border-primary
+				peer-checked:border-2
+				peer-checked:hover:border-primary-600
+				peer-focus:shadow-border-primary
+				group-hover:border-secondary-alt-700
+				group-focus:border-secondary-alt-700"
 			:class="invertOrder && 'order-last'"
 		>
-			<span class="ui-radio__dot absolute top-2/4 left-2/4 w-xs h-xs block bg-primary rounded-full" />
+			<span
+				class="
+						ui-radio__dot
+						absolute
+						top-2/4
+						left-2/4
+						w-xs
+						h-xs
+						block
+						bg-primary
+						rounded-full"
+			/>
 		</span>
 		<slot />
 	</label>
@@ -57,34 +85,13 @@
 </script>
 
 <style>
-	.ui-radio {
-		grid-template-columns: auto auto;
-	}
-
 	.ui-radio__dot {
 		transform: translate3d(-50%, -50%, 0) scale(0);
 		transition: transform 0.2s ease-in-out;
 	}
 
-	input:disabled + .ui-radio_custom {
-		border: 1px solid var(--color-secondary-alt-400);
-		background-color: var(--color-secondary-alt-200);
-	}
-
-	input:focus + .ui-radio_custom {
-		box-shadow: var(--shadow-border-primary);
-	}
-
-	input:checked + .ui-radio_custom {
-		border: 2px solid var(--color-primary);
-	}
-
 	input:checked + .ui-radio_custom .ui-radio__dot {
 		transform: translate3d(-50%, -50%, 0) scale(1);
-	}
-
-	input:checked + .ui-radio_custom:hover {
-		border: 2px solid var(--color-primary-600);
 	}
 
 	input:checked + .ui-radio_custom:hover .ui-radio__dot {
@@ -93,7 +100,6 @@
 
 	input:checked:disabled + .ui-radio_custom {
 		border: 2px solid var(--color-primary-300);
-		background-color: var(--color-white);
 	}
 
 	input:checked:disabled + .ui-radio_custom .ui-radio__dot {

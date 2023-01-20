@@ -8,73 +8,54 @@
 		"lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
 		"lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
 		"lint:markup": "vue-tsc --noEmit",
-		"test": "jest",
 		"deploy": "gh-pages -d storybook-static",
 		"typecheck": "tsc --noEmit && vue-tsc --noEmit",
-		"i": "yarn install --frozen-lockfile",
-		"postinstall": "husky install"
+		"test": "vitest run",
+		"i": "yarn install --frozen-lockfile"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.2.0",
-		"@fortawesome/free-brands-svg-icons": "^6.2.0",
-		"@fortawesome/free-regular-svg-icons": "^6.2.0",
-		"@fortawesome/free-solid-svg-icons": "^6.2.0",
-		"@fortawesome/vue-fontawesome": "^3.0.1",
-		"vue": "^3.2.38"
+		"@fortawesome/fontawesome-svg-core": "^6.2.1",
+		"@fortawesome/free-brands-svg-icons": "^6.2.1",
+		"@fortawesome/free-regular-svg-icons": "^6.2.1",
+		"@fortawesome/free-solid-svg-icons": "^6.2.1",
+		"@fortawesome/vue-fontawesome": "^3.0.2",
+		"@vueuse/components": "^9.10.0",
+		"@vueuse/core": "^9.10.0",
+		"vue": "^3.2.45"
 	},
 	"devDependencies": {
-		"@storybook/addon-actions": "^6.5.10",
-		"@storybook/addon-essentials": "^6.5.10",
-		"@storybook/addon-links": "^6.5.10",
+		"@storybook/addon-actions": "^6.5.15",
+		"@storybook/addon-essentials": "^6.5.15",
+		"@storybook/addon-links": "^6.5.15",
 		"@storybook/addon-postcss": "^2.0.0",
-		"@storybook/builder-vite": "^0.2.2",
-		"@storybook/vue3": "^6.5.10",
-		"@types/jest": "^28.1.3",
-		"@typescript-eslint/eslint-plugin": "^5.36.1",
-		"@typescript-eslint/parser": "^5.36.1",
-		"@vitejs/plugin-vue": "^3.0.3",
-		"@vue/eslint-config-typescript": "^11.0.0",
-		"@vue/test-utils": "^2.0.0",
-		"@vue/vue3-jest": "^27.0.0",
-		"babel-jest": "27",
-		"eslint": "8.22.0",
-		"eslint-plugin-vue": "^9.4.0",
+		"@storybook/builder-vite": "^0.2.7",
+		"@storybook/vue3": "^6.5.15",
+		"@typescript-eslint/eslint-plugin": "^5.48.1",
+		"@typescript-eslint/parser": "^5.48.1",
+		"@vitejs/plugin-vue": "^4.0.0",
+		"@vue/eslint-config-typescript": "^11.0.2",
+		"@vue/test-utils": "^2.2.7",
+		"eslint": "8.31.0",
+		"eslint-plugin-vue": "^9.8.0",
 		"gh-pages": "^4.0.0",
-		"husky": "^8.0.1",
-		"jest": "27.3.1",
-		"lint-staged": "^13.0.2",
-		"postcss": "^8.4.16",
+		"husky": "4.3.8",
+		"jsdom": "^21.0.0",
+		"lint-staged": "^13.1.0",
+		"postcss": "^8.4.21",
 		"postcss-html": "^1.4.1",
-		"storybook-tailwind-dark-mode": "^1.0.13",
-		"stylelint": "^14.11.0",
+		"storybook-tailwind-dark-mode": "^1.0.15",
+		"stylelint": "^14.16.1",
 		"stylelint-config-recommended": "^9.0.0",
 		"stylelint-config-recommended-vue": "^1.4.0",
-		"stylelint-config-standard": "^28.0.0",
-		"tailwindcss": "^3.1.8",
-		"ts-jest": "^27.0.7",
-		"typescript": "^4.8.2",
-		"vite": "^3.0.9",
-		"vue-eslint-parser": "^9.0.3",
-		"vue-loader": "^17.0.0",
-		"vue-tsc": "^0.40.5"
-	},
-	"jest": {
-		"preset": "ts-jest",
-		"moduleFileExtensions": [
-			"vue",
-			"js",
-			"jsx",
-			"ts"
-		],
-		"testEnvironment": "jsdom",
-		"moduleNameMapper": {
-			"^@/(.*)$": "<rootDir>/src/$1"
-		},
-		"transform": {
-			".*\\.(js)$": "babel-jest",
-			"^.+\\.tsx?$": "ts-jest",
-			".*\\.(vue)$": "@vue/vue3-jest"
-		}
+		"stylelint-config-standard": "^29.0.0",
+		"tailwindcss": "^3.2.4",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.4",
+		"vitest": "^0.27.0",
+		"vue-eslint-parser": "^9.1.0",
+		"vue-loader": "^17.0.1",
+		"vue-tsc": "^1.0.24"
 	},
 	"lint-staged": {
 		"*.{ts,tsx,vue}": [
@@ -82,6 +63,11 @@
 			"bash -c 'yarn typecheck'"
 		],
 		"*.{css,vue,tsx}": "stylelint --fix"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn typecheck && yarn lint-staged && yarn test"
+		}
 	},
 	"license": "MIT"
 }

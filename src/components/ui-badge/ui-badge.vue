@@ -10,6 +10,7 @@
 
 			size === EBadgeSize.MEDIUM && 'px-xs py-xs',
 			size === EBadgeSize.LARGE && 'px-sm py-xs',
+			elipsis && 'max-w-full',
 		]"
 	>
 		<ui-icon
@@ -23,6 +24,9 @@
 			:size="getBadgeSize"
 			:weight="ETextWeight.SEMI_BOLD"
 			class="whitespace-nowrap"
+			:class="[
+				elipsis && 'overflow-hidden overflow-ellipsis',
+			]"
 		>
 			<slot />
 		</ui-typography>
@@ -40,6 +44,7 @@
 		size?: EBadgeSize;
 		kind?: EBadgeKind;
 		icon?: TIconName;
+		elipsis?: boolean;
 	}>();
 
 	const slots = useSlots();

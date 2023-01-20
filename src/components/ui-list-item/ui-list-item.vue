@@ -1,36 +1,56 @@
+
 <template>
-	<li class="ui-icon-list flex">
-		<ui-icon
-			v-if="icon"
-			class="mr-xs"
-			:size="ESize.SM"
-			:icon-name="icon"
+	<li
+		class="ui-list-item grid grid-flow-col justify-start gap-xs relative group"
+		:class="[
+			size === EListItemSizes.DEFAULT && 'pb-md',
+			size === EListItemSizes.COMPACT && 'pb-xs'
+		]"
+	>
+		<div
+			v-if="kind === EListItemTypes.PROGRESS"
+			class="ui-list-item__line bg-primary-300 h-full absolute w-xxs left-xs -translate-x-2/4 top-sm group-last:hidden"
 		/>
 
-		<div>
+		<slot name="icon">
+			<ui-icon
+				v-if="icon"
+				class="bg-white z-[1] mt-[0.2em]"
+				:icon-name="icon"
+				:size="ESize.SM"
+			/>
+		</slot>
+
+		<span>
 			<ui-typography
+				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
+				line-height
 			>
 				{{ title }}
+
 			</ui-typography>
-			<p
-				v-if="$slots.default"
-				class="mt-xs"
-			>
-				<slot />
-			</p>
-		</div>
+			<slot />
+		</span>
 	</li>
 </template>
 
 <script lang="ts" setup>
 	import UiIcon, { type TIconName } from "../ui-icon";
-	import { ESize } from "../../_types/sizing";
 	import UiTypography, { ETextWeight } from "../ui-typography";
+	import { ESize } from "../../_types/sizing";
+	import { EListItemTypes, EListItemSizes } from "./_types";
 
-	defineProps<{
-		icon?: TIconName;
-		title?: string;
-	}>();
+	withDefaults(defineProps<{
+		icon?: TIconName
+		title?: string
+		kind?: EListItemTypes
+		size?: EListItemSizes
+	}>(), {
+		kind: EListItemTypes.DEFAULT,
+		size: EListItemSizes.COMPACT,
+		title: "",
+		icon: undefined
+	});
 
 </script>
