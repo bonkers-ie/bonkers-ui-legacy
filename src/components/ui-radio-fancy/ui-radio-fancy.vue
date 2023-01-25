@@ -46,7 +46,7 @@
 
 				peer-active:before:-top-xxs
 				peer-active:before:-bottom-xxs
-				peer-active:before:-left-xxs
+				peer- active:before:-left-xxs
 				peer-active:before:-right-xxs
 
 				peer-focus:before:-top-xs
@@ -54,53 +54,38 @@
 				peer-focus:before:-left-xs
 				peer-focus:before:-right-xs
 			"
-			:class="disabled && 'pointer-events-none'"
+			:class="[disabled && 'pointer-events-none',
+				radioSize === ERadioSizes.DEFAULT && 'default',
+				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle']"
 		>
-			<ui-icon
-				:icon-name="iconName"
-				:size="ESize.MD"
-				class="mb-md group-checked:text-primary-500"
-				:class="value === modelValue && 'text-primary'"
-			/>
+			<div
+				v-if="radioSize === ERadioSizes.DEFAULT"
+			>
+				<ui-icon
+					:icon-name="iconName"
+					:size="ESize.MD"
+					class=" mb-md group-checked:text-primary-500"
+					:class="value === modelValue && 'text-primary'"
+				/>
+			</div>
+			<div v-else-if="radioSize === ERadioSizes.MINIMAL">
+				<ui-icon
+					:icon-name="iconName"
+					:size="ESize.MD"
+					:class="value === modelValue && 'text-primary'"
+				/>
+
+			</div>
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
 				:weight="ETextWeight.SEMI_BOLD"
+				class="pt-xxs"
 			>
 				<slot />
 			</ui-typography>
 		</div>
 	</label>
-	<div>
-		<label
-			class="ui-radio-item grid grid-flow-col justify-start gap-sm p-sm border rounded-2xl hover:border-primary cursor-pointer bg-white"
-			:class="[
-				isActive ? 'border-primary pointer-events-none':'border-secondary-alt',
-			]"
-		>
-			<input
-				v-model="radioModel"
-				type="radio"
-				:name="name"
-				:value="value"
-				class="appearance-none absolute"
-			>
-
-			<ui-icon
-				:icon-name="iconName"
-				:size="ESize.MD"
-				:class="isActive && 'text-primary'"
-			/>
-			<ui-typography
-				:size="ETypographySizes.SM"
-				:kind="EColors.SECONDARY"
-				:weight="ETextWeight.SEMI_BOLD"
-			>
-				{{ title }}
-			</ui-typography>
-
-		</label>
-	</div>
 </template>
 
 <script lang="ts" setup>
@@ -109,12 +94,16 @@
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import { EColors } from "../../_types/colors";
+	import { ERadioSizes } from "./_typings";
+	import uiIcon from "../ui-icon";
+
 	const props = defineProps<{
 		modelValue: string;
 		name: string;
 		value: string | number;
 		iconName: TIconName;
 		disabled?: boolean;
+		radioSize?: ERadioSizes;
 	}>();
 	const emit = defineEmits(["update:modelValue"]);
 	const radioModel = computed({

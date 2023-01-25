@@ -1,5 +1,6 @@
+import { ERadioSizes } from "./_typings";
 import { ref } from "vue";
-import UiRadioFancy from "./ui-radio-fancy.vue";
+import UiRadioFancy from "../ui-radio-fancy";
 import type { Story } from "@storybook/vue3";
 import { EIconType } from "../ui-icon/_typings";
 
@@ -16,11 +17,17 @@ export default {
 			control: { type: "boolean" },
 			description: "The full width size",
 		},
+		radioSize: {
+			control: { type: "select" },
+			options: Object.values(ERadioSizes),
+			description: "The radio kinds",
+		},
 	},
 	args: {
 		slot: "Description",
 		invertOrder: false,
-		disabled: false
+		disabled: false,
+		radioSize: ERadioSizes.DEFAULT
 	},
 };
 
@@ -31,11 +38,11 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		const modelValue = ref("1");
 
-		return { modelValue, EIconType, args };
+		return { modelValue, EIconType, args, ERadioSizes };
 	},
 	template: /*html*/`
 		<div class="grid gap-sm" :style="{'grid-template-columns': 'repeat(auto-fit, minmax(160px, 1fr))'}">
-			<ui-radio-fancy v-for="item in 2" :key="item" :value="String(item)" v-model="modelValue" name="radio" title="title" :icon-name="[EIconType.FAR, 'face-smile']">
+			<ui-radio-fancy v-for="item in 2" :key="item" :value="String(item)" v-model="modelValue" name="radio" title="title" :icon-name="[EIconType.FAR, 'face-smile']" :radioSize="args.radioSize">
 				{{args.slot}}
 			</ui-radio-fancy>
 		</div>
