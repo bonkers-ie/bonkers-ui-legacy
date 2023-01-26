@@ -42,7 +42,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	template: /*html*/`
 		<div class="grid gap-sm" :style="{'grid-template-columns': 'repeat(auto-fit, minmax(160px, 1fr))'}">
-			<ui-radio-fancy v-for="item in 2" :key="item" :value="String(item)" v-model="modelValue" name="radio" title="title" :icon-name="[EIconType.FAR, 'face-smile']" :radioSize="args.radioSize">
+			<ui-radio-fancy v-for="item in 2" :key="item" :value="String(item)" v-model="modelValue" name="radio" title="title" :icon-name="[EIconType.FAR, 'face-smile']" :radioSize="args.radioSize" :disabled="args.disabled">
 				{{args.slot}}
 			</ui-radio-fancy>
 		</div>

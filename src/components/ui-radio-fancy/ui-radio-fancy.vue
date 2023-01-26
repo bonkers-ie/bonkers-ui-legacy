@@ -13,6 +13,7 @@
 			:name="name"
 			:value="value"
 			class="peer group appearance-none absolute"
+			:disabled="disabled"
 		>
 		<div
 			class="
@@ -46,7 +47,7 @@
 
 				peer-active:before:-top-xxs
 				peer-active:before:-bottom-xxs
-				peer- active:before:-left-xxs
+				peer-active:before:-left-xxs
 				peer-active:before:-right-xxs
 
 				peer-focus:before:-top-xs
@@ -54,7 +55,7 @@
 				peer-focus:before:-left-xs
 				peer-focus:before:-right-xs
 			"
-			:class="[disabled && 'pointer-events-none',
+			:class="[disabled && 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
 				radioSize === ERadioSizes.DEFAULT && 'default',
 				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle']"
 		>
@@ -64,15 +65,21 @@
 				<ui-icon
 					:icon-name="iconName"
 					:size="ESize.MD"
-					class=" mb-md group-checked:text-primary-500"
-					:class="value === modelValue && 'text-primary'"
+					class=" mb-md peer-checked:text-primary-500"
+					:class="[value === modelValue && 'text-primary',
+						disabled && 'text-secondary-alt-400',
+						disabled && value === modelValue && 'text-primary-300'
+					]"
 				/>
 			</div>
 			<div v-else-if="radioSize === ERadioSizes.MINIMAL">
 				<ui-icon
 					:icon-name="iconName"
 					:size="ESize.MD"
-					:class="value === modelValue && 'text-primary'"
+					:class="[value === modelValue && 'text-primary',
+						disabled && 'text-secondary-alt-400',
+						disabled && value === modelValue && 'text-primary-300'
+					]"
 				/>
 
 			</div>
