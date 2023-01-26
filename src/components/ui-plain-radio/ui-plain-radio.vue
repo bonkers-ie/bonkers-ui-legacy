@@ -1,34 +1,81 @@
 <template>
 	<label
-		class="ui-plain-radio grid grid-flow-col justify-start items-center gap-sm border p-sm rounded-lg cursor-pointer"
-		:class="[
-			isActive ? 'border-primary':'border-secondary-alt',
-			disabled && 'pointer-events-none border-secondary-alt-400'
-		]"
+		class="ui-plain-radio relative mb-md"
 	>
-		<ui-radio
+		<input
 			v-model="radioModel"
+			type="radio"
 			:name="name"
 			:value="value"
+			class="peer group appearance-none absolute"
 			:disabled="disabled"
-		/>
+		>
+		<div
+			class="
+                ui-plain-radio__content
+                box-border
+                w-full
+                h-full
+                py-sm px-sm
+                border
+                border-secondary-alt-500
+                bg-white
+                hover:border-secondary-alt-700
+                cursor-pointer
+                rounded-xl
 
-		<span class="text-wrapper">
-			<ui-typography
-				:size="ETypographySizes.SM"
-				:kind="EColors.SECONDARY"
-				:weight="ETextWeight.SEMI_BOLD"
-			>
-				{{ header }}
-			</ui-typography>
+                before:absolute
+                before:-z-10
+                before:box-border
+                before:rounded-[16px]
+                before:bg-primary-300
 
-			<ui-typography
-				:size="ETypographySizes.XS"
-				:kind="EColors.SECONDARY_ALT"
-			>
-				{{ subHeader }}
-			</ui-typography>
-		</span>
+                peer-checked:border-transparent
+                peer-checked:active:shadow-border-primary
+                peer-checked:active:before:-top-xs
+                peer-checked:active:before:-bottom-xs
+                peer-checked:active:before:-left-xs
+                peer-checked:active:before:-right-xs
+                peer-checked:hover:shadow-border-selected
+				peer-checked:shadow-selected-shadow
+
+                peer-active:before:-top-xxs
+                peer-active:before:-bottom-xxs
+                peer-active:before:-left-xxs
+                peer-active:before:-right-xxs
+
+                peer-focus:before:-top-xs
+                peer-focus:before:-bottom-xs
+                peer-focus:before:-left-xs
+                peer-focus:before:-right-xs
+            "
+		>
+			<span class="grid grid-flow-col justify-start gap-sm">
+				<ui-radio
+					model-value=""
+					:name="name"
+					:value="value"
+					:disabled="disabled"
+				/>
+
+				<span class="text-wrapper">
+					<ui-typography
+						:size="ETypographySizes.SM"
+						:kind="EColors.SECONDARY"
+						:weight="ETextWeight.SEMI_BOLD"
+						line-height
+					>
+						{{ header }}
+					</ui-typography>
+					<ui-typography
+						:size="ETypographySizes.XS"
+						:kind="EColors.SECONDARY_ALT"
+					>
+						{{ subHeader }}
+					</ui-typography>
+				</span>
+			</span>
+		</div>
 	</label>
 </template>
 
