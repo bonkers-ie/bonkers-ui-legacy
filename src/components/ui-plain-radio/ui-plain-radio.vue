@@ -1,79 +1,91 @@
 <template>
 	<label
-		class="ui-plain-radio relative mb-md"
+		class="ui-plain-radio relative mb-sm"
+		:for="value"
 	>
+
 		<input
+			:id="value"
 			v-model="radioModel"
-			type="radio"
-			:name="name"
 			:value="value"
-			class="peer group appearance-none absolute"
+			name="name"
+			type="radio"
 			:disabled="disabled"
+			class="appearance-none absolute peer"
 		>
+
 		<div
-			class="
-                ui-plain-radio__content
-                box-border
-                w-full
-                h-full
-                py-sm px-sm
-                border
-                border-secondary-alt-500
-                bg-white
-                hover:border-secondary-alt-700
-                cursor-pointer
-                rounded-xl
+			class="ui-plain-radio__content
+				grid
+				grid-flow-col
+				justify-start
+				items-center
+				gap-sm
+				box-border
+				w-full
+				h-full
+				py-sm px-sm
+				border
+				border-secondary-alt-500
+				bg-white
+				hover:border-secondary-alt-700
+				cursor-pointer
+				rounded-xl
 
-                before:absolute
-                before:-z-10
-                before:box-border
-                before:rounded-[16px]
-                before:bg-primary-300
+				before:absolute
+				before:-z-10
+				before:box-border
+				before:rounded-[16px]
+				before:bg-primary-300
 
-                peer-checked:border-transparent
-                peer-checked:active:shadow-border-primary
-                peer-checked:active:before:-top-xs
-                peer-checked:active:before:-bottom-xs
-                peer-checked:active:before:-left-xs
-                peer-checked:active:before:-right-xs
-                peer-checked:hover:shadow-border-selected
+				peer-checked:border-transparent
+				peer-checked:active:shadow-border-primary
+				peer-checked:active:before:-top-xs
+				peer-checked:active:before:-bottom-xs
+				peer-checked:active:before:-left-xs
+				peer-checked:active:before:-right-xs
+
+				peer-checked:hover:shadow-border-selected
 				peer-checked:shadow-selected-shadow
 
-                peer-active:before:-top-xxs
-                peer-active:before:-bottom-xxs
-                peer-active:before:-left-xxs
-                peer-active:before:-right-xxs
+				peer-active:before:-top-xxs
+				peer-active:before:-bottom-xxs
+				peer-active:before:-left-xxs
+				peer-active:before:-right-xxs
 
-                peer-focus:before:-top-xs
-                peer-focus:before:-bottom-xs
-                peer-focus:before:-left-xs
-                peer-focus:before:-right-xs
-            "
+				peer-focus:before:-top-xs
+				peer-focus:before:-bottom-xs
+				peer-focus:before:-left-xs
+				peer-focus:before:-right-xs
+			"
+			:class="disabled && 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled'"
 		>
-			<span class="grid grid-flow-col justify-start gap-sm">
-				<ui-radio
-					model-value=""
-					:name="name"
-					:value="value"
-					:disabled="disabled"
-				/>
+			<ui-radio
+				v-model="radioModel"
+				:value="value"
+				:name="name"
+				:disabled="disabled"
+				class="pointer-events-none"
+			/>
 
-				<span class="text-wrapper">
-					<ui-typography
-						:size="ETypographySizes.SM"
-						:kind="EColors.SECONDARY"
-						:weight="ETextWeight.SEMI_BOLD"
-						line-height
-					>
-						{{ header }}
-					</ui-typography>
-					<ui-typography
-						:size="ETypographySizes.XS"
-						:kind="EColors.SECONDARY_ALT"
-					>
-						{{ subHeader }}
-					</ui-typography>
-				</span>
+			<span
+				class="
+				text-wrapper"
+			>
+				<ui-typography
+					:size="ETypographySizes.SM"
+					:kind="EColors.SECONDARY"
+					:weight="ETextWeight.SEMI_BOLD"
+					line-height
+				>
+					{{ header }}
+				</ui-typography>
+				<ui-typography
+					:size="ETypographySizes.XS"
+					:kind="EColors.SECONDARY_ALT"
+				>
+					{{ subHeader }}
+				</ui-typography>
 			</span>
 		</div>
 	</label>
@@ -103,6 +115,4 @@
 			emit ("update:modelValue", value);
 		}
 	});
-
-	const isActive = computed(() => props.modelValue === props.value);
 </script>

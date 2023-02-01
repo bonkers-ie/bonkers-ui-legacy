@@ -32,7 +32,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	components: { UiPlainRadio },
 
 	setup() {
-		const modelValue = ref("value1");
+		const modelValue = ref("1");
 
 		return { modelValue, args, ETypographySizes, EColors };
 
@@ -41,21 +41,17 @@ const Template: Story<TComponentProps> = (args) => ({
 	template: /*html*/ `
 		<div :style="{display: 'grid', gridGap: '5px'}">
 			<ui-plain-radio
-				v-bind="args"
-				name="plain-radio"
-				value="value1"
+				v-for="item in 2"
+				:name="String(item)"
+				:key="item"
+				:value="String(item)"
 				v-model="modelValue"
 				:header="args.header"
 				:sub-header="args.subHeader"
-			/>
-			<ui-plain-radio
-				v-bind="args"
-				name="plain-radio"
-				value="value2"
-				v-model="modelValue"
-				:header="args.header"
-				:sub-header="args.subHeader"
-			/>
+				title="title"
+				:disabled="args.disabled"
+			>
+			</ui-plain-radio>
 		</div>
 	`,
 });
