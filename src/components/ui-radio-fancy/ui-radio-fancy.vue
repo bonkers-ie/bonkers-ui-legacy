@@ -13,6 +13,7 @@
 			:name="name"
 			:value="value"
 			class="peer group appearance-none absolute"
+			:disabled="disabled"
 		>
 		<div
 			class="
@@ -54,18 +55,39 @@
 				peer-focus:before:-left-xs
 				peer-focus:before:-right-xs
 			"
-			:class="disabled && 'pointer-events-none'"
+			:class="[disabled && 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
+				radioSize === ERadioSizes.DEFAULT && 'default',
+				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle']"
 		>
-			<ui-icon
-				:icon-name="iconName"
-				:size="ESize.MD"
-				class="mb-md group-checked:text-primary-500"
-				:class="value === modelValue && 'text-primary'"
-			/>
+			<div
+				v-if="radioSize === ERadioSizes.DEFAULT"
+			>
+				<ui-icon
+					:icon-name="iconName"
+					:size="ESize.MD"
+					class=" mb-md peer-checked:text-primary-500"
+					:class="[value === modelValue && 'text-primary',
+						disabled && 'text-secondary-alt-400',
+						disabled && value === modelValue && 'text-primary-300'
+					]"
+				/>
+			</div>
+			<div v-else-if="radioSize === ERadioSizes.MINIMAL">
+				<ui-icon
+					:icon-name="iconName"
+					:size="ESize.MD"
+					:class="[value === modelValue && 'text-primary',
+						disabled && 'text-secondary-alt-400',
+						disabled && value === modelValue && 'text-primary-300'
+					]"
+				/>
+
+			</div>
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
 				:weight="ETextWeight.SEMI_BOLD"
+				class="pt-xxs"
 			>
 				<slot />
 			</ui-typography>
@@ -76,15 +98,19 @@
 <script lang="ts" setup>
 	import { computed } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
-	import UiIcon, { type TIconName } from "../ui-icon";
+	import type { TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import { EColors } from "../../_types/colors";
+	import { ERadioSizes } from "./_typings";
+	import uiIcon from "../ui-icon";
+
 	const props = defineProps<{
 		modelValue: string;
 		name: string;
 		value: string | number;
 		iconName: TIconName;
 		disabled?: boolean;
+		radioSize?: ERadioSizes;
 	}>();
 	const emit = defineEmits(["update:modelValue"]);
 	const radioModel = computed({
