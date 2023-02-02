@@ -4,6 +4,7 @@
 		class="ui-typography"
 		:class="[
 			size === ETypographySizes.MD && 'text-md',
+			size === ETypographySizes.XXS && 'text-xxs',
 			size === ETypographySizes.XS && 'text-xs',
 			size === ETypographySizes.SM && 'text-sm',
 			size === ETypographySizes.LG && 'text-lg',
