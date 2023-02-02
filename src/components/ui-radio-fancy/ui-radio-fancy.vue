@@ -96,7 +96,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed } from "vue";
+	import { computed, withDefaults } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import type { TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
@@ -104,14 +104,16 @@
 	import { ERadioSizes } from "./_typings";
 	import uiIcon from "../ui-icon";
 
-	const props = defineProps<{
+	const props = withDefaults(defineProps<{
 		modelValue: string;
 		name: string;
 		value: string | number;
 		iconName: TIconName;
 		disabled?: boolean;
 		radioSize?: ERadioSizes;
-	}>();
+	}>(), {
+		radioSize: ERadioSizes.DEFAULT
+	});
 	const emit = defineEmits(["update:modelValue"]);
 	const radioModel = computed({
 		get() {
