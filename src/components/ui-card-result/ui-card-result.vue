@@ -1,8 +1,8 @@
 <template>
-	<div class="ui-card-result__wrapper">
+	<div class="ui-card-result">
 		<div
 			v-if="exclusiveText"
-			class="ui-card-result__exclusive bg-primary rounded-2xl px-sm pb-lg -mb-lg"
+			class="bg-primary rounded-2xl px-sm pb-lg -mb-lg"
 		>
 			<ui-typography
 				class="py-xs"
@@ -16,30 +16,29 @@
 			</ui-typography>
 		</div>
 
-		<div class="ui-card-result flex border border-secondary-alt rounded-2xl overflow-hidden">
-			<div
-				v-if="slots.sidebar"
-				class="ui-card-result__sidebar bg-secondary-alt-200 p-sm w-xl border-r border-secondary-alt flex items-center justify-center text-center"
-			>
-				<slot name="sidebar" />
-			</div>
-
+		<div class="flex border border-secondary-alt-400 rounded-2xl overflow-hidden">
 			<main class="p-sm bg-white w-full overflow-hidden">
-				<ui-typography
-					v-if="header"
-					class="mb-xs"
-					:size="ETypographySizes.SM"
-					:weight="ETextWeight.SEMI_BOLD"
-				>
-					{{ header }}
-				</ui-typography>
+				<div class="flex gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs mb-sm">
+					<ui-typography
+						v-if="header"
+						line-height
+						class="flex-1 truncate"
+						:size="ETypographySizes.SM"
+						:weight="ETextWeight.SEMI_BOLD"
+					>
+						{{ header }}
+					</ui-typography>
+
+					<slot name="sidebar" />
+				</div>
+
 				<slot />
 			</main>
 		</div>
 
 		<div
 			v-if="exclusiveTextBottom"
-			class="ui-card-result__exclusive_bottom bg-secondary rounded-2xl px-sm pt-lg -mt-lg"
+			class="bg-secondary rounded-2xl px-sm pt-lg -mt-lg"
 		>
 			<ui-typography
 				class="py-xs"
