@@ -1,14 +1,14 @@
 <template>
 	<label
 		class="ui-plain-radio relative mb-sm"
-		:for="value"
+		:for="name + value"
 	>
 
 		<input
-			:id="value"
+			:id="name + value"
 			v-model="radioModel"
 			:value="value"
-			name="name"
+			name="ui-plain-radio"
 			type="radio"
 			:disabled="disabled"
 			class="appearance-none absolute peer"
@@ -68,10 +68,7 @@
 				class="pointer-events-none"
 			/>
 
-			<span
-				class="
-				text-wrapper"
-			>
+			<span>
 				<ui-typography
 					:size="ETypographySizes.SM"
 					:kind="EColors.SECONDARY"
