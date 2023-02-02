@@ -38,7 +38,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	/*html*/`
 		<ui-card-result
 			v-bind="args"
-			header="Some header"
+			header="Some header Some header Some header Some header Some header Some header"
 			:exclusive-text="args.exclusiveText
 				? 'Only available on bonkers.ie'
 				: undefined"
@@ -47,7 +47,7 @@ const Template: Story<TComponentProps> = (args) => ({
 				: undefined"
 		>
 			<template #sidebar>
-				<ui-typography :size='ETypographySizes.XXS' line-height>
+				<ui-typography :size='ETypographySizes.XXS' line-height :style="{height: '64px', width: '64px', border: '1px solid black'}" class="flex items-center">
 					Special offer text
 				</ui-typography>
 			</template>
@@ -73,26 +73,26 @@ const Template: Story<TComponentProps> = (args) => ({
 					/>
 				</ul>
 
-				<ui-typography
-					:weight="ETextWeight.BOLD"
-					:size="ETypographySizes.LG"
-					:align="ETextAlign.RIGHT"
-					class="mb-xs"
-				>
-					€1004.63 p/m
-				</ui-typography>
+				<div :style="{display: 'grid', gridTemplateColumns: '1fr 1fr'}" class="items-center gap-sm">
+					<ui-typography
+						:weight="ETextWeight.BOLD"
+						:size="ETypographySizes.XXL"
+					>
+						€1004.63 p/m
+					</ui-typography>
 
-				<div class="flex gap-sm">
-					<ui-button :kind="EButtonTypes.SECONDARY_OVERLAY">
-						<template #prefix>
-							<ui-icon
-								:icon-name="['far', 'face-smile']"
-								:size="ESize.SM"
-							/>
-						</template>
-					</ui-button>
+					<div class="flex gap-sm">
+						<ui-button :kind="EButtonTypes.SECONDARY_OVERLAY">
+							<template #prefix>
+								<ui-icon
+									:icon-name="['far', 'face-smile']"
+									:size="ESize.SM"
+								/>
+							</template>
+						</ui-button>
 
-					<ui-button full-width>Some text</ui-button>
+						<ui-button full-width>Some text</ui-button>
+					</div>
 				</div>
 
 			</template>
