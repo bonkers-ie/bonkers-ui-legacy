@@ -16,22 +16,22 @@
 			</ui-typography>
 		</div>
 
-		<div class="flex border border-secondary-alt-400 rounded-2xl overflow-hidden">
-			<main class="p-sm bg-white w-full overflow-hidden">
-				<div class="flex gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs mb-sm">
-					<ui-typography
-						v-if="header"
-						line-height
-						class="flex-1 truncate"
-						:size="ETypographySizes.SM"
-						:weight="ETextWeight.SEMI_BOLD"
-					>
-						{{ header }}
-					</ui-typography>
+		<div class="grid border border-secondary-alt-400 rounded-2xl overflow-hidden bg-white">
+			<div class="flex gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs m-xs mb-sm">
+				<ui-typography
+					v-if="header"
+					line-height
+					class="flex-1 truncate"
+					:size="ETypographySizes.SM"
+					:weight="ETextWeight.SEMI_BOLD"
+				>
+					{{ header }}
+				</ui-typography>
 
-					<slot name="sidebar" />
-				</div>
+				<slot name="sidebar" />
+			</div>
 
+			<main class="p-sm w-full overflow-hidden bg-white">
 				<slot />
 			</main>
 		</div>

@@ -1,12 +1,14 @@
 <template>
 	<div class="ui-select">
-		<ui-typography
-			v-if="heading"
-			:weight="ETextWeight.SEMI_BOLD"
-			class="mb-sm"
-		>
-			{{ heading }}
-		</ui-typography>
+		<slot name="heading">
+			<ui-typography
+				v-if="heading"
+				:weight="ETextWeight.SEMI_BOLD"
+				class="mb-sm"
+			>
+				{{ heading }}
+			</ui-typography>
+		</slot>
 		<div
 			class="relative rounded-lg border bg-white border-secondary-alt-500 hover:border-secondary-alt-700"
 			:class="[disabled && 'pointer-events-none bg-secondary-alt-200 border-secondary-alt-300']"
@@ -18,17 +20,19 @@
 				<slot />
 			</select>
 
-			<div class="ui-select__icon-wrapper absolute right-sm">
+			<div class="absolute right-sm top-1/2 -translate-y-1/2">
 				<slot name="postfix-icon" />
 			</div>
 		</div>
-		<ui-typography
-			v-if="subLabel"
-			:size="ETypographySizes.SM"
-			class="mt-sm"
-		>
-			{{ subLabel }}
-		</ui-typography>
+		<slot name="subLabel">
+			<ui-typography
+				v-if="subLabel"
+				:size="ETypographySizes.SM"
+				class="mt-sm"
+			>
+				{{ subLabel }}
+			</ui-typography>
+		</slot>
 	</div>
 </template>
 
@@ -54,10 +58,3 @@
 		}
 	});
 </script>
-
-<style scoped>
-	.ui-select__icon-wrapper {
-		top: 50%;
-		transform: translateY(-50%);
-	}
-</style>

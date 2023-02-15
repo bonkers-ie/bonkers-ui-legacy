@@ -15,7 +15,7 @@
 		<slot name="icon">
 			<ui-icon
 				v-if="icon"
-				class="bg-white z-[1] mt-[0.2em]"
+				class="bg-white z-[1]"
 				:class="iconClass"
 				:icon-name="icon"
 				:size="ESize.SM"
@@ -26,7 +26,6 @@
 			<ui-typography
 				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
-				line-height
 			>
 				{{ title }}
 
