@@ -69,20 +69,25 @@
 			/>
 
 			<span>
-				<ui-typography
-					:size="ETypographySizes.SM"
-					:kind="EColors.SECONDARY"
-					:weight="ETextWeight.SEMI_BOLD"
-					line-height
-				>
-					{{ header }}
-				</ui-typography>
-				<ui-typography
-					:size="ETypographySizes.XS"
-					:kind="EColors.SECONDARY_ALT"
-				>
-					{{ subHeader }}
-				</ui-typography>
+				<slot name="header">
+					<ui-typography
+						:size="ETypographySizes.SM"
+						:kind="EColors.SECONDARY"
+						:weight="ETextWeight.SEMI_BOLD"
+						line-height
+					>
+						{{ header }}
+					</ui-typography>
+				</slot>
+
+				<slot name="subHeader">
+					<ui-typography
+						:size="ETypographySizes.XS"
+						:kind="EColors.SECONDARY_ALT"
+					>
+						{{ subHeader }}
+					</ui-typography>
+				</slot>
 			</span>
 		</div>
 	</label>
@@ -95,8 +100,8 @@
 
 	const props = defineProps<{
 		modelValue: string;
-		header: string;
-		subHeader: string;
+		header?: string;
+		subHeader?: string;
 		name: string;
 		value: string;
 		disabled?: boolean;

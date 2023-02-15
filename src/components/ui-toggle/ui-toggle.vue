@@ -2,12 +2,14 @@
 	<div
 		class="ui-toggle"
 	>
-		<ui-typography
-			:weight="ETextWeight.BOLD"
-			class="mb-sm"
-		>
-			{{ header }}
-		</ui-typography>
+		<slot name="header">
+			<ui-typography
+				:weight="ETextWeight.BOLD"
+				class="mb-sm"
+			>
+				{{ header }}
+			</ui-typography>
+		</slot>
 
 		<label
 			class="rounded-full cursor-pointer flex gap-sm"
@@ -49,11 +51,13 @@
 				</span>
 			</span>
 
-			<ui-typography
-				:size="ETypographySizes.SM"
-				class="w-full"
-				line-height
-			>{{ title }}</ui-typography>
+			<slot name="title">
+				<ui-typography
+					:size="ETypographySizes.SM"
+					class="w-full"
+					line-height
+				>{{ title }}</ui-typography>
+			</slot>
 		</label>
 	</div>
 </template>

@@ -13,8 +13,8 @@ export enum ETypographySizes {
 
 export enum ETextWeight {
 	LIGHT = "light", // 300
-	REGULAR = "regular", // 400
-	SEMI_BOLD = "semi_bold", // 600
+	REGULAR = "regular", // 500
+	SEMI_BOLD = "semi_bold", // 700
 	BOLD = "bold", // 900
 }
 

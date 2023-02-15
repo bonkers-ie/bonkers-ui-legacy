@@ -1,12 +1,14 @@
 <template>
 	<div class="ui-input">
-		<ui-typography
-			v-if="heading"
-			:weight="ETextWeight.BOLD"
-			class="mb-sm"
-		>
-			{{ heading }}
-		</ui-typography>
+		<slot name="header">
+			<ui-typography
+				v-if="heading"
+				:weight="ETextWeight.BOLD"
+				class="mb-sm"
+			>
+				{{ heading }}
+			</ui-typography>
+		</slot>
 		<label
 			class="ui-input__wrapper flex w-full rounded-lg border bg-white items-center p-sm gap-xs"
 			:class="[
@@ -33,13 +35,16 @@
 
 			<slot name="postfix-icon" />
 		</label>
-		<ui-typography
-			v-if="subLabel"
-			:size="ETypographySizes.SM"
-			class="mt-sm"
-		>
-			{{ subLabel }}
-		</ui-typography>
+
+		<slot name="subLabel">
+			<ui-typography
+				v-if="subLabel"
+				:size="ETypographySizes.SM"
+				class="mt-sm"
+			>
+				{{ subLabel }}
+			</ui-typography>
+		</slot>
 	</div>
 </template>
 
