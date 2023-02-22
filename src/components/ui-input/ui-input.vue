@@ -54,7 +54,7 @@
 
 	withDefaults(defineProps<{
 		placeholder?: string;
-		modelValue: string;
+		modelValue: string | number;
 		disabled?: boolean;
 		kind?: EInputKinds;
 		heading?: string;
