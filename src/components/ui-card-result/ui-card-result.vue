@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="grid border border-secondary-alt-400 rounded-2xl overflow-hidden bg-white">
-			<div class="flex gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs m-xs mb-sm">
+			<div class="ui-card-result__header grid gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs m-xs mb-sm">
 				<ui-typography
 					v-if="header"
 					line-height
@@ -67,3 +67,9 @@
 	}>();
 
 </script>
+
+<style scoped>
+	.ui-card-result__header {
+		grid-template-columns: 1fr auto;
+	}
+</style>
