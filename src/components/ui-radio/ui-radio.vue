@@ -16,7 +16,7 @@
 			:id="value"
 			v-model="radioModel"
 			type="radio"
-			:name="name"
+			:name="name.toString()"
 			:value="value"
 			:disabled="disabled"
 			class="appearance-none absolute peer"
@@ -64,8 +64,8 @@
 	import { EJustify } from "../../_types/align";
 	const slots = useSlots();
 	const props = defineProps<{
-		modelValue: string;
-		name: string;
+		modelValue: string | number | boolean;
+		name: string | number | boolean;
 		value: string;
 		justify?: EJustify;
 		invertOrder?: boolean;

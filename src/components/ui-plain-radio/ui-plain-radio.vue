@@ -62,7 +62,7 @@
 		>
 			<ui-radio
 				v-model="radioModel"
-				:value="value"
+				:value="value.toString()"
 				:name="name"
 				:disabled="disabled"
 				class="pointer-events-none"
@@ -99,11 +99,11 @@
 	import UiTypography, { ETypographySizes, EColors, ETextWeight } from "../ui-typography";
 
 	const props = defineProps<{
-		modelValue: string;
+		modelValue: string | number | boolean;
 		header?: string;
 		subHeader?: string;
 		name: string;
-		value: string;
+		value: string | number | boolean;
 		disabled?: boolean;
 	}>();
 

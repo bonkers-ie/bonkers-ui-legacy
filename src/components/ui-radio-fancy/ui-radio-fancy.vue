@@ -105,9 +105,9 @@
 	import uiIcon from "../ui-icon";
 
 	const props = withDefaults(defineProps<{
-		modelValue: string;
+		modelValue: string | number | boolean;
 		name: string;
-		value: string | number;
+		value: string | number | boolean;
 		iconName: TIconName;
 		disabled?: boolean;
 		radioSize?: ERadioSizes;
