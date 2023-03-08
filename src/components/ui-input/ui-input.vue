@@ -68,9 +68,9 @@
 	}>(), {
 		modelValue: "",
 		placeholder: "",
-		heading: "",
-		subLabel: "",
-		pattern: "",
+		heading: undefined,
+		subLabel: undefined,
+		pattern: undefined,
 		maxlength: undefined,
 		minlength: undefined,
 		type: EInputType.TEXT,
