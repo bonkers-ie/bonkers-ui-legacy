@@ -3,8 +3,10 @@
 	<li
 		class="ui-list-item grid grid-flow-col justify-start gap-xs relative group"
 		:class="[
-			size === EListItemSizes.DEFAULT && 'pb-md',
-			size === EListItemSizes.COMPACT && 'pb-xs'
+			size === EListItemSize.SM && 'text-sm',
+			size === EListItemSize.MD && 'text-md',
+			spacing === EListItemSpacing.DEFAULT && 'pb-sm',
+			spacing === EListItemSpacing.COMPACT && 'pb-xs'
 		]"
 	>
 		<div
@@ -16,7 +18,6 @@
 			<ui-icon
 				v-if="icon"
 				class="bg-white z-[1]"
-				:class="iconClass"
 				:icon-name="icon"
 				:size="ESize.SM"
 			/>
@@ -39,19 +40,19 @@
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import UiTypography, { ETextWeight } from "../ui-typography";
 	import { ESize } from "../../_types/sizing";
-	import { EListItemTypes, EListItemSizes } from "./_types";
+	import { EListItemTypes, EListItemSpacing, EListItemSize } from "./_types";
 
 	withDefaults(defineProps<{
 		icon?: TIconName
 		title?: string
 		kind?: EListItemTypes
-		size?: EListItemSizes
-		iconClass?: string
+		size?: EListItemSize
+		spacing?: EListItemSpacing
 	}>(), {
 		kind: EListItemTypes.DEFAULT,
-		size: EListItemSizes.COMPACT,
+		size: EListItemSize.SM,
+		spacing: EListItemSpacing.COMPACT,
 		title: "",
-		iconClass: "text-secondary-alt",
 		icon: undefined
 	});
 

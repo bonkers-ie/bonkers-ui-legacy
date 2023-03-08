@@ -23,7 +23,7 @@
 		/>
 
 		<div
-			class="ui-input-range__thumb bg-primary absolute border-8 border-white rounded-full box-content -translate-y-1/2 -translate-x-1/2 pointer-events-none"
+			class="ui-input-range__thumb bg-primary absolute border-white rounded-full box-content -translate-y-1/2 -translate-x-1/2 pointer-events-none"
 			:style="{left: getPercentage + '%'}"
 		/>
 	</div>
@@ -89,9 +89,9 @@
 <style scoped>
 	input[type="range"]::-webkit-slider-thumb {
 		appearance: none;
-		height: 8px;
-		width: 8px;
-		transform: scale(5);
+		height: 10px;
+		width: 10px;
+		transform: scale(4);
 		background-color: transparent;
 		border: 0;
 		box-shadow: none;
@@ -110,8 +110,9 @@
 
 	.ui-input-range__thumb {
 		top: 50%;
-		height: 13px;
-		width: 13px;
+		height: var(--xs);
+		width: var(--xs);
+		border-width: 12px;
 		box-shadow: 0 0 0 4px var(--color-primary);
 	}
 </style>

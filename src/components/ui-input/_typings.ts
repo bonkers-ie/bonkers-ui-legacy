@@ -1,6 +1,7 @@
 export enum EInputKinds {
-	PRIMARY = "primary",
-	ERROR = "error",
+	PRIMARY = "PRIMARY",
+	SECONDARY = "SECONDARY",
+	ERROR = "ERROR",
 }
 
 export enum EInputType {

@@ -21,7 +21,7 @@
 				<ui-typography
 					v-if="header"
 					line-height
-					class="flex-1 truncate"
+					class="flex-1 line-clamp"
 					:size="ETypographySizes.SM"
 					:weight="ETextWeight.SEMI_BOLD"
 				>
@@ -71,5 +71,12 @@
 <style scoped>
 	.ui-card-result__header {
 		grid-template-columns: 1fr auto;
+	}
+
+	.line-clamp {
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
 	}
 </style>

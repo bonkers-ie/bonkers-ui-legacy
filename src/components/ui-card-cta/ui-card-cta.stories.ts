@@ -1,8 +1,4 @@
 import UiCardCta from "../ui-card-cta";
-import UiIcon from "../ui-icon";
-import UiIconWrapper from "../ui-icon-wrapper";
-import { ESize } from "../../_types/sizing";
-import UiTypography from "../ui-typography";
 import type { Story } from "@storybook/vue3";
 
 export default {
@@ -29,18 +25,12 @@ export default {
 type TComponentProps = InstanceType<typeof UiCardCta>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiCardCta, UiIcon, UiTypography, UiIconWrapper },
+	components: { UiCardCta },
 	setup() {
-		return { args, ESize };
+		return { args };
 	},
 	template: /*html*/ `
-		<ui-card-cta v-bind="args">
-			<template #icon>
-				<ui-icon-wrapper>
-					<ui-icon :icon-name="['far', 'face-smile']" :size=ESize.MD />
-				</ui-icon-wrapper>
-			</template>
-
+		<ui-card-cta v-bind="args" :icon-name="['far', 'face-smile']">
 			<template #title>
 				Title
 			</template>

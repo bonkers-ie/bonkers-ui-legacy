@@ -1,6 +1,7 @@
 export enum EIconWrapperTypes {
-	PRIMARY = "primary",
-	SECONDARY = "secondary",
+	DEFAULT = "DEFAULT",
+	PRIMARY = "PRIMARY",
+	SECONDARY = "SECONDARY",
 }
 export enum EIconWrapperSizes {
 	DEFAULT = "default",

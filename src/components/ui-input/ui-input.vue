@@ -3,8 +3,8 @@
 		<slot name="header">
 			<ui-typography
 				v-if="heading"
-				:weight="ETextWeight.BOLD"
-				class="mb-sm"
+				class="mb-xs"
+				:size="ETypographySizes.MD"
 			>
 				{{ heading }}
 			</ui-typography>
@@ -12,7 +12,7 @@
 		<label
 			class="ui-input__wrapper flex w-full rounded-lg border bg-white items-center p-sm gap-xs"
 			:class="[
-				!kind && 'border-secondary-alt-500 hover:border-secondary-alt-700',
+				kind === EInputKinds.SECONDARY && 'border-secondary-alt-500 hover:border-secondary-alt-700',
 				kind === EInputKinds.PRIMARY && 'border-primary',
 				kind === EInputKinds.ERROR && 'border-error',
 
@@ -25,7 +25,7 @@
 				:value="modelValue"
 				:pattern="pattern"
 				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
-				:type="type || 'text'"
+				:type="type"
 				:placeholder="placeholder"
 				:maxlength="maxlength"
 				:minlength="minlength"
@@ -40,7 +40,8 @@
 			<ui-typography
 				v-if="subLabel"
 				:size="ETypographySizes.SM"
-				class="mt-sm"
+				:kind="EColors.SECONDARY_ALT"
+				class="mt-xs"
 			>
 				{{ subLabel }}
 			</ui-typography>
@@ -50,7 +51,7 @@
 
 <script lang="ts" setup>
 	import { EInputKinds, EInputType } from "./_typings";
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import UiTypography, { ETypographySizes, EColors } from "../ui-typography";
 
 	withDefaults(defineProps<{
 		placeholder?: string;
@@ -65,7 +66,16 @@
 		minlength?: string;
 		focusHandler?: (e:FocusEvent) => void;
 	}>(), {
-		modelValue: ""
+		modelValue: "",
+		placeholder: "",
+		heading: "",
+		subLabel: "",
+		pattern: "",
+		maxlength: undefined,
+		minlength: undefined,
+		type: EInputType.TEXT,
+		focusHandler: ()=>undefined,
+		kind: EInputKinds.SECONDARY
 	});
 
 	defineEmits(["update:modelValue"]);

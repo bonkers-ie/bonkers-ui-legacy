@@ -50,8 +50,7 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 		};
 	},
 	template: /*html*/`
-		<ui-input v-bind="args" v-model="valueModel" heading="heading" sub-label="subLabel" pattern="[\\d]{9}"
-		/>
+		<ui-input v-bind="args" v-model="valueModel" heading="Heading" sub-label="Sub Label" pattern="[\\d]{9}" />
 	`
 });
 
@@ -74,16 +73,18 @@ const TemplateAll: Story<MyComponentProps> = (args: MyComponentProps) => ({
 			gridGap: '12px'
 		}">
 			<ui-input v-bind="args" v-model="valueModel">
-				<template v-slot:prefix-icon> € </template>
+				<template v-slot:prefix-icon>
+					<span class="text-secondary-alt"> € </span>
+				</template>
 			</ui-input>
 			<ui-input v-bind="args" v-model="valueModel">
 				<template v-slot:prefix-icon>
-					<Icon :size="16" />
+					<Icon :size="16" class="text-secondary-alt" />
 				</template>
 			</ui-input>
 			<ui-input v-bind="args" v-model="valueModel">
 				<template v-slot:postfix-icon>
-					<Icon :size="16" />
+					<Icon :size="16"  class="text-secondary-alt" />
 				</template>
 			</ui-input>
 		</div>
