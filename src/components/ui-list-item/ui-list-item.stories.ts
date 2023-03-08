@@ -1,6 +1,6 @@
 import UiListItem from "./ui-list-item.vue";
 import type { Story } from "@storybook/vue3";
-import { EListItemSizes, EListItemTypes } from "./_types";
+import { EListItemSize, EListItemSpacing, EListItemTypes } from "./_types";
 
 export default {
 	title: "Components/ui-list-item",
@@ -13,8 +13,13 @@ export default {
 		},
 		size: {
 			control: { type: "select" },
-			options: Object.values(EListItemSizes),
+			options: Object.values(EListItemSize),
 			description: "The Element size"
+		},
+		spacing: {
+			control: { type: "select" },
+			options: Object.values(EListItemSpacing),
+			description: "The Element spacing"
 		},
 		title: {
 			control: { type: "text" },
@@ -28,7 +33,8 @@ export default {
 	args: {
 		title: "default text",
 		kind: EListItemTypes.DEFAULT,
-		size: EListItemSizes.COMPACT,
+		size: EListItemSize.SM,
+		spacing: EListItemSpacing.DEFAULT,
 		slot: "default slot"
 	},
 };

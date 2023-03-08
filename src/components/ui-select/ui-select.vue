@@ -3,8 +3,8 @@
 		<slot name="heading">
 			<ui-typography
 				v-if="heading"
-				:weight="ETextWeight.SEMI_BOLD"
-				class="mb-sm"
+				class="mb-xs"
+				:size="ETypographySizes.MD"
 			>
 				{{ heading }}
 			</ui-typography>
@@ -28,7 +28,8 @@
 			<ui-typography
 				v-if="subLabel"
 				:size="ETypographySizes.SM"
-				class="mt-sm"
+				:kind="EColors.SECONDARY_ALT"
+				class="mt-xs"
 			>
 				{{ subLabel }}
 			</ui-typography>
@@ -38,7 +39,7 @@
 
 <script lang="ts" setup>
 	import { computed } from "vue";
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import UiTypography, { ETypographySizes, EColors } from "../ui-typography";
 
 	const props = defineProps<{
 		modelValue: string;

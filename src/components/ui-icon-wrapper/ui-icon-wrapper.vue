@@ -1,9 +1,11 @@
 <template>
 	<div
-		class="icon-wrapper w-fit h-fit grid place-items-center relative rounded-3xl"
+		class="icon-wrapper w-fit h-fit grid place-items-center relative rounded-2xl"
 		:class="[
 			kind === EIconWrapperTypes.PRIMARY && 'text-white bg-primary',
 			kind === EIconWrapperTypes.SECONDARY && 'text-black bg-secondary-alt-200',
+			kind === EIconWrapperTypes.DEFAULT && 'text-primary bg-white border-2 border-primary ',
+
 			size === EIconWrapperSizes.DEFAULT && 'py-sm px-sm',
 			size === EIconWrapperSizes.SMALL && 'py-xs px-xs',
 			size === EIconWrapperSizes.MEDIUM && 'py-md px-md icon-wrapper_offset-md',
@@ -23,7 +25,7 @@
 	}
 
 	withDefaults(defineProps<TProps>(),{
-		kind: EIconWrapperTypes.PRIMARY,
+		kind: EIconWrapperTypes.DEFAULT,
 		size: EIconWrapperSizes.DEFAULT,
 	});
 
@@ -39,5 +41,4 @@
 		top: 8px;
 		right: 8px;
 	}
-
 </style>
