@@ -12,8 +12,6 @@
 		"jsx": "preserve",
 		"noImplicitThis": true,
 		"isolatedModules": true,
-		"preserveValueImports": true,
-		"importsNotUsedAsValues": "error",
 		"importHelpers": true,
 		"moduleResolution": "node",
 		"skipLibCheck": true,

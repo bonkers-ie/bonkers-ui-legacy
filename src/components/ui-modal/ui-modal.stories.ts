@@ -1,8 +1,7 @@
-import { ref } from "vue";
 import type { Story } from "@storybook/vue3";
 import UiModal from "./ui-modal.vue";
 import UiButton from "../ui-button";
-import UiBackdrop from "../ui-backdrop";
+import UiBackdrop from "./ui-backdrop";
 import UiIcon from "../ui-icon";
 import UiTypography from "../ui-typography";
 import { ESize } from "../../_types/sizing";
@@ -39,64 +38,31 @@ type TComponentProps = InstanceType<typeof UiModal>["$props"];
 const Template: Story<TComponentProps> = (args) => ({
 	components: { UiModal, UiBackdrop, UiButton, UiIcon, UiTypography },
 	setup() {
-		const isVisible = ref(false);
-
-		const showModal = () => {
-			isVisible.value = true;
-		};
-
-		const closeModal = () => {
-			isVisible.value = false;
-		};
-
-		return { args, showModal, closeModal, isVisible, ESize };
+		return { args, ESize };
 	},
 	template:/*html*/`
-			<transition
-				name="ui-modal"
-				mode="out-in"
-				appear
-				enter-active-class="transition delay-100"
-				enter-from-class="opacity-0 translate-y-1/4"
-				enter-to-class="opacity-100 translate-y-0"
-				leave-active-class="transition"
-				leave-to-class="opacity-0 translate-y-1/4"
-				leave-from-class="opacity-100 translate-y-0"
-			>
-				<ui-modal
-					v-if="isVisible"
+			<ui-modal
 					:title="args.title"
 					:modalSize="args.modalSize"
-					:closeModal="closeModal"
 				>
 					<template #icon>
 						<ui-icon class="text-primary"  :icon-name="['far', 'circle-check']" :size=ESize.XL  />
 					</template>
-					<template #title>
-						<ui-typography class="text-2xl font-bold">{{ args.title }}</ui-typography>
-					</template>
 
-					<template #default >
+					<template #default>
 						{{args.body}}
 					</template>
+
 					<template #footer>
 						<ui-button
 							fullWidth
-							@click="closeModal"
 						>
 							Ok
 						</ui-button>
-						</template>
-				</ui-modal>
-			</transition>
+					</template>
+			</ui-modal>
 
-			<ui-backdrop v-if="isVisible" />
-
-			<div class="absolute" style="top: calc(50vh - 2rem); left: calc(50vw - 4rem)">
-				<ui-button @click="showModal">
-					Toggle Modal
-				</ui-button>
-			</div>
+			<ui-backdrop />
 			`
 });
 

@@ -1,6 +1,5 @@
 <template>
 	<div
-		v-on-click-outside="closeModal"
 		class="
 				ui-modal
 				absolute
@@ -8,7 +7,6 @@
 				flex flex-col
 				items-center
 				z-10
-				opacity-0
 				inset-0
 				rounded-2xl
 				shadow-md
@@ -28,15 +26,19 @@
 		>
 			<slot name="icon" />
 		</div>
-		<ui-typography
-			v-if="title"
-			class="my-md"
-			:weight="ETextWeight.BOLD"
-			:align="ETextAlign.CENTER"
-			:size="ETypographySizes.LG"
-		>
-			{{ title }}
-		</ui-typography>
+
+		<slot name="title">
+			<ui-typography
+				v-if="title"
+				class="my-md"
+				:weight="ETextWeight.BOLD"
+				:align="ETextAlign.CENTER"
+				:size="ETypographySizes.LG"
+			>
+				{{ title }}
+			</ui-typography>
+		</slot>
+
 		<ui-typography
 			:weight="ETextWeight.REGULAR"
 			:align="ETextAlign.CENTER"
@@ -51,19 +53,19 @@
 		</div>
 	</div>
 </template>
+
 <script lang="ts" setup>
-	import { vOnClickOutside } from "@vueuse/components";
 	import { ETypographySizes } from "../ui-typography/";
 	import UiTypography, { ETextWeight, ETextAlign } from "../ui-typography";
 	import { EModalSizes } from "./_typings";
 
 	withDefaults(
 		defineProps<{
-			title: string;
+			title?: string;
 			modalSize?: EModalSizes;
-			closeModal: () => void;
 		}>(),
 		{
+			title: undefined,
 			modalSize: EModalSizes.SM,
 		}
 	);
