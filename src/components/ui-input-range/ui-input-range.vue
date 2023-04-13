@@ -4,7 +4,7 @@
 	>
 		<input
 			ref="track"
-			v-model="rangeModel"
+			v-model.number="rangeModel"
 			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
 			type="range"
 			:min="min"
@@ -33,14 +33,14 @@
 	import { computed, ref } from "vue";
 
 	const props = defineProps<{
-		modelValue: string | number;
+		modelValue: number;
 		min: string | number;
 		max: string | number;
 		step: string | number;
 	}>();
 
 	const emit = defineEmits<{
-		(e: "update:modelValue", state: string | number): void
+		(e: "update:modelValue", state: number): void
 	}>();
 
 	const rangeModel = computed({
