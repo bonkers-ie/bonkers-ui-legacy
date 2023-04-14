@@ -1,4 +1,5 @@
-import {app} from '@storybook/vue3';
+import { setup } from '@storybook/vue3'
+import { createRouter, createWebHashHistory } from 'vue-router'
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -13,12 +14,21 @@ library.add(faFaceSmile, faCircleCheck);
 
 import '../src/main.css';
 
-app.component('font-awesome-icon', FontAwesomeIcon)
+const router = createRouter({
+	history: createWebHashHistory(),
+	routes: [],
+})
+
+setup((app) => {
+	app.use(router)
+	app.component('font-awesome-icon', FontAwesomeIcon)
+})
+
 
 export const parameters = {
 	darkMode: false,
 	stylePreview: true,
-	actions: {argTypesRegex: "^on[A-Z].*"},
+	actions: { argTypesRegex: "^on[A-Z].*" },
 	backgrounds: {
 		default: "Bonkers",
 		values: [
