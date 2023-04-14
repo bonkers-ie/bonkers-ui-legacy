@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-alert flex gap-sm p-sm border rounded-lg"
+		class="ui-alert flex gap-sm p-sm border rounded-lg bg-white"
 		:class="[
 			(!kind || kind === EAlertTypes.PRIMARY) && 'border-primary',
 			kind === EAlertTypes.WARNING && 'border-warning',

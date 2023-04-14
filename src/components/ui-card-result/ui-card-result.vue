@@ -56,9 +56,6 @@
 <script lang="ts" setup>
 	import UiTypography, { ETypographySizes, ETextWeight, ETextAlign } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
-	import { useSlots } from "vue";
-
-	const slots = useSlots();
 
 	defineProps<{
 		header?: string;
