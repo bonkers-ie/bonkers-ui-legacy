@@ -1,0 +1,1 @@
+{"version":3,"file":"CONSTANTS-3fd880c0.js","sources":["../../src/CONSTANTS.ts"],"sourcesContent":["export const ICON_DEFAULT = [\"far\", \"face-smile\"];\n"],"names":["ICON_DEFAULT"],"mappings":"AAAa,MAAAA,EAAe,CAAC,MAAO,YAAY"}
