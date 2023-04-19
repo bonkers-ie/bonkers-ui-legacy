@@ -1,12 +1,12 @@
 <template>
 	<div
-		class="ui-badge rounded-full flex items-center content-center gap-xxs"
+		class="ui-badge rounded-full flex items-center content-center gap-xxs text-white"
 		:class="[
 			(!size || size === EBadgeSize.SMALL) && 'px-xs py-xxs',
-			(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-alt-300 text-primary-alt-700',
+			(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
 
-			kind === EBadgeKind.ERROR && 'bg-error-300 text-error-700',
-			kind === EBadgeKind.ACCENT && 'bg-accent-300 text-accent-700',
+			kind === EBadgeKind.ERROR && 'bg-error-600',
+			kind === EBadgeKind.ACCENT && 'bg-accent-600',
 
 			size === EBadgeSize.MEDIUM && 'px-xs py-xs',
 			size === EBadgeSize.LARGE && 'px-sm py-xs',
@@ -22,7 +22,7 @@
 		<ui-typography
 			v-if="slots.default"
 			:size="getBadgeSize"
-			:weight="ETextWeight.SEMI_BOLD"
+			:weight="ETextWeight.REGULAR"
 			class="whitespace-nowrap"
 			:class="[
 				elipsis && 'overflow-hidden overflow-ellipsis',

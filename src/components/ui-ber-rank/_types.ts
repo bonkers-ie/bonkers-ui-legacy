@@ -75,3 +75,8 @@ export const berRankDictionary = [
 ] as const;
 
 export const berRanksList = berRankDictionary.map(({ text }) => text);
+
+export enum EBerSize {
+	SMALL = "small",
+	MEDIUM = "medium",
+}

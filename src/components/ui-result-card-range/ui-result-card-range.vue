@@ -6,10 +6,10 @@
 			flex
 			flex-col
 			items-center
-			border
+			border-4
 			border-secondary-alt-300
 			bg-secondary-alt-200
-			rounded-2xl
+			rounded-3xl
 			text-secondary-500 p-md"
 	>
 		<ui-icon
@@ -18,16 +18,16 @@
 			:size="ESize.MD"
 			:icon-name="iconName"
 		/>
-		<ui-typography 
+		<ui-typography
 			v-if="title"
 			class="mb-xs"
 			:size="ETypographySizes.MD"
-			:weight="ETextWeight.BOLD"
+			:weight="ETextWeight.SEMI_BOLD"
 			:align="ETextAlign.CENTER"
 		>
 			{{ title }}
 		</ui-typography>
-		
+
 		<slot />
 	</div>
 </template>
