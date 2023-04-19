@@ -2,7 +2,11 @@
 	<div class="ui-ber-rank flex">
 		<div class="ui-ber-rank__icon-wrapper relative">
 			<svg
-				class="ui-ber-rank__icon text-secondary"
+				class="text-secondary"
+				:class="[
+					size === EBerSize.SMALL && 'ui-ber-rank__icon_small',
+					size === EBerSize.MEDIUM && 'ui-ber-rank__icon_medium',
+				]"
 				viewBox="0 0 160 60"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +20,7 @@
 			<ui-typography
 				:kind="EColors.WHITE"
 				:weight="ETextWeight.BOLD"
-				:size="ETypographySizes.XXXL"
+				:size="textSize"
 				:text-transform="ETextTransform.UPPERCASE"
 				class="absolute top-0 left-0 w-full h-full flex justify-center items-center"
 			>
@@ -27,7 +31,10 @@
 		<div class="ui-ber-rank__icon-wrapper relative">
 			<ui-typography :kind="berRankDictionary[+rank]?.color || berRankDictionary[0].color">
 				<svg
-					class="ui-ber-rank__icon"
+					:class="[
+						size === EBerSize.SMALL && 'ui-ber-rank__icon_small',
+						size === EBerSize.MEDIUM && 'ui-ber-rank__icon_medium',
+					]"
 					viewBox="0 0 106 60"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +50,7 @@
 			<ui-typography
 				:kind="EColors.WHITE"
 				:weight="ETextWeight.BOLD"
-				:size="ETypographySizes.XXXL"
+				:size="textSize"
 				:text-transform="ETextTransform.UPPERCASE"
 				class="absolute top-0 left-0 w-full h-full flex justify-center items-center"
 			>
@@ -54,17 +61,36 @@
 </template>
 
 <script lang="ts" setup>
+	import { computed } from "vue";
 	import UiTypography, { ETextWeight, ETypographySizes, ETextTransform } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
-	import { berRankDictionary, type TBerPropNumber, type TBerPropString }from"./_types";
+	import { berRankDictionary, type TBerPropNumber, type TBerPropString, EBerSize }from"./_types";
 
-	defineProps<{
+	const props = withDefaults(defineProps<{
 		rank: TBerPropNumber | TBerPropString | number; // from 0 to 15
-	}>();
+		size?: EBerSize
+	}>(), {
+		size: EBerSize.MEDIUM
+	});
+
+	const textSize = computed(()=>{
+		switch(props.size) {
+			case EBerSize.SMALL:
+				return ETypographySizes.SM;
+			case EBerSize.MEDIUM:
+				return ETypographySizes.XXXL;
+			default:
+				return ETypographySizes.XXXL;
+		}
+	});
 </script>
 
 <style>
-	.ui-ber-rank__icon {
+	.ui-ber-rank__icon_medium {
 		height: 60px;
+	}
+
+	.ui-ber-rank__icon_small {
+		height: 30px;
 	}
 </style>

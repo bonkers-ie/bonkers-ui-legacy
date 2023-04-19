@@ -6,7 +6,6 @@ import UiAlert from "../ui-alert";
 export default {
 	title: "Components/ui-alert",
 	component: UiAlert,
-	tags: ["autodocs"],
 
 	argTypes: {
 		kind: {

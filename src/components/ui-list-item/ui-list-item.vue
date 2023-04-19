@@ -23,16 +23,18 @@
 			/>
 		</slot>
 
-		<span>
+		<ui-typography
+			:weight="ETextWeight.LIGHT"
+			class="grid gap-sm"
+		>
 			<ui-typography
 				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
 			>
 				{{ title }}
-
 			</ui-typography>
 			<slot />
-		</span>
+		</ui-typography>
 	</li>
 </template>
 
