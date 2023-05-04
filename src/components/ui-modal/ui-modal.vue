@@ -2,10 +2,9 @@
 	<div
 		class="
 				ui-modal
-				absolute
-				m-auto
 				flex flex-col
 				items-center
+				w-full
 				z-10
 				inset-0
 				rounded-2xl
@@ -22,6 +21,7 @@
 		]"
 	>
 		<div
+			v-if="$slots.icon"
 			class="mt-md mb-sm"
 		>
 			<slot name="icon" />
@@ -40,15 +40,20 @@
 		</slot>
 
 		<ui-typography
+			is="div"
+			v-if="$slots.default"
 			:weight="ETextWeight.REGULAR"
 			:align="ETextAlign.CENTER"
 			line-height
-			class="text-secondary mb-md"
+			class="w-full text-secondary mb-md overflow-y-auto"
 		>
 			<slot />
 		</ui-typography>
 
-		<div class="w-full mt-auto">
+		<div
+			v-if="$slots.footer"
+			class="w-full mt-auto"
+		>
 			<slot name="footer" />
 		</div>
 	</div>

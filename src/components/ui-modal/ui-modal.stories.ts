@@ -42,6 +42,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	},
 	template:/*html*/`
 			<ui-modal
+					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
 					:title="args.title"
 					:modalSize="args.modalSize"
 				>
