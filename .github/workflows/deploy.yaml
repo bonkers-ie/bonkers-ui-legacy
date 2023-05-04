@@ -22,7 +22,10 @@ jobs:
       - run: yarn lint:script
       - run: yarn lint:style
       - run: yarn test
-      - uses: mikeal/merge-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_SECRET_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+    #   - uses: mikeal/merge-release@master
+    #     env:
+    #       GITHUB_TOKEN: ${{ secrets.PERSONAL_SECRET_TOKEN }}
+    #       NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
