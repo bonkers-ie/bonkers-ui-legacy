@@ -30,7 +30,7 @@
 				:maxlength="maxlength"
 				:minlength="minlength"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
-				@focus="focusHandler"
+				@focus="focusHandler as any"
 			>
 
 			<slot name="postfix-icon" />
