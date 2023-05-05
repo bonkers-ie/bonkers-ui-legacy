@@ -3,6 +3,7 @@
 		<div
 			v-if="exclusiveText"
 			class="bg-primary rounded-2xl px-sm pb-lg -mb-lg"
+			@click="exclusiveClickAction"
 		>
 			<ui-typography
 				class="py-xs"
@@ -39,6 +40,7 @@
 		<div
 			v-if="exclusiveTextBottom"
 			class="bg-secondary rounded-2xl px-sm pt-lg -mt-lg"
+			@click="exclusiveBottomClickAction"
 		>
 			<ui-typography
 				class="py-xs"
@@ -61,6 +63,8 @@
 		header?: string;
 		exclusiveText?: string;
 		exclusiveTextBottom?: string;
+		exclusiveClickAction?: () => void;
+		exclusiveBottomClickAction?: () => void;
 	}>();
 
 </script>
