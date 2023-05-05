@@ -1,16 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { exec, execSync } = require("child_process");
-// const bent = require("bent");
-// const git = require("simple-git")();
-// const { promisify } = require("util");
+const { execSync } = require("child_process");
 
 const DIR_VARIABLE = path.join(process.cwd(), "./");
 const VERSION_TO_UPDATE = "patch";
-
-// const getlog = promisify(git.log.bind(git));
-
-// const get = bent("json", "https://registry.npmjs.org/");
 
 const setVersionToJson = version => {
 	const json = JSON.parse(fs.readFileSync(path.join(DIR_VARIABLE, "package.json"), "utf8"));
@@ -35,12 +28,14 @@ const run = async () => {
 
 	console.log("new version:", newVersion);
 
-	exec(`npm publish --verbose`, DIR_VARIABLE);
-	exec(`git checkout package.json`);
+	execSync(`npm config set _authToken=${process.env.NPM_AUTH_TOKEN}`);
+	execSync(`npm publish --verbose`, DIR_VARIABLE);
+	execSync(`git checkout package.json`);
 
-	exec(`git tag ${newVersion}`);
+	execSync(`git tag ${newVersion}`);
 
-	exec("git push --tags");
+	execSync("git push --tags");
+
 };
 
 try{
