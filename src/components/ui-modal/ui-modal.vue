@@ -12,12 +12,13 @@
 				p-md
 				bg-white
 				overflow-y-scroll
+				max-height
 			"
 		:class="[
-			modalSize === EModalSizes.SM &&'h-fit max-h-[24rem] max-w-[24rem]',
-			modalSize === EModalSizes.MD &&'h-fit max-h-[32rem] max-w-[32rem]',
-			modalSize === EModalSizes.LG &&'h-fit max-h-[40rem] max-w-[40rem]',
-			modalSize === EModalSizes.RESPONSIVE && 'h-5/6 w-11/12',
+			modalSize === EModalSizes.SM &&'h-fit max-w-[24rem]',
+			modalSize === EModalSizes.MD &&'h-fit max-w-[32rem]',
+			modalSize === EModalSizes.LG &&'h-fit max-w-[40rem]',
+			modalSize === EModalSizes.RESPONSIVE && 'max-width h-full',
 		]"
 	>
 		<div
@@ -76,3 +77,13 @@
 	);
 
 </script>
+
+<style scoped>
+	.max-height{
+		max-height: calc(100vh - var(--md));
+	}
+
+	.max-width{
+		max-width: calc(100vw - var(--md));
+	}
+</style>
