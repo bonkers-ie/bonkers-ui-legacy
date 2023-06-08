@@ -1,35 +1,52 @@
 <template>
 	<div
-		class="ui-badge rounded-full flex items-center content-center gap-xxs text-white"
+		class="ui-badge relative text-white"
 		:class="[
-			(!size || size === EBadgeSize.SMALL) && 'px-xs py-xxs',
-			(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
-
-			kind === EBadgeKind.ERROR && 'bg-error-600',
-			kind === EBadgeKind.ACCENT && 'bg-accent-600',
-
-			size === EBadgeSize.MEDIUM && 'px-xs py-xs',
-			size === EBadgeSize.LARGE && 'px-sm py-xs',
-			elipsis && 'max-w-full',
+			more && 'mr-sm',
 		]"
 	>
-		<ui-icon
-			v-if="icon"
-			:size="ESize.SM"
-			:icon-name="icon"
+		<div class="relative z-[1] flex items-center content-center gap-xxs px-xs py-xxs">
+			<ui-icon
+				v-if="icon"
+				:size="ESize.SM"
+				:icon-name="icon"
+			/>
+
+			<ui-typography
+				v-if="slots.default"
+				:size="getBadgeSize"
+				:weight="ETextWeight.SEMI_BOLD"
+				class="whitespace-nowrap"
+				line-height
+				:class="[
+					elipsis && 'overflow-hidden overflow-ellipsis',
+				]"
+			>
+				<slot />
+			</ui-typography>
+		</div>
+
+		<div
+			v-if="more"
+			class="absolute top-0 left-[15px] w-full h-full bg-primary-300 rounded-full border border-white"
 		/>
 
-		<ui-typography
-			v-if="slots.default"
-			:size="getBadgeSize"
-			:weight="ETextWeight.REGULAR"
-			class="whitespace-nowrap"
+		<div
+			v-if="more"
+			class="absolute top-0 left-xs w-full h-full bg-primary-400 rounded-full border border-white"
+		/>
+
+		<div
+			class="absolute rounded-full top-0 left-0 w-full h-full"
 			:class="[
-				elipsis && 'overflow-hidden overflow-ellipsis',
+				(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
+
+				kind === EBadgeKind.ERROR && 'bg-error-600',
+				kind === EBadgeKind.ACCENT && 'bg-accent-600',
+				elipsis && 'max-w-full',
+				more && 'border border-white',
 			]"
-		>
-			<slot />
-		</ui-typography>
+		/>
 	</div>
 </template>
 
@@ -45,6 +62,7 @@
 		kind?: EBadgeKind;
 		icon?: TIconName;
 		elipsis?: boolean;
+		more?: boolean;
 	}>();
 
 	const slots = useSlots();
