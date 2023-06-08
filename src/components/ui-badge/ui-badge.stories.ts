@@ -15,12 +15,17 @@ export default {
 			control: { type: "select" },
 			options: Object.values(EBadgeSize),
 			description: "The Element size",
+		},
+		more: {
+			control: { type: "boolean" },
+			description: "The Element more",
 		}
 	},
 	args: {
 		slot: "default text",
 		kind: EBadgeKind.PRIMARY,
 		size: EBadgeSize.SMALL,
+		more: false,
 	},
 };
 
@@ -31,7 +36,7 @@ const Template: Story<TComponentProps> = (args) => ({
 	setup() {
 		return { args };
 	},
-	template: `
+	template: /*html*/`
 		<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
 			{{ args.slot }}
 		</ui-badge>

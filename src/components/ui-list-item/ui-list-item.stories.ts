@@ -46,9 +46,9 @@ export const Default = (args) => ({
 	},
 	template:/*html*/`
 			<ul>
-				<ui-list-item v-bind="args" :icon="ICON_DEFAULT" title="title only" />
+				<ui-list-item v-bind="args" :icon="ICON_DEFAULT" title="title only" icon-class="text-secondary-alt" />
 
-				<ui-list-item :icon="ICON_DEFAULT" :spacing="args.spacing">
+				<ui-list-item :icon="ICON_DEFAULT" :kind="args.kind" :spacing="args.spacing">
 					text only
 				</ui-list-item>
 
@@ -56,7 +56,7 @@ export const Default = (args) => ({
 					{{ args.title }}
 				</ui-list-item>
 
-				<ui-list-item v-bind="args" :icon="ICON_DEFAULT" />
+				<ui-list-item v-bind="args" icon-class="text-secondary-alt" :icon="ICON_DEFAULT" />
 			</ul>
 	`,
 });

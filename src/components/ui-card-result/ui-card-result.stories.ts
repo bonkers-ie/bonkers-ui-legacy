@@ -1,3 +1,4 @@
+import { EColors } from "./../../_types/colors";
 import UiCardResult from "./ui-card-result.vue";
 import UiTypography, { ETypographySizes, ETextWeight, ETextAlign } from "../ui-typography";
 import UiBadge from "../ui-badge";
@@ -32,7 +33,7 @@ type TComponentProps = InstanceType<typeof UiCardResult>["$props"];
 const Template: Story<TComponentProps> = (args) => ({
 	components: { UiCardResult, UiTypography, UiBadge, UiListItem, UiButton, UiIcon },
 	setup() {
-		return { args, ETypographySizes, ETextWeight, ETextAlign, EButtonTypes, ESize };
+		return { args, ETypographySizes, ETextWeight, ETextAlign, EButtonTypes, ESize, EColors };
 	},
 	template:
 	/*html*/`
@@ -47,54 +48,97 @@ const Template: Story<TComponentProps> = (args) => ({
 				: undefined"
 		>
 			<template #sidebar>
-				<ui-typography :size='ETypographySizes.XXS' line-height :style="{height: '64px', width: '64px', border: '1px solid black'}" class="flex items-center">
-					Special offer text
-				</ui-typography>
+				<div class="flex gap-sm">
+					<ui-typography :size='ETypographySizes.XXS' line-height :style="{height: '64px', width: '64px', border: '1px solid black'}" class="flex items-center p-sm text-center">
+						Special offer text
+					</ui-typography>
+
+					<ui-typography :size='ETypographySizes.XXS' line-height :style="{height: '64px', width: '64px', border: '1px solid black'}" class="flex items-center p-sm text-center">
+						Special offer text
+					</ui-typography>
+				</div>
 			</template>
 
 			<template #default>
-				<div class="flex flex-wrap gap-xs mb-xs">
+				<div class="flex flex-wrap gap-xs mb-sm">
 					<ui-badge
-						v-for="item in ['10% annual overpayment allowance', 'Flexibility built in', 'Flexibility built in!', 'Flexibility built inas', 'lorem5 aslijdhsdoi ashjd oiahsjdoi ']"
+						v-for="item in ['Free bank tranfers']"
 						:icon="['far', 'face-smile']"
 						:key="item"
 					>
 						{{ item }}
 					</ui-badge>
+
+					<ui-badge
+						:icon="['far', 'face-smile']"
+						more
+					>
+						more...
+					</ui-badge>
+
+					<div
+						class="flex gap-xs items-center justify-center"
+						:style="{marginLeft: 'auto'}"
+					>
+						<ui-icon
+							class="text-primary"
+							:size="ESize.SM"
+							:icon-name="['far', 'face-smile']"
+						/>
+
+						<ui-icon
+							class="text-primary"
+							:size="ESize.SM"
+							:icon-name="['far', 'face-smile']"
+						/>
+
+						<ui-icon
+							class="text-secondary-alt-300"
+							:size="ESize.SM"
+							:icon-name="['far', 'face-smile']"
+						/>
+					</div>
 				</div>
 
 				<ul>
 					<ui-list-item
-						v-for="item in 5"
-						class="mb-xs"
+						v-for="item in 4"
+						class="mb-xxs items-center"
 						:key="item"
 						:icon="['far', 'face-smile']"
-						:title="'Feature item ' + item"
-					/>
+						icon-class="text-secondary-alt"
+					>
+						<p>
+							<ui-typography is="span" :weight="ETextWeight.BOLD">
+								{{item}}
+							</ui-typography>
+
+							<span> Feature item</span>
+						</p>
+					</ui-list-item>
 				</ul>
+
+				<ui-typography class="mb-sm" underline :size="ETypographySizes.SM" :kind="EColors.SECONDARY">
+					Some link
+				</ui-typography>
 
 				<div :style="{display: 'grid', gridTemplateColumns: '1fr 1fr'}" class="items-center gap-sm">
 					<ui-typography
 						:weight="ETextWeight.BOLD"
-						:size="ETypographySizes.XXL"
+						:size="ETypographySizes.XL"
+						:kind="EColors.SECONDARY"
 					>
-						€1004.63 p/m
+						<p class="mb-xxs">€1004.63</p>
+						<ui-typography
+							:size="ETypographySizes.XS"
+							:kind="EColors.SECONDARY_400"
+						>
+							Monthly fee
+						</ui-typography>
 					</ui-typography>
 
-					<div class="flex gap-sm">
-						<ui-button :kind="EButtonTypes.SECONDARY_OVERLAY">
-							<template #prefix>
-								<ui-icon
-									:icon-name="['far', 'face-smile']"
-									:size="ESize.SM"
-								/>
-							</template>
-						</ui-button>
-
-						<ui-button full-width>Some text</ui-button>
-					</div>
+					<ui-button full-width>Some text</ui-button>
 				</div>
-
 			</template>
 		</ui-card-result>
 

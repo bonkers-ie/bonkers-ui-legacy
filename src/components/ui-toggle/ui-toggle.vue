@@ -5,6 +5,7 @@
 		<slot name="header">
 			<ui-typography
 				:weight="ETextWeight.BOLD"
+				line-height
 				class="mb-sm"
 			>
 				{{ header }}
@@ -56,7 +57,9 @@
 					:size="ETypographySizes.SM"
 					class="w-full"
 					line-height
-				>{{ title }}</ui-typography>
+				>
+					{{ title }}
+				</ui-typography>
 			</slot>
 		</label>
 	</div>

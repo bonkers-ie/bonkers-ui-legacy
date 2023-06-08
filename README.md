@@ -1,4 +1,5 @@
 # Vue 3 + TypeScript + Vite
+## [LINK](https://bonkers-ie.github.io/bonkers-ui/?path=/docs/example-introduction--docs)
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
@@ -28,7 +29,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - After you ready to push just `merge`(not `rebase`) develop to current branch 
 - Fix merge conflicts if you have
 - Next create pull request to develop (you can do squash when merging)
-- After pull request is merged to develop you can see it in staging [https://bonkers-ie.github.io/bonkers-ui](https://bonkers-ie.github.io/bonkers-ui/?path=/story/example-introduction--page)
+- After pull request is merged to develop you can see it in staging [https://bonkers-ie.github.io/bonkers-ui](https://bonkers-ie.github.io/bonkers-ui/?path=/docs/example-introduction--docs)
 - Only after test staging you can create merge request from `develop` to `master`
 - After merge to master patch version will up x.x.^x and you can use this version in package
 

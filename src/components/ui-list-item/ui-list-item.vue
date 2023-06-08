@@ -1,7 +1,7 @@
 
 <template>
 	<li
-		class="ui-list-item grid grid-flow-col justify-start gap-xs relative group"
+		class="ui-list-item grid grid-flow-col justify-start gap-xs relative group text-secondary"
 		:class="[
 			size === EListItemSize.SM && 'text-sm',
 			size === EListItemSize.MD && 'text-md',
@@ -17,24 +17,29 @@
 		<slot name="icon">
 			<ui-icon
 				v-if="icon"
-				class="bg-white z-[1]"
+				class="bg-white"
+				:class="iconClass"
 				:icon-name="icon"
 				:size="ESize.SM"
 			/>
 		</slot>
 
-		<ui-typography
-			:weight="ETextWeight.LIGHT"
-			class="grid gap-sm"
-		>
+		<div>
 			<ui-typography
 				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
 			>
 				{{ title }}
 			</ui-typography>
-			<slot />
-		</ui-typography>
+
+			<ui-typography
+				v-if="$slots.default"
+				:class="[title && 'mt-xxs']"
+				:weight="ETextWeight.LIGHT"
+			>
+				<slot />
+			</ui-typography>
+		</div>
 	</li>
 </template>
 
@@ -50,12 +55,14 @@
 		kind?: EListItemTypes
 		size?: EListItemSize
 		spacing?: EListItemSpacing
+		iconClass?: string
 	}>(), {
 		kind: EListItemTypes.DEFAULT,
 		size: EListItemSize.SM,
 		spacing: EListItemSpacing.COMPACT,
 		title: "",
-		icon: undefined
+		icon: undefined,
+		iconClass: "",
 	});
 
 </script>

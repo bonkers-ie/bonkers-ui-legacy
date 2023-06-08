@@ -13,12 +13,13 @@
 				bg-white
 				overflow-y-scroll
 				max-height
+				max-width
 			"
 		:class="[
 			modalSize === EModalSizes.SM &&'h-fit max-w-[24rem]',
 			modalSize === EModalSizes.MD &&'h-fit max-w-[32rem]',
 			modalSize === EModalSizes.LG &&'h-fit max-w-[40rem]',
-			modalSize === EModalSizes.RESPONSIVE && 'max-width h-full',
+			modalSize === EModalSizes.RESPONSIVE && 'h-full',
 		]"
 	>
 		<div

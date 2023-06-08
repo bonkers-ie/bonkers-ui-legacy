@@ -22,6 +22,7 @@
 			<slot name="prefix-icon" />
 
 			<input
+				:autocomplete="autocomplete"
 				:value="modelValue"
 				:pattern="pattern"
 				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
@@ -39,6 +40,7 @@
 		<slot name="subLabel">
 			<ui-typography
 				v-if="subLabel"
+				line-height
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY_ALT"
 				class="mt-xs"
@@ -65,9 +67,11 @@
 		maxlength?: string;
 		minlength?: string;
 		focusHandler?: (e:FocusEvent) => void;
+		autocomplete?: string;
 	}>(), {
 		modelValue: "",
 		placeholder: "",
+		autocomplete: "off",
 		heading: undefined,
 		subLabel: undefined,
 		pattern: undefined,

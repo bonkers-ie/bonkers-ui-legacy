@@ -96,7 +96,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed, withDefaults } from "vue";
+	import { computed } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import type { TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
