@@ -35,8 +35,10 @@ const Template: Story<TComponentProps> = (args) => ({
 
 		return { args, modelValue };
 	},
-	template: `
-		<ui-input-range v-bind="args" v-model:modelValue="modelValue"/>
+	template: /*html*/`
+		<div :style="{border: '1px solid'}">
+			<ui-input-range v-bind="args" v-model:modelValue="modelValue"/>
+		</div>
 		<div>{{ modelValue }}</div>
 	`,
 });

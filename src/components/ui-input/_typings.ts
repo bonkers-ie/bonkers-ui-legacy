@@ -9,5 +9,6 @@ export enum EInputType {
 	NUMBER = "number",
 	TEL = "tel",
 	PASSWORD = "password",
-	EMAIL = "email"
+	EMAIL = "email",
+	DATE = "date",
 }

@@ -1,9 +1,8 @@
 <template>
 	<div
-		class="ui-input-range relative h-lg mx-xs py-xs box-content"
+		class="ui-input-range relative h-lg py-xs box-content"
 	>
 		<input
-			ref="track"
 			v-model.number="rangeModel"
 			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
 			type="range"
@@ -12,11 +11,13 @@
 			:step="step"
 			@touchmove="moveHandler"
 		>
+
 		<div
-			class="ui-input-range__line h-xs w-full bg-secondary-alt rounded absolute left-0 -z-10 -translate-y-1/2"
+			class="h-xs w-full bg-secondary-alt rounded absolute top-1/2 left-0 -translate-y-1/2 pointer-events-none"
 		/>
+
 		<div
-			class="ui-input-range__line h-xs bg-primary rounded absolute left-0 -z-10 -translate-y-1/2"
+			class="h-xs bg-primary rounded absolute top-1/2 left-0 -translate-y-1/2 pointer-events-none"
 			:style="{
 				width: getPercentage + '%',
 			}"
@@ -114,10 +115,6 @@
 		background-color: transparent;
 		border: 0;
 		box-shadow: none;
-	}
-
-	.ui-input-range__line {
-		top: 50%;
 	}
 
 	.ui-input-range__thumb {
