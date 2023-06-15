@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-badge relative text-white"
+		class="ui-badge relative text-white overflow-hidden"
 		:class="[
 			more && 'mr-sm',
 		]"
@@ -8,7 +8,7 @@
 		<div class="relative z-[1] flex items-center content-center gap-xxs px-xs py-xxs">
 			<ui-icon
 				v-if="icon"
-				:size="ESize.SM"
+				:size="ESize.XS"
 				:icon-name="icon"
 			/>
 
