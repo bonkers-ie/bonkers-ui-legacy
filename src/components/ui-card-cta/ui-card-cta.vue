@@ -28,8 +28,8 @@
 					<ui-icon
 						v-if="iconName"
 						:icon-name="iconName"
-						:size="ESize.MD"
-						class="text-secondary-700"
+						:size="ESize.SM"
+						class="text-secondary-400"
 					/>
 				</ui-icon-wrapper>
 			</slot>
@@ -39,8 +39,7 @@
 				:class="invertOrder && 'order-first'"
 			>
 				<ui-typography
-					:kind="EColors.SECONDARY"
-					:weight="ETextWeight.SEMI_BOLD"
+					:kind="EColors.SECONDARY_400"
 					class="mb-xxs"
 					line-height
 				>
@@ -63,7 +62,7 @@
 	import UiTypography from "../ui-typography";
 	import UiIcon from "../ui-icon";
 	import UiIconWrapper from "../ui-icon-wrapper";
-	import { ETypographySizes, ETextWeight } from "../ui-typography";
+	import { ETypographySizes } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
 	import type { TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
