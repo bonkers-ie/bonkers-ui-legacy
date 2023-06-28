@@ -4,7 +4,6 @@
 	>
 		<slot name="header">
 			<ui-typography
-				:weight="ETextWeight.BOLD"
 				line-height
 				class="mb-sm"
 			>

@@ -86,7 +86,6 @@
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
-				:weight="ETextWeight.SEMI_BOLD"
 				class="pt-xxs"
 			>
 				<slot />

@@ -42,7 +42,7 @@
 	import UiTypography, { ETypographySizes, EColors } from "../ui-typography";
 
 	const props = defineProps<{
-		modelValue: string;
+		modelValue: string | number;
 		heading?: string;
 		subLabel?: string;
 		disabled?: boolean;

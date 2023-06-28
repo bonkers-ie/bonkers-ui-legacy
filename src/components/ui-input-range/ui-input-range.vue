@@ -3,6 +3,7 @@
 		class="ui-input-range relative h-lg py-xs box-content"
 	>
 		<input
+			ref="track"
 			v-model.number="rangeModel"
 			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
 			type="range"
@@ -43,7 +44,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed, ref } from "vue";
+	import { computed, ref, watch } from "vue";
 
 	const props = defineProps<{
 		modelValue: number;
@@ -62,6 +63,14 @@
 		},
 		set(value) {
 			emit("update:modelValue", value);
+		}
+	});
+
+	watch(()=>[props.min, props.max], () => {
+		if(rangeModel.value < +props.min){
+			rangeModel.value = +props.min;
+		}else if(rangeModel.value > +props.max){
+			rangeModel.value = +props.max;
 		}
 	});
 
@@ -94,7 +103,11 @@
 	};
 
 	const moveHandler = (e: MouseEvent | TouchEvent) => {
-		rangeModel.value = parseMouseMove(e) || 0;
+		const newValue = parseMouseMove(e);
+
+		if(newValue){
+			rangeModel.value = newValue;
+		}
 	};
 
 </script>

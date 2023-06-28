@@ -1,9 +1,6 @@
 <template>
 	<div
 		class="ui-badge relative text-white overflow-hidden"
-		:class="[
-			more && 'mr-sm',
-		]"
 	>
 		<div class="relative z-[1] flex items-center content-center gap-xxs px-xs py-xxs">
 			<ui-icon
@@ -27,16 +24,6 @@
 		</div>
 
 		<div
-			v-if="more"
-			class="absolute top-0 left-[15px] w-full h-full bg-primary-300 rounded-full border border-white"
-		/>
-
-		<div
-			v-if="more"
-			class="absolute top-0 left-xs w-full h-full bg-primary-400 rounded-full border border-white"
-		/>
-
-		<div
 			class="absolute rounded-full top-0 left-0 w-full h-full"
 			:class="[
 				(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
@@ -44,7 +31,6 @@
 				kind === EBadgeKind.ERROR && 'bg-error-600',
 				kind === EBadgeKind.ACCENT && 'bg-accent-600',
 				elipsis && 'max-w-full',
-				more && 'border border-white',
 			]"
 		/>
 	</div>
@@ -62,7 +48,6 @@
 		kind?: EBadgeKind;
 		icon?: TIconName;
 		elipsis?: boolean;
-		more?: boolean;
 	}>();
 
 	const slots = useSlots();

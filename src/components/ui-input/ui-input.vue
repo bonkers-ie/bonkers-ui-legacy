@@ -22,7 +22,7 @@
 			<slot name="prefix-icon" />
 
 			<input
-				:autocomplete="autocomplete"
+				:autocomplete="getAutoComplete()"
 				:value="modelValue"
 				:pattern="pattern"
 				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
@@ -55,7 +55,7 @@
 	import { EInputKinds, EInputType } from "./_typings";
 	import UiTypography, { ETypographySizes, EColors } from "../ui-typography";
 
-	withDefaults(defineProps<{
+	const props = withDefaults(defineProps<{
 		placeholder?: string;
 		modelValue: string | number;
 		disabled?: boolean;
@@ -71,7 +71,7 @@
 	}>(), {
 		modelValue: "",
 		placeholder: "",
-		autocomplete: "off",
+		autocomplete: "",
 		heading: undefined,
 		subLabel: undefined,
 		pattern: undefined,
@@ -83,5 +83,14 @@
 	});
 
 	defineEmits(["update:modelValue"]);
+
+	const getAutoComplete =()=> {
+		if(props.autocomplete !== "") return props.autocomplete;
+		switch(props.type) {
+			case EInputType.PASSWORD: return "current-password";
+			case EInputType.EMAIL: return "email";
+			default: return "off";
+		}
+	};
 
 </script>

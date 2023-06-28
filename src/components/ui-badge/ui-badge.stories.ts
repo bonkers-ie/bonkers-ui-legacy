@@ -16,16 +16,11 @@ export default {
 			options: Object.values(EBadgeSize),
 			description: "The Element size",
 		},
-		more: {
-			control: { type: "boolean" },
-			description: "The Element more",
-		}
 	},
 	args: {
 		slot: "default text",
 		kind: EBadgeKind.PRIMARY,
 		size: EBadgeSize.SMALL,
-		more: false,
 	},
 };
 

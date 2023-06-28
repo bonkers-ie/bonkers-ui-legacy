@@ -60,6 +60,29 @@ const Template: Story<TComponentProps> = (args) => ({
 			</template>
 
 			<template #default>
+
+				<div
+					class="flex gap-xs items-center mb-xs"
+				>
+					<ui-icon
+						class="text-primary"
+						:size="ESize.SM"
+						:icon-name="['far', 'face-smile']"
+					/>
+
+					<ui-icon
+						class="text-primary"
+						:size="ESize.SM"
+						:icon-name="['far', 'face-smile']"
+					/>
+
+					<ui-icon
+						class="text-secondary-alt-300"
+						:size="ESize.SM"
+						:icon-name="['far', 'face-smile']"
+					/>
+				</div>
+
 				<div class="flex flex-wrap gap-xs mb-sm">
 					<ui-badge
 						v-for="item in ['Free bank tranfers']"
@@ -75,29 +98,6 @@ const Template: Story<TComponentProps> = (args) => ({
 					>
 						more...
 					</ui-badge>
-
-					<div
-						class="flex gap-xs items-center justify-center"
-						:style="{marginLeft: 'auto'}"
-					>
-						<ui-icon
-							class="text-primary"
-							:size="ESize.SM"
-							:icon-name="['far', 'face-smile']"
-						/>
-
-						<ui-icon
-							class="text-primary"
-							:size="ESize.SM"
-							:icon-name="['far', 'face-smile']"
-						/>
-
-						<ui-icon
-							class="text-secondary-alt-300"
-							:size="ESize.SM"
-							:icon-name="['far', 'face-smile']"
-						/>
-					</div>
 				</div>
 
 				<ul>
@@ -118,12 +118,13 @@ const Template: Story<TComponentProps> = (args) => ({
 					</ui-list-item>
 				</ul>
 
-				<ui-typography class="mb-sm" underline :size="ETypographySizes.SM" :kind="EColors.SECONDARY">
-					Some link
-				</ui-typography>
+				<div :style="{display: 'grid', gridTemplateColumns: '1fr 1fr'}" class="items-center gap-sm mb-sm">
+					<ui-typography underline :size="ETypographySizes.SM" :kind="EColors.ACCENT">
+						Full Details
+					</ui-typography>
 
-				<div :style="{display: 'grid', gridTemplateColumns: '1fr 1fr'}" class="items-center gap-sm">
 					<ui-typography
+						class="text-right"
 						:weight="ETextWeight.BOLD"
 						:size="ETypographySizes.XL"
 						:kind="EColors.SECONDARY"
@@ -136,9 +137,8 @@ const Template: Story<TComponentProps> = (args) => ({
 							Monthly fee
 						</ui-typography>
 					</ui-typography>
-
-					<ui-button full-width>Some text</ui-button>
 				</div>
+				<ui-button full-width>Some text</ui-button>
 			</template>
 		</ui-card-result>
 
