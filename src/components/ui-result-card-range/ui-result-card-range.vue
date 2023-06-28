@@ -14,7 +14,7 @@
 	>
 		<ui-icon
 			v-if="iconName"
-			class="rounded-full mb-md"
+			class="mb-md"
 			:size="ESize.MD"
 			:icon-name="iconName"
 		/>

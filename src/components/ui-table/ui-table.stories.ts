@@ -1,18 +1,20 @@
-import UiTableRow, { ERowKind } from "./ui-table-row";
+import UiTableRow from "./ui-table-row";
 import UiTableCell from "./ui-table-cell";
 import UiTypography, { ETextWeight, ETypographySizes } from "../ui-typography";
+import UiTable from "./ui-table.vue";
+import { ETableKind } from "./_types";
 
 export default {
 	title: "Components/ui-table",
 	argTypes: {
 		kind: {
 			control: { type: "select" },
-			options: ["empty"].concat(Object.values(ERowKind)),
+			options: Object.values(ETableKind),
 			description: "The row kind",
 		},
 	},
 	args: {
-		kind: ERowKind.SECONDARY,
+		kind: ETableKind.DEFAULT,
 	},
 };
 
@@ -23,7 +25,8 @@ const Template = (args: MyComponentProps) => ({
 		// UiTable,
 		UiTableRow,
 		UiTableCell,
-		UiTypography
+		UiTypography,
+		UiTable
 	},
 	setup(){
 
@@ -48,18 +51,16 @@ const Template = (args: MyComponentProps) => ({
 		return{
 			ETextWeight,
 			ETypographySizes,
-			ERowKind,
 			args,
 			list
 		};
 	},
 	template:
 	/*html*/`
-		<table class='w-full'>
+		<ui-table class='w-full' :kind="args.kind">
 				<ui-table-row v-for="(row, index) in list"
 											:key="index"
-											rounded
-											:kind="index % 2 === 0 && args.kind">
+											rounded>
 					<ui-table-cell :weight='ETextWeight.SEMI_BOLD'>
 							{{row.text1}}
 					</ui-table-cell>
@@ -76,7 +77,7 @@ const Template = (args: MyComponentProps) => ({
 				 			</template>
 					</ui-table-cell>
 				</ui-table-row>
-		</table>
+		</ui-table>
 	`
 });
 
