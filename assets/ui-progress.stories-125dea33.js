@@ -1,0 +1,8 @@
+import{d as i,c as m,o as c,e as p,l as n,E as d}from"./vue.esm-bundler-d669bd99.js";const f={class:"ui-progress"},g={class:"relative h-xs w-full overflow-hidden rounded-lg bg-primary-alt-300"},o=i({__name:"ui-progress",props:{min:{default:0},max:{default:100},current:{default:0}},setup(u){const e=u,l=m(()=>(e.current-e.min)/(e.max-e.min)*100);return(_,b)=>(c(),p("div",f,[n("div",g,[n("div",{class:"ui-progress__bar-fill absolute left-0 top-0 z-10 h-full rounded-lg bg-primary-alt-700 transition-all duration-300",style:d({width:l.value+"%"})},null,4)])]))}});o.__docgenInfo={exportName:"default",displayName:"ui-progress",description:"",tags:{},props:[{name:"min",required:!0,type:{name:"number"},defaultValue:{func:!1,value:"0"}},{name:"max",required:!0,type:{name:"number"},defaultValue:{func:!1,value:"100"}},{name:"current",required:!0,type:{name:"number"},defaultValue:{func:!1,value:"0"}}],sourceFiles:["/home/runner/work/bonkers-ui/bonkers-ui/src/components/ui-progress/ui-progress.vue"]};const x={title:"Components/ui-progress",component:o,argTypes:{min:{control:{type:"number"},description:"The minimum value"},max:{control:{type:"number"},description:"The maximum value"},current:{control:{type:"number"}}}},r={args:{min:0,max:10,current:3}};var a,s,t;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    min: 0,
+    max: 10,
+    current: 3
+  }
+}`,...(t=(s=r.parameters)==null?void 0:s.docs)==null?void 0:t.source}}};const y=["Default"];export{r as Default,y as __namedExportsOrder,x as default};
+//# sourceMappingURL=ui-progress.stories-125dea33.js.map
