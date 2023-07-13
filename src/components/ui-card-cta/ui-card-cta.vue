@@ -3,22 +3,22 @@
 		class="
 			ui-card-cta
 			w-full
-			outline-0
+			rounded-2xl
 			border
 			border-secondary-alt-500
-			rounded-2xl
+			bg-white
 			p-sm
 			shadow-md
-			bg-white
+			outline-0
 			hover:border-secondary-700
 			focus:shadow-border-primary
 			active:bg-secondary-alt-200
-			disabled:bg-secondary-alt-200
-			disabled:pointer-events-none"
+			disabled:pointer-events-none
+			disabled:bg-secondary-alt-200"
 		:disabled="disabled"
 	>
 		<span
-			class="ui-card-cta__wrapper w-full grid gap-sm items-center"
+			class="ui-card-cta__wrapper grid w-full items-center gap-sm"
 			:class="[
 				invertOrder && 'ui-card-cta_inverted',
 			]"

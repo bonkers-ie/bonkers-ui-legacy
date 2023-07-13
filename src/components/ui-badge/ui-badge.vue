@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="ui-badge relative text-white overflow-hidden"
+		class="ui-badge relative overflow-hidden text-white"
 	>
-		<div class="relative z-[1] flex items-center content-center gap-xxs px-xs py-xxs">
+		<div class="relative z-[1] flex content-center items-center gap-xxs px-xs py-xxs">
 			<ui-icon
 				v-if="icon"
 				:size="ESize.XS"
@@ -16,7 +16,7 @@
 				class="whitespace-nowrap"
 				line-height
 				:class="[
-					elipsis && 'overflow-hidden overflow-ellipsis',
+					elipsis && 'overflow-hidden text-ellipsis',
 				]"
 			>
 				<slot />
@@ -24,7 +24,7 @@
 		</div>
 
 		<div
-			class="absolute rounded-full top-0 left-0 w-full h-full"
+			class="absolute left-0 top-0 h-full w-full rounded-full"
 			:class="[
 				(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
 

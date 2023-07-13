@@ -1,9 +1,23 @@
 <template>
 	<div
-		class="notification-badge absolute min-w-sm h-sm font-bold text-xxs rounded-full border border-white text-white bg-error text-center leading-none"
+		class="
+			notification-badge
+			absolute
+			h-sm
+			min-w-sm
+			rounded-full
+			border
+			border-white
+			bg-error
+			text-center
+			text-xxs
+			font-bold
+			leading-none
+			text-white
+		"
 		:class="[
-			origin === EBadgeOrigin.DEFAULT && 'top-0 right-0',
-			origin === EBadgeOrigin.OFFSET_TOP_RIGHT && '-top-xxs -right-xxs',
+			origin === EBadgeOrigin.DEFAULT && 'right-0 top-0',
+			origin === EBadgeOrigin.OFFSET_TOP_RIGHT && '-right-xxs -top-xxs',
 		]"
 	>
 		<slot />

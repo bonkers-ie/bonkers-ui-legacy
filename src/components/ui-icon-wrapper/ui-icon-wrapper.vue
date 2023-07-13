@@ -1,15 +1,15 @@
 <template>
 	<div
-		class="icon-wrapper w-fit h-fit grid place-items-center relative rounded-2xl"
+		class="icon-wrapper relative grid h-fit w-fit place-items-center rounded-2xl"
 		:class="[
-			kind === EIconWrapperTypes.PRIMARY && 'text-white bg-primary',
-			kind === EIconWrapperTypes.SECONDARY && 'text-black bg-secondary-alt-200',
-			kind === EIconWrapperTypes.DEFAULT && 'text-primary bg-white border-2 border-primary ',
+			kind === EIconWrapperTypes.PRIMARY && 'bg-primary text-white',
+			kind === EIconWrapperTypes.SECONDARY && 'bg-secondary-alt-200 text-black',
+			kind === EIconWrapperTypes.DEFAULT && 'border-2 border-primary bg-white text-primary ',
 
-			size === EIconWrapperSizes.DEFAULT && 'py-sm px-sm',
-			size === EIconWrapperSizes.SMALL && 'py-xs px-xs',
-			size === EIconWrapperSizes.MEDIUM && 'py-md px-md icon-wrapper_offset-md',
-			size === EIconWrapperSizes.LARGE && 'py-lg px-lg icon-wrapper_offset-lg',
+			size === EIconWrapperSizes.DEFAULT && 'p-sm',
+			size === EIconWrapperSizes.SMALL && 'p-xs',
+			size === EIconWrapperSizes.MEDIUM && 'icon-wrapper_offset-md p-md',
+			size === EIconWrapperSizes.LARGE && 'icon-wrapper_offset-lg p-lg',
 		]"
 	>
 		<slot />

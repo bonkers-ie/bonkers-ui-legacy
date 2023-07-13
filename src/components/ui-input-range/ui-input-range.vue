@@ -1,11 +1,11 @@
 <template>
 	<div
-		class="ui-input-range relative h-lg py-xs box-content"
+		class="ui-input-range relative box-content h-lg py-xs"
 	>
 		<input
 			ref="track"
 			v-model.number="rangeModel"
-			class="appearance-none absolute top-0 left-0 cursor-pointer bg-transparent w-full h-full"
+			class="absolute left-0 top-0 h-full w-full cursor-pointer appearance-none bg-transparent"
 			type="range"
 			:min="min"
 			:max="max"
@@ -14,11 +14,11 @@
 		>
 
 		<div
-			class="h-xs w-full bg-secondary-alt rounded absolute top-1/2 left-0 -translate-y-1/2 pointer-events-none"
+			class="pointer-events-none absolute left-0 top-1/2 h-xs w-full -translate-y-1/2 rounded bg-secondary-alt"
 		/>
 
 		<div
-			class="h-xs bg-primary rounded absolute top-1/2 left-0 -translate-y-1/2 pointer-events-none"
+			class="pointer-events-none absolute left-0 top-1/2 h-xs -translate-y-1/2 rounded bg-primary"
 			:style="{
 				width: getPercentage + '%',
 			}"
@@ -27,16 +27,16 @@
 		<div
 			class="
 				ui-input-range__thumb
-				w-xs
-				h-xs
-				bg-primary
-				absolute
-				border-white
-				rounded-full
-				box-content
-				-translate-y-1/2
-				-translate-x-1/2
 				pointer-events-none
+				absolute
+				box-content
+				h-xs
+				w-xs
+				-translate-x-1/2
+				-translate-y-1/2
+				rounded-full
+				border-white
+				bg-primary
 			"
 			:style="{left: getPercentage + '%'}"
 		/>

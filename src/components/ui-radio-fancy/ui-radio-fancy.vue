@@ -12,52 +12,54 @@
 			type="radio"
 			:name="name"
 			:value="value"
-			class="peer group appearance-none absolute"
+			class="group peer absolute appearance-none"
 			:disabled="disabled"
 		>
 		<div
 			class="
 				ui-radio-fancy__content
 				box-border
-				w-full
 				h-full
-				py-sm px-sm
+				w-full
+				cursor-pointer rounded-xl
 				border
 				border-secondary-alt-500
 				bg-white
-				hover:border-secondary-alt-700
-				cursor-pointer
-				rounded-xl
-
+				p-sm
 				before:absolute
 				before:-z-10
+
 				before:box-border
 				before:rounded-[16px]
 				before:bg-primary-300
-
+				hover:border-secondary-alt-700
 				peer-checked:border-transparent
+
+				peer-checked:shadow-selected-shadow
+				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
-				peer-checked:active:before:-top-xs
 				peer-checked:active:before:-bottom-xs
 				peer-checked:active:before:-left-xs
 				peer-checked:active:before:-right-xs
 
-				peer-checked:hover:shadow-border-selected
-				peer-checked:shadow-selected-shadow
-
-				peer-active:before:-top-xxs
-				peer-active:before:-bottom-xxs
-				peer-active:before:-left-xxs
-				peer-active:before:-right-xxs
-
-				peer-focus:before:-top-xs
+				peer-checked:active:before:-top-xs
 				peer-focus:before:-bottom-xs
+
 				peer-focus:before:-left-xs
 				peer-focus:before:-right-xs
+				peer-focus:before:-top-xs
+				peer-active:before:-bottom-xxs
+
+				peer-active:before:-left-xxs
+				peer-active:before:-right-xxs
+				peer-active:before:-top-xxs
 			"
-			:class="[disabled && 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
+			:class="[
+				disabled
+					&& 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
 				radioSize === ERadioSizes.DEFAULT && 'default',
-				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle']"
+				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle'
+			]"
 		>
 			<div
 				v-if="radioSize === ERadioSizes.DEFAULT"

@@ -1,7 +1,7 @@
 
 <template>
 	<li
-		class="ui-list-item grid grid-flow-col justify-start gap-xs relative group text-secondary"
+		class="ui-list-item group relative grid grid-flow-col justify-start gap-xs text-secondary"
 		:class="[
 			size === EListItemSize.SM && 'text-sm',
 			size === EListItemSize.MD && 'text-md',
@@ -11,7 +11,17 @@
 	>
 		<div
 			v-if="kind === EListItemTypes.PROGRESS"
-			class="ui-list-item__line bg-primary-300 h-full absolute w-xxs left-xs -translate-x-2/4 top-sm group-last:hidden"
+			class="
+				ui-list-item__line
+				absolute
+				left-xs
+				top-sm
+				h-full
+				w-xxs
+				-translate-x-2/4
+				bg-primary-300
+				group-last:hidden
+			"
 		/>
 
 		<slot name="icon">

@@ -1,15 +1,15 @@
 <template>
 	<div
-		class="ui-order-card relative text-center rounded-md pt-md mt-sm"
+		class="ui-order-card relative mt-sm rounded-md pt-md text-center"
 		:class="[
-			kind === EOrderCardTypes.DEFAULT && 'text-white bg-primary-300',
+			kind === EOrderCardTypes.DEFAULT && 'bg-primary-300 text-white',
 			kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-warning-700'
 		]"
 	>
 		<ui-icon
 			:icon-name="iconName"
 			:size="ESize.LG"
-			class="absolute top-0 left-1/2 bg-primary-300 rounded-full -translate-x-1/2 -translate-y-1/2"
+			class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-300"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'text-white',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-white'
@@ -44,7 +44,7 @@
 
 		<ui-typography
 			v-if="$slots.footer"
-			class="py-sm text-white rounded-b-lg"
+			class="rounded-b-lg py-sm text-white"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'bg-primary-700',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-700'

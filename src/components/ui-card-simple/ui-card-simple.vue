@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-card-simple rounded-3xl shadow-md py-md px-sm bg-white"
+		class="ui-card-simple rounded-3xl bg-white px-sm py-md shadow-md"
 	>
 		<ui-typography
 			v-if="slots.title"

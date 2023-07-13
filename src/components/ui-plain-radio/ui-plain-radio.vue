@@ -11,54 +11,53 @@
 			name="ui-plain-radio"
 			type="radio"
 			:disabled="disabled"
-			class="appearance-none absolute peer"
+			class="peer absolute appearance-none"
 		>
 
 		<div
 			class="ui-plain-radio__content
-				grid
-				grid-flow-col
-				justify-start
-				items-center
-				gap-sm
 				box-border
-				w-full
+				grid
 				h-full
-				py-sm px-sm
+				w-full
+				cursor-pointer
+				grid-flow-col
+				items-center
+				justify-start
+				gap-sm rounded-xl
 				border
 				border-secondary-alt-500
 				bg-white
-				hover:border-secondary-alt-700
-				cursor-pointer
-				rounded-xl
-
+				p-sm
 				before:absolute
 				before:-z-10
+
 				before:box-border
 				before:rounded-[16px]
 				before:bg-primary-300
-
+				hover:border-secondary-alt-700
 				peer-checked:border-transparent
+
+				peer-checked:shadow-selected-shadow
+				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
-				peer-checked:active:before:-top-xs
 				peer-checked:active:before:-bottom-xs
 				peer-checked:active:before:-left-xs
 				peer-checked:active:before:-right-xs
 
-				peer-checked:hover:shadow-border-selected
-				peer-checked:shadow-selected-shadow
-
-				peer-active:before:-top-xxs
-				peer-active:before:-bottom-xxs
-				peer-active:before:-left-xxs
-				peer-active:before:-right-xxs
-
-				peer-focus:before:-top-xs
+				peer-checked:active:before:-top-xs
 				peer-focus:before:-bottom-xs
+
 				peer-focus:before:-left-xs
 				peer-focus:before:-right-xs
-			"
-			:class="disabled && 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled'"
+				peer-focus:before:-top-xs
+				peer-active:before:-bottom-xxs
+
+				peer-active:before:-left-xxs
+				peer-active:before:-right-xxs
+				peer-active:before:-top-xxs"
+			:class="disabled
+				&& 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled'"
 		>
 			<ui-radio
 				v-model="radioModel"

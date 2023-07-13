@@ -12,26 +12,26 @@
 		</slot>
 
 		<label
-			class="rounded-full cursor-pointer flex gap-sm"
+			class="flex cursor-pointer gap-sm rounded-full"
 			:class="[
-				disabled && 'pointer-events-none ui-toggle_disabled',
+				disabled && 'ui-toggle_disabled pointer-events-none',
 				invertOrder && 'flex-row-reverse',
 				alignCenter && 'items-center'
 			]"
 		>
 			<span
-				class="ui-input__input-wrapper block relative h-md"
+				class="ui-input__input-wrapper relative block h-md"
 			>
 				<input
 					v-model="checkboxModel"
 					type="checkbox"
-					class="appearance-none absolute w-0 h-0 border-0"
+					class="absolute h-0 w-0 appearance-none border-0"
 					:value="value"
 				>
 
-				<span class="ui-toggle__bg-block w-lg h-md bg-secondary-alt block rounded-full" />
+				<span class="ui-toggle__bg-block block h-md w-lg rounded-full bg-secondary-alt" />
 
-				<span class="ui-toggle__dot block bg-white absolute top-0 rounded-full">
+				<span class="ui-toggle__dot absolute top-0 block rounded-full bg-white">
 					<svg
 						class="ui-toggle__check-icon absolute"
 						:class="disabled ? 'text-primary-300' : 'text-primary'"

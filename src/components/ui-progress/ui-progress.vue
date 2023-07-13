@@ -1,10 +1,21 @@
 <template>
 	<div class="ui-progress">
 		<div
-			class="relative rounded-lg bg-primary-alt-300 h-xs w-full overflow-hidden"
+			class="relative h-xs w-full overflow-hidden rounded-lg bg-primary-alt-300"
 		>
 			<div
-				class="ui-progress__bar-fill rounded-lg bg-primary-alt-700 z-10 absolute top-0 left-0 h-full transition-all duration-300"
+				class="
+					ui-progress__bar-fill
+					absolute
+					left-0
+					top-0
+					z-10
+					h-full
+					rounded-lg
+					bg-primary-alt-700
+					transition-all
+					duration-300
+				"
 				:style="{
 					width: filler + '%'
 				}"
