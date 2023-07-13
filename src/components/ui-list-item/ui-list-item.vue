@@ -48,6 +48,7 @@
 	import UiTypography, { ETextWeight } from "../ui-typography";
 	import { ESize } from "../../_types/sizing";
 	import { EListItemTypes, EListItemSpacing, EListItemSize } from "./_types";
+	import { HTMLAttributes } from "vue";
 
 	withDefaults(defineProps<{
 		icon?: TIconName
@@ -55,7 +56,7 @@
 		kind?: EListItemTypes
 		size?: EListItemSize
 		spacing?: EListItemSpacing
-		iconClass?: string
+		iconClass?: HTMLAttributes["class"]
 	}>(), {
 		kind: EListItemTypes.DEFAULT,
 		size: EListItemSize.SM,

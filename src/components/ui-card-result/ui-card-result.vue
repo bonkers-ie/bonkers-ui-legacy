@@ -11,7 +11,7 @@
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
 				:align="ETextAlign.CENTER"
-				:weight="ETextWeight.SEMI_BOLD"
+				:weight="ETextWeight.BOLD"
 			>
 				{{ exclusiveText }}
 			</ui-typography>

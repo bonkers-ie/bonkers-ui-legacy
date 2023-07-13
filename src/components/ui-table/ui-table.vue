@@ -1,7 +1,7 @@
 <template>
 	<table
 		:class="[
-			'ui-table',
+			'ui-table rounded-lg',
 			kind === ETableKind.SECONDARY && 'ui-table__secondary',
 			kind === ETableKind.SECONDARY_INVERTED && 'ui-table__secondary-inverted',
 		]"
@@ -21,13 +21,11 @@
 </script>
 
 <style scoped>
-	.ui-table__secondary::v-deep tr:nth-child(odd){
+	.ui-table__secondary::v-deep(tr:nth-child(odd)){
 		background-color: var(--color-secondary-alt-200);
-		border-radius: var(--xs);
 	}
 
-	.ui-table__secondary-inverted::v-deep tr:nth-child(even){
+	.ui-table__secondary-inverted::v-deep(tr:nth-child(even)){
 		background-color: var(--color-secondary-alt-200);
-		border-radius: var(--xs);
 	}
 </style>

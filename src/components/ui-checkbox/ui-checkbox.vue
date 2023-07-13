@@ -64,7 +64,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(e: "update:modelValue", state: unknown): void
+		(e: "update:modelValue", state: typeof props.modelValue): void
 	}>();
 
 	const checkboxModel = computed({
