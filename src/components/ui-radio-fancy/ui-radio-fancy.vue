@@ -98,7 +98,7 @@
 
 <script lang="ts" setup>
 	import { computed } from "vue";
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import UiTypography, { ETypographySizes } from "../ui-typography";
 	import type { TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
 	import { EColors } from "../../_types/colors";

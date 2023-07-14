@@ -63,7 +63,7 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx,vue}": [
-			"eslint --fix",
+			"yarn eslint --fix",
 			"bash -c 'yarn typecheck'"
 		],
 		"*.{css,vue,tsx}": "stylelint --fix"

@@ -65,7 +65,7 @@
 </template>
 
 <script lang="ts" setup>
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import UiTypography, { ETypographySizes } from "../ui-typography";
 	import { computed } from "vue";
 
 	const props = defineProps<{
