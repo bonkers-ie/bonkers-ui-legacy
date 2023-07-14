@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="ui-radio grid cursor-pointer group grid-flow-col"
+		class="ui-radio group grid cursor-pointer grid-flow-col"
 		:class="[
 			slots.default && 'items-center gap-xs',
 			(!justify || justify === EJustify.START) && 'justify-start',
@@ -19,40 +19,40 @@
 			:name="name.toString()"
 			:value="value"
 			:disabled="disabled"
-			class="appearance-none absolute peer"
+			class="peer absolute appearance-none"
 		>
 		<span
 			class="
 				ui-radio_custom
 				relative
 				block
-				w-md
 				h-md
+				w-md
+				rounded-full
 				border
 				border-secondary-alt
-				rounded-full
 				bg-white
-				peer-disabled:border-secondary-alt-400
-				peer-disabled:bg-secondary-alt-200
-				peer-checked:border-primary
+				group-hover:border-secondary-alt-700
+				group-focus:border-secondary-alt-700
 				peer-checked:border-2
+				peer-checked:border-primary
 				peer-checked:hover:border-primary-600
 				peer-focus:shadow-border-primary
-				group-hover:border-secondary-alt-700
-				group-focus:border-secondary-alt-700"
+				peer-disabled:border-secondary-alt-400
+				peer-disabled:bg-secondary-alt-200"
 			:class="invertOrder && 'order-last'"
 		>
 			<span
 				class="
 						ui-radio__dot
 						absolute
-						top-2/4
 						left-2/4
-						w-xs
-						h-xs
+						top-2/4
 						block
-						bg-primary
-						rounded-full"
+						h-xs
+						w-xs
+						rounded-full
+						bg-primary"
 			/>
 		</span>
 		<slot />

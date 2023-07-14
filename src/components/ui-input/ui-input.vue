@@ -10,7 +10,7 @@
 			</ui-typography>
 		</slot>
 		<label
-			class="ui-input__wrapper flex w-full rounded-lg border bg-white items-center p-sm gap-xs"
+			class="ui-input__wrapper flex w-full items-center gap-xs rounded-lg border bg-white p-sm"
 			:class="[
 				kind === EInputKinds.SECONDARY && 'border-secondary-alt-500 hover:border-secondary-alt-700',
 				kind === EInputKinds.PRIMARY && 'border-primary',
@@ -25,7 +25,7 @@
 				:autocomplete="getAutoComplete()"
 				:value="modelValue"
 				:pattern="pattern"
-				class="bg-transparent border-0 outline-none w-full placeholder:text-secondary-alt placeholder:italic"
+				class="w-full border-0 bg-transparent outline-none placeholder:italic placeholder:text-secondary-alt"
 				:type="type"
 				:placeholder="placeholder"
 				:maxlength="maxlength"

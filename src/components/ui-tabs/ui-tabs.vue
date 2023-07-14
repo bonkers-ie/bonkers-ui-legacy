@@ -1,16 +1,16 @@
 <template>
-	<ul class="ui-tabs bg-secondary-alt-200 rounded-full grid grid-flow-col">
+	<ul class="ui-tabs grid grid-flow-col rounded-full bg-secondary-alt-200">
 		<li
 			v-for="tab in tabs"
 			:key="tab"
 			class="rounded-full text-center"
 			:class="[tabsModel === tab && 'bg-white']"
 		>
-			<label class="block cursor-pointer py-xs px-md">
+			<label class="block cursor-pointer px-md py-xs">
 				<input
 					v-model="tabsModel"
 					type="radio"
-					class="appearance-none absolute"
+					class="absolute appearance-none"
 					:value="tab"
 					:name="name"
 				>

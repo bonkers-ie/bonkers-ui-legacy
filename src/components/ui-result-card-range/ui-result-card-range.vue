@@ -2,15 +2,15 @@
 	<div
 		class="
 			ui-result-card-range
-			w-full
 			flex
+			w-full
 			flex-col
 			items-center
+			rounded-3xl
 			border-4
 			border-secondary-alt-300
 			bg-secondary-alt-200
-			rounded-3xl
-			text-secondary-500 p-md"
+			p-md text-secondary-500"
 	>
 		<ui-icon
 			v-if="iconName"

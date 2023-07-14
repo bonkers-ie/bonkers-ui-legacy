@@ -2,18 +2,18 @@
 	<div
 		class="
 				ui-modal
-				flex flex-col
-				items-center
-				w-full
-				z-10
+				max-height max-width
 				inset-0
-				rounded-2xl
-				shadow-md
-				p-md
-				bg-white
+				z-10
+				flex
+				w-full
+				flex-col
+				items-center
 				overflow-y-scroll
-				max-height
-				max-width
+				rounded-2xl
+				bg-white
+				p-md
+				shadow-md
 			"
 		:class="[
 			modalSize === EModalSizes.SM &&'h-fit max-w-[24rem]',
@@ -24,7 +24,7 @@
 	>
 		<div
 			v-if="$slots.icon"
-			class="mt-md mb-sm"
+			class="mb-sm mt-md"
 		>
 			<slot name="icon" />
 		</div>
@@ -47,14 +47,14 @@
 			:weight="ETextWeight.REGULAR"
 			:align="ETextAlign.CENTER"
 			line-height
-			class="w-full text-secondary mb-md overflow-y-auto"
+			class="mb-md w-full overflow-y-auto text-secondary"
 		>
 			<slot />
 		</ui-typography>
 
 		<div
 			v-if="$slots.footer"
-			class="w-full mt-auto"
+			class="mt-auto w-full"
 		>
 			<slot name="footer" />
 		</div>

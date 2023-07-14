@@ -14,13 +14,25 @@
 	>
 		<input
 			v-model="checkboxModel"
-			class="appearance-none absolute"
+			class="absolute appearance-none"
 			type="checkbox"
 			:value="value"
 			:disabled="disabled"
 		>
 		<span
-			class="ui-checkbox_custom w-md h-md flex items-center justify-center border border-secondary-alt-500 rounded relative hover:border-secondary-alt-700"
+			class="
+				ui-checkbox_custom
+				relative
+				flex
+				h-md
+				w-md
+				items-center
+				justify-center
+				rounded
+				border
+				border-secondary-alt-500
+				hover:border-secondary-alt-700
+				"
 			:class="invertOrder && 'order-last'"
 		>
 			<svg
@@ -64,7 +76,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(e: "update:modelValue", state: unknown): void
+		(e: "update:modelValue", state: typeof props.modelValue): void
 	}>();
 
 	const checkboxModel = computed({

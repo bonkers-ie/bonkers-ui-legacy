@@ -10,12 +10,23 @@
 			</ui-typography>
 		</slot>
 		<div
-			class="relative rounded-lg border bg-white border-secondary-alt-500 hover:border-secondary-alt-700"
-			:class="[disabled && 'pointer-events-none bg-secondary-alt-200 border-secondary-alt-300']"
+			class="relative rounded-lg border border-secondary-alt-500 bg-white hover:border-secondary-alt-700"
+			:class="[disabled && 'pointer-events-none border-secondary-alt-300 bg-secondary-alt-200']"
 		>
 			<select
 				v-model="radioModel"
-				class="appearance-none bg-transparent border-0 m-0 outline-0 w-full p-sm cursor-pointer italic text-secondary-alt"
+				class="
+					m-0
+					w-full
+					cursor-pointer
+					appearance-none
+					border-0
+					bg-transparent
+					p-sm
+					italic
+					text-secondary-alt
+					outline-0
+				"
 			>
 				<slot />
 			</select>

@@ -4,10 +4,10 @@
 			class="
 				backdrop-color
 				fixed
-				backdrop-blur-sm
-				transition-all
 				inset-0
 				z-0
+				backdrop-blur-sm
+				transition-all
 				"
 		/>
 

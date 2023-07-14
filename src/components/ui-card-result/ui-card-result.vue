@@ -2,7 +2,7 @@
 	<div class="ui-card-result">
 		<div
 			v-if="exclusiveText"
-			class="bg-primary rounded-2xl px-sm pb-lg -mb-lg"
+			class="-mb-lg rounded-2xl bg-primary px-sm pb-lg"
 			@click="exclusiveClickAction"
 		>
 			<ui-typography
@@ -11,18 +11,31 @@
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
 				:align="ETextAlign.CENTER"
-				:weight="ETextWeight.SEMI_BOLD"
+				:weight="ETextWeight.BOLD"
 			>
 				{{ exclusiveText }}
 			</ui-typography>
 		</div>
 
-		<div class="grid relative border border-secondary-alt-400 rounded-2xl overflow-hidden bg-white">
-			<div class="ui-card-result__header grid gap-xs justify-between items-center rounded-lg bg-secondary-alt-200 p-xs m-xs mb-sm">
+		<div class="relative grid overflow-hidden rounded-2xl border border-secondary-alt-400 bg-white">
+			<div
+				class="
+				ui-card-result__header
+				m-xs
+				mb-sm
+				grid
+				items-center
+				justify-between
+				gap-xs
+				rounded-lg
+				bg-secondary-alt-200
+				p-xs
+			"
+			>
 				<ui-typography
 					v-if="header"
 					line-height
-					class="flex-1 line-clamp"
+					class="line-clamp flex-1"
 					:size="ETypographySizes.SM"
 					:weight="ETextWeight.SEMI_BOLD"
 					:kind="EColors.SECONDARY"
@@ -33,14 +46,14 @@
 				<slot name="sidebar" />
 			</div>
 
-			<main class="p-sm pt-0 w-full overflow-hidden bg-white">
+			<main class="w-full overflow-hidden bg-white p-sm pt-0">
 				<slot />
 			</main>
 		</div>
 
 		<div
 			v-if="exclusiveTextBottom"
-			class="bg-secondary-alt-200 rounded-2xl px-sm pt-lg -mt-lg border border-secondary-alt-400"
+			class="-mt-lg rounded-2xl border border-secondary-alt-400 bg-secondary-alt-200 px-sm pt-lg"
 			@click="exclusiveBottomClickAction"
 		>
 			<ui-typography
