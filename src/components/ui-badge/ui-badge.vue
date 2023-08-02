@@ -5,7 +5,7 @@
 		<div class="relative z-[1] flex content-center items-center gap-xxs px-xs py-xxs">
 			<ui-icon
 				v-if="icon"
-				:size="ESize.XS"
+				:size="ESize.SM"
 				:icon-name="icon"
 			/>
 

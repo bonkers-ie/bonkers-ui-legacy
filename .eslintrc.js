@@ -88,5 +88,12 @@ module.exports = {
 			ignorePattern: 'd="([\\s\\S]*?)"',
 		}],
 		"tailwindcss/no-custom-classname": "off",
+		"object-curly-newline": ["error", {
+			"ImportDeclaration": {
+				"multiline": true,
+				"minProperties": 5,
+			}
+		}],
+		"object-property-newline": "error",
 	},
 };

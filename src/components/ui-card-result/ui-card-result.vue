@@ -11,7 +11,7 @@
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
 				:align="ETextAlign.CENTER"
-				:weight="ETextWeight.BOLD"
+				:weight="ETextWeight.SEMI_BOLD"
 			>
 				{{ exclusiveText }}
 			</ui-typography>
@@ -37,7 +37,7 @@
 					line-height
 					class="line-clamp flex-1"
 					:size="ETypographySizes.SM"
-					:weight="ETextWeight.SEMI_BOLD"
+					:weight="ETextWeight.BOLD "
 					:kind="EColors.SECONDARY"
 				>
 					{{ header }}
