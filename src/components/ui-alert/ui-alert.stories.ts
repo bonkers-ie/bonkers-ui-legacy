@@ -9,12 +9,16 @@ export default {
 
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EAlertTypes),
 			description: "The button kinds",
 		},
 		default: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 		}
 	},
 } satisfies Meta<typeof UiAlert>;

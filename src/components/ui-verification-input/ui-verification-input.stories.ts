@@ -6,16 +6,20 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		inputsCount: {
-			control: { type: "number" },
+			control: {
+				type: "number" 
+			},
 			description: "Number of inputs",
 		},
 		type: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: ["text"],
 			description: "Inputs type",
 		},
 	},
-	args:{
+	args: {
 		inputsCount: 4,
 		type: "text"
 	}
@@ -24,14 +28,17 @@ export default {
 type MyComponentProps = InstanceType<typeof UiVerificationInput>["$props"];
 
 const Template = (args: MyComponentProps) => ({
-	components:{
+	components: {
 		UiVerificationInput
 	},
 	setup() {
 		const filedHandler = (payload: string)=>{
 			console.log("=--->",payload);
 		};
-		return { args, filedHandler };
+		return {
+			args,
+			filedHandler 
+		};
 	},
 	template: `
 		<ui-verification-input @onFiled="filedHandler" :className="args.className" :inputsCount="args.inputsCount" :type="args.type"/>

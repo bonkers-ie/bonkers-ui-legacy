@@ -36,7 +36,7 @@
 	const inputsRefs = ref<VNodeRef>();
 
 	const animateRipple = (e:MouseEvent)=> {
-		if(tiBtn.value){
+		if (tiBtn.value) {
 			const pos = tiBtn.value.getBoundingClientRect();
 
 			ripples.value.push({

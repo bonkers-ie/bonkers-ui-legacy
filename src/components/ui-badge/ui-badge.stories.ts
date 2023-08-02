@@ -7,12 +7,16 @@ export default {
 	component: UiBadge,
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EBadgeKind),
 			description: "The Element kinds",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EBadgeSize),
 			description: "The Element size",
 		},
@@ -27,9 +31,13 @@ export default {
 type TComponentProps = InstanceType<typeof UiBadge>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiBadge },
+	components: {
+		UiBadge 
+	},
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	template: /*html*/`
 		<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">

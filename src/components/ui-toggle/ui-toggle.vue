@@ -6,6 +6,7 @@
 			<ui-typography
 				line-height
 				class="mb-sm"
+				:weight="ETextWeight.SEMI_BOLD"
 			>
 				{{ header }}
 			</ui-typography>
@@ -65,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-	import UiTypography, { ETypographySizes } from "../ui-typography";
+	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import { computed } from "vue";
 
 	const props = defineProps<{

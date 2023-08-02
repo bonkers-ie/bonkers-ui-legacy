@@ -9,39 +9,55 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		is: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The Element component or tag",
 		},
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EColors),
 			description: "The Element kinds",
 		},
 		weight: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ETextWeight),
 			description: "The Element weights",
 		},
 		align: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ETextAlign),
 			description: "The Element align",
 		},
 		textTransform: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ETextTransform),
 			description: "The Element transform",
 		},
 		lineHeight: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element line height 1.6",
 		},
 		underline: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element underline",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ETypographySizes),
 			description: "The Element sizes",
 		},
@@ -56,10 +72,14 @@ type TComponentProps = InstanceType<typeof UiTypography>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiTypography },
+	components: {
+		UiTypography 
+	},
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `

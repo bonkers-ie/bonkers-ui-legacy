@@ -12,16 +12,22 @@ export default {
 	component: UiModal,
 	argTypes: {
 		title: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The modal title text",
 		},
 		modalSize: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EModalSizes),
 			description: "The modal kinds",
 		},
 		modalVisible: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "Control Modal Visibility",
 		},
 
@@ -36,11 +42,20 @@ export default {
 type TComponentProps = InstanceType<typeof UiModal>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiModal, UiBackdrop, UiButton, UiIcon, UiTypography },
-	setup() {
-		return { args, ESize };
+	components: {
+		UiModal,
+		UiBackdrop,
+		UiButton,
+		UiIcon,
+		UiTypography 
 	},
-	template:/*html*/`
+	setup() {
+		return {
+			args,
+			ESize 
+		};
+	},
+	template: /*html*/`
 			<ui-modal
 					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
 					:title="args.title"

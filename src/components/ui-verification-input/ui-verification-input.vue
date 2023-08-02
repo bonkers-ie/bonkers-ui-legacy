@@ -41,17 +41,17 @@
 	};
 
 	const inputHandler = (event:Event, index:number)=>{
-		if(index < props.inputsCount){
+		if (index < props.inputsCount) {
 			inputsRefs.value[index + 1]?.focus();
 		}
 
-		if(index === props.inputsCount - 1){
+		if (index === props.inputsCount - 1) {
 			doSubmit();
 		}
 	};
 
 	const focusHandler = (e:FocusEvent) => {
-		if(e.target){
+		if (e.target) {
 			(e.target as HTMLInputElement).select();
 		}
 	};
@@ -59,11 +59,11 @@
 	const handlePaste = (e:ClipboardEvent) => {
 		e.preventDefault();
 		const pasteText = e.clipboardData?.getData("text");
-		if(pasteText && pasteText.length === props.inputsCount) {
+		if (pasteText && pasteText.length === props.inputsCount) {
 			inputsRefs.value[props.inputsCount - 1]?.focus();
 
 			inputsRefs.value.forEach((input, index)=>{
-				if(input){
+				if (input) {
 					input.value = pasteText[index];
 				}
 			});

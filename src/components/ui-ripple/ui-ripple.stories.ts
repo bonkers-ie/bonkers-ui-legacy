@@ -9,17 +9,18 @@ export default {
 	component: UiRipple,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {},
-	args: {
-		// slot: "Some text",
-	},
 };
 
 type TComponentProps = InstanceType<typeof UiRipple>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiRipple },
+	components: {
+		UiRipple
+	},
 	setup() {
-		return { args };
+		return {
+			args
+		};
 	},
 	template: `
 		<div
@@ -34,9 +35,15 @@ const Template: Story<TComponentProps> = (args) => ({
 		`,
 });
 const Template2: Story<TComponentProps> = (args) => ({
-	components: { UiRipple, UiButton, UiTypography },
+	components: {
+		UiRipple,
+		UiButton,
+		UiTypography
+	},
 	setup() {
-		return { args };
+		return {
+			args
+		};
 	},
 	template: `
 		<div class="flex">

@@ -7,26 +7,36 @@ export default {
 	component: UiListItem,
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EListItemTypes),
 			description: "The Element kind",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EListItemSize),
 			description: "The Element size"
 		},
 		spacing: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EListItemSpacing),
 			description: "The Element spacing"
 		},
 		title: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The Element title"
 		},
 		slot: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The slot text or component",
 		},
 	},
@@ -40,11 +50,16 @@ export default {
 };
 
 export const Default = (args) => ({
-	components: { UiListItem },
-	setup() {
-		return { args, ICON_DEFAULT };
+	components: {
+		UiListItem 
 	},
-	template:/*html*/`
+	setup() {
+		return {
+			args,
+			ICON_DEFAULT 
+		};
+	},
+	template: /*html*/`
 			<ul>
 				<ui-list-item v-bind="args" :icon="ICON_DEFAULT" title="title only" icon-class="text-secondary-alt" />
 

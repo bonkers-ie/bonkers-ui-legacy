@@ -12,15 +12,21 @@ export default {
 		// 	description: "The button kinds",
 		// },
 		min: {
-			control: { type: "number" },
+			control: {
+				type: "number" 
+			},
 			description: "The minimum value",
 		},
 		max: {
-			control: { type: "number" },
+			control: {
+				type: "number" 
+			},
 			description: "The maximum value",
 		},
 		current: {
-			control: { type: "number" },
+			control: {
+				type: "number" 
+			},
 		}
 	},
 } satisfies Meta<typeof UiProgress>;

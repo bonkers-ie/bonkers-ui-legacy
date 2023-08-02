@@ -7,11 +7,15 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		invertOrder: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element order",
 		},
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The full width size",
 		},
 	},
@@ -25,9 +29,13 @@ export default {
 type TComponentProps = InstanceType<typeof UiCardCta>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiCardCta },
+	components: {
+		UiCardCta 
+	},
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	template: /*html*/ `
 		<ui-card-cta v-bind="args" :icon-name="['far', 'face-smile']">

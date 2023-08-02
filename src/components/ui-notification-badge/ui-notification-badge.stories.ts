@@ -8,7 +8,9 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		origin: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EBadgeOrigin),
 			description: "The Element origin",
 		}
@@ -22,9 +24,13 @@ export default {
 type TComponentProps = InstanceType<typeof UiNotificationBadge>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiNotificationBadge },
+	components: {
+		UiNotificationBadge 
+	},
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	template: /*html*/`
 		<div class="relative rounded-full bg-primary w-lg h-lg">

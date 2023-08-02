@@ -74,7 +74,7 @@
 	});
 
 	const pickKind = computed(()=>{
-		switch(props.kind){
+		switch (props.kind) {
 			case EOrderCardTypes.WARNING: return EColors.WARNING_700;
 			default: return EColors.PRIMARY_700;
 		}

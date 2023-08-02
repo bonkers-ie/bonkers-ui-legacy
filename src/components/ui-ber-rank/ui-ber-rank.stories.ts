@@ -7,12 +7,16 @@ export default {
 	title: "Components/ui-ber-rank",
 	component: UiBerRank,
 	argTypes: {
-		rank:{
-			control: { type: "number" },
+		rank: {
+			control: {
+				type: "number" 
+			},
 			description: "The Element rank from 0 to 15",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EBerSize),
 			description: "The size of the rank",
 		}
