@@ -7,7 +7,9 @@ export default {
 	component: UiSelect,
 	argTypes: {
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element disabled state",
 		}
 	},
@@ -19,11 +21,17 @@ export default {
 type TComponentProps = InstanceType<typeof UiSelect>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiSelect },
+	components: {
+		UiSelect 
+	},
 	setup() {
 		const list = ["Option 1", "Option 2", "Option 3"];
 		const valueModel = ref(list[0]);
-		return { args, valueModel, list };
+		return {
+			args,
+			valueModel,
+			list 
+		};
 	},
 	template: /*html*/`
 		<ui-select v-bind="args" v-model="valueModel" heading="Heading" subLabel="Sub Label">

@@ -8,7 +8,9 @@ export default {
 	title: "Components/ui-table",
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ETableKind),
 			description: "The row kind",
 		},
@@ -21,14 +23,14 @@ export default {
 type MyComponentProps = InstanceType<typeof UiTableRow>["$props"];
 
 const Template = (args: MyComponentProps) => ({
-	components:{
+	components: {
 		// UiTable,
 		UiTableRow,
 		UiTableCell,
 		UiTypography,
 		UiTable
 	},
-	setup(){
+	setup() {
 
 		const defaultList = {
 			text1: "some text",
@@ -48,7 +50,7 @@ const Template = (args: MyComponentProps) => ({
 			}
 		];
 
-		return{
+		return {
 			ETextWeight,
 			ETypographySizes,
 			args,

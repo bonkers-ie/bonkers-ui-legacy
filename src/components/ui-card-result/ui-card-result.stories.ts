@@ -13,11 +13,15 @@ export default {
 	component: UiCardResult,
 	argTypes: {
 		exclusiveText: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "Whether to show the exclusive text",
 		},
 		exclusiveTextBottom: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "Whether to show the exclusive text",
 		},
 	},
@@ -31,9 +35,24 @@ export default {
 type TComponentProps = InstanceType<typeof UiCardResult>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiCardResult, UiTypography, UiBadge, UiListItem, UiButton, UiIcon },
+	components: {
+		UiCardResult,
+		UiTypography,
+		UiBadge,
+		UiListItem,
+		UiButton,
+		UiIcon 
+	},
 	setup() {
-		return { args, ETypographySizes, ETextWeight, ETextAlign, EButtonTypes, ESize, EColors };
+		return {
+			args,
+			ETypographySizes,
+			ETextWeight,
+			ETextAlign,
+			EButtonTypes,
+			ESize,
+			EColors 
+		};
 	},
 	template:
 	/*html*/`

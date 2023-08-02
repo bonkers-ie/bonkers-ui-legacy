@@ -85,8 +85,8 @@
 	defineEmits(["update:modelValue"]);
 
 	const getAutoComplete =()=> {
-		if(props.autocomplete !== "") return props.autocomplete;
-		switch(props.type) {
+		if (props.autocomplete !== "") return props.autocomplete;
+		switch (props.type) {
 			case EInputType.PASSWORD: return "current-password";
 			case EInputType.EMAIL: return "email";
 			default: return "off";

@@ -11,11 +11,17 @@ export default {
 type TComponentProps = InstanceType<typeof UiTabs>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiTabs },
+	components: {
+		UiTabs 
+	},
 	setup() {
 		const value = ref("Tab1");
 		const value2 = ref("Tab1");
-		return { args, value, value2 };
+		return {
+			args,
+			value,
+			value2 
+		};
 	},
 	template: `
 		<ui-tabs v-bind="args" :tabs="['Tab1', 'Tab2', 'Tab3']" v-model:modelValue="value" />

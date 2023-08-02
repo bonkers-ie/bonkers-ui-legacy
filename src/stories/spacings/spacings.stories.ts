@@ -6,7 +6,9 @@ export default {
 };
 
 const Template = () => ({
-	components: { UiSpacings },
+	components: {
+		UiSpacings 
+	},
 	template: `<ui-spacings/>`,
 });
 

@@ -8,7 +8,9 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ESize),
 			description: "The Element size",
 		}
@@ -23,10 +25,14 @@ type TComponentProps = InstanceType<typeof UiIcon>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiIcon },
+	components: {
+		UiIcon 
+	},
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `

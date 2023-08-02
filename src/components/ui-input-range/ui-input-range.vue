@@ -67,9 +67,9 @@
 	});
 
 	watch(()=>[props.min, props.max], () => {
-		if(rangeModel.value < +props.min){
+		if (rangeModel.value < +props.min) {
 			rangeModel.value = +props.min;
-		}else if(rangeModel.value > +props.max){
+		} else if (rangeModel.value > +props.max) {
 			rangeModel.value = +props.max;
 		}
 	});
@@ -81,7 +81,7 @@
 	});
 
 	const parseMouseMove = (e: MouseEvent | TouchEvent) => {
-		if(track.value){
+		if (track.value) {
 			const CLICK = "clientX";
 
 			const {
@@ -105,7 +105,7 @@
 	const moveHandler = (e: MouseEvent | TouchEvent) => {
 		const newValue = parseMouseMove(e);
 
-		if(newValue){
+		if (newValue) {
 			rangeModel.value = newValue;
 		}
 	};

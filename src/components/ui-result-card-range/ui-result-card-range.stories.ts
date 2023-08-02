@@ -5,11 +5,15 @@ export default {
 	component: UiResultCardRange,
 	argTypes: {
 		slot: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The slot text or component",
 		},
 		title: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The title text",
 		},
 	},
@@ -20,11 +24,15 @@ export default {
 };
 
 const Template = (args) => ({
-	components: { UiResultCardRange },
-	setup() {
-		return { args };
+	components: {
+		UiResultCardRange 
 	},
-	template:/*html*/`
+	setup() {
+		return {
+			args 
+		};
+	},
+	template: /*html*/`
 		<ui-result-card-range :icon-name="['far', 'face-smile']" :title="args.title">
 			{{args.slot}}
 		</ui-result-card-range>
@@ -32,11 +40,15 @@ const Template = (args) => ({
 });
 
 const TemplateAll = (args) => ({
-	components: { UiResultCardRange },
-	setup() {
-		return { args };
+	components: {
+		UiResultCardRange 
 	},
-	template:/*html*/`
+	setup() {
+		return {
+			args 
+		};
+	},
+	template: /*html*/`
     <div class="ui-result-card-range grid gap-sm w-full">
 
 		<ui-result-card-range style="grid-column: 1 / 1"
@@ -61,8 +73,6 @@ const TemplateAll = (args) => ({
     `,
 });
 
-export const singleCard = Template.bind({
-
-});
+export const SingleCard = Template.bind({});
 
 export const FullCard = TemplateAll.bind({});

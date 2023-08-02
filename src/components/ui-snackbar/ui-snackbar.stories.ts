@@ -8,12 +8,16 @@ export default {
 
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ESnackbarTypes),
 			description: "The button kinds",
 		},
 		title: {
-			controls: { type: "text" },
+			controls: {
+				type: "text" 
+			},
 		},
 	}
 } satisfies Meta<typeof UiSnackbar>;

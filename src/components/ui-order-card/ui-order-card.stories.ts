@@ -8,7 +8,9 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EOrderCardTypes),
 			description: "The Element kinds",
 		},
@@ -23,10 +25,14 @@ export default {
 type TComponentProps = InstanceType<typeof UiOrderCard>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiOrderCard },
+	components: {
+		UiOrderCard 
+	},
 	setup() {
 
-		return { args };
+		return {
+			args 
+		};
 	},
 
 	template: /*html*/`

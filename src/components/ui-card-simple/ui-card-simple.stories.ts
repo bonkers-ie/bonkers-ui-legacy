@@ -13,9 +13,13 @@ export default {
 type TComponentProps = InstanceType<typeof UiCardSimple>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiCardSimple },
+	components: {
+		UiCardSimple 
+	},
 	setup() {
-		return { args };
+		return {
+			args 
+		};
 	},
 	template: /*html*/`
 

@@ -7,15 +7,21 @@ export default {
 	component: UiToggle,
 	argTypes: {
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element disabled state",
 		},
 		alignCenter: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Elements center align state",
 		},
 		invertOrder: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element order state",
 		}
 	},
@@ -30,11 +36,16 @@ export default {
 type TComponentProps = InstanceType<typeof UiToggle>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiToggle },
+	components: {
+		UiToggle 
+	},
 	setup() {
 		const modelValue = ref(false);
 
-		return { args, modelValue };
+		return {
+			args,
+			modelValue 
+		};
 	},
 	template: `
 		<ui-toggle v-bind="args" v-model="modelValue" header="Header" :title="args.slot" />

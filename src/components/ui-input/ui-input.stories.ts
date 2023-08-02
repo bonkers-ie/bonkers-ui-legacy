@@ -10,21 +10,29 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		placeholder: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "Placeholder",
 		},
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EInputKinds),
 			description: "The input kinds",
 		},
 		type: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EInputType),
 			description: "The input type",
 		},
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element disabled state",
 		},
 	},
@@ -39,12 +47,12 @@ export default {
 type MyComponentProps = InstanceType<typeof UiInput>["$props"];
 
 const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
-	components:{
+	components: {
 		UiInput
 	},
-	setup(){
+	setup() {
 		const valueModel = ref("");
-		return{
+		return {
 			args,
 			valueModel
 		};
@@ -55,14 +63,14 @@ const Template: Story<MyComponentProps> = (args: MyComponentProps) => ({
 });
 
 const TemplateAll: Story<MyComponentProps> = (args: MyComponentProps) => ({
-	components:{
+	components: {
 		UiInput,
 		Icon
 	},
-	setup(){
+	setup() {
 		const valueModel = ref("");
 
-		return{
+		return {
 			args,
 			valueModel
 		};

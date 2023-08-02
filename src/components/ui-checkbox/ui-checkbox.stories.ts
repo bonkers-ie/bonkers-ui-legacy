@@ -9,20 +9,28 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		justify: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EJustify),
 			description: "The Element justify",
 		},
 		invertOrder: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element order",
 		},
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element disabled state",
 		},
 		modelValue: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element disabled state",
 		},
 
@@ -40,12 +48,17 @@ type TComponentProps = InstanceType<typeof UiCheckbox>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiCheckbox },
+	components: {
+		UiCheckbox 
+	},
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
 		const modelValue = ref(true);
 
-		return { args, modelValue };
+		return {
+			args,
+			modelValue 
+		};
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `

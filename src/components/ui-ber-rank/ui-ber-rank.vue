@@ -64,7 +64,7 @@
 	import { computed } from "vue";
 	import UiTypography, { ETextWeight, ETypographySizes, ETextTransform } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
-	import { berRankDictionary, type TBerPropNumber, type TBerPropString, EBerSize }from"./_types";
+	import { berRankDictionary, type TBerPropNumber, type TBerPropString, EBerSize } from "./_types";
 
 	const props = withDefaults(defineProps<{
 		rank: TBerPropNumber | TBerPropString | number; // from 0 to 15
@@ -74,7 +74,7 @@
 	});
 
 	const textSize = computed(()=>{
-		switch(props.size) {
+		switch (props.size) {
 			case EBerSize.SMALL:
 				return ETypographySizes.SM;
 			case EBerSize.MEDIUM:

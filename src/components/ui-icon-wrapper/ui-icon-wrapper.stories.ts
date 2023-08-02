@@ -10,12 +10,16 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EIconWrapperTypes),
 			description: "The Icon Wrapper kinds",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EIconWrapperSizes),
 			description: "The Icon Wrapper sizes",
 		}
@@ -28,9 +32,18 @@ export default {
 type TComponentProps = InstanceType<typeof UiIconWrapper>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiIconWrapper, UiIcon, UiNotificationBadge },
+	components: {
+		UiIconWrapper,
+		UiIcon,
+		UiNotificationBadge 
+	},
 	setup() {
-		return { args, EBadgeOrigin, EIconWrapperSizes, EIconWrapperTypes };
+		return {
+			args,
+			EBadgeOrigin,
+			EIconWrapperSizes,
+			EIconWrapperTypes 
+		};
 	},
 	template: /*html*/`
 		<ui-icon-wrapper :kind="EIconWrapperTypes.PRIMARY" v-bind="args" class="mb-sm">

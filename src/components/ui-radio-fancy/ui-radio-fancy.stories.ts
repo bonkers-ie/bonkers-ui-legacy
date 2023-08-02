@@ -10,15 +10,21 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		invertOrder: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The Element order",
 		},
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The full width size",
 		},
 		radioSize: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(ERadioSizes),
 			description: "The radio kinds",
 		},
@@ -34,11 +40,18 @@ export default {
 type TComponentProps = InstanceType<typeof UiRadioFancy>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiRadioFancy },
+	components: {
+		UiRadioFancy 
+	},
 	setup() {
 		const modelValue = ref("1");
 
-		return { modelValue, EIconType, args, ERadioSizes };
+		return {
+			modelValue,
+			EIconType,
+			args,
+			ERadioSizes 
+		};
 	},
 	template: /*html*/`
 		<div class="grid gap-sm" :style="{'grid-template-columns': 'repeat(auto-fit, minmax(160px, 1fr))'}">

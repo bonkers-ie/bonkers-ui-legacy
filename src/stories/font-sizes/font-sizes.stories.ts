@@ -6,7 +6,9 @@ export default {
 };
 
 const Template = () => ({
-	components: { UiFontSizes },
+	components: {
+		UiFontSizes 
+	},
 	template: `<ui-font-sizes/>`,
 });
 

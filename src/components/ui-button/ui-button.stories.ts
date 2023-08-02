@@ -9,32 +9,46 @@ export default {
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		kind: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EButtonTypes),
 			description: "The button kinds",
 		},
 		size: {
-			control: { type: "select" },
+			control: {
+				type: "select" 
+			},
 			options: Object.values(EButtonSizes),
 			description: "The button sizes",
 		},
 		fullWidth: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "The full width size",
 		},
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 			description: "Disabled state",
 		},
 		slot: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 			description: "The slot text or component",
 		},
-		hasPrefix:{
-			control: { type: "boolean" },
+		hasPrefix: {
+			control: {
+				type: "boolean" 
+			},
 		},
-		hasPostfix:{
-			control: { type: "boolean" },
+		hasPostfix: {
+			control: {
+				type: "boolean" 
+			},
 		}
 	},
 	args: {
@@ -48,10 +62,16 @@ type TComponentProps = InstanceType<typeof UiButton>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
 	// Components used in your story `template` are defined in the `components` object
-	components: { UiButton, UiIcon },
+	components: {
+		UiButton,
+		UiIcon 
+	},
 	// The story's `args` need to be mapped into the template through the `setup()` method
 	setup() {
-		return { args, ESize };
+		return {
+			args,
+			ESize 
+		};
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: /*html*/`
@@ -76,10 +96,15 @@ const Template: Story<TComponentProps> = (args) => ({
 		</ui-button>`,
 });
 const TemplateAll: Story<TComponentProps> = () => ({
-	components: { UiButton },
+	components: {
+		UiButton 
+	},
 
 	setup() {
-		return { EButtonSizes, EButtonTypes };
+		return {
+			EButtonSizes,
+			EButtonTypes 
+		};
 	},
 
 	template: /*html*/`

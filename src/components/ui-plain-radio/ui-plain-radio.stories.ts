@@ -6,17 +6,25 @@ import { ref } from "vue";
 
 export default {
 	title: "Components/ui-plain-radio",
-	component: UiPlainRadio, ETypographySizes, EColors,
+	component: UiPlainRadio,
+	ETypographySizes,
+	EColors,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		disabled: {
-			control: { type: "boolean" },
+			control: {
+				type: "boolean" 
+			},
 		},
 		header: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 		},
 		subHeader: {
-			control: { type: "text" },
+			control: {
+				type: "text" 
+			},
 		}
 	},
 	args: {
@@ -29,12 +37,19 @@ export default {
 type TComponentProps = InstanceType<typeof UiPlainRadio>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiPlainRadio },
+	components: {
+		UiPlainRadio 
+	},
 
 	setup() {
 		const modelValue = ref("1");
 
-		return { modelValue, args, ETypographySizes, EColors };
+		return {
+			modelValue,
+			args,
+			ETypographySizes,
+			EColors 
+		};
 
 	},
 

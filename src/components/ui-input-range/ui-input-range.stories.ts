@@ -6,16 +6,22 @@ export default {
 	title: "Components/ui-input-range",
 	component: UiInputRange,
 	argTypes: {
-		min:{
-			control: { type: "number" },
+		min: {
+			control: {
+				type: "number" 
+			},
 			description: "The Element min value",
 		},
-		max:{
-			control: { type: "number" },
+		max: {
+			control: {
+				type: "number" 
+			},
 			description: "The Element max value",
 		},
-		step:{
-			control: { type: "number" },
+		step: {
+			control: {
+				type: "number" 
+			},
 			description: "The Element max value",
 		}
 	},
@@ -29,11 +35,16 @@ export default {
 type TComponentProps = InstanceType<typeof UiInputRange>["$props"];
 
 const Template: Story<TComponentProps> = (args) => ({
-	components: { UiInputRange },
+	components: {
+		UiInputRange 
+	},
 	setup() {
 		const modelValue = ref(50);
 
-		return { args, modelValue };
+		return {
+			args,
+			modelValue 
+		};
 	},
 	template: /*html*/`
 		<div :style="{border: '1px solid'}">
