@@ -18,6 +18,7 @@ module.exports = {
 	parser: "vue-eslint-parser",
 	plugins: [
 		"tailwindcss",
+		"eslint-plugin-storybook"
 	],
 	overrides: [
 		{
