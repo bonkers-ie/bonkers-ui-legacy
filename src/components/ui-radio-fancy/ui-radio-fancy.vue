@@ -57,12 +57,13 @@
 			:class="[
 				disabled
 					&& 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
-				radioSize === ERadioSizes.DEFAULT && 'default',
-				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle'
+				radioSize === ERadioSizes.MINIMAL && 'flex gap-sm align-middle',
+				radioSize === ERadioSizes.COMPACT && 'grid cursor-pointer grid-flow-col px-md'
+
 			]"
 		>
 			<div
-				v-if="radioSize === ERadioSizes.DEFAULT"
+				v-if="radioSize === ERadioSizes.DEFAULT && iconName"
 			>
 				<ui-icon
 					:icon-name="iconName"
@@ -74,7 +75,7 @@
 					]"
 				/>
 			</div>
-			<div v-else-if="radioSize === ERadioSizes.MINIMAL">
+			<div v-else-if="radioSize === ERadioSizes.MINIMAL && iconName">
 				<ui-icon
 					:icon-name="iconName"
 					:size="ESize.MD"
@@ -85,6 +86,9 @@
 				/>
 
 			</div>
+			<div
+				v-else-if="radioSize === ERadioSizes.COMPACT"
+			/>
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
@@ -109,11 +113,12 @@
 		modelValue: string | number | boolean;
 		name: string;
 		value: string | number | boolean;
-		iconName: TIconName;
+		iconName?: TIconName;
 		disabled?: boolean;
 		radioSize?: ERadioSizes;
 	}>(), {
-		radioSize: ERadioSizes.DEFAULT
+		radioSize: ERadioSizes.DEFAULT,
+		iconName: undefined
 	});
 	const emit = defineEmits(["update:modelValue"]);
 	const radioModel = computed({
