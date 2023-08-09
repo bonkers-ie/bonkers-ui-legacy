@@ -6,12 +6,7 @@ import type { Meta } from "@storybook/vue3";
 const meta: Meta<typeof UiRadioCompact> = {
 	title: "Components/ui-radio-compact",
 	component: UiRadioCompact,
-	argTypes: {},
-	// default: {
-	// 	control: {
-	// 		type: "text"
-	// 	},
-	// }
+	argTypes: {}
 };
 
 export default meta;

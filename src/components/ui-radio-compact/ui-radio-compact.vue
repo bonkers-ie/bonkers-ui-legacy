@@ -17,46 +17,46 @@
 			class="
 			ui-radio-compact_content
 			box-border
-			flex
+			grid
 			cursor-pointer
-			rounded-2xl
+			items-center
+			justify-items-center
+			rounded-xl
 			border
 			border-secondary-alt-500
 			bg-white
-			px-md
 			before:absolute
 			before:-z-10
 			before:box-border
-
 			before:rounded-[16px]
+
 			before:bg-primary-300
 			hover:border-secondary-alt-700
 			peer-checked:border-transparent
 			peer-checked:shadow-selected-shadow
-
 			peer-checked:hover:shadow-border-selected
+
 			peer-checked:active:shadow-border-primary
 			peer-checked:active:before:-bottom-xs
 			peer-checked:active:before:-left-xs
 			peer-checked:active:before:-right-xs
 			peer-checked:active:before:-top-xs
-
 			peer-focus:before:-bottom-xs
-			peer-focus:before:-left-xs
 
+			peer-focus:before:-left-xs
 			peer-focus:before:-right-xs
+
 			peer-focus:before:-top-xs
 			peer-active:before:-bottom-xxs
 			peer-active:before:-left-xxs
-
 			peer-active:before:-right-xxs
+
 			peer-active:before:-top-xxs
 			"
 		>
 
 			<ui-typography
 				:size="ETypographySizes.MD"
-				:align="ETextAlign.CENTER"
 			>
 				<slot />
 			</ui-typography>
@@ -66,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-	import UiTypography, { ETextAlign,ETypographySizes } from "../ui-typography";
+	import UiTypography, { ETypographySizes } from "../ui-typography";
 	import { computed } from "vue";
 
 	const props = defineProps<{
@@ -88,9 +88,8 @@
 
 <style>
 	.ui-radio-compact_content{
-		height: 58px;
-		width: 58px;
-		padding-top: 20px;
+		min-height: 58px;
+		min-width: 58px;
 	}
 
 </style>
