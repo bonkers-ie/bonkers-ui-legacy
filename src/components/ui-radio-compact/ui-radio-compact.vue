@@ -56,7 +56,10 @@
 		>
 
 			<ui-typography
+				class="px-md py-sm"
 				:size="ETypographySizes.MD"
+				line-height
+				:align="ETextAlign.CENTER"
 			>
 				<slot />
 			</ui-typography>
@@ -66,8 +69,8 @@
 </template>
 
 <script lang="ts" setup>
-	import UiTypography, { ETypographySizes } from "../ui-typography";
 	import { computed } from "vue";
+	import UiTypography, { ETypographySizes, ETextAlign } from "../ui-typography";
 
 	const props = defineProps<{
 		modelValue: string | number | boolean;
@@ -75,7 +78,9 @@
 		value: string | number | boolean;
 		disabled?: boolean;
 	}>();
+
 	const emit = defineEmits(["update:modelValue"]);
+
 	const radioModel = computed({
 		get() {
 			return props.modelValue;
@@ -85,11 +90,3 @@
 		}
 	});
 </script>
-
-<style>
-	.ui-radio-compact_content{
-		min-height: 58px;
-		min-width: 58px;
-	}
-
-</style>

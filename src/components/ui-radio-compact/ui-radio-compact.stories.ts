@@ -38,10 +38,9 @@ export const Default = {
 				name="radio" title="title"
 
 			>
-				<ui-typography :size="ETypographySizes.MD" :align="ETextAlign.CENTER">
 					{{item}}
-				</ui-typography>
-			</ui-radio-compact>
+				</ui-radio-compact>
+
 		</div>
 		`,
 		args: {
