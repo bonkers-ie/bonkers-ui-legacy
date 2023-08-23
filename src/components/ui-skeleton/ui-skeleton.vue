@@ -37,7 +37,7 @@
 		v-else
 		class="ui-skeleton-menu mb-sm flex animate-pulse flex-row items-center justify-between"
 	>
-		<div class="ui-skeleton-menu__result-count h-sm w-full max-w-xl rounded-md bg-secondary-alt-300" />
+		<div class="ui-skeleton-menu__result-count h-sm w-full max-w-xxl rounded-md bg-secondary-alt-300" />
 		<div class="ui-skeleton-menu__filters relative flex h-lg w-xxl flex-row gap-x-sm">
 			<div
 				v-for="i in 2"
