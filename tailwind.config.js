@@ -18,6 +18,12 @@ module.exports = {
 			minWidth: (theme) => ({
 				...theme("spacing"),
 			}),
+			maxHeight: (theme) => ({
+				...theme("spacing"),
+			}),
+			maxWidth: (theme) => ({
+				...theme("spacing"),
+			}),
 		},
 	},
 	plugins: [],
