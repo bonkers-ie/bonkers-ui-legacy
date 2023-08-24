@@ -3,11 +3,11 @@ export enum EListItemTypes {
 	PROGRESS = "PROGRESS"
 }
 export enum EListItemSpacing {
-    DEFAULT = "DEFAULT",
+	DEFAULT = "DEFAULT",
 	COMPACT = "COMPACT"
 }
 
 export enum EListItemSize {
-    SM = "SM",
+	SM = "SM",
 	MD = "MD"
 }

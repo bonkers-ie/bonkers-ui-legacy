@@ -1,8 +1,8 @@
 export enum EResultCardRangeSizes {
-DEFAULT = "DEFAULT",
+	DEFAULT = "DEFAULT",
 }
 
 export enum EResultCardRangeTypes {
-    DEFAULT = "DEFAULT",
-    FULL = "FULL",
+	DEFAULT = "DEFAULT",
+	FULL = "FULL",
 }

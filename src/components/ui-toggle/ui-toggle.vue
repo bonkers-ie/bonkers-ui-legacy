@@ -54,7 +54,7 @@
 
 			<slot name="title">
 				<ui-typography
-					:size="ETypographySizes.SM"
+					:size="ETypographySizes.MD"
 					class="w-full"
 					line-height
 				>
