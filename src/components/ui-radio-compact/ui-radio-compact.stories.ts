@@ -30,7 +30,7 @@ export const Default = {
 			};
 		},
 		template: /*html*/`
-		<div class="flex gap-sm align-middle" :style="{}">
+		<div class="flex flex-row gap-sm align-middle" :style="{}">
 			<ui-radio-compact v-for="item in 8"
 				:key="item"
 				:value="String(item)"
