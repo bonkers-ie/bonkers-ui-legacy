@@ -1,0 +1,1 @@
+{"version":3,"file":"ui-skeleton.stories-430f0181.js","sources":["../../src/components/ui-skeleton/_typings.ts"],"sourcesContent":["export enum ESkeletonKind {\n\tRESULT_CARD = \"RESULT_CARD\",\n\tFILTER_MENU = \"FILTER_MENU\"\n}\n"],"names":["ESkeletonKind"],"mappings":"qGAAY,IAAAA,GAAAA,IACXA,EAAA,YAAc,cACdA,EAAA,YAAc,cAFHA,IAAAA,GAAA,CAAA,CAAA;;;;;;"}
