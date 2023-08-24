@@ -27,9 +27,14 @@ module.exports = {
 				indent: "off",
 			},
 		},
+		{
+			files: ["*.ts"],
+			rules: {
+				"@typescript-eslint/indent": ["error", "tab"],
+			}
+		}
 	],
 	rules: {
-		"@typescript-eslint/indent": ["error", "tab"],
 		indent: [
 			"error",
 			"tab",
