@@ -7,11 +7,16 @@
 		--color-transparent: transparent;
 
 		/* colors/primary */
+		--color-primary-50: #ecf8ed;
+		--color-primary-100: #d9f2db;
+		--color-primary-200: #b3e5b6;
 		--color-primary-300: #9adc9e;
 		--color-primary-400: #78d17d;
 		--color-primary-500: #56c55d;
 		--color-primary-600: #459e4a;
 		--color-primary-700: #347638;
+		--color-primary-800: #1a4c1d;
+		--color-primary-900: #0d260f;
 		--color-primary: var(--color-primary-500);
 
 		/* colors/primary-alt */
