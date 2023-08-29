@@ -5,6 +5,7 @@
 				v-if="heading"
 				class="mb-xs"
 				:size="ETypographySizes.MD"
+				line-height
 			>
 				{{ heading }}
 			</ui-typography>
