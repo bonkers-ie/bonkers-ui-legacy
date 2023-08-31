@@ -1,2 +1,2 @@
 export { default } from "./ui-input.vue";
-export { EInputType, EInputKinds } from "./_typings";
+export { EInputType, EInputKinds, EAutocomplete } from "./_typings";

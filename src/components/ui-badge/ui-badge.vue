@@ -12,7 +12,6 @@
 			<ui-typography
 				v-if="slots.default"
 				:size="getBadgeSize"
-				:weight="ETextWeight.SEMI_BOLD"
 				class="whitespace-nowrap"
 				line-height
 				:class="[
