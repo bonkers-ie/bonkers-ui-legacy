@@ -23,7 +23,8 @@
 			<slot name="prefix-icon" />
 
 			<input
-				:autocomplete="getAutoComplete()"
+				:autocomplete="autocomplete || getAutoComplete"
+				:name="name || autocomplete || getAutoComplete"
 				:value="modelValue"
 				:pattern="pattern"
 				class="w-full border-0 bg-transparent outline-none placeholder:italic placeholder:text-secondary-alt"
@@ -32,7 +33,7 @@
 				:maxlength="maxlength"
 				:minlength="minlength"
 				@input="$emit('update:modelValue', ($event.target as HTMLTextAreaElement)?.value)"
-				@focus="focusHandler || (()=>undefined)"
+				@focus="focusHandler || undefined"
 			>
 
 			<slot name="postfix-icon" />
@@ -53,7 +54,8 @@
 </template>
 
 <script lang="ts" setup>
-	import { EInputKinds, EInputType } from "./_typings";
+	import { computed } from "vue";
+	import { EAutocomplete, EInputKinds, EInputType } from "./_typings";
 	import UiTypography, { ETypographySizes, EColors } from "../ui-typography";
 
 	const props = withDefaults(defineProps<{
@@ -68,11 +70,13 @@
 		maxlength?: string;
 		minlength?: string;
 		focusHandler?: (e:FocusEvent) => void;
-		autocomplete?: string;
+		autocomplete?: EAutocomplete;
+		name?: string;
 	}>(), {
 		modelValue: "",
 		placeholder: "",
-		autocomplete: "",
+		autocomplete: undefined,
+		name: undefined,
 		heading: undefined,
 		subLabel: undefined,
 		pattern: undefined,
@@ -85,13 +89,12 @@
 
 	defineEmits(["update:modelValue"]);
 
-	const getAutoComplete =()=> {
-		if (props.autocomplete !== "") return props.autocomplete;
+	const getAutoComplete = computed(()=> {
 		switch (props.type) {
-			case EInputType.PASSWORD: return "current-password";
-			case EInputType.EMAIL: return "email";
-			default: return "off";
+			case EInputType.PASSWORD: return EAutocomplete.CURRENT_PASSWORD;
+			case EInputType.EMAIL: return EAutocomplete.EMAIL;
+			default: return undefined;
 		}
-	};
+	});
 
 </script>

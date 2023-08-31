@@ -1,7 +1,7 @@
 <template>
 	<div class="ui-progress">
 		<div
-			class="relative h-xs w-full overflow-hidden rounded-lg bg-primary-50"
+			class="relative h-xs w-full overflow-hidden rounded-lg bg-primary-200"
 		>
 			<div
 				class="
