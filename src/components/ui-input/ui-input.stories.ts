@@ -2,7 +2,7 @@ import type { Story } from "@storybook/vue3";
 import UiInput from "./ui-input.vue";
 import Icon from "../../_samples/icon.vue";
 import { ref } from "vue";
-import { EInputKinds, EInputType } from "./_typings";
+import { EInputKinds, EInputType, EAutocomplete } from "./_typings";
 
 export default {
 	title: "Components/ui-input",
@@ -11,36 +11,44 @@ export default {
 	argTypes: {
 		placeholder: {
 			control: {
-				type: "text" 
+				type: "text"
 			},
 			description: "Placeholder",
 		},
 		kind: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(EInputKinds),
 			description: "The input kinds",
 		},
 		type: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(EInputType),
 			description: "The input type",
 		},
 		disabled: {
 			control: {
-				type: "boolean" 
+				type: "boolean"
 			},
 			description: "The Element disabled state",
 		},
+		autocomplete: {
+			control: {
+				type: "select"
+			},
+			option: Object.values(EAutocomplete),
+			description: "The Element autocomplete state",
+		}
 	},
 	args: {
 		placeholder: "Placeholder",
 		kind: undefined,
 		disabled: false,
-		type: EInputType.TEXT
+		type: EInputType.TEXT,
+		autocomplete: EAutocomplete.OFF
 	}
 };
 
