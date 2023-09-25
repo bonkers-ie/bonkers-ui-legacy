@@ -1,53 +1,20 @@
+import { ICON_DEFAULT } from "../../CONSTANTS";
 import UiCardCta from "../ui-card-cta";
-import type { Story } from "@storybook/vue3";
+import type { Meta } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-card-cta",
 	component: UiCardCta,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-	argTypes: {
-		invertOrder: {
-			control: {
-				type: "boolean" 
-			},
-			description: "The Element order",
-		},
-		disabled: {
-			control: {
-				type: "boolean" 
-			},
-			description: "The full width size",
-		},
-	},
+} satisfies Meta<typeof UiCardCta>;
+
+export const Default = {
 	args: {
+		iconName: ICON_DEFAULT,
 		slot: "Description",
 		invertOrder: false,
-		disabled: false
+		disabled: false,
+		title: "Title",
+		description: "Description"
 	},
 };
-
-type TComponentProps = InstanceType<typeof UiCardCta>["$props"];
-
-const Template: Story<TComponentProps> = (args) => ({
-	components: {
-		UiCardCta 
-	},
-	setup() {
-		return {
-			args 
-		};
-	},
-	template: /*html*/ `
-		<ui-card-cta v-bind="args" :icon-name="['far', 'face-smile']">
-			<template #title>
-				Title
-			</template>
-
-			<template #description>
-				{{args.slot}}
-			</template>
-		</ui-card-cta>
-		`
-});
-
-export const Default = Template.bind({});

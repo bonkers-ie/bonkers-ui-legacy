@@ -2,12 +2,14 @@
 	<button
 		class="
 			ui-card-cta
+			group
 			w-full
 			rounded-2xl
 			border
 			border-secondary-alt-500
 			bg-white
 			p-sm
+			text-left
 			shadow-md
 			outline-0
 			hover:border-secondary-700
@@ -18,12 +20,13 @@
 		:disabled="disabled"
 	>
 		<span
-			class="ui-card-cta__wrapper grid w-full items-center gap-sm"
-			:class="[
-				invertOrder && 'ui-card-cta_inverted',
-			]"
+			class="group-disabled:opcity-50 grid w-full items-center gap-sm"
+			:class="{
+				'grid-cols-[auto,1fr]': !invertOrder,
+				'grid-cols-[1fr,auto]': invertOrder,
+			}"
 		>
-			<slot name="icon">
+			<slot name="iconSlot">
 				<ui-icon-wrapper>
 					<ui-icon
 						v-if="iconName"
@@ -34,25 +37,28 @@
 				</ui-icon-wrapper>
 			</slot>
 			<span
-				v-if="$slots.title && $slots.description"
 				class="w-full"
 				:class="invertOrder && 'order-first'"
 			>
-				<ui-typography
-					:kind="EColors.SECONDARY_400"
-					class="mb-xxs"
-					line-height
-				>
-					<slot name="title" />
-				</ui-typography>
+				<slot name="titleSlot">
+					<ui-typography
+						:kind="EColors.SECONDARY_400"
+						class="mb-xxs"
+						line-height
+					>
+						{{ title }}
+					</ui-typography>
+				</slot>
 
-				<ui-typography
-					:kind="EColors.SECONDARY_300"
-					:size="ETypographySizes.SM"
-					line-height
-				>
-					<slot name="description" />
-				</ui-typography>
+				<slot name="descriptionSlot">
+					<ui-typography
+						:kind="EColors.SECONDARY_300"
+						:size="ETypographySizes.SM"
+						line-height
+					>
+						{{ description }}
+					</ui-typography>
+				</slot>
 			</span>
 		</span>
 	</button>
@@ -70,25 +76,8 @@
 	defineProps<{
 		invertOrder?: boolean;
 		disabled?: boolean;
-		iconName?: TIconName
+		iconName?: TIconName;
+		title?: string;
+		description?: string;
 	}>();
-
 </script>
-
-<style scoped>
-	.ui-card-cta {
-		text-align: unset;
-	}
-
-	.ui-card-cta__wrapper {
-		grid-template-columns: auto 1fr;
-	}
-
-	.ui-card-cta:disabled .ui-card-cta__wrapper {
-		opacity: 0.5;
-	}
-
-	.ui-card-cta_inverted {
-		grid-template-columns: 1fr auto;
-	}
-</style>
