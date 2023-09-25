@@ -20,7 +20,7 @@
 		:disabled="disabled"
 	>
 		<span
-			class="grid w-full items-center gap-sm group-disabled:opacity-50"
+			class="group-disabled:opcity-50 grid w-full items-center gap-sm"
 			:class="{
 				'grid-cols-[auto,1fr]': !invertOrder,
 				'grid-cols-[1fr,auto]': invertOrder,
