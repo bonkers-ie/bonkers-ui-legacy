@@ -18,10 +18,14 @@ const run = async () => {
 
 	const pkg = require(path.join(DIR_VARIABLE, "package.json"));
 
-	const currentVersion = execSync(`npm view ${pkg.name} version`, { cwd: DIR_VARIABLE }).toString();
+	const currentVersion = execSync(`npm view ${pkg.name} version`, {
+		cwd: DIR_VARIABLE 
+	}).toString();
 	setVersionToJson(currentVersion);
 
-	let newVersion = execSync(`npm version --no-git-tag-version ${VERSION_TO_UPDATE}`, { cwd: DIR_VARIABLE }).toString();
+	let newVersion = execSync(`npm version --no-git-tag-version ${VERSION_TO_UPDATE}`, {
+		cwd: DIR_VARIABLE 
+	}).toString();
 	newVersion = newVersion.replace(/(\r\n|\n|\r)/gm, "");
 
 	setVersionToJson(newVersion);
@@ -38,8 +42,8 @@ const run = async () => {
 
 };
 
-try{
+try {
 	run();
-}catch(e){
+} catch (e) {
 	console.error(e, "<------=");
 }
