@@ -1,10 +1,10 @@
 <template>
 	<div
 		v-if="dropdownKind === EDropdownKinds.DEFAULT"
-		class=" rounded-lg border border-secondary-alt-300"
+		class="rounded-lg border border-secondary-alt-300 bg-white"
 	>
 		<div
-			class="flex justify-between rounded bg-white px-md py-sm font-bold text-black"
+			class="flex justify-between rounded px-md py-sm font-bold text-black"
 			@click="isOpen = !isOpen"
 		>
 			<ui-typography
@@ -21,11 +21,16 @@
 				:size="ESize.MD"
 			/>
 		</div>
+
 		<div
-			class="w-full items-center border border-transparent border-t-secondary-alt-300 p-sm"
-			:class="isOpen ? 'inline-block' : 'hidden'"
+			class=" border border-secondary-alt-300 border-x-transparent border-b-transparent bg-white
+			transition duration-300 ease-in-out"
+			:class="isOpen ? 'grid-rows-[1fr] opacity-100 h-auto ' : 'grid-rows-[0fr] opacity-0 h-0'"
 		>
-			<slot>
+			<div
+				class="w-full items-center border border-transparent p-sm"
+				:class="isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+			>
 				<ui-typography
 					line-height
 					:size="
@@ -34,13 +39,11 @@
 				>
 					{{ subText }}
 				</ui-typography>
-			</slot>
-		</div>
-		<div
-			class="w-full items-center border border-transparent p-sm"
-			:class="isOpen ? 'inline-block' : 'hidden'"
-		>
-			<slot>
+			</div>
+			<div
+				class="w-full items-center border border-transparent p-sm"
+				:class="isOpen ? 'grid-rows-[1fr] opacity-100 ' : 'grid-rows-[0fr] opacity-0'"
+			>
 				<ui-typography
 					line-height
 					:size="
@@ -49,7 +52,7 @@
 				>
 					{{ subText }}
 				</ui-typography>
-			</slot>
+			</div>
 		</div>
 	</div>
 
@@ -67,8 +70,9 @@
 			px-md
 			py-sm
 			font-bold
-			text-black"
-			@click="isOpen = !isOpen"
+			text-black
+			"
+			@click="isOpen = !isOpen "
 		>
 			<ui-typography
 				line-height
@@ -87,8 +91,8 @@
 		</div>
 
 		<div
-			class="mt-sm w-full "
-			:class="isOpen ? 'inline-block' : 'hidden'"
+			class=" mt-sm w-full transition-all duration-300 ease-in-out"
+			:class="isOpen ? 'grid-rows-[1fr] opacity-100 ' : 'grid-rows-[0fr] opacity-0'"
 		>
 			<slot>
 				<ui-typography
