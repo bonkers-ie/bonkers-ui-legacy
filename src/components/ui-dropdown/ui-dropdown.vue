@@ -23,12 +23,13 @@
 		</div>
 
 		<div
-			class=" border border-secondary-alt-300 border-x-transparent border-b-transparent bg-white
+			class=" border border-transparent
 			transition duration-300 ease-in-out"
-			:class="isOpen ? 'grid-rows-[1fr] opacity-100 h-auto ' : 'grid-rows-[0fr] opacity-0 h-0'"
+			:class="isOpen ? 'grid-rows-[1fr] opacity-100 h-auto'
+				: 'grid-rows-[0fr] opacity-0 h-0'"
 		>
 			<div
-				class="w-full items-center border border-transparent p-sm"
+				class="w-full items-center border border-transparent border-t-secondary-alt-300 p-sm"
 				:class="isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
 			>
 				<ui-typography
