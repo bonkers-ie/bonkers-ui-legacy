@@ -1,110 +1,47 @@
 <template>
 	<div
-		v-if="dropdownKind === EDropdownKinds.DEFAULT"
-		class="rounded-lg border border-secondary-alt-300 bg-white"
+		class="rounded-lg bg-white"
 	>
 		<div
-			class="flex justify-between rounded px-md py-sm font-bold text-black"
+			class="flex flex-col rounded-lg border px-md py-sm text-black"
+			:class="{
+				' border-secondary-alt-300': dropdownKind === EDropdownKinds.DEFAULT,
+				' border-error': dropdownKind === EDropdownKinds.SECONDARY
+			}"
 			@click="isOpen = !isOpen"
 		>
-			<ui-typography
-				line-height
-				:size="
-					ETypographySizes.MD"
-				:weight="ETextWeight.SEMI_BOLD "
-			>
-				{{ header }}
-			</ui-typography>
-
-			<ui-icon
-				:icon-name="iconName"
-				:size="ESize.MD"
-			/>
-		</div>
-
-		<div
-			class=" border border-transparent
-			transition duration-300 ease-in-out"
-			:class="isOpen ? 'grid-rows-[1fr] opacity-100 h-auto'
-				: 'grid-rows-[0fr] opacity-0 h-0'"
-		>
-			<div
-				class="w-full items-center border border-transparent border-t-secondary-alt-300 p-sm"
-				:class="isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-			>
+			<div class="flex flex-row justify-between">
 				<ui-typography
 					line-height
-					:size="
-						ETypographySizes.SM"
+					:size="ETypographySizes.MD"
 					:weight="ETextWeight.SEMI_BOLD "
 				>
-					{{ subText }}
+					{{ header }}
 				</ui-typography>
+
+				<ui-icon
+					class="item-icon"
+					:class="isOpen ? 'rotate-180 transform duration-200 opacity-100'
+						: 'rotate-0 transform duration-200 opacity-100'"
+					:icon-name="iconName"
+					:size="ESize.MD"
+				/>
 			</div>
-			<div
-				class="w-full items-center border border-transparent p-sm"
-				:class="isOpen ? 'grid-rows-[1fr] opacity-100 ' : 'grid-rows-[0fr] opacity-0'"
-			>
-				<ui-typography
-					line-height
-					:size="
-						ETypographySizes.SM"
-					:weight="ETextWeight.SEMI_BOLD "
+
+			<Transition>
+				<div
+					v-show="isOpen"
+					class="overflow-hidden"
+					:class="{
+						' items-center border border-transparent ':
+							dropdownKind === EDropdownKinds.DEFAULT
+					}"
 				>
-					{{ subText }}
-				</ui-typography>
-			</div>
-		</div>
-	</div>
-
-	<div
-		v-else
-	>
-		<div
-			class="
-			flex
-			justify-between
-			rounded-lg
-			border
-			border-secondary-500
-			bg-white
-			px-md
-			py-sm
-			font-bold
-			text-black
-			"
-			@click="isOpen = !isOpen "
-		>
-			<ui-typography
-				line-height
-				:size="
-					ETypographySizes.MD"
-				:weight="ETextWeight.SEMI_BOLD "
-			>
-				{{ header }}
-			</ui-typography>
-
-			<ui-icon
-				:class="isOpen ? 'rotate-180' : 'rotate-0'"
-				:icon-name="iconName"
-				:size="ESize.MD"
-			/>
-		</div>
-
-		<div
-			class=" mt-sm w-full transition-all duration-300 ease-in-out"
-			:class="isOpen ? 'grid-rows-[1fr] opacity-100 ' : 'grid-rows-[0fr] opacity-0'"
-		>
-			<slot>
-				<ui-typography
-					line-height
-					:size="
-						ETypographySizes.SM"
-					:weight="ETextWeight.REGULAR "
-				>
-					{{ subText }}
-				</ui-typography>
-			</slot>
+					<slot>
+						{{ subText }}
+					</slot>
+				</div>
+			</Transition>
 		</div>
 	</div>
 </template>
@@ -117,12 +54,34 @@
 
 	const isOpen = ref(false);
 
-	defineProps<{
+	withDefaults(defineProps<{
 		header?: string;
 		iconName: TIconName;
 		subText?: string;
-		dropdownKind: EDropdownKinds
+		dropdownKind?: EDropdownKinds
 
-	}>();
+	}>(), {
+		dropdownKind: EDropdownKinds.DEFAULT
+	});
 
 </script>
+
+<style scoped>
+	.v-enter-active,
+	.v-leave-active {
+		transition: all 0.5s ease-in-out;
+	}
+
+	.v-enter-to,
+	.v-leave-from {
+		height: auto;
+		opacity: 1;
+	}
+
+	.v-enter-from,
+	.v-leave-to {
+		height: 0;
+		opacity: 0;
+	}
+
+</style>
