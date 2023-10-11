@@ -1,16 +1,13 @@
 <template>
 	<div
-		class="rounded-lg bg-white"
+		v-if="dropdownKind === EDropdownKinds.DEFAULT"
+		class="rounded-lg border border-secondary-alt-300 bg-white"
 	>
 		<div
-			class="flex flex-col rounded-lg border px-md py-sm text-black"
-			:class="{
-				' border-secondary-alt-300': dropdownKind === EDropdownKinds.DEFAULT,
-				' border-error': dropdownKind === EDropdownKinds.SECONDARY
-			}"
+			class="flex flex-col rounded-lg text-black"
 			@click="isOpen = !isOpen"
 		>
-			<div class="flex flex-row justify-between">
+			<div class="flex flex-row justify-between px-md py-sm ">
 				<ui-typography
 					line-height
 					:size="ETypographySizes.MD"
@@ -31,10 +28,50 @@
 			<Transition>
 				<div
 					v-show="isOpen"
-					class="overflow-hidden"
 					:class="{
-						' items-center border border-transparent ':
-							dropdownKind === EDropdownKinds.DEFAULT
+						'h-full items-center overflow-hidden border border-transparent border-t-secondary-alt-300 p-sm':
+							dropdownKind === EDropdownKinds.DEFAULT,
+					}"
+				>
+					<slot>
+						{{ subText }}
+					</slot>
+				</div>
+			</Transition>
+		</div>
+	</div>
+
+	<div
+		v-else-if="dropdownKind === EDropdownKinds.SECONDARY"
+	>
+		<div
+			@click="isOpen = !isOpen"
+		>
+			<div class=" my-md rounded-lg border border-secondary-500">
+				<div class="flex flex-row justify-between px-md  py-sm">
+					<ui-typography
+						line-height
+						:size="ETypographySizes.LG"
+						:weight="ETextWeight.SEMI_BOLD "
+					>
+						{{ header }}
+					</ui-typography>
+
+					<ui-icon
+						:class="isOpen ? 'rotate-180 transform duration-200 opacity-100'
+							: 'rotate-0 transform duration-200 opacity-100'"
+						:icon-name="iconName"
+						:size="ESize.MD"
+					/>
+				</div>
+			</div>
+
+			<Transition>
+				<div
+					v-show="isOpen"
+					:class="{
+						'h-full items-center overflow-hidden':
+							dropdownKind === EDropdownKinds.SECONDARY,
 					}"
 				>
 					<slot>
@@ -69,18 +106,13 @@
 <style scoped>
 	.v-enter-active,
 	.v-leave-active {
-		transition: all 0.5s ease-in-out;
-	}
+		transition: opacity 0.15s ease-in-out 0.2s, height 0.1s ease;
 
-	.v-enter-to,
-	.v-leave-from {
-		height: auto;
-		opacity: 1;
 	}
 
 	.v-enter-from,
 	.v-leave-to {
-		height: 0;
+		height: fit-content;
 		opacity: 0;
 	}
 
