@@ -20,7 +20,7 @@
 		--color-primary-alt-500: #31d277;
 		--color-primary-alt-600: #27a85f;
 		--color-primary-alt-700: #1d7e47;
-		--color-primary-alt: var(--color-primary-500);
+		--color-primary-alt: var(--color-primary-alt-500);
 
 		/* colors/secondary */
 		--color-secondary-300: #848793;

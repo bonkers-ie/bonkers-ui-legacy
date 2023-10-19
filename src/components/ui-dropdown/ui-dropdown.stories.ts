@@ -9,7 +9,7 @@ export default {
 	component: UiDropdown,
 
 	argTypes: {
-		dropdownKind: {
+		kind: {
 			control: {
 				type: "select"
 			},
@@ -25,29 +25,7 @@ export const Default = {
 		iconName: ICON_DEFAULT,
 		header: "Tables of content",
 		subText: "Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		dropdownKind: EDropdownKinds.DEFAULT
+		kind: EDropdownKinds.DEFAULT
 	},
 
 };
-
-export const Secondary = ()=>({
-	components: {
-		UiDropdown
-	},
-	setup() { return {
-		args: {
-			iconName: ICON_DEFAULT,
-			header: "Who are we?",
-			subText: "Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-			dropdownKind: EDropdownKinds.SECONDARY
-		}
-	}; },
-
-	template: `
-		<div>
-			<ui-dropdown v-bind="args" />
-			<ui-dropdown v-bind="args" />
-
-		</div>
-	`
-});

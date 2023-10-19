@@ -1,5 +1,6 @@
 export enum EDropdownKinds {
 	DEFAULT = "default",
-	SECONDARY = "secondary"
+	SECONDARY = "secondary",
+	OPENED = "opened"
 
 }

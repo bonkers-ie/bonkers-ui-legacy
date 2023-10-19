@@ -1,84 +1,62 @@
 <template>
 	<div
-		v-if="dropdownKind === EDropdownKinds.DEFAULT"
-		class="rounded-lg border border-secondary-alt-300 bg-white"
+		class="bg-white"
+		:class="{
+			'rounded-lg border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT,
+		}"
 	>
 		<div
-			class="flex flex-col rounded-lg text-black"
+			class="flex justify-between px-md py-sm"
+			:class="{
+				'rounded-lg border border-secondary': kind === EDropdownKinds.SECONDARY
+					|| kind === EDropdownKinds.OPENED
+			}"
 			@click="isOpen = !isOpen"
 		>
-			<div class="flex flex-row justify-between px-md py-sm ">
-				<ui-typography
-					line-height
-					:size="ETypographySizes.MD"
-					:weight="ETextWeight.SEMI_BOLD "
-				>
-					{{ header }}
-				</ui-typography>
+			<ui-typography
+				line-height
+				:size="ETypographySizes.MD"
+				:weight="ETextWeight.SEMI_BOLD "
+			>
+				{{ header }}
+			</ui-typography>
 
-				<ui-icon
-					class="item-icon"
-					:class="isOpen ? 'rotate-180 transform duration-200 opacity-100'
-						: 'rotate-0 transform duration-200 opacity-100'"
-					:icon-name="iconName"
-					:size="ESize.MD"
-				/>
-			</div>
-
-			<Transition>
-				<div
-					v-show="isOpen"
-					:class="{
-						'h-full items-center overflow-hidden border border-transparent border-t-secondary-alt-300 p-sm':
-							dropdownKind === EDropdownKinds.DEFAULT,
-					}"
-				>
-					<slot>
-						{{ subText }}
-					</slot>
-				</div>
-			</Transition>
+			<ui-icon
+				class="item-icon duration-200"
+				:class="{
+					'rotate-180': isOpen ? kind === EDropdownKinds.DEFAULT || kind === EDropdownKinds.SECONDARY :
+						'rotate-0' ? kind === EDropdownKinds.OPENED : !isOpen
+				}"
+				:icon-name="iconName"
+				:size="ESize.MD"
+			/>
 		</div>
-	</div>
 
-	<div
-		v-else-if="dropdownKind === EDropdownKinds.SECONDARY"
-	>
 		<div
-			@click="isOpen = !isOpen"
+			class="overflow-hidden duration-300"
+			:style="{
+				height: accordionHeight + 'px'
+			}"
+			:class="{
+				'border border-transparent border-t-secondary-alt-300':
+					kind === EDropdownKinds.DEFAULT,
+				'!h-0 opacity-0': !isOpen ? kind === EDropdownKinds.DEFAULT || kind === EDropdownKinds.SECONDARY:
+					'h-auto opacity-100' ? kind === EDropdownKinds.OPENED : isOpen,
+
+			}"
 		>
-			<div class=" my-md rounded-lg border border-secondary-500">
-				<div class="flex flex-row justify-between px-md  py-sm">
-					<ui-typography
-						line-height
-						:size="ETypographySizes.LG"
-						:weight="ETextWeight.SEMI_BOLD "
-					>
-						{{ header }}
-					</ui-typography>
+			<div
+				ref="contentRef"
+				class="box-border pt-sm"
+				:class="{
+					'p-sm': kind === EDropdownKinds.DEFAULT,
 
-					<ui-icon
-						:class="isOpen ? 'rotate-180 transform duration-200 opacity-100'
-							: 'rotate-0 transform duration-200 opacity-100'"
-						:icon-name="iconName"
-						:size="ESize.MD"
-					/>
-				</div>
+				}"
+			>
+				<slot>
+					{{ subText }}
+				</slot>
 			</div>
-
-			<Transition>
-				<div
-					v-show="isOpen"
-					:class="{
-						'h-full items-center overflow-hidden':
-							dropdownKind === EDropdownKinds.SECONDARY,
-					}"
-				>
-					<slot>
-						{{ subText }}
-					</slot>
-				</div>
-			</Transition>
 		</div>
 	</div>
 </template>
@@ -86,34 +64,29 @@
 <script lang="ts" setup>
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName, ESize } from "../ui-icon";
-	import { ref } from "vue";
+	import { onMounted, ref } from "vue";
 	import { EDropdownKinds } from "./_typings";
 
 	const isOpen = ref(false);
+
+	const contentRef = ref<null | HTMLDivElement>(null);
+	const accordionHeight = ref<number>(0);
 
 	withDefaults(defineProps<{
 		header?: string;
 		iconName: TIconName;
 		subText?: string;
-		dropdownKind?: EDropdownKinds
+		kind?: EDropdownKinds
 
 	}>(), {
-		dropdownKind: EDropdownKinds.DEFAULT
+		kind: EDropdownKinds.DEFAULT
+	});
+
+	onMounted(()=>{
+		if (contentRef.value) {
+			const { height } = contentRef.value.getBoundingClientRect();
+			accordionHeight.value = height;
+		}
 	});
 
 </script>
-
-<style scoped>
-	.v-enter-active,
-	.v-leave-active {
-		transition: opacity 0.15s ease-in-out 0.2s, height 0.1s ease;
-
-	}
-
-	.v-enter-from,
-	.v-leave-to {
-		height: fit-content;
-		opacity: 0;
-	}
-
-</style>
