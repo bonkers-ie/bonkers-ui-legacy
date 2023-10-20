@@ -5,6 +5,7 @@
 	"scripts": {
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
+		"build": "vite build",
 		"lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
 		"lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
 		"lint:markup": "vue-tsc --noEmit",
@@ -21,6 +22,7 @@
 		"@fortawesome/vue-fontawesome": "^3.0.3",
 		"eslint-plugin-tailwindcss": "^3.13.0",
 		"storybook-addon-designs": "^6.3.1",
+		"vite-plugin-dts": "^3.6.0",
 		"vue": "^3.3.4",
 		"vue-router": "^4.2.5"
 	},
@@ -78,5 +80,18 @@
 			"pre-commit": "yarn typecheck && yarn lint-staged && yarn test"
 		}
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"files": [
+		"dist",
+		"src"
+	],
+	"main": "dist/bonkers-ui.umd.js",
+	"module": "dist/bonkers-ui.esm.js",
+	"exports": {
+		".": {
+			"import": "./dist/bonkers-ui.esm.js",
+			"require": "./dist/bonkers-ui.umd.js"
+		}
+	},
+	"types": "./dist/types/index.d.ts"
 }
