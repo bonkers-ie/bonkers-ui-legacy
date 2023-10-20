@@ -18,13 +18,16 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
 		"baseUrl": ".",
 		"lib": [
 			"esnext",
 			"dom",
 			"dom.iterable",
-		]
+		],
+		"outDir": "dist",
+		"declaration": true,
+		"declarationMap": "true",
+		"sourceMap": true,
 	},
 	"include": [
 		"src/**/*.ts",
