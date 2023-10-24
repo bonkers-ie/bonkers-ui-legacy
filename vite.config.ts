@@ -1,24 +1,21 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import * as path from "path";
-// import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	resolve: {
 		alias: {
-			"@/": new URL("./src/", import.meta.url).pathname,
+			"@*": path.resolve(__dirname, "src/*"),
+			"@/types": path.resolve(__dirname, "src/_types.ts"),
 		}
 	},
 	plugins: [
-		vue({
-			reactivityTransform: true
-		}),
-		dts({
-			insertTypesEntry: true,
-		}),
-		// cssInjectedByJsPlugin()
+		vue(),
+		dts(),
+		cssInjectedByJsPlugin()
 	],
 
 	build: {
@@ -29,12 +26,17 @@ export default defineConfig({
 			fileName: (format) => `bonkers-ui.${format}.js`
 		},
 		rollupOptions: {
+			input: {
+				main: path.resolve(__dirname, "src/index.ts")
+			},
 			external: ["vue"],
 			output: {
+				exports: "named",
 				globals: {
 					vue: "Vue",
 				},
 			},
 		},
+		emptyOutDir: false,
 	}
 });
