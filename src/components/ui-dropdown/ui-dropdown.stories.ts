@@ -13,9 +13,9 @@ export default {
 			control: {
 				type: "select"
 			},
-			options: Object.values(EDropdownKinds),
+			options: Object.values(EDropdownKinds)
 
-		},
+		}
 	},
 } satisfies Meta<typeof UiDropdown>;
 
@@ -25,7 +25,8 @@ export const Default = {
 		iconName: ICON_DEFAULT,
 		header: "Tables of content",
 		subText: "Bonkers Money Limited, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		kind: EDropdownKinds.DEFAULT
+		kind: EDropdownKinds.DEFAULT,
+		active: true
 	},
 
 };
