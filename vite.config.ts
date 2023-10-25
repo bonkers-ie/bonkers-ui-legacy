@@ -1,23 +1,31 @@
-import { defineConfig } from "vite";
+import { defineConfig, UserConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import tsconfigPaths from "vite-tsconfig-paths";
 import * as path from "path";
+import type { InlineConfig } from "vitest";
 
-// https://vitejs.dev/config/
+interface VitestConfigExport extends UserConfig {
+	test: InlineConfig;
+}
+
 export default defineConfig({
 	resolve: {
 		alias: {
 			"@*": path.resolve(__dirname, "src/*"),
-			"@/types": path.resolve(__dirname, "src/_types.ts"),
 		}
 	},
 	plugins: [
 		vue(),
 		dts(),
-		cssInjectedByJsPlugin()
+		cssInjectedByJsPlugin(),
+		tsconfigPaths(),
 	],
-
+	test: {
+		globals: true,
+		environment: "jsdom",
+	},
 	build: {
 		target: "esnext",
 		lib: {
@@ -37,6 +45,8 @@ export default defineConfig({
 				},
 			},
 		},
-		emptyOutDir: false,
+		sourcemap: true,
+		emptyOutDir: true,
 	}
 });
+// } as VitestConfigExport);

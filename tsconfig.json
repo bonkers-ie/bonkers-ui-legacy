@@ -4,23 +4,23 @@
 			"vite/client",
 			"vitest/globals"
 		],
-		"target": "esnext",
-		"module": "esnext",
+		"target": "ESNext",
+		"module": "ESNext",
 		"strict": true,
 		"resolveJsonModule": true,
 		"useDefineForClassFields": true,
-		"jsx": "preserve",
 		"noImplicitThis": true,
 		"isolatedModules": true,
 		"importHelpers": true,
-		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"noEmit": true,
+		"moduleResolution": "Node",
 		"skipLibCheck": true,
-		"esModuleInterop": true,
+		"esModuleInterop": false,
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": ".",
+		"paths": {
+		  "@/*": ["src/*"]
+		},
 		"lib": [
 			"esnext",
 			"dom",
@@ -41,7 +41,8 @@
 	],
 	"exclude": [
 		"node_modules",
-		"**/*.stories.ts"
+		"**/*.stories.ts",
+		"src/stories"
 	],
 	"references": [
 		{
