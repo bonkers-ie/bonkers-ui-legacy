@@ -1,11 +1,11 @@
 {
 	"name": "bonkers-ui",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"private": false,
 	"scripts": {
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"build": "rm -rf dist && vite build && tsc --emitDeclarationOnly && tsc-alias && tcm -o dist src",
+		"build": "vue-tsc && vite build",
 		"lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
 		"lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
 		"lint:markup": "vue-tsc --noEmit",
@@ -29,16 +29,19 @@
 		"vue": "^3.0.0"
 	},
 	"devDependencies": {
+		"@rollup/plugin-typescript": "^11.1.5",
 		"@storybook/addon-essentials": "^7.4.5",
 		"@storybook/addon-links": "^7.4.5",
 		"@storybook/addon-mdx-gfm": "^7.4.5",
 		"@storybook/vue3": "^7.4.5",
 		"@storybook/vue3-vite": "^7.4.5",
+		"@types/glob": "^8.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.59.9",
 		"@typescript-eslint/parser": "^5.59.9",
 		"@vitejs/plugin-vue": "^4.3.4",
 		"@vue/eslint-config-typescript": "^12.0.0",
 		"@vue/test-utils": "^2.4.1",
+		"autoprefixer": "^10.4.16",
 		"eslint": "8.50.0",
 		"eslint-plugin-storybook": "^0.6.14",
 		"eslint-plugin-vue": "^9.17.0",
@@ -47,6 +50,7 @@
 		"jsdom": "^22.1.0",
 		"lint-staged": "^14.0.1",
 		"postcss": "^8.4.30",
+		"postcss-cli": "^10.1.0",
 		"postcss-html": "^1.4.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -59,11 +63,13 @@
 		"tailwindcss": "^3.3.3",
 		"ts-node": "^10.9.1",
 		"tsc-alias": "^1.8.8",
+		"tsup": "^7.2.0",
 		"typed-css-modules": "^0.8.0",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
 		"vite-plugin-css-injected-by-js": "^3.3.0",
 		"vite-plugin-dts": "^3.6.1",
+		"vite-plugin-static-copy": "^0.17.0",
 		"vite-tsconfig-paths": "^4.2.1",
 		"vitest": "^0.34.5",
 		"vue-eslint-parser": "^9.3.1",
@@ -89,16 +95,29 @@
 	},
 	"license": "MIT",
 	"files": [
-		"dist",
-		"src/components"
+		"dist/",
+		"index.d.ts",
+		"src/**/*.d.ts",
+		"plugin.d.ts",
+		"plugin.js",
+		"LICENCE",
+		".eslintrc.js",
+		".stylelintrc",
+		"package.json",
+		"postcss.config.js"
 	],
-	"main": "dist/bonkers-ui.umd.js",
-	"module": "dist/bonkers-ui.es.js",
+	"main": "dist/index.min.js",
+	"module": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"exports": {
-		".": {
-			"import": "./dist/bonkers-ui.es.js",
-			"require": "./dist/bonkers-ui.umd.js"
-		}
+		".": "./dist/index.js",
+		"./src/_types/*": "./dist/_types/*",
+		"./ui-*": "./dist/components/ui-*",
+		"./plugin": "./plugin.cjs",
+		"./postcss.config": "./postcss.config.cjs",
+		"./eslintrc": "./.eslintrc.js",
+		"./tailwind.config": "./tailwind.config.js",
+		"./dist/style.css": "./style.css",
+		"./src/_styles/classTypes": "./_styles/classTypes"
 	}
 }

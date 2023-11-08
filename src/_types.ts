@@ -1,3 +1,5 @@
+export type { TIconName } from "./components/ui-icon";
+export type { EIconType } from "./components/ui-icon/_typings";
 export { EAlertTypes } from "./components/ui-alert";
 export { EBadgeKind, EBadgeSize } from "./components/ui-badge";
 export { EBerSize } from "./components/ui-ber-rank";
@@ -11,5 +13,3 @@ export { EBadgeOrigin } from "./components/ui-notification-badge";
 export { ESnackbarTypes  } from "./components/ui-snackbar";
 export { ETableKind, ERowKind } from "./components/ui-table";
 export { EColors, ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./components/ui-typography";
-
-export type { TIconName } from "./components/ui-icon";

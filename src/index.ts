@@ -1,5 +1,6 @@
 import { App, defineComponent } from "vue";
 import * as UiAlert from "./components/ui-alert";
+import * as UiBackdrop from "./components/ui-modal/ui-backdrop";
 import * as UiBadge from "./components/ui-badge";
 import * as UiBerRank from "./components/ui-ber-rank";
 import * as UiButton from "./components/ui-button";
@@ -26,14 +27,18 @@ import * as UiSelect from "./components/ui-select";
 import * as UiSkeleton from "./components/ui-skeleton";
 import * as UiSnackbar from "./components/ui-snackbar";
 import * as UiTable from "./components/ui-table";
+import * as UiTableCell from "./components/ui-table/ui-table-cell";
+import * as UiTableRow from "./components/ui-table/ui-table-row";
 import * as UiTabs from "./components/ui-tabs";
 import * as UiToggle from "./components/ui-toggle";
 import * as UiTypography from "./components/ui-typography";
 import * as UiVerificationInput from "./components/ui-verification-input";
-// import * as UiSlider from "./components/ui-slider";
+
+import "./main.css";
 
 const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiAlert,
+	UiBackdrop,
 	UiBadge,
 	UiBerRank,
 	UiButton,
@@ -61,23 +66,27 @@ const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	//UiSlider,
 	UiSnackbar,
 	UiTable,
+	UiTableCell,
+	UiTableRow,
 	UiTabs,
 	UiToggle,
 	UiTypography,
 	UiVerificationInput
 };
 
-function install(Vue: App) {
-	for (const component in Components) {
-		Vue.component(Components[component].name, Components[component]);
+// for use with global app.use() in consumer project
+const BonkersUI = {
+	install(app: App) {
+		Object.keys(Components).forEach((component) => {
+			app.component(Components[component].name, Components[component]);
+		});
 	}
-}
-
-export default {
-	install
 };
 
+export default BonkersUI;
+
 export { default as UiAlert, EAlertTypes } from "./components/ui-alert";
+export { default as UiBackdrop } from "./components/ui-modal/ui-backdrop";
 export { default as UiBadge, EBadgeKind, EBadgeSize } from "./components/ui-badge";
 export { default as UiBerRank, EBerSize } from "./components/ui-ber-rank";
 export { default as UiButton, EButtonSizes, EButtonTypes } from "./components/ui-button";
@@ -103,10 +112,10 @@ export { default as UiRipple } from "./components/ui-ripple";
 export { default as UiSelect } from "./components/ui-select";
 export { default as UiSkeleton } from "./components/ui-skeleton";
 export { default as UiSnackbar,  ESnackbarTypes  } from "./components/ui-snackbar";
-export { UiTable, UiTableCell, UiTableRow, ETableKind, ERowKind } from "./components/ui-table";
+export { UiTable, ETableKind, ERowKind } from "./components/ui-table";
+export { default as UiTableCell } from "./components/ui-table/ui-table-cell";
+export { default as UiTableRow } from "./components/ui-table/ui-table-row";
 export { default as UiTabs } from "./components/ui-tabs";
 export { default as UiToggle } from "./components/ui-toggle";
 export { default as UiTypography, EColors, ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./components/ui-typography";
 export { default as UiVerificationInput } from "./components/ui-verification-input";
-
-export type { TIconName } from "./components/ui-icon";
