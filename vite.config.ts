@@ -20,6 +20,7 @@ export default defineConfig({
 	],
 
 	build: {
+		target: "esnext",
 		sourcemap: true,
 		lib: {
 			entry: path.resolve(__dirname, "src/index.ts"),
@@ -41,6 +42,7 @@ export default defineConfig({
 				{
 					format: "es",
 					entryFileNames: "[name].js",
+					compact: true,
 					preserveModules: true
 				}
 			],

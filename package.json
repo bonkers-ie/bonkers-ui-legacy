@@ -1,116 +1,115 @@
 {
-	"name": "bonkers-ui",
-	"version": "1.0.1",
-	"private": false,
-	"scripts": {
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"build": "vue-tsc && vite build",
-		"lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
-		"lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
-		"lint:markup": "vue-tsc --noEmit",
-		"deploy": "gh-pages -d storybook-static",
-		"typecheck": "tsc --noEmit && vue-tsc --noEmit",
-		"test": "vitest run",
-		"i": "yarn install --frozen-lockfile"
-	},
-	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.4.2",
-		"@fortawesome/free-brands-svg-icons": "^6.4.2",
-		"@fortawesome/free-regular-svg-icons": "^6.4.2",
-		"@fortawesome/free-solid-svg-icons": "^6.4.2",
-		"@fortawesome/vue-fontawesome": "^3.0.5",
-		"eslint-plugin-tailwindcss": "^3.13.0",
-		"storybook-addon-designs": "^6.3.1",
-		"vue": "^3.3.8",
-		"vue-router": "^4.2.5"
-	},
-	"peerDependencies": {
-		"vue": "^3.0.0"
-	},
-	"devDependencies": {
-		"@rollup/plugin-typescript": "^11.1.5",
-		"@storybook/addon-essentials": "^7.5.3",
-		"@storybook/addon-links": "^7.5.3",
-		"@storybook/addon-mdx-gfm": "^7.5.3",
-		"@storybook/vue3": "^7.5.3",
-		"@storybook/vue3-vite": "^7.5.3",
-		"@types/glob": "^8.1.0",
-		"@typescript-eslint/eslint-plugin": "^6.10.0",
-		"@typescript-eslint/parser": "^6.10.0",
-		"@vitejs/plugin-vue": "^4.4.1",
-		"@vue/eslint-config-typescript": "^12.0.0",
-		"@vue/test-utils": "^2.4.1",
-		"autoprefixer": "^10.4.16",
-		"eslint": "8.53.0",
-		"eslint-plugin-storybook": "^0.6.15",
-		"eslint-plugin-vue": "^9.18.1",
-		"gh-pages": "^6.0.0",
-		"husky": "4.3.8",
-		"jsdom": "^22.1.0",
-		"lint-staged": "^15.0.2",
-		"postcss": "^8.4.31",
-		"postcss-cli": "^10.1.0",
-		"postcss-html": "^1.4.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"storybook": "^7.5.3",
-		"storybook-tailwind-dark-mode": "^1.0.22",
-		"stylelint": "^15.11.0",
-		"stylelint-config-recommended": "^13.0.0",
-		"stylelint-config-recommended-vue": "^1.5.0",
-		"stylelint-config-standard": "^34.0.0",
-		"tailwindcss": "^3.3.5",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.2.2",
-		"vite": "^4.5.0",
-		"vite-plugin-css-injected-by-js": "^3.3.0",
-		"vite-plugin-dts": "^3.6.3",
-		"vite-plugin-static-copy": "^0.17.0",
-		"vite-tsconfig-paths": "^4.2.1",
-		"vitest": "^0.34.6",
-		"vue-eslint-parser": "^9.3.2",
-		"vue-loader": "^17.3.1",
-		"vue-tsc": "^1.8.22"
-	},
-
-	"lint-staged": {
-		"*.{ts,tsx,vue}": [
-			"yarn eslint --fix",
-			"bash -c 'yarn typecheck'"
-		],
-		"*.{css,vue,tsx}": "stylelint --fix"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "yarn typecheck && yarn lint-staged && yarn test"
-		}
-	},
-	"license": "MIT",
-	"files": [
-		"dist/",
-		"index.d.ts",
-		"src/**/*.d.ts",
-		"plugin.d.ts",
-		"plugin.js",
-		"LICENCE",
-		".eslintrc.js",
-		".stylelintrc",
-		"package.json",
-		"postcss.config.js"
-	],
-	"main": "dist/index.min.js",
-	"module": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"exports": {
-		".": "./dist/index.js",
-		"./src/_types/*": "./dist/_types/*",
-		"./ui-*": "./dist/components/ui-*",
-		"./plugin": "./plugin.cjs",
-		"./postcss.config": "./postcss.config.cjs",
-		"./eslintrc": "./.eslintrc.js",
-		"./tailwind.config": "./tailwind.config.js",
-		"./dist/style.css": "./style.css",
-		"./src/_styles/classTypes": "./_styles/classTypes"
-	}
+  "name": "bonkers-ui",
+  "version": "1.0.1",
+  "private": false,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build": "vue-tsc && vite build",
+    "lint:script": "eslint --fix './src/**/*.{ts,tsx,vue}'",
+    "lint:style": "stylelint --fix './src/**/*.{css,scss,vue}'",
+    "lint:markup": "vue-tsc --noEmit",
+    "deploy": "gh-pages -d storybook-static",
+    "typecheck": "tsc --noEmit && vue-tsc --noEmit",
+    "test": "vitest run",
+    "i": "bun install --frozen-lockfile"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "bun-types": "^1.0.11",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "storybook-addon-designs": "^6.3.1",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-mdx-gfm": "^7.5.3",
+    "@storybook/vue3": "^7.5.3",
+    "@storybook/vue3-vite": "^7.5.3",
+    "@types/glob": "^8.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-vue": "^4.4.1",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/test-utils": "^2.4.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.53.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-vue": "^9.18.1",
+    "gh-pages": "^6.0.0",
+    "husky": "4.3.8",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^15.0.2",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-html": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.5.3",
+    "storybook-tailwind-dark-mode": "^1.0.22",
+    "stylelint": "^15.11.0",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^34.0.0",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
+    "vite-plugin-dts": "^3.6.3",
+    "vite-plugin-static-copy": "^0.17.0",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.6",
+    "vue-eslint-parser": "^9.3.2",
+    "vue-loader": "^17.3.1",
+    "vue-tsc": "^1.8.22"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,vue}": [
+      "bun eslint --fix",
+      "bash -c 'bun typecheck'"
+    ],
+    "*.{css,vue,tsx}": "stylelint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "bun typecheck && bun lint-staged && bun test"
+    }
+  },
+  "license": "MIT",
+  "files": [
+    "dist/",
+    "index.d.ts",
+    "src/**/*.d.ts",
+    "plugin.d.ts",
+    "plugin.js",
+    "LICENCE",
+    ".eslintrc.js",
+    ".stylelintrc",
+    "package.json",
+    "postcss.config.js"
+  ],
+  "main": "dist/index.min.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./src/_types/*": "./dist/_types/*",
+    "./ui-*": "./dist/components/ui-*",
+    "./plugin": "./plugin.cjs",
+    "./postcss.config": "./postcss.config.cjs",
+    "./eslintrc": "./.eslintrc.js",
+    "./tailwind.config": "./tailwind.config.js",
+    "./dist/style.css": "./style.css",
+    "./src/_styles/classTypes": "./_styles/classTypes"
+  }
 }
