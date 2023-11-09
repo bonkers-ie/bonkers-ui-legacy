@@ -87,16 +87,7 @@
   },
   "license": "MIT",
   "files": [
-    "dist/",
-    "index.d.ts",
-    "src/**/*.d.ts",
-    "plugin.d.ts",
-    "plugin.js",
-    "LICENCE",
-    ".eslintrc.js",
-    ".stylelintrc",
-    "package.json",
-    "postcss.config.js"
+    "dist"
   ],
   "main": "dist/index.min.js",
   "module": "dist/index.js",
