@@ -89,7 +89,7 @@ export { default as UiAlert, EAlertTypes } from "./components/ui-alert";
 export { default as UiBackdrop } from "./components/ui-modal/ui-backdrop";
 export { default as UiBadge, EBadgeKind, EBadgeSize } from "./components/ui-badge";
 export { default as UiBerRank, EBerSize } from "./components/ui-ber-rank";
-export { default as UiButton, EButtonSizes, EButtonTypes } from "./components/ui-button";
+export { UiButton, EButtonSizes, EButtonTypes } from "./components/ui-button";
 export { default as UiCardCta } from "./components/ui-card-cta";
 export { default as UiCardResult } from "./components/ui-card-result";
 export { default as UiCardSimple } from "./components/ui-card-simple";
