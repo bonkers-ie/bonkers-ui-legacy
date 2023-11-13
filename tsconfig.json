@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 
-		"target": "ESNext",
+		"target": "ES2020",
 		"module": "ESNext",
 		"strict": true,
 
@@ -27,7 +27,7 @@
 		"typeRoots": ["./dist/index.d.ts", "./node_modules/@types"],
 
 		 /* Bun Settings */
-		 "moduleResolution": "bundler",
+		 "moduleResolution": "node",
 		 "noEmit": true,
 		 "allowImportingTsExtensions": true,
 		 "moduleDetection": "force",
@@ -35,8 +35,6 @@
 		 "resolveJsonModule": true,
 		 "isolatedModules": true,
 		 "jsx": "preserve",
-		 "composite": true,
-		"downlevelIteration": true,
 	},
 	"include": [
 		"src/**/*.ts",

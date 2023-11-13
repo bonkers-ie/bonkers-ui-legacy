@@ -14,13 +14,12 @@ export default defineConfig({
 			staticImport: true,
 			insertTypesEntry: true,
 			include: ["src/**/*.ts", "src/**/*.vue"],
-			exclude: ["src/**/*.test.ts", "src/**/*.stories.ts"]
+			exclude: ["src/**/*.test.ts", "src/**/*.stories.ts", "src/_types/*"]
 		}),
 		vue()
 	],
 
 	build: {
-		target: "esnext",
 		sourcemap: true,
 		lib: {
 			entry: path.resolve(__dirname, "src/index.ts"),
@@ -42,7 +41,6 @@ export default defineConfig({
 				{
 					format: "es",
 					entryFileNames: "[name].js",
-					compact: true,
 					preserveModules: true
 				}
 			],

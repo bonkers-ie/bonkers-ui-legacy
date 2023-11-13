@@ -1,7 +1,7 @@
-const colors = require("./src/_styles/classTypes/_colors.json");
-const fontSize = require("./src/_styles/classTypes/_font-sizes.json");
-const spacing = require("./src/_styles/classTypes/_spacing.json");
-const boxShadow = require("./src/_styles/classTypes/_shadow.json");
+import colors from "./src/_styles/classTypes/_colors.json";
+import fontSize from "./src/_styles/classTypes/_font-sizes.json";
+import spacing from "./src/_styles/classTypes/_spacing.json";
+import boxShadow from "./src/_styles/classTypes/_shadow.json";
 
 module.exports = {
 	darkMode: "class",
@@ -26,6 +26,5 @@ module.exports = {
 			}),
 		},
 	},
-	plugins: [
-	],
+	plugins: []
 };

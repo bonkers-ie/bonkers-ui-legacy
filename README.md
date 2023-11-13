@@ -34,15 +34,73 @@
   - [Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
 ## Setup project
-- Use yarn to install all dependencies with the frozen lockfile
+- Use bun to install all dependencies with the frozen lockfile
+
 	```js
-	yarn i
+	bun i
 	```
 - To run the storybook
+
 	```js
-	yarn storybook
+	bun storybook
 	```
 - open [http://localhost:6006/](http://localhost:6006/)
+
+## For use in a consuming project
+- Install the component library with your desired package manager.
+	- Insure `autoprefixer`, `postcss` and `tailwindcss` are installed
+
+- In your `tailwind.config.js`, add the following code (`note:` ensure the `bonkers-ui` node_modules path is added to the content array)
+
+```js
+const bonkersUiConfig = require("bonkers-ui/tailwind.config");
+export default {
+	presets: [ bonkersUiConfig ],
+	content: [
+		"./index.html",
+		"./node_modules/bonkers-ui/**/*.{vue, js,ts,jsx,tsx}",
+		"./src/**/*.{vue, js,ts,jsx,tsx}",
+	],
+}
+```
+
+- Add the Bonkers-UI styles to your css entry-point
+
+```css
+@import "bonkers-ui/styles";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+- Bonkers-UI has been successfully installed to your project, now import any compoenents you need!
+```vue
+<template>
+	<div>
+		<ui-button 
+			:size="EButtonSizes.LARGE" 
+			:kind="EButtonTypes.PRIMARY"
+			>
+			I'm a Bonkers Button
+		</ui-button>
+
+		<ui-input
+			:kinds="EInputKinds.PRIMARY"
+			placeholder="Placeholder"
+			full-width
+			class="mb-md"
+			heading="Heading"
+			sub-label="Sub Label"
+		/>	
+	</div>
+</template>
+
+<script setup lang="ts">
+	import { UiButton, EButtonTypes, EButtonSizes } from "bonkers-ui";
+	import UiInput from "bonkers-ui/ui-input";
+	import { EInputKinds } from "bonkers-ui/_types";
+</script>
+```
 
 ## Flow to develop
 - We use only <b>develop</b> to create new branch
@@ -64,9 +122,9 @@
 ## Flow to deploy to github
 - To deploy to github-pages use:
 	```js
-	yarn build-storybook
+	bun build-storybook
 	``` 
 - Finally run:
 	```js
-	yarn deploy
+	bun deploy
 	```
