@@ -88,8 +88,6 @@
   "license": "MIT",
   "files": [
     "dist",
-    "plugin.js",
-    "plugin.d.ts",
     "postcss.config.js",
     "tailwind.config.js",
     ".eslintrc.js",
