@@ -1,8 +1,9 @@
-import { withInstall } from "../../_types/helper";
-import Progress from "./ui-progress.vue";
+import UiProgress from "./ui-progress.vue";
+
+export { UiProgress };
 
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiProgress = withInstall(Progress);
-export default UiProgress;
+const deprecatedDefault = UiProgress;
+export default deprecatedDefault;

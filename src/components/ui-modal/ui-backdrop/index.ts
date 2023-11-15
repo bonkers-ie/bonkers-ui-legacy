@@ -1,7 +1,9 @@
-import { withInstall } from "../../../_types/helper";
-import Backdrop from "./ui-backdrop.vue";
+import UiBackdrop from "./ui-backdrop.vue";
+
+export { UiBackdrop };
+
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiBackdrop = withInstall(Backdrop);
-export default UiBackdrop;
+const deprecatedDefault = UiBackdrop;
+export default deprecatedDefault;

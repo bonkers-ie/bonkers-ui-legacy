@@ -1,7 +1,8 @@
-import { withInstall } from "../../_types/helper";
-import PlainRadio from "./ui-plain-radio.vue";
+import UiPlainRadio from "./ui-plain-radio.vue";
+
+export { UiPlainRadio };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiPlainRadio = withInstall(PlainRadio);
-export default UiPlainRadio;
+const deprecatedDefault = UiPlainRadio;
+export default deprecatedDefault;

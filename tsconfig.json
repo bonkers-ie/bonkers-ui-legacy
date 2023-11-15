@@ -5,12 +5,12 @@
 		"module": "ESNext",
 		"strict": true,
 
+		"declaration": true,
 		"useDefineForClassFields": true,
 		"noImplicitThis": true,
 		"importHelpers": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"allowSyntheticDefaultImports": true,
 		"baseUrl": ".",
 		"paths": {
 		  "@/*": ["src/*"],

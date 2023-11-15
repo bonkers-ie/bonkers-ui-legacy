@@ -1,8 +1,8 @@
-import { withInstall } from "../../_types/helper";
-import ResultCardRange from "./ui-result-card-range.vue";
+import UiResultCardRange from "./ui-result-card-range.vue";
 
+export { UiResultCardRange };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiResultCardRange = withInstall(ResultCardRange);
-export default UiResultCardRange;
+const deprecatedDefault = UiResultCardRange;
+export default deprecatedDefault;

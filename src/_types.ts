@@ -1,10 +1,11 @@
 export type { TIconName } from "./components/ui-icon";
-export { EIconType } from "./components/ui-icon/_typings";
+export { EIconType } from "./components/ui-icon";
 export { EAlertTypes } from "./components/ui-alert";
 export { EBadgeKind, EBadgeSize } from "./components/ui-badge";
 export { EBerSize } from "./components/ui-ber-rank";
 export { EButtonSizes, EButtonTypes } from "./components/ui-button";
-// export { ESize } from "./components/ui-icon";
+export { ERadioSizes } from "./components/ui-radio-fancy/_typings";
+export { ESkeletonKind } from "./components/ui-skeleton/_typings";
 export { EIconWrapperTypes, EIconWrapperSizes } from "./components/ui-icon-wrapper";
 export { EInputType, EInputKinds, EAutocomplete } from "./components/ui-input";
 export { EListItemTypes, EListItemSpacing, EListItemSize } from "./components/ui-list-item";

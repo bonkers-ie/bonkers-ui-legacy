@@ -1,7 +1,8 @@
-import { withInstall } from "../../_types/helper";
-import OrderCard from "./ui-order-card.vue";
+import UiOrderCard from "./ui-order-card.vue";
+
+export { UiOrderCard };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiOrderCard = withInstall(OrderCard);
-export default UiOrderCard;
+const deprecatedDefault = UiOrderCard;
+export default deprecatedDefault;

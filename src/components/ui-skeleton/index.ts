@@ -1,8 +1,8 @@
-import { withInstall } from "../../_types/helper";
-import Skeleton from "./ui-skeleton.vue";
+import UiSkeleton from "./ui-skeleton.vue";
+export { UiSkeleton };
 
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiSkeleton = withInstall(Skeleton);
-export default UiSkeleton;
+const deprecatedDefault = UiSkeleton;
+export default deprecatedDefault;

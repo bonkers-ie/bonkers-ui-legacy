@@ -1,7 +1,8 @@
-import { withInstall } from "../../_types/helper";
-import InputRange from "./ui-input-range.vue";
+import UiInputRange from "./ui-input-range.vue";
+
+export { UiInputRange };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiInputRange = withInstall(InputRange);
-export default UiInputRange;
+const deprecatedDefault = UiInputRange;
+export default deprecatedDefault;

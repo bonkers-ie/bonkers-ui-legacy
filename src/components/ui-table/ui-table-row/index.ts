@@ -1,9 +1,9 @@
-import { withInstall } from "../../../_types/helper";
-import TableRow from "./ui-table-row.vue";
+import UiTableRow from "./ui-table-row.vue";
+export { UiTableRow };
 
 export { ERowKind } from "./_typings";
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
-export const UiTableRow = withInstall(TableRow);
-export default UiTableRow;
+const deprecatedDefault = UiTableRow;
+export default deprecatedDefault;
