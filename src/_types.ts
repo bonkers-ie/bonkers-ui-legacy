@@ -1,4 +1,5 @@
 export type { TIconName } from "./components/ui-icon";
+export { EDropdownKinds } from "./components/ui-dropdown";
 export { EIconType } from "./components/ui-icon";
 export { EAlertTypes } from "./components/ui-alert";
 export { EBadgeKind, EBadgeSize } from "./components/ui-badge";
