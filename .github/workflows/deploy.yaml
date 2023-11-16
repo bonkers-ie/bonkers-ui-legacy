@@ -21,7 +21,7 @@ jobs:
       - run: bun i
       - run: bun lint:script
       - run: bun lint:style
-      - run: bun test
+      - run: bun run test
       - run: node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_SECRET_TOKEN }}

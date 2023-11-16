@@ -21,7 +21,7 @@ jobs:
       - run: bun i
       - run: bun lint:script
       - run: bun lint:style
-      - run: bun test
+      - run: bun run test
       - run: bun build-storybook
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
