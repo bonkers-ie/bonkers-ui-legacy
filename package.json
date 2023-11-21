@@ -15,19 +15,20 @@
     "i": "bun install --frozen-lockfile"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/vue-fontawesome": "^3.0.5",
     "bun-types": "^1.0.11",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "storybook-addon-designs": "^6.3.1",
+    "tailwindcss": "^3.3.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.5"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
@@ -61,7 +62,6 @@
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard": "^34.0.0",
-    "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-css-injected-by-js": "^3.3.0",
@@ -82,30 +82,27 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "bun typecheck && bun lint-staged && bun test"
+      "pre-commit": "bun typecheck && bun lint-staged && bun run test"
     }
   },
   "license": "MIT",
   "files": [
-    "dist",
-    "postcss.config.js",
-    "tailwind.config.js",
-    ".eslintrc.js",
-    ".stylelintrc",
-    "tsconfig.json",
-    "src/_styles"
+	  "dist",
+	  "postcss.config.js",
+	  "tailwind.config.js",
+	  ".eslintrc.js",
+	  ".stylelintrc",
+	  "tsconfig.json",
+	  "plugin.ts",
+	  "src/_styles"
   ],
   "main": "dist/index.min.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-	"styles": "dist/style.css",
-	"exports": {
-		".": "./dist/index.js",
-		"./types": "./dist/_types.d.ts",
-		"./src/_styles/classTypes": "./dist/_styles/classTypes",
-		"./tailwind.config": "./tailwind.config.js",
-		"./postcss.config": "./postcss.config.js",
-		"./styles": "./dist/style.css",
-		"./*": "./dist/components/*"
-	}
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/_types.d.ts",
+    "./plugin": "./plugin.ts",
+    "./*": "./dist/components/*"
+  }
 }

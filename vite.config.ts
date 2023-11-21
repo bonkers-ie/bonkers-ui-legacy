@@ -25,7 +25,6 @@ export default defineConfig({
 			entry: path.resolve(__dirname, "src/index.ts"),
 			name: "bonkersUi"
 		},
-
 		rollupOptions: {
 			external: ["vue", "tailwindcss"],
 			treeshake: true,
@@ -36,13 +35,13 @@ export default defineConfig({
 					exports: "named",
 					globals: {
 						vue: "Vue"
-					}
+					},
 				},
 				{
 					format: "es",
 					entryFileNames: "[name].js",
-					preserveModules: true
-				}
+					preserveModules: true,
+				},
 			],
 
 		},
