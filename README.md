@@ -30,7 +30,6 @@
 - [VS Code](https://code.visualstudio.com/)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
   - [Volar-ts](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-  - [GraphQL](htps://marketplace.visualstudio.com/items?itemName=mquandalle.graphql)
   - [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html)
   - [Editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
   - [Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
