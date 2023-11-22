@@ -2,7 +2,9 @@ import type { Config } from "tailwindcss";
 import bonkersPlugin from "./plugin";
 
 const config = {
-	content: [],
+	content: [
+		"./src/**/*.{vue,js,ts,jsx,tsx}",
+	],
 	plugins: [
 		bonkersPlugin
 	],

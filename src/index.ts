@@ -35,8 +35,6 @@ import * as UiToggle from "./components/ui-toggle";
 import * as UiTypography from "./components/ui-typography";
 import * as UiVerificationInput from "./components/ui-verification-input";
 
-import "./main.css";
-
 const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiAlert,
 	UiBackdrop,

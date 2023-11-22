@@ -84,7 +84,7 @@
 	});
 </script>
 
-<style>
+<style scoped>
 	.ui-radio__dot {
 		transform: translate3d(-50%, -50%, 0) scale(0);
 		transition: transform 0.2s ease-in-out;

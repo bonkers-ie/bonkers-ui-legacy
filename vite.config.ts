@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 import * as path from "path";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
 	resolve: {
@@ -10,17 +11,21 @@ export default defineConfig({
 		}
 	},
 	plugins: [
+		cssInjectedByJsPlugin({
+			relativeCSSInjection: true,
+		}),
 		dts({
 			staticImport: true,
 			insertTypesEntry: true,
 			include: ["src/**/*.ts", "src/**/*.vue"],
-			exclude: ["src/**/*.test.ts", "src/**/*.stories.ts", "src/_types/*"]
+			exclude: ["**/*.test.ts", "**/*.stories.ts", "src/_types/*"]
 		}),
 		vue()
 	],
 
 	build: {
 		sourcemap: true,
+		cssCodeSplit: true,
 		lib: {
 			entry: path.resolve(__dirname, "src/index.ts"),
 			name: "bonkersUi"

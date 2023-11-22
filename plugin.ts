@@ -103,6 +103,9 @@ export default plugin(
 	{
 		darkMode: "class",
 		theme: {
+			corePlugins: {
+				preflight: false,
+			},
 			colors: _colors,
 			spacing: _spacing,
 			boxShadow: _shadow,
