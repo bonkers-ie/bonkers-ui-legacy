@@ -30,9 +30,10 @@
 - [VS Code](https://code.visualstudio.com/)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
   - [Volar-ts](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+  - [GraphQL](htps://marketplace.visualstudio.com/items?itemName=mquandalle.graphql)
+  - [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html)
   - [Editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
   - [Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-
 ## Setup project
 - Use bun to install all dependencies with the frozen lockfile
 
@@ -50,30 +51,25 @@
 - Install the component library with your desired package manager.
 	- Insure `autoprefixer`, `postcss` and `tailwindcss` are installed
 
-- In your `tailwind.config.js`, add the following code (`note:` ensure the `bonkers-ui` node_modules path is added to the content array)
+- In your `tailwind.config.js`, add the Bonkers-UI tailwind plugin to your `plugins` array
 
 ```js
-const bonkersUiConfig = require("bonkers-ui/tailwind.config");
+import bonkersUiConfig from "bonkers-ui/plugin";
+
 export default {
-	presets: [ bonkersUiConfig ],
-	content: [
-		"./index.html",
-		"./node_modules/bonkers-ui/**/*.{vue, js,ts,jsx,tsx}",
-		"./src/**/*.{vue, js,ts,jsx,tsx}",
-	],
+	plugins: [ bonkersUiConfig ],	
 }
 ```
 
-- Add the Bonkers-UI styles to your css entry-point
+- Ensure that the tailwind directives are included in your `main.css` file
 
 ```css
-@import "bonkers-ui/styles";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-- Bonkers-UI has been successfully installed to your project, now import any compoenents you need!
+- Bonkers-UI has been successfully installed to your project, now import any components you need!
 ```vue
 <template>
 	<div>
@@ -97,7 +93,7 @@ export default {
 
 <script setup lang="ts">
 	import { UiButton, EButtonTypes, EButtonSizes } from "bonkers-ui";
-	import UiInput from "bonkers-ui/ui-input";
+	import UiInput from "bonkers-ui/ui-input"; // Deprecated Import Method
 	import { EInputKinds } from "bonkers-ui/_types";
 </script>
 ```
