@@ -50,12 +50,15 @@
 - Install the component library with your desired package manager.
 	- Insure `autoprefixer`, `postcss` and `tailwindcss` are installed
 
-- In your `tailwind.config.js`, add the Bonkers-UI tailwind plugin to your `plugins` array
+- In your `tailwind.config.js`, add the Bonkers-UI tailwind plugin to your `plugins` array. *Note:* the content array should include the path to the Bonkers-UI source files once installed.
 
 ```js
 import bonkersUiConfig from "bonkers-ui/plugin";
 
 export default {
+	content: [
+		"./node_modules/bonkers-ui/**/*.{vue,js,ts,jsx,tsx}",
+	],
 	plugins: [ bonkersUiConfig ],	
 }
 ```
@@ -66,6 +69,40 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+
+- Please ensure that your `tsconfig` file is configured with `moduleResolution` set to `Bundler` or `NodeNext` (depending on your project setup) to allow for the Bonkers-UI types to be resolved. Example:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "NodeNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+
+    /* Bundler mode */
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+
 ```
 
 - Bonkers-UI has been successfully installed to your project, now import any components you need!

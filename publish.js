@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const DIR_VARIABLE = path.join(process.cwd(), "./");
+const DIR_VARIABLE = path.join(process.cwd(), "./dist/");
 const VERSION_TO_UPDATE = "patch";
 
 const setVersionToJson = version => {
@@ -19,12 +19,12 @@ const run = async () => {
 	const pkg = require(path.join(DIR_VARIABLE, "package.json"));
 
 	const currentVersion = execSync(`npm view ${pkg.name} version`, {
-		cwd: DIR_VARIABLE 
+		cwd: DIR_VARIABLE
 	}).toString();
 	setVersionToJson(currentVersion);
 
 	let newVersion = execSync(`npm version --no-git-tag-version ${VERSION_TO_UPDATE}`, {
-		cwd: DIR_VARIABLE 
+		cwd: DIR_VARIABLE
 	}).toString();
 	newVersion = newVersion.replace(/(\r\n|\n|\r)/gm, "");
 
