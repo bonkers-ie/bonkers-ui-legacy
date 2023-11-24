@@ -40,7 +40,7 @@
 	import { EBadgeKind, EBadgeSize } from "./_typings";
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import UiTypography, { ETypographySizes } from "../ui-typography";
 
 	const props = defineProps<{
 		size?: EBadgeSize;
