@@ -4,6 +4,7 @@
 	>
 		<slot name="header">
 			<ui-typography
+				v-if="header || $slots.header"
 				line-height
 				class="mb-sm"
 				:weight="ETextWeight.SEMI_BOLD"
@@ -54,6 +55,7 @@
 
 			<slot name="title">
 				<ui-typography
+					v-if="title || $slots.title"
 					:size="ETypographySizes.MD"
 					class="w-full"
 					line-height

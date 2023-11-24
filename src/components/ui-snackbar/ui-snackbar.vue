@@ -12,7 +12,7 @@
 		<slot>
 			<ui-typography
 				:size="ETypographySizes.SM"
-				class=""
+				line-height
 			>
 				<slot name="titleSlot">
 					{{ title }}
@@ -21,7 +21,7 @@
 
 			<ui-typography
 				:size="ETypographySizes.XS"
-				class=""
+				line-height
 			>
 				<slot name="articleSlot" />
 			</ui-typography>
