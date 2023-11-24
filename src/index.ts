@@ -1,4 +1,5 @@
 import { App, defineComponent } from "vue";
+import * as types from "./types";
 import * as UiAlert from "./components/ui-alert";
 import * as UiBackdrop from "./components/ui-modal/ui-backdrop";
 import * as UiBadge from "./components/ui-badge";
@@ -71,7 +72,8 @@ const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiTabs,
 	UiToggle,
 	UiTypography,
-	UiVerificationInput
+	UiVerificationInput,
+	types
 };
 
 // for use with global app.use() in consumer project

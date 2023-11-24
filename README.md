@@ -93,7 +93,7 @@ export default {
 <script setup lang="ts">
 	import { UiButton, EButtonTypes, EButtonSizes } from "bonkers-ui";
 	import UiInput from "bonkers-ui/ui-input"; // Deprecated Import Method
-	import { EInputKinds } from "bonkers-ui/_types";
+	import { EInputKinds } from "bonkers-ui/types";
 </script>
 ```
 
