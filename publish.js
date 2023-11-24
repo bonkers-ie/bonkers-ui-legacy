@@ -33,7 +33,7 @@ const run = async () => {
 	console.log("new version:", newVersion);
 
 	execSync(`npm set //registry.npmjs.org/:_authToken=${process.env.NPM_AUTH_TOKEN}`);
-	execSync(`npm publish --verbose`, DIR_VARIABLE);
+	execSync(`npm publish --verbose ${DIR_VARIABLE}`);
 	execSync(`git checkout package.json`);
 
 	execSync(`git tag ${newVersion}`);
