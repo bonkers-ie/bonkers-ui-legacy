@@ -43,7 +43,6 @@
 				'h-auto opacity-100': isOpen
 
 			}"
-			:active="active"
 		>
 			<div
 				ref="contentRef"
@@ -79,7 +78,6 @@
 
 	}>(), {
 		kind: EDropdownKinds.DEFAULT,
-		active: true
 	});
 
 	// eslint-disable-next-line vue/no-setup-props-destructure
