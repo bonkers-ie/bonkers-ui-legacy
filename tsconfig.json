@@ -1,39 +1,52 @@
 {
 	"compilerOptions": {
-		"types": [
-			"vite/client",
-			"vitest/globals"
-		],
-		"target": "esnext",
-		"module": "esnext",
+
+		"target": "ES2020",
+		"module": "ESNext",
 		"strict": true,
-		"resolveJsonModule": true,
+
+		"declaration": true,
 		"useDefineForClassFields": true,
-		"jsx": "preserve",
 		"noImplicitThis": true,
-		"isolatedModules": true,
 		"importHelpers": true,
-		"moduleResolution": "node",
 		"skipLibCheck": true,
-		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
 		"baseUrl": ".",
+		"paths": {
+		  "@/*": ["src/*"],
+		},
 		"lib": [
-			"esnext",
-			"dom",
-			"dom.iterable",
-		]
+			"ESNext",
+			"DOM",
+			"DOM.Iterable",
+		],
+
+		"outDir": "dist",
+		"preserveConstEnums": true,
+
+		"typeRoots": ["./dist/index.d.ts", "./node_modules/@types"],
+
+		 /* Bun Settings */
+		 "moduleResolution": "node",
+		 "noEmit": true,
+		 "allowImportingTsExtensions": true,
+		 "moduleDetection": "force",
+
+		 "resolveJsonModule": true,
+		 "isolatedModules": true,
+		 "jsx": "preserve",
 	},
 	"include": [
 		"src/**/*.ts",
+		"src/**/*.d.ts",
 		"src/**/*.tsx",
-		"src/**/*.vue"
+		"src/**/*.vue",
 	],
 	"exclude": [
 		"node_modules",
-		"**/*.stories.ts"
+		"./src/**/*.stories.*",
+		"./src/stories"
+
 	],
 	"references": [
 		{

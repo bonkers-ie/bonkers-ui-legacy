@@ -1,17 +1,13 @@
-
-import { defineConfig, UserConfig } from "vite";
-import type { InlineConfig } from "vitest";
-
 import vue from "@vitejs/plugin-vue";
+import { defineConfig } from "vite";
 
-interface VitestConfigExport extends UserConfig {
-	test: InlineConfig;
-}
-
-export default defineConfig({
+export default defineConfig(() => ({
 	plugins: [vue()],
+	resolve: {
+		alias: []
+	},
 	test: {
 		globals: true,
-		environment: "jsdom",
-	},
-} as VitestConfigExport);
+		environment: "jsdom"
+	}
+}));

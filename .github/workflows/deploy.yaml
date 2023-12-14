@@ -12,16 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint:script
-      - run: yarn lint:style
-      - run: yarn test
+            bun-version: latest
+      - run: bun i
+      - run: bun lint:script
+      - run: bun lint:style
+      - run: bun run test
+      - run: bun run build
       - run: node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_SECRET_TOKEN }}

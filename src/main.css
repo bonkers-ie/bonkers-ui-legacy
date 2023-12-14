@@ -1,8 +1,3 @@
-@import url("_styles/variables/colors.css");
-@import url("_styles/variables/spacing.css");
-@import url("_styles/variables/font-sizes.css");
-@import url("_styles/variables/shadow.css");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
