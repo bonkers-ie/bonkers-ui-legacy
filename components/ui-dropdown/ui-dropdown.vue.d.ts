@@ -9,7 +9,6 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     active?: boolean | undefined;
 }>, {
     kind: EDropdownKinds;
-    active: boolean;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     header?: string | undefined;
     iconName: TIconName;
@@ -18,10 +17,8 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     active?: boolean | undefined;
 }>, {
     kind: EDropdownKinds;
-    active: boolean;
 }>>>, {
     kind: EDropdownKinds;
-    active: boolean;
 }, {}>, {
     default?(_: {}): any;
 }>;

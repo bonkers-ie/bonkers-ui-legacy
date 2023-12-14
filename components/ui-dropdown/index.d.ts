@@ -13,13 +13,12 @@ declare const deprecatedDefault: {
         $data: {};
         $props: Partial<{
             kind: EDropdownKinds;
-            active: boolean;
         }> & Omit<{
             readonly kind: EDropdownKinds;
             readonly iconName: TIconName;
-            readonly active: boolean;
             readonly header?: string | undefined;
             readonly subText?: string | undefined;
+            readonly active?: boolean | undefined;
         } & VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
             header: {
                 type: PropType<string>;
@@ -37,9 +36,8 @@ declare const deprecatedDefault: {
             };
             active: {
                 type: PropType<boolean>;
-                default: boolean;
             };
-        }>>, "kind" | "active">;
+        }>>, "kind">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -70,11 +68,9 @@ declare const deprecatedDefault: {
             };
             active: {
                 type: PropType<boolean>;
-                default: boolean;
             };
         }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {
             kind: EDropdownKinds;
-            active: boolean;
         }, {}, string, {}> & {
             beforeCreate?: ((() => void) | (() => void)[]) | undefined;
             created?: ((() => void) | (() => void)[]) | undefined;
@@ -112,7 +108,6 @@ declare const deprecatedDefault: {
         };
         active: {
             type: PropType<boolean>;
-            default: boolean;
         };
     }>> & ShallowUnwrapRef<{}> & {} & ComponentCustomProperties & {};
     __isFragment?: undefined;
@@ -135,11 +130,9 @@ declare const deprecatedDefault: {
     };
     active: {
         type: PropType<boolean>;
-        default: boolean;
     };
 }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {
     kind: EDropdownKinds;
-    active: boolean;
 }, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         default?(_: {}): any;
