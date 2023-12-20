@@ -13,8 +13,8 @@ export declare enum EInputType {
 }
 export declare enum EAutocomplete {
     OFF = "off",
-    ON = "on",
-    NAME = "name",
+    ON = "on",// dont forget to add name attribute to input (custom one)
+    NAME = "name",// full name
     GIVEN_NAME = "given-name",
     ADDITIONAL_NAME = "additional-name",
     FAMILY_NAME = "family-name",
