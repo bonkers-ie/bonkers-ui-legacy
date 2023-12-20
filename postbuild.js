@@ -10,7 +10,7 @@ shell.cp("./tsconfig.json", "./dist/");
 shell.cp("./tsconfig.node.json", "./dist/");
 shell.cp("./plugin.ts", "./dist/");
 shell.cp("./README.md", "./dist/");
-shell.cp("./LICENSE", "./dist/");
+// shell.cp("./LICENSE", "./dist/"); // @Sean - are you checking what are you doing????????
 
 shell.mkdir("-p", "./dist/src/_styles");
 shell.cp("./src/_styles/*", "./dist/src/_styles/");
