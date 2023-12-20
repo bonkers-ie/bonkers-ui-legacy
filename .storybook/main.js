@@ -1,4 +1,4 @@
-const { mergeConfig } = require('vite');
+import { mergeConfig } from "vite";
 
 module.exports = {
 	"stories": [
@@ -8,7 +8,6 @@ module.exports = {
 	"addons": [
 		"@storybook/addon-links",
 		"@storybook/addon-essentials",
-		"@storybook/addon-mdx-gfm",
 	],
 	framework: {
 		name: "@storybook/vue3-vite",
@@ -18,7 +17,7 @@ module.exports = {
 		builder: '@storybook/builder-vite', // or '@storybook/builder-webpack5'
 		disableTelemetry: true,
 	},
-	async viteFinal(config, {}) {
+	async viteFinal(config, { }) {
 		return mergeConfig(config, {
 			base: "https://bonkers-ie.github.io/bonkers-ui/",
 		});

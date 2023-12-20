@@ -6,7 +6,7 @@
 		}"
 	>
 		<div
-			class="flex justify-between px-md py-sm"
+			class="flex items-center justify-between px-md py-sm"
 			:class="{
 				'rounded-lg border border-secondary': kind === EDropdownKinds.SECONDARY
 			}"
@@ -14,7 +14,7 @@
 		>
 			<ui-typography
 				line-height
-				:size="ETypographySizes.MD"
+				:size="ETypographySizes.LG"
 				:weight="ETextWeight.SEMI_BOLD "
 			>
 				{{ header }}
@@ -27,7 +27,7 @@
 					'rotate-0': !isOpen
 				}"
 				:icon-name="iconName"
-				:size="ESize.MD"
+				:size="ESize.SM"
 			/>
 		</div>
 
@@ -80,7 +80,6 @@
 		kind: EDropdownKinds.DEFAULT,
 	});
 
-	// eslint-disable-next-line vue/no-setup-props-destructure
 	const isOpen = ref(props.active);
 
 	onMounted(()=>{
