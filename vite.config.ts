@@ -10,6 +10,9 @@ export default defineConfig({
 			"@*": path.resolve(__dirname, "src"),
 		}
 	},
+
+	assetsInclude: ["/sb-preview/runtime.js"],
+
 	plugins: [
 		cssInjectedByJsPlugin({
 			relativeCSSInjection: true,
