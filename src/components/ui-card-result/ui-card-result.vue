@@ -70,7 +70,7 @@
 </template>
 
 <script lang="ts" setup>
-	import UiTypography, { ETypographySizes, ETextWeight, ETextAlign } from "../ui-typography";
+	import { UiTypography, ETypographySizes, ETextWeight, ETextAlign } from "../ui-typography";
 	import { EColors } from "../../_types/colors";
 
 	defineProps<{

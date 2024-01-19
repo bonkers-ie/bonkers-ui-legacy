@@ -1,4 +1,5 @@
 import UiVerificationInput from "./ui-verification-input.vue";
+import type { Meta } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-verification-input",
@@ -7,13 +8,13 @@ export default {
 	argTypes: {
 		inputsCount: {
 			control: {
-				type: "number" 
+				type: "number"
 			},
 			description: "Number of inputs",
 		},
 		type: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: ["text"],
 			description: "Inputs type",
@@ -23,26 +24,24 @@ export default {
 		inputsCount: 4,
 		type: "text"
 	}
+} satisfies Meta<typeof UiVerificationInput>;
+
+export const Default = {
+	render: (args)=>({
+		components: {
+			UiVerificationInput
+		},
+		setup() {
+			const filedHandler = (payload: string)=>{
+				console.log("=--->",payload);
+			};
+			return {
+				args,
+				filedHandler
+			};
+		},
+		template: `
+			<ui-verification-input @onFiled="filedHandler" :className="args.className" :inputsCount="args.inputsCount" :type="args.type"/>
+		`
+	})
 };
-
-type MyComponentProps = InstanceType<typeof UiVerificationInput>["$props"];
-
-const Template = (args: MyComponentProps) => ({
-	components: {
-		UiVerificationInput
-	},
-	setup() {
-		const filedHandler = (payload: string)=>{
-			console.log("=--->",payload);
-		};
-		return {
-			args,
-			filedHandler 
-		};
-	},
-	template: `
-		<ui-verification-input @onFiled="filedHandler" :className="args.className" :inputsCount="args.inputsCount" :type="args.type"/>
-	`
-});
-
-export const Default = Template.bind({});

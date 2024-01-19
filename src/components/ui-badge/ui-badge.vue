@@ -14,11 +14,8 @@
 				:size="getBadgeSize"
 				class="whitespace-nowrap"
 				line-height
-				:class="[
-					elipsis && 'overflow-hidden text-ellipsis',
-				]"
 			>
-				<slot />
+				<slot name="default" />
 			</ui-typography>
 		</div>
 
@@ -29,7 +26,6 @@
 
 				kind === EBadgeKind.ERROR && 'bg-error-600',
 				kind === EBadgeKind.ACCENT && 'bg-accent-600',
-				elipsis && 'max-w-full',
 			]"
 		/>
 	</div>
@@ -46,7 +42,6 @@
 		size?: EBadgeSize;
 		kind?: EBadgeKind;
 		icon?: TIconName;
-		elipsis?: boolean;
 	}>();
 
 	const slots = useSlots();

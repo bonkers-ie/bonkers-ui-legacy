@@ -1,5 +1,5 @@
 import UiBadge from "./ui-badge.vue";
-import type { Story } from "@storybook/vue3";
+import type { Meta } from "@storybook/vue3";
 import { EBadgeKind, EBadgeSize } from "./_typings";
 
 export default {
@@ -8,42 +8,45 @@ export default {
 	argTypes: {
 		kind: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(EBadgeKind),
 			description: "The Element kinds",
 		},
 		size: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(EBadgeSize),
 			description: "The Element size",
 		},
+		default: {
+			control: {
+				type: "text"
+			}
+		}
 	},
 	args: {
-		slot: "default text",
 		kind: EBadgeKind.PRIMARY,
 		size: EBadgeSize.SMALL,
-	},
+		default: "hello"
+	}
+} satisfies Meta<typeof UiBadge>;
+
+export const Default = {
+	render: (args) => ({
+		components: {
+			UiBadge
+		},
+		setup() {
+			return {
+				args,
+			};
+		},
+		template: /*html*/`
+			<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
+				{{args.default}}
+			</ui-badge>
+		`,
+	})
 };
-
-type TComponentProps = InstanceType<typeof UiBadge>["$props"];
-
-const Template: Story<TComponentProps> = (args) => ({
-	components: {
-		UiBadge 
-	},
-	setup() {
-		return {
-			args 
-		};
-	},
-	template: /*html*/`
-		<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
-			{{ args.slot }}
-		</ui-badge>
-	`,
-});
-
-export const Default = Template.bind({});

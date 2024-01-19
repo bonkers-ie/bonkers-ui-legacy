@@ -53,9 +53,7 @@
 		step: string | number;
 	}>();
 
-	const emit = defineEmits<{
-		(e: "update:modelValue", state: number): void
-	}>();
+	const emit = defineEmits(["update:modelValue"]);
 
 	const rangeModel = computed({
 		get() {

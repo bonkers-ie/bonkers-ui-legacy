@@ -1,4 +1,4 @@
-import { App, defineComponent } from "vue";
+import { type App, defineComponent } from "vue";
 import * as types from "./types";
 import * as UiAlert from "./components/ui-alert";
 import * as UiBackdrop from "./components/ui-modal/ui-backdrop";
