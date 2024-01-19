@@ -39,8 +39,6 @@
 	defineProps<{
 		iconName?: TIconName;
 		title?: string;
-		size?: string;
-		description?: string;
 	}>();
 
 </script>

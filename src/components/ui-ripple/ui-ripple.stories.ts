@@ -1,19 +1,15 @@
 import UiRipple from "./ui-ripple.vue";
-import UiButton from "../ui-button";
-import UiTypography from "../ui-typography";
+import { UiButton } from "../ui-button";
+import { UiTypography } from "../ui-typography";
 
-import type { Story } from "@storybook/vue3";
+import type { Meta } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-ripple",
 	component: UiRipple,
-	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-	argTypes: {},
-};
+} satisfies Meta<typeof UiRipple>;
 
-type TComponentProps = InstanceType<typeof UiRipple>["$props"];
-
-const Template: Story<TComponentProps> = (args) => ({
+const Template = (args) => ({
 	components: {
 		UiRipple
 	},
@@ -22,7 +18,7 @@ const Template: Story<TComponentProps> = (args) => ({
 			args
 		};
 	},
-	template: `
+	template: /*html*/`
 		<div
 			:style="{
 				width: '500px',
@@ -34,7 +30,7 @@ const Template: Story<TComponentProps> = (args) => ({
 		</div>
 		`,
 });
-const Template2: Story<TComponentProps> = (args) => ({
+const Template2 = (args) => ({
 	components: {
 		UiRipple,
 		UiButton,
@@ -45,14 +41,14 @@ const Template2: Story<TComponentProps> = (args) => ({
 			args
 		};
 	},
-	template: `
+	template: /*html*/`
 		<div class="flex">
-		<ui-button class="relative">
-			<ui-typography is="div">
-				<ui-ripple v-bind="args" />
-				hello world
-			</ui-typography>
-		</ui-button>
+			<ui-button class="relative">
+				<ui-typography is="div">
+					<ui-ripple v-bind="args" />
+					hello world
+				</ui-typography>
+			</ui-button>
 		</div>
 		`,
 });

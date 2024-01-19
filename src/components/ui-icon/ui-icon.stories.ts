@@ -1,15 +1,14 @@
 import UiIcon from "./ui-icon.vue";
-import type { Story } from "@storybook/vue3";
 import { ESize } from "../../_types/sizing";
+import type { Meta } from "@storybook/vue3";
 
 export default {
 	title: "Components/ui-icon",
 	component: UiIcon,
-	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		size: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(ESize),
 			description: "The Element size",
@@ -19,25 +18,10 @@ export default {
 	args: {
 		size: ESize.LG,
 	},
+} satisfies Meta<typeof UiIcon>;
+
+export const Default = {
+	args: {
+		iconName: ["far", "face-smile"]
+	}
 };
-
-type TComponentProps = InstanceType<typeof UiIcon>["$props"];
-
-const Template: Story<TComponentProps> = (args) => ({
-	// Components used in your story `template` are defined in the `components` object
-	components: {
-		UiIcon 
-	},
-	// The story's `args` need to be mapped into the template through the `setup()` method
-	setup() {
-		return {
-			args 
-		};
-	},
-	// And then the `args` are bound to your component with `v-bind="args"`
-	template: `
-		<ui-icon v-bind="args" :icon-name="['far', 'face-smile']" />
-	`,
-});
-
-export const Default = Template.bind({});

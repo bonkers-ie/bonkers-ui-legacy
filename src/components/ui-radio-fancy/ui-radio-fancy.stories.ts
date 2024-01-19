@@ -1,14 +1,13 @@
 import { ERadioSizes } from "./_typings";
-import UiRadioFancy from "../ui-radio-fancy";
+import { UiRadioFancy } from "../ui-radio-fancy";
 import { ICON_DEFAULT } from "./../../CONSTANTS";
-import UiTypography, { ETypographySizes } from "../ui-typography";
+import { UiTypography, ETypographySizes } from "../ui-typography";
 import type { Meta } from "@storybook/vue3";
 import { ref } from "vue";
 
-const meta: Meta<typeof UiRadioFancy> =  {
+export default {
 	title: "Components/ui-radio-fancy",
 	component: UiRadioFancy,
-	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		disabled: {
 			control: {
@@ -24,9 +23,10 @@ const meta: Meta<typeof UiRadioFancy> =  {
 			description: "The radio kinds",
 		},
 	},
-};
-
-export default meta;
+	args: {
+		disabled: false
+	}
+} satisfies Meta<typeof UiRadioFancy>;
 
 export const Default = {
 	args: {
@@ -58,7 +58,7 @@ export const Compact = {
 			};
 		},
 		template: /*html*/`
-		<div class="flex gap-sm" :style="{}">
+		<div class="flex gap-sm">
 			<ui-radio-fancy v-for="item in 2"
 				:key="item"
 				:value="String(item)"

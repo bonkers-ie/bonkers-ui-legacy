@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/vue3";
 
 import { EBerSize } from "./_types";
-import UiBerRank from "../ui-ber-rank";
+import { UiBerRank } from "../ui-ber-rank";
 
 export default {
 	title: "Components/ui-ber-rank",
@@ -9,13 +9,13 @@ export default {
 	argTypes: {
 		rank: {
 			control: {
-				type: "number" 
+				type: "number"
 			},
 			description: "The Element rank from 0 to 15",
 		},
 		size: {
 			control: {
-				type: "select" 
+				type: "select"
 			},
 			options: Object.values(EBerSize),
 			description: "The size of the rank",
@@ -23,7 +23,8 @@ export default {
 	},
 	args: {
 		rank: 0,
+		size: EBerSize.MEDIUM
 	},
-}satisfies Meta<typeof UiBerRank>;
+} satisfies Meta<typeof UiBerRank>;
 
 export const Default = {};

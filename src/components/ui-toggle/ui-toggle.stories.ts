@@ -1,5 +1,5 @@
 import UiToggle from "./ui-toggle.vue";
-import type { Story } from "@storybook/vue3";
+import type { Meta } from "@storybook/vue3";
 import { ref } from "vue";
 
 export default {
@@ -8,48 +8,57 @@ export default {
 	argTypes: {
 		disabled: {
 			control: {
-				type: "boolean" 
+				type: "boolean"
 			},
 			description: "The Element disabled state",
 		},
 		alignCenter: {
 			control: {
-				type: "boolean" 
+				type: "boolean"
 			},
 			description: "The Elements center align state",
 		},
 		invertOrder: {
 			control: {
-				type: "boolean" 
+				type: "boolean"
 			},
 			description: "The Element order state",
+		},
+		header: {
+			control: {
+				type: "text"
+			}
+		},
+		title: {
+			control: {
+				type: "text"
+			}
 		}
 	},
 	args: {
-		slot: "default text",
 		disabled: false,
 		invertOrder: false,
 		alignCenter: false,
+		title: "title",
+		header: "header"
 	},
+} satisfies Meta<typeof UiToggle>;
+
+export const Default = {
+	render: (args) => ({
+		components: {
+			UiToggle
+		},
+		setup() {
+			const modelValue = ref(false);
+
+			return {
+				args,
+				modelValue
+			};
+		},
+		template: /*html*/`
+			<ui-toggle v-bind="args" v-model="modelValue" />
+		`,
+	})
 };
-
-type TComponentProps = InstanceType<typeof UiToggle>["$props"];
-
-const Template: Story<TComponentProps> = (args) => ({
-	components: {
-		UiToggle 
-	},
-	setup() {
-		const modelValue = ref(false);
-
-		return {
-			args,
-			modelValue 
-		};
-	},
-	template: `
-		<ui-toggle v-bind="args" v-model="modelValue" header="Header" :title="args.slot" />
-	`,
-});
-
-export const Default = Template.bind({});

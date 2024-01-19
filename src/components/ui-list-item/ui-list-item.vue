@@ -27,14 +27,14 @@
 		<slot name="icon">
 			<ui-icon
 				v-if="icon"
-				class="bg-white"
+				class="absolute left-0 bg-white"
 				:class="iconClass"
 				:icon-name="icon"
 				:size="ESize.SM"
 			/>
 		</slot>
 
-		<div>
+		<div class="ml-md">
 			<ui-typography
 				v-if="title"
 				:weight="ETextWeight.SEMI_BOLD"
@@ -47,7 +47,7 @@
 				:class="[title && 'mt-xxs']"
 				:weight="ETextWeight.LIGHT"
 			>
-				<slot />
+				<slot name="default" />
 			</ui-typography>
 		</div>
 	</li>
@@ -58,7 +58,7 @@
 	import UiTypography, { ETextWeight } from "../ui-typography";
 	import { ESize } from "../../_types/sizing";
 	import { EListItemTypes, EListItemSpacing, EListItemSize } from "./_types";
-	import { HTMLAttributes } from "vue";
+	import type { HTMLAttributes } from "vue";
 
 	withDefaults(defineProps<{
 		icon?: TIconName

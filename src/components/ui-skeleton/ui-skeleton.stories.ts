@@ -1,4 +1,4 @@
-import UiSkeleton from "../ui-skeleton";
+import { UiSkeleton } from "../ui-skeleton";
 import type { Meta } from "@storybook/vue3";
 import { ESkeletonKind } from "./_typings";
 
@@ -27,7 +27,7 @@ export default {
 			};
 		},
 		template: /*html*/`
-			<ui-skeleton :kind="args.kind" />
+			<ui-skeleton v-bind="args" />
 		`,
 		args: {
 			kind: ESkeletonKind.RESULT_CARD
@@ -35,8 +35,4 @@ export default {
 	})
 } satisfies Meta<typeof UiSkeleton>;
 
-export const Default = {
-	args: {
-		kind: ESkeletonKind.RESULT_CARD
-	}
-};
+export const Default = {};

@@ -67,7 +67,7 @@
 	import { EDropdownKinds } from "./_typings";
 
 	const contentRef = ref<null | HTMLDivElement>(null);
-	const accordionHeight = ref<number>(0);
+	const accordionHeight = ref(0);
 
 	const props = withDefaults(defineProps<{
 		header?: string;

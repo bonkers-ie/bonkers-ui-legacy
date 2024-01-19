@@ -1,5 +1,10 @@
 <template>
-	<div class="ui-input">
+	<div
+		class="ui-input"
+		:class="[
+			disabled && 'pointer-events-none'
+		]"
+	>
 		<slot name="header">
 			<ui-typography
 				v-if="heading"
@@ -75,6 +80,7 @@
 	}>(), {
 		modelValue: "",
 		placeholder: "",
+		disabled: false,
 		autocomplete: undefined,
 		name: undefined,
 		heading: undefined,
@@ -96,5 +102,4 @@
 			default: return undefined;
 		}
 	});
-
 </script>
