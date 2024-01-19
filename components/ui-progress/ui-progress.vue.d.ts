@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     min: number;
     max: number;
@@ -7,7 +7,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     min: number;
     max: number;
     current: number;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     min: number;
     max: number;
     current: number;
@@ -38,3 +38,4 @@ type __VLS_WithDefaults<P, D> = {
 type __VLS_Prettify<T> = {
     [K in keyof T]: T[K];
 } & {};
+//# sourceMappingURL=ui-progress.vue.d.ts.map

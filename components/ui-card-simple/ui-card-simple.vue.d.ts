@@ -1,5 +1,5 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}, {}>, {
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+declare const _default: __VLS_WithTemplateSlots<DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{}>>, {}, {}>, {
     title?(_: {}): any;
     default?(_: {}): any;
     footerSubtitle?(_: {}): any;
@@ -10,3 +10,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-card-simple.vue.d.ts.map

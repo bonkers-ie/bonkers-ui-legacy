@@ -1,6 +1,6 @@
 import { TIconName } from './_typings';
 import { ESize } from '../../_types/sizing';
-import { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import UiIcon from "./ui-icon.vue";
 export { UiIcon };
 export { ESize } from "../../_types/sizing";
@@ -18,7 +18,7 @@ declare const deprecatedDefault: DefineComponent<{
         type: PropType<TIconName>;
         required: true;
     };
-}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     size: {
         type: PropType<ESize>;
         default: ESize;
@@ -31,3 +31,4 @@ declare const deprecatedDefault: DefineComponent<{
     size: ESize;
 }, {}>;
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

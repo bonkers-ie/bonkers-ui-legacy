@@ -1,4 +1,4 @@
-import { App } from './vue/dist/vue.esm-bundler.js';
+import { type App } from '../vue/dist/vue.esm-bundler.js';
 declare const BonkersUI: {
     install(app: App): void;
 };
@@ -38,3 +38,4 @@ export { UiTabs } from "./components/ui-tabs";
 export { UiToggle } from "./components/ui-toggle";
 export { UiTypography, EColors, ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./components/ui-typography";
 export { UiVerificationInput } from "./components/ui-verification-input";
+//# sourceMappingURL=index.d.ts.map

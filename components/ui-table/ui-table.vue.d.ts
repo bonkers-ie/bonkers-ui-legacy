@@ -1,10 +1,10 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { ETableKind } from "./_types";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     kind?: ETableKind | undefined;
 }>, {
     kind: ETableKind;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     kind?: ETableKind | undefined;
 }>, {
     kind: ETableKind;
@@ -36,3 +36,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-table.vue.d.ts.map

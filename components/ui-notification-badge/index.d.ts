@@ -1,5 +1,5 @@
 import { EBadgeOrigin } from './_types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiNotificationBadge from "./ui-notification-badge.vue";
 export { UiNotificationBadge };
 export { EBadgeOrigin } from "./_types";
@@ -50,3 +50,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

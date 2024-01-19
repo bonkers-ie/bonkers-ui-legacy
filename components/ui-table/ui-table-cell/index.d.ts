@@ -1,5 +1,5 @@
 import { ETextAlign, ETextWeight } from '..';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../../vue/dist/vue.esm-bundler.js';
 import UiTableCell from "./ui-table-cell.vue";
 export { UiTableCell };
 /**
@@ -52,3 +52,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
     modelValue: string | number | boolean;
     header?: string | undefined;
@@ -8,7 +8,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     disabled?: boolean | undefined;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     modelValue: string | number | boolean;
     header?: string | undefined;
     subHeader?: string | undefined;
@@ -36,3 +36,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-plain-radio.vue.d.ts.map

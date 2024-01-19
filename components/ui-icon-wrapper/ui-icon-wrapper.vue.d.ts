@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { EIconWrapperSizes, EIconWrapperTypes } from "./_typings";
 type TProps = {
     kind?: EIconWrapperTypes;
@@ -7,7 +7,7 @@ type TProps = {
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EIconWrapperTypes;
     size: EIconWrapperSizes;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EIconWrapperTypes;
     size: EIconWrapperSizes;
 }>>>, {
@@ -39,3 +39,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-icon-wrapper.vue.d.ts.map

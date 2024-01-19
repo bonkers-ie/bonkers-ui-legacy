@@ -5,3 +5,4 @@ export declare enum EResultCardRangeTypes {
     DEFAULT = "DEFAULT",
     FULL = "FULL"
 }
+//# sourceMappingURL=_types.d.ts.map

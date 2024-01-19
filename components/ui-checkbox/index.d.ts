@@ -1,5 +1,5 @@
 import { EJustify } from '../../types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiCheckbox from "./ui-checkbox.vue";
 export { UiCheckbox };
 /**
@@ -24,9 +24,9 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: boolean | unknown[]) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        "update:modelValue": (state: boolean | unknown[]) => void;
+        "update:modelValue": (...args: any[]) => void;
     }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
         modelValue: {
             type: PropType<boolean | unknown[]>;
@@ -45,7 +45,7 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: boolean | unknown[]) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, true, {}, {}, {
         P: {};
         B: {};
@@ -71,7 +71,7 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: boolean | unknown[]) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, {}, {}, {}, {}>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -94,12 +94,13 @@ declare const deprecatedDefault: {
         type: PropType<string>;
     };
 }>> & {
-    "onUpdate:modelValue"?: ((state: boolean | unknown[]) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (state: boolean | unknown[]) => void;
+    "update:modelValue": (...args: any[]) => void;
 }, string, {}, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         default?(_: {}): any;
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

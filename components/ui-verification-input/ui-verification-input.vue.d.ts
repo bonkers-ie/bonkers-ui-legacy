@@ -1,11 +1,11 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 type TProps = {
     inputsCount: number;
     type?: "text";
 };
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<TProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     onFiled: (...args: any[]) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TProps>>> & {
+}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TProps>>> & {
     onOnFiled?: ((...args: any[]) => any) | undefined;
 }, {}, {}>, {
     button?(_: {}): any;
@@ -25,3 +25,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-verification-input.vue.d.ts.map

@@ -1,5 +1,5 @@
 import { EJustify } from '../../types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiRadio from "./ui-radio.vue";
 export { UiRadio };
 /**
@@ -123,3 +123,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

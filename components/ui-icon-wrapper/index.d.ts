@@ -1,5 +1,5 @@
 import { EIconWrapperSizes, EIconWrapperTypes } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiIconWrapper from "./ui-icon-wrapper.vue";
 export { UiIconWrapper };
 export { EIconWrapperTypes, EIconWrapperSizes } from "./_typings";
@@ -69,3 +69,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

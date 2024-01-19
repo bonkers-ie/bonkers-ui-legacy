@@ -1,6 +1,6 @@
 import { EColors } from '../../_types/colors';
 import { ETextAlign, ETypographySizes, ETextWeight, ETextTransform } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, Component, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, Component, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiTypography from "./ui-typography.vue";
 export { UiTypography };
 /**
@@ -126,3 +126,4 @@ declare const deprecatedDefault: {
 export default deprecatedDefault;
 export { ETypographySizes, ETextWeight, ETextAlign, ETextTransform } from "./_typings";
 export { EColors } from "../../_types/colors";
+//# sourceMappingURL=index.d.ts.map

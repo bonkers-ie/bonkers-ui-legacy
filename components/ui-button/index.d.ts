@@ -1,5 +1,5 @@
 import { EButtonSizes, EButtonTypes } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiButton from "./ui-button.vue";
 export { UiButton };
 export { EButtonSizes, EButtonTypes } from "./_typings";
@@ -109,3 +109,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

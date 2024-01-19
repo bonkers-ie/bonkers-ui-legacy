@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { type TIconName } from "../ui-icon";
 import { EListItemTypes, EListItemSpacing, EListItemSize } from "./_types";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
@@ -15,7 +15,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     title: string;
     icon: undefined;
     iconClass: string;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     icon?: TIconName | undefined;
     title?: string | undefined;
     kind?: EListItemTypes | undefined;
@@ -63,3 +63,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-list-item.vue.d.ts.map

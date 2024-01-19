@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
     header?: string | undefined;
     title?: string | undefined;
@@ -8,8 +8,8 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     alignCenter?: boolean | undefined;
     value?: string | undefined;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (state: unknown) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+    "update:modelValue": (...args: any[]) => void;
+}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     header?: string | undefined;
     title?: string | undefined;
     modelValue: boolean | unknown[];
@@ -18,7 +18,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     alignCenter?: boolean | undefined;
     value?: string | undefined;
 }>>> & {
-    "onUpdate:modelValue"?: ((state: unknown) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {}, {}>, {
     header?(_: {}): any;
     title?(_: {}): any;
@@ -38,3 +38,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-toggle.vue.d.ts.map

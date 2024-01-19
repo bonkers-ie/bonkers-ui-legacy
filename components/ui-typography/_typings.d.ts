@@ -67,3 +67,4 @@ export declare enum ETextTransform {
     LOWERCASE = "lowercase",
     UPPERCASE = "uppercase"
 }
+//# sourceMappingURL=_typings.d.ts.map

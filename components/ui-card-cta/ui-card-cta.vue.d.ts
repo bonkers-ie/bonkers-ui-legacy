@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import type { TIconName } from "../ui-icon";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
     invertOrder?: boolean | undefined;
@@ -6,7 +6,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     iconName?: TIconName | undefined;
     title?: string | undefined;
     description?: string | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     invertOrder?: boolean | undefined;
     disabled?: boolean | undefined;
     iconName?: TIconName | undefined;
@@ -32,3 +32,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-card-cta.vue.d.ts.map

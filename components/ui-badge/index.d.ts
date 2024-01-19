@@ -1,6 +1,6 @@
 import { TIconName } from '../ui-icon';
 import { EBadgeSize, EBadgeKind } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiBadge from "./ui-badge.vue";
 export { UiBadge };
 /**
@@ -17,9 +17,6 @@ declare const deprecatedDefault: {
         icon: {
             type: PropType<TIconName>;
         };
-        elipsis: {
-            type: PropType<boolean>;
-        };
     }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
@@ -29,9 +26,6 @@ declare const deprecatedDefault: {
         };
         icon: {
             type: PropType<TIconName>;
-        };
-        elipsis: {
-            type: PropType<boolean>;
         };
     }>>, {}, true, {}, {}, {
         P: {};
@@ -50,9 +44,6 @@ declare const deprecatedDefault: {
         icon: {
             type: PropType<TIconName>;
         };
-        elipsis: {
-            type: PropType<boolean>;
-        };
     }>>, {}, {}, {}, {}, {}>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -67,9 +58,6 @@ declare const deprecatedDefault: {
     icon: {
         type: PropType<TIconName>;
     };
-    elipsis: {
-        type: PropType<boolean>;
-    };
 }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {}, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         default?(_: {}): any;
@@ -77,3 +65,4 @@ declare const deprecatedDefault: {
 });
 export default deprecatedDefault;
 export { EBadgeKind, EBadgeSize } from "./_typings";
+//# sourceMappingURL=index.d.ts.map

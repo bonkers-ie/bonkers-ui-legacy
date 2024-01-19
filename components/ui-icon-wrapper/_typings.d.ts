@@ -9,3 +9,4 @@ export declare enum EIconWrapperSizes {
     MEDIUM = "md",
     LARGE = "lg"
 }
+//# sourceMappingURL=_typings.d.ts.map

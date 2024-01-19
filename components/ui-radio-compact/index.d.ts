@@ -1,8 +1,11 @@
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiRadioCompact from "./ui-radio-compact.vue";
+/**
+ * @deprecated The default should not be used at all (look at ui-radio-fancy compact)
+ */
 export { UiRadioCompact };
 /**
- * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
+ * @deprecated The default should not be used at all
  */
 declare const deprecatedDefault: {
     new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
@@ -98,3 +101,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

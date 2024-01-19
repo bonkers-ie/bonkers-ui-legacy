@@ -8,3 +8,4 @@ export declare enum EIconType {
     BRANDS = "fa-brands"
 }
 export type TIconName = [EIconType, string];
+//# sourceMappingURL=_typings.d.ts.map

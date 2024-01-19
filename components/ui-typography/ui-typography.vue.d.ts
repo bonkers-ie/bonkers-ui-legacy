@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType, Component } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType, Component } from '../../../vue/dist/vue.esm-bundler.js';
 import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from "./_typings";
 import { EColors } from "../../_types/colors";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
@@ -10,7 +10,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     textTransform?: ETextTransform | undefined;
     underline?: boolean | undefined;
     is?: string | Component | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;
     size?: ETypographySizes | undefined;
     kind?: EColors | undefined;
@@ -37,3 +37,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-typography.vue.d.ts.map

@@ -1,5 +1,5 @@
 import { EInputType, EInputKinds, EAutocomplete } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiInput from "./ui-input.vue";
 export { EInputType, EInputKinds, EAutocomplete } from "./_typings";
 export { UiInput };
@@ -22,6 +22,7 @@ declare const deprecatedDefault: {
         };
         disabled: {
             type: PropType<boolean>;
+            default: boolean;
         };
         modelValue: {
             type: PropType<string | number>;
@@ -79,6 +80,7 @@ declare const deprecatedDefault: {
         };
         disabled: {
             type: PropType<boolean>;
+            default: boolean;
         };
         modelValue: {
             type: PropType<string | number>;
@@ -123,6 +125,7 @@ declare const deprecatedDefault: {
         type: EInputType;
         pattern: string;
         kind: EInputKinds;
+        disabled: boolean;
         modelValue: string | number;
         name: string;
         placeholder: string;
@@ -154,6 +157,7 @@ declare const deprecatedDefault: {
         };
         disabled: {
             type: PropType<boolean>;
+            default: boolean;
         };
         modelValue: {
             type: PropType<string | number>;
@@ -198,6 +202,7 @@ declare const deprecatedDefault: {
         type: EInputType;
         pattern: string;
         kind: EInputKinds;
+        disabled: boolean;
         modelValue: string | number;
         name: string;
         placeholder: string;
@@ -226,6 +231,7 @@ declare const deprecatedDefault: {
     };
     disabled: {
         type: PropType<boolean>;
+        default: boolean;
     };
     modelValue: {
         type: PropType<string | number>;
@@ -272,6 +278,7 @@ declare const deprecatedDefault: {
     type: EInputType;
     pattern: string;
     kind: EInputKinds;
+    disabled: boolean;
     modelValue: string | number;
     name: string;
     placeholder: string;
@@ -290,3 +297,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

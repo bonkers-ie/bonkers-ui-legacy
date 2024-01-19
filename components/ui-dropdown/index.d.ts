@@ -1,6 +1,6 @@
 import { TIconName } from '../ui-icon/_typings.ts';
 import { EDropdownKinds } from './_typings.ts';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiDropdown from "./ui-dropdown.vue";
 export { UiDropdown };
 export { EDropdownKinds } from "./_typings.ts";
@@ -103,3 +103,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

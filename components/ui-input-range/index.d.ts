@@ -1,4 +1,4 @@
-import { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import UiInputRange from "./ui-input-range.vue";
 export { UiInputRange };
 /**
@@ -22,8 +22,8 @@ declare const deprecatedDefault: DefineComponent<{
         required: true;
     };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (state: number) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    "update:modelValue": (...args: any[]) => void;
+}, string, PublicProps, Readonly<ExtractPropTypes<{
     modelValue: {
         type: PropType<number>;
         required: true;
@@ -41,6 +41,7 @@ declare const deprecatedDefault: DefineComponent<{
         required: true;
     };
 }>> & {
-    "onUpdate:modelValue"?: ((state: number) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {}, {}>;
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

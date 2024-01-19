@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { EJustify } from "../../_types/align";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
     modelValue: boolean | unknown[];
@@ -7,15 +7,15 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     disabled?: boolean | undefined;
     value?: string | undefined;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (state: boolean | unknown[]) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+    "update:modelValue": (...args: any[]) => void;
+}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     modelValue: boolean | unknown[];
     justify?: EJustify | undefined;
     invertOrder?: boolean | undefined;
     disabled?: boolean | undefined;
     value?: string | undefined;
 }>>> & {
-    "onUpdate:modelValue"?: ((state: boolean | unknown[]) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {}, {}>, {
     default?(_: {}): any;
 }>;
@@ -34,3 +34,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-checkbox.vue.d.ts.map

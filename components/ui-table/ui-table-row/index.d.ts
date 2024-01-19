@@ -1,5 +1,5 @@
 import { ERowKind } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../../vue/dist/vue.esm-bundler.js';
 import UiTableRow from "./ui-table-row.vue";
 export { UiTableRow };
 export { ERowKind } from "./_typings";
@@ -40,3 +40,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

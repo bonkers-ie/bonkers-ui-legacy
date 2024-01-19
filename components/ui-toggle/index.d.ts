@@ -1,4 +1,4 @@
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiToggle from "./ui-toggle.vue";
 export { UiToggle };
 /**
@@ -29,9 +29,9 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: unknown) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        "update:modelValue": (state: unknown) => void;
+        "update:modelValue": (...args: any[]) => void;
     }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
         header: {
             type: PropType<string>;
@@ -56,7 +56,7 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: unknown) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, true, {}, {}, {
         P: {};
         B: {};
@@ -88,7 +88,7 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>> & {
-        "onUpdate:modelValue"?: ((state: unknown) => any) | undefined;
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, {}, {}, {}, {}>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -117,9 +117,9 @@ declare const deprecatedDefault: {
         type: PropType<string>;
     };
 }>> & {
-    "onUpdate:modelValue"?: ((state: unknown) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (state: unknown) => void;
+    "update:modelValue": (...args: any[]) => void;
 }, string, {}, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         header?(_: {}): any;
@@ -127,3 +127,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

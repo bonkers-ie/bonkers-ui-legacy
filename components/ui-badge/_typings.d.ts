@@ -8,3 +8,4 @@ export declare enum EBadgeKind {
     ERROR = "error",
     ACCENT = "accent"
 }
+//# sourceMappingURL=_typings.d.ts.map

@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes, PropType } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { EAutocomplete, EInputKinds, EInputType } from "./_typings";
 declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     placeholder?: string | undefined;
@@ -17,6 +17,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
 }>, {
     modelValue: string;
     placeholder: string;
+    disabled: boolean;
     autocomplete: undefined;
     name: undefined;
     heading: undefined;
@@ -29,7 +30,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     kind: EInputKinds;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     placeholder?: string | undefined;
     modelValue: string | number;
     disabled?: boolean | undefined;
@@ -46,6 +47,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
 }>, {
     modelValue: string;
     placeholder: string;
+    disabled: boolean;
     autocomplete: undefined;
     name: undefined;
     heading: undefined;
@@ -62,6 +64,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     type: EInputType;
     pattern: string;
     kind: EInputKinds;
+    disabled: boolean;
     modelValue: string | number;
     name: string;
     placeholder: string;
@@ -100,3 +103,4 @@ type __VLS_WithTemplateSlots<T, S> = T & {
         $slots: S;
     };
 };
+//# sourceMappingURL=ui-input.vue.d.ts.map

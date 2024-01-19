@@ -1,4 +1,4 @@
-import { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import UiTabs from "./ui-tabs.vue";
 export { UiTabs };
 /**
@@ -19,7 +19,7 @@ declare const deprecatedDefault: DefineComponent<{
     };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, string, PublicProps, Readonly<ExtractPropTypes<{
     modelValue: {
         type: PropType<string>;
         required: true;
@@ -38,3 +38,4 @@ declare const deprecatedDefault: DefineComponent<{
     name: string;
 }, {}>;
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

@@ -1,6 +1,6 @@
 import { EAlertTypes } from './_types';
 import { TIconName } from '../ui-icon';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import UiAlert from "./ui-alert.vue";
 export { UiAlert };
 /**
@@ -57,3 +57,4 @@ declare const deprecatedDefault: {
 });
 export default deprecatedDefault;
 export { EAlertTypes } from "./_types";
+//# sourceMappingURL=index.d.ts.map

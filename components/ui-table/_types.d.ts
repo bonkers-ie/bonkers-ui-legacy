@@ -3,3 +3,4 @@ export declare enum ETableKind {
     SECONDARY = "secondary",
     SECONDARY_INVERTED = "secondary-inverted"
 }
+//# sourceMappingURL=_types.d.ts.map

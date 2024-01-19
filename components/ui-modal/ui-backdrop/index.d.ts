@@ -1,4 +1,4 @@
-import { CreateComponentPublicInstance, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from './vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../../vue/dist/vue.esm-bundler.js';
 import UiBackdrop from "./ui-backdrop.vue";
 export { UiBackdrop };
 /**
@@ -22,3 +22,4 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

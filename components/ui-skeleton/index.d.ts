@@ -1,5 +1,5 @@
 import { ESkeletonKind } from './_typings';
-import { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import UiSkeleton from "./ui-skeleton.vue";
 export { UiSkeleton };
 /**
@@ -10,7 +10,7 @@ declare const deprecatedDefault: DefineComponent<{
         type: PropType<ESkeletonKind>;
         default: ESkeletonKind;
     };
-}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     kind: {
         type: PropType<ESkeletonKind>;
         default: ESkeletonKind;
@@ -19,3 +19,4 @@ declare const deprecatedDefault: DefineComponent<{
     kind: ESkeletonKind;
 }, {}>;
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map

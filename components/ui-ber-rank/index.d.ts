@@ -1,5 +1,5 @@
 import { EBerSize } from './_types';
-import { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from './vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import UiBerRank from "./ui-ber-rank.vue";
 export { UiBerRank };
 export { EBerSize } from "./_types";
@@ -15,7 +15,7 @@ declare const deprecatedDefault: DefineComponent<{
         type: PropType<number | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15">;
         required: true;
     };
-}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
     size: {
         type: PropType<EBerSize>;
         default: EBerSize;
@@ -28,3 +28,4 @@ declare const deprecatedDefault: DefineComponent<{
     size: EBerSize;
 }, {}>;
 export default deprecatedDefault;
+//# sourceMappingURL=index.d.ts.map
