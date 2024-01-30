@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="bg-white"
+		class="h-auto bg-white"
 		:class="{
 			'rounded-lg border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT
 		}"
@@ -10,7 +10,7 @@
 			:class="{
 				'rounded-lg border border-secondary': kind === EDropdownKinds.SECONDARY
 			}"
-			@click="isOpen = !isOpen"
+			@click="toggleEvent"
 		>
 			<ui-typography
 				line-height
@@ -30,44 +30,42 @@
 				:size="ESize.SM"
 			/>
 		</div>
+		<transition
 
-		<div
-			class="overflow-hidden duration-300"
-			:style="{
-				height: accordionHeight + 'px'
-			}"
-			:class="{
-				'border border-transparent border-t-secondary-alt-300':
-					kind === EDropdownKinds.DEFAULT,
-				'!h-0 opacity-0': !isOpen,
-				'h-auto opacity-100': isOpen
-
-			}"
+			@before-enter="onBeforeEnter"
+			@enter="enter"
+			@leave="leave"
 		>
 			<div
-				ref="contentRef"
-				class="box-border pt-sm"
+				v-show="isOpen"
 				:class="{
-					'p-sm': kind === EDropdownKinds.DEFAULT
+					'overflow-hidden border border-transparent border-t-secondary-alt-300 opacity-0':
+						kind === EDropdownKinds.DEFAULT,
 
 				}"
 			>
-				<slot>
-					{{ subText }}
-				</slot>
+				<div
+					class="box-border pt-sm"
+					:class="{
+						'p-sm': kind === EDropdownKinds.DEFAULT
+
+					}"
+				>
+					<slot>
+						{{ subText }}
+					</slot>
+				</div>
 			</div>
-		</div>
+		</transition>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	import { onMounted, ref } from "vue";
+	import { ref } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName, ESize } from "../ui-icon";
 	import { EDropdownKinds } from "./_typings";
-
-	const contentRef = ref<null | HTMLDivElement>(null);
-	const accordionHeight = ref(0);
+	import gsap from "gsap";
 
 	const props = withDefaults(defineProps<{
 		header?: string;
@@ -82,11 +80,46 @@
 
 	const isOpen = ref(props.active);
 
-	onMounted(()=>{
-		if (contentRef.value) {
-			const { height } = contentRef.value.getBoundingClientRect();
-			accordionHeight.value = height;
-		}
+	function toggleEvent() {
+		isOpen.value = !isOpen.value;
+		t.reversed() ? t.play() : t.reversed();
+	}
+
+	const t = gsap.timeline({
+		paused: true,
+		reversed: true
 	});
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	function onBeforeEnter(el: Element | any) {
+		el.style.height = "0";
+		el.style.opacity = "0";
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	function enter(el: Element | any, done: ()=> void) {
+		t.to(el, {
+			height: "auto",
+			transform: "height",
+			duration: 0.2,
+			opacity: 1,
+			onComplete: done
+
+		}).play();
+
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	function leave(el: Element | any, done: ()=> void) {
+		t.to(el, {
+			height: "0",
+			opacity: 0,
+			transform: "height",
+			duration: 0.2,
+			onComplete: done
+
+		}).play();
+
+	}
 
 </script>
