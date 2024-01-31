@@ -32,7 +32,7 @@
 		</div>
 
 		<div
-			class="overflow-hidden duration-1000 ease-in-out"
+			class="overflow-hidden duration-300 ease-in-out"
 			:style="{
 				height
 			}"
