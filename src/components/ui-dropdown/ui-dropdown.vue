@@ -30,41 +30,40 @@
 				:size="ESize.SM"
 			/>
 		</div>
-		<transition
-			class="transition-height overflow-hidden duration-300 ease-in-out"
-			@enter="enter"
-			@after-enter="afterEnter"
-			@leave="leave"
+
+		<div
+			class="overflow-hidden duration-1000 ease-in-out"
+			:style="{
+				height
+			}"
+			:class="{
+				'border border-transparent border-t-secondary-alt-300':
+					kind === EDropdownKinds.DEFAULT,
+				'!h-0 !border-transparent': !isOpen
+			}"
 		>
 			<div
-				v-if="isOpen"
-				:class="{
-					'border border-transparent border-t-secondary-alt-300':
-						kind === EDropdownKinds.DEFAULT,
+				ref="contentWrapper"
 
+				class="box-border pt-sm"
+				:class="{
+					'p-sm': kind === EDropdownKinds.DEFAULT
 				}"
 			>
-				<div
-					class="box-border pt-sm"
-					:class="{
-						'p-sm': kind === EDropdownKinds.DEFAULT
-
-					}"
-				>
-					<slot>
-						{{ subText }}
-					</slot>
-				</div>
+				<slot>
+					{{ subText }}
+				</slot>
 			</div>
-		</transition>
+		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	import { ref } from "vue";
+	import { onMounted, ref } from "vue";
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName, ESize } from "../ui-icon";
 	import { EDropdownKinds } from "./_typings";
+	import { debounce } from "../../_utils/debounce";
 
 	const props = withDefaults(defineProps<{
 		header?: string;
@@ -72,42 +71,26 @@
 		subText?: string;
 		kind?: EDropdownKinds;
 		active?: boolean;
-
 	}>(), {
 		kind: EDropdownKinds.DEFAULT,
 	});
 
 	const isOpen = ref(props.active);
+	const contentWrapper = ref<HTMLElement>();
+	const height = ref("0");
 
 	function toggleAccordion() {
 		isOpen.value = !isOpen.value;
-
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	function enter(el : Element | any) {
-		const height = getComputedStyle(el).height;
-		el.style.height = height;
-		el.style.height = "0";
+	onMounted(()=>{
+		if (contentWrapper.value) {
+			const resizeObserver = new ResizeObserver(debounce(() => {
+				height.value = getComputedStyle(contentWrapper.value as HTMLElement).height;
+			}, 50));
 
-		setTimeout(() => {
-			el.style.height = height;
-		});
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	function afterEnter (el: Element | any) {
-		el.style.height = getComputedStyle(el).height;
-		el.style.height = "fit-content";
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	function leave(el: Element | any) {
-		el.style.height = getComputedStyle(el).height;
-
-		setTimeout(() => {
-			el.style.height = "0";
-		});
-	}
+			resizeObserver.observe(contentWrapper.value);
+		}
+	});
 
 </script>
