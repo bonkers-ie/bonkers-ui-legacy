@@ -23,7 +23,7 @@ jobs:
       - run: bun lint:style
       - run: bun run test
       - run: bun run build
-      - run: node publish.js
+      - run: bun run publish.ts
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_SECRET_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
