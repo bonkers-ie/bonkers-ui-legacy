@@ -1,7 +1,7 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../vue/dist/vue.esm-bundler.js';
 declare const _default: DefineComponent<__VLS_TypePropsToRuntimeProps<{
     size: number;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     size: number;
 }>>>, {}, {}>;
 export default _default;

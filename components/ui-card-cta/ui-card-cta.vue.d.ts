@@ -1,12 +1,13 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import type { TIconName } from "../ui-icon";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
+import { TIconName } from '../ui-icon';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
     invertOrder?: boolean | undefined;
     disabled?: boolean | undefined;
     iconName?: TIconName | undefined;
     title?: string | undefined;
     description?: string | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     invertOrder?: boolean | undefined;
     disabled?: boolean | undefined;
     iconName?: TIconName | undefined;

@@ -1,14 +1,15 @@
 import { TIconName } from '../ui-icon';
 import { EListItemSize, EListItemTypes, EListItemSpacing } from './_types';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiListItem from "./ui-list-item.vue";
-export { EListItemTypes, EListItemSpacing, EListItemSize } from "./_types";
+import { default as UiListItem } from './ui-list-item.vue';
+
+export { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
 export { UiListItem };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
@@ -33,7 +34,7 @@ declare const deprecatedDefault: {
             type: PropType<any>;
             default: string;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
@@ -72,7 +73,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
@@ -108,7 +109,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EListItemSize>;
         default: EListItemSize;

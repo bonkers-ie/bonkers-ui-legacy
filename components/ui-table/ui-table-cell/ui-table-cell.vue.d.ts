@@ -1,9 +1,10 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../../vue/dist/vue.esm-bundler.js';
-import { ETextAlign, ETextWeight } from "../../ui-typography";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
+import { ETextAlign, ETextWeight } from '../../ui-typography';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;
     weight?: ETextWeight | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;
     weight?: ETextWeight | undefined;
 }>>>, {}, {}>, {

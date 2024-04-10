@@ -1,5 +1,6 @@
 import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
-import UiInputRange from "./ui-input-range.vue";
+import { default as UiInputRange } from './ui-input-range.vue';
+
 export { UiInputRange };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
@@ -23,7 +24,7 @@ declare const deprecatedDefault: DefineComponent<{
     };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<{
+}, string, PublicProps, Readonly< ExtractPropTypes<{
     modelValue: {
         type: PropType<number>;
         required: true;

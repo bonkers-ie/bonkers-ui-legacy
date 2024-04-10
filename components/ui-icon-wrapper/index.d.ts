@@ -1,13 +1,14 @@
 import { EIconWrapperSizes, EIconWrapperTypes } from './_typings';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiIconWrapper from "./ui-icon-wrapper.vue";
+import { default as UiIconWrapper } from './ui-icon-wrapper.vue';
+
 export { UiIconWrapper };
-export { EIconWrapperTypes, EIconWrapperSizes } from "./_typings";
+export { EIconWrapperTypes, EIconWrapperSizes } from './_typings';
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EIconWrapperSizes>;
             default: EIconWrapperSizes;
@@ -16,7 +17,7 @@ declare const deprecatedDefault: {
             type: PropType<EIconWrapperTypes>;
             default: EIconWrapperTypes;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EIconWrapperSizes>;
             default: EIconWrapperSizes;
@@ -35,7 +36,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EIconWrapperSizes>;
             default: EIconWrapperSizes;
@@ -51,7 +52,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EIconWrapperSizes>;
         default: EIconWrapperSizes;

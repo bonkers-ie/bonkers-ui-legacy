@@ -1,12 +1,13 @@
 import { EJustify } from '../../types';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiCheckbox from "./ui-checkbox.vue";
+import { default as UiCheckbox } from './ui-checkbox.vue';
+
 export { UiCheckbox };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         modelValue: {
             type: PropType<boolean | unknown[]>;
             required: true;
@@ -27,7 +28,7 @@ declare const deprecatedDefault: {
         "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
         "update:modelValue": (...args: any[]) => void;
-    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         modelValue: {
             type: PropType<boolean | unknown[]>;
             required: true;
@@ -53,7 +54,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         modelValue: {
             type: PropType<boolean | unknown[]>;
             required: true;
@@ -76,7 +77,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     modelValue: {
         type: PropType<boolean | unknown[]>;
         required: true;

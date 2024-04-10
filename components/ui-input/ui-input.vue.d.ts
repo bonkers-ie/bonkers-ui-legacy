@@ -1,6 +1,7 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { EAutocomplete, EInputKinds, EInputType } from "./_typings";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+import { EAutocomplete, EInputKinds, EInputType } from './_typings';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     placeholder?: string | undefined;
     modelValue: string | number;
     disabled?: boolean | undefined;
@@ -30,7 +31,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     kind: EInputKinds;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     placeholder?: string | undefined;
     modelValue: string | number;
     disabled?: boolean | undefined;

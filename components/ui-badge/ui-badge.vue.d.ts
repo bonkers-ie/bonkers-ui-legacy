@@ -1,11 +1,12 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { EBadgeKind, EBadgeSize } from "./_typings";
-import { type TIconName } from "../ui-icon";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
+import { TIconName } from '../ui-icon';
+import { EBadgeKind, EBadgeSize } from './_typings';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
     size?: EBadgeSize | undefined;
     kind?: EBadgeKind | undefined;
     icon?: TIconName | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     size?: EBadgeSize | undefined;
     kind?: EBadgeKind | undefined;
     icon?: TIconName | undefined;

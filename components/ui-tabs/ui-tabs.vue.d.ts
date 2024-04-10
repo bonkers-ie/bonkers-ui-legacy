@@ -7,7 +7,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     name: string;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     tabs: string[];
     modelValue: string;
     name?: string | undefined;

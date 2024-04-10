@@ -7,7 +7,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     min: number;
     max: number;
     current: number;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     min: number;
     max: number;
     current: number;

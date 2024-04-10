@@ -1,5 +1,5 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{}>>, {}, {}>, {
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<{}>>, {}, {}>, {
     title?(_: {}): any;
     default?(_: {}): any;
     footerSubtitle?(_: {}): any;

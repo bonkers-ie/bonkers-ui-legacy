@@ -1,12 +1,13 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { ESize } from "../../_types/sizing";
-import type { TIconName } from "./_typings";
+import { TIconName } from './_typings';
+import { ESize } from '../../_types/sizing';
+
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     size?: ESize | undefined;
     iconName: TIconName;
 }>, {
     size: ESize;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     size?: ESize | undefined;
     iconName: TIconName;
 }>, {

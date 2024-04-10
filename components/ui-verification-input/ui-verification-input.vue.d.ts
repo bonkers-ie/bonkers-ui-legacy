@@ -3,9 +3,9 @@ type TProps = {
     inputsCount: number;
     type?: "text";
 };
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<TProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<TProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     onFiled: (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TProps>>> & {
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TProps>>> & {
     onOnFiled?: ((...args: any[]) => any) | undefined;
 }, {}, {}>, {
     button?(_: {}): any;

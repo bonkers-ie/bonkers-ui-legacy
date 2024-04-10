@@ -1,13 +1,14 @@
 import { EInputType, EInputKinds, EAutocomplete } from './_typings';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiInput from "./ui-input.vue";
-export { EInputType, EInputKinds, EAutocomplete } from "./_typings";
+import { default as UiInput } from './ui-input.vue';
+
+export { EInputType, EInputKinds, EAutocomplete } from './_typings';
 export { UiInput };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         type: {
             type: PropType<EInputType>;
             default: EInputType;
@@ -65,7 +66,7 @@ declare const deprecatedDefault: {
         "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
         "update:modelValue": (...args: any[]) => void;
-    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         type: {
             type: PropType<EInputType>;
             default: EInputType;
@@ -142,7 +143,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         type: {
             type: PropType<EInputType>;
             default: EInputType;
@@ -216,7 +217,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     type: {
         type: PropType<EInputType>;
         default: EInputType;

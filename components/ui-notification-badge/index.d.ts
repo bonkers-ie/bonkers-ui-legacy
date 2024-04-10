@@ -1,18 +1,19 @@
 import { EBadgeOrigin } from './_types';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiNotificationBadge from "./ui-notification-badge.vue";
+import { default as UiNotificationBadge } from './ui-notification-badge.vue';
+
 export { UiNotificationBadge };
-export { EBadgeOrigin } from "./_types";
+export { EBadgeOrigin } from './_types';
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         origin: {
             type: PropType<EBadgeOrigin>;
             default: EBadgeOrigin;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         origin: {
             type: PropType<EBadgeOrigin>;
             default: EBadgeOrigin;
@@ -26,7 +27,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         origin: {
             type: PropType<EBadgeOrigin>;
             default: EBadgeOrigin;
@@ -37,7 +38,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     origin: {
         type: PropType<EBadgeOrigin>;
         default: EBadgeOrigin;

@@ -1,12 +1,13 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import type { TIconName } from "../ui-icon";
-import { EOrderCardTypes } from "./_types";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+import { EOrderCardTypes } from './_types';
+import { TIconName } from '../ui-icon';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     iconName: TIconName;
     kind?: EOrderCardTypes | undefined;
 }>, {
     kind: EOrderCardTypes;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     iconName: TIconName;
     kind?: EOrderCardTypes | undefined;
 }>, {

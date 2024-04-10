@@ -1,7 +1,8 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { type TIconName } from "../ui-icon";
-import { EDropdownKinds } from "./_typings";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+import { EDropdownKinds } from './_typings';
+import { TIconName } from '../ui-icon';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     header?: string | undefined;
     iconName: TIconName;
     subText?: string | undefined;
@@ -9,7 +10,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaul
     active?: boolean | undefined;
 }>, {
     kind: EDropdownKinds;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     header?: string | undefined;
     iconName: TIconName;
     subText?: string | undefined;

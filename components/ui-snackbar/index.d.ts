@@ -1,13 +1,14 @@
 import { ESnackbarTypes } from './_types';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiSnackbar from "./ui-snackbar.vue";
+import { default as UiSnackbar } from './ui-snackbar.vue';
+
 export { UiSnackbar };
-export { ESnackbarTypes } from "./_types";
+export { ESnackbarTypes } from './_types';
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         title: {
             type: PropType<string>;
             required: true;
@@ -16,7 +17,7 @@ declare const deprecatedDefault: {
             type: PropType<ESnackbarTypes>;
             default: ESnackbarTypes;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         title: {
             type: PropType<string>;
             required: true;
@@ -34,7 +35,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         title: {
             type: PropType<string>;
             required: true;
@@ -49,7 +50,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     title: {
         type: PropType<string>;
         required: true;

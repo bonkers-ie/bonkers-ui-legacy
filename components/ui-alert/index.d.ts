@@ -1,13 +1,14 @@
 import { EAlertTypes } from './_types';
 import { TIconName } from '../ui-icon';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiAlert from "./ui-alert.vue";
+import { default as UiAlert } from './ui-alert.vue';
+
 export { UiAlert };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         icon: {
             type: PropType<TIconName>;
             required: true;
@@ -15,7 +16,7 @@ declare const deprecatedDefault: {
         kind: {
             type: PropType<EAlertTypes>;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         icon: {
             type: PropType<TIconName>;
             required: true;
@@ -30,7 +31,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         icon: {
             type: PropType<TIconName>;
             required: true;
@@ -42,7 +43,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     icon: {
         type: PropType<TIconName>;
         required: true;
@@ -56,5 +57,5 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
-export { EAlertTypes } from "./_types";
+export { EAlertTypes } from './_types';
 //# sourceMappingURL=index.d.ts.map

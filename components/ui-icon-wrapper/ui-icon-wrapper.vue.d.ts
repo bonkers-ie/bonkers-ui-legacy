@@ -1,13 +1,14 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { EIconWrapperSizes, EIconWrapperTypes } from "./_typings";
+import { EIconWrapperSizes, EIconWrapperTypes } from './_typings';
+
 type TProps = {
     kind?: EIconWrapperTypes;
     size?: EIconWrapperSizes;
 };
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EIconWrapperTypes;
     size: EIconWrapperSizes;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EIconWrapperTypes;
     size: EIconWrapperSizes;
 }>>>, {

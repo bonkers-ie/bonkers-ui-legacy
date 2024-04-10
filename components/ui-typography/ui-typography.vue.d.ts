@@ -1,7 +1,8 @@
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType, Component } from '../../../vue/dist/vue.esm-bundler.js';
-import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from "./_typings";
-import { EColors } from "../../_types/colors";
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsToRuntimeProps<{
+import { EColors } from '../../_types/colors';
+import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from './_typings';
+import { Component, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;
     size?: ETypographySizes | undefined;
     kind?: EColors | undefined;
@@ -10,7 +11,7 @@ declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_TypePropsT
     textTransform?: ETextTransform | undefined;
     underline?: boolean | undefined;
     is?: string | Component | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;
     size?: ETypographySizes | undefined;
     kind?: EColors | undefined;

@@ -1,11 +1,12 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { type TBerPropNumber, type TBerPropString, EBerSize } from "./_types";
+import { TBerPropNumber, TBerPropString, EBerSize } from './_types';
+
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     rank: TBerPropNumber | TBerPropString | number;
     size?: EBerSize | undefined;
 }>, {
     size: EBerSize;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     rank: TBerPropNumber | TBerPropString | number;
     size?: EBerSize | undefined;
 }>, {

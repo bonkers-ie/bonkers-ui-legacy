@@ -1,13 +1,14 @@
 import { TIconName } from '../ui-icon';
 import { EOrderCardTypes } from './_types';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiOrderCard from "./ui-order-card.vue";
+import { default as UiOrderCard } from './ui-order-card.vue';
+
 export { UiOrderCard };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         kind: {
             type: PropType<EOrderCardTypes>;
             default: EOrderCardTypes;
@@ -16,7 +17,7 @@ declare const deprecatedDefault: {
             type: PropType<TIconName>;
             required: true;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         kind: {
             type: PropType<EOrderCardTypes>;
             default: EOrderCardTypes;
@@ -34,7 +35,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         kind: {
             type: PropType<EOrderCardTypes>;
             default: EOrderCardTypes;
@@ -49,7 +50,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     kind: {
         type: PropType<EOrderCardTypes>;
         default: EOrderCardTypes;

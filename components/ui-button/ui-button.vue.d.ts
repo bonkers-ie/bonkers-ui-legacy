@@ -1,17 +1,18 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { EButtonSizes, EButtonTypes } from "./_typings";
+import { EButtonSizes, EButtonTypes } from './_typings';
+
 type TProps = {
     kind?: EButtonTypes;
     size?: EButtonSizes;
     fullWidth?: boolean;
     disabled?: boolean;
 };
-declare const _default: __VLS_WithTemplateSlots<DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EButtonTypes;
     size: EButtonSizes;
     fullWidth: boolean;
     disabled: boolean;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EButtonTypes;
     size: EButtonSizes;
     fullWidth: boolean;

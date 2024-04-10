@@ -6,7 +6,7 @@ declare const _default: DefineComponent<__VLS_TypePropsToRuntimeProps<{
     step: string | number;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     modelValue: number;
     min: string | number;
     max: string | number;

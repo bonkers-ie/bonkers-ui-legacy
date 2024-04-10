@@ -1,13 +1,14 @@
 import { TIconName } from '../ui-icon';
 import { EBadgeSize, EBadgeKind } from './_typings';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiBadge from "./ui-badge.vue";
+import { default as UiBadge } from './ui-badge.vue';
+
 export { UiBadge };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
         };
@@ -17,7 +18,7 @@ declare const deprecatedDefault: {
         icon: {
             type: PropType<TIconName>;
         };
-    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
         };
@@ -34,7 +35,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
         };
@@ -48,7 +49,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EBadgeSize>;
     };
@@ -64,5 +65,5 @@ declare const deprecatedDefault: {
     };
 });
 export default deprecatedDefault;
-export { EBadgeKind, EBadgeSize } from "./_typings";
+export { EBadgeKind, EBadgeSize } from './_typings';
 //# sourceMappingURL=index.d.ts.map

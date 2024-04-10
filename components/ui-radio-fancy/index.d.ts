@@ -1,13 +1,14 @@
 import { ERadioSizes } from './_typings';
 import { TIconName } from '../ui-icon';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import UiRadioFancy from "./ui-radio-fancy.vue";
+import { default as UiRadioFancy } from './ui-radio-fancy.vue';
+
 export { UiRadioFancy };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
 declare const deprecatedDefault: {
-    new (...args: any[]): CreateComponentPublicInstance<Readonly<ExtractPropTypes<{
+    new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         iconName: {
             type: PropType<TIconName>;
             default: undefined;
@@ -35,7 +36,7 @@ declare const deprecatedDefault: {
         "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
         "update:modelValue": (...args: any[]) => void;
-    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly<ExtractPropTypes<{
+    }, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         iconName: {
             type: PropType<TIconName>;
             default: undefined;
@@ -71,7 +72,7 @@ declare const deprecatedDefault: {
         C: {};
         M: {};
         Defaults: {};
-    }, Readonly<ExtractPropTypes<{
+    }, Readonly< ExtractPropTypes<{
         iconName: {
             type: PropType<TIconName>;
             default: undefined;
@@ -104,7 +105,7 @@ declare const deprecatedDefault: {
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
-} & ComponentOptionsBase<Readonly<ExtractPropTypes<{
+} & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     iconName: {
         type: PropType<TIconName>;
         default: undefined;

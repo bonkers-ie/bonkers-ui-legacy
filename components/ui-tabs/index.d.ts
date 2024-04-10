@@ -1,5 +1,6 @@
 import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
-import UiTabs from "./ui-tabs.vue";
+import { default as UiTabs } from './ui-tabs.vue';
+
 export { UiTabs };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
@@ -19,7 +20,7 @@ declare const deprecatedDefault: DefineComponent<{
     };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly<ExtractPropTypes<{
+}, string, PublicProps, Readonly< ExtractPropTypes<{
     modelValue: {
         type: PropType<string>;
         required: true;

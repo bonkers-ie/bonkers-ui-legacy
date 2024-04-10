@@ -1,11 +1,12 @@
 import { TIconName } from './_typings';
 import { ESize } from '../../_types/sizing';
 import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
-import UiIcon from "./ui-icon.vue";
+import { default as UiIcon } from './ui-icon.vue';
+
 export { UiIcon };
-export { ESize } from "../../_types/sizing";
-export { EIconType } from "./_typings";
-export type { TIconName } from "./_typings";
+export { ESize } from '../../_types/sizing';
+export { EIconType } from './_typings';
+export type { TIconName } from './_typings';
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
  */
@@ -18,7 +19,7 @@ declare const deprecatedDefault: DefineComponent<{
         type: PropType<TIconName>;
         required: true;
     };
-}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<{
     size: {
         type: PropType<ESize>;
         default: ESize;
