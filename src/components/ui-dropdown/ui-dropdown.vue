@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="bg-white"
+		class="h-auto bg-white"
 		:class="{
 			'rounded-lg border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT
 		}"
@@ -10,7 +10,7 @@
 			:class="{
 				'rounded-lg border border-secondary': kind === EDropdownKinds.SECONDARY
 			}"
-			@click="isOpen = !isOpen"
+			@click="toggleAccordion"
 		>
 			<ui-typography
 				line-height
@@ -32,24 +32,22 @@
 		</div>
 
 		<div
-			class="overflow-hidden duration-300"
+			class="overflow-hidden duration-300 ease-in-out"
 			:style="{
-				height: accordionHeight + 'px'
+				height
 			}"
 			:class="{
 				'border border-transparent border-t-secondary-alt-300':
 					kind === EDropdownKinds.DEFAULT,
-				'!h-0 opacity-0': !isOpen,
-				'h-auto opacity-100': isOpen
-
+				'!h-0 !border-transparent': !isOpen
 			}"
 		>
 			<div
-				ref="contentRef"
+				ref="contentWrapper"
+
 				class="box-border pt-sm"
 				:class="{
 					'p-sm': kind === EDropdownKinds.DEFAULT
-
 				}"
 			>
 				<slot>
@@ -65,9 +63,7 @@
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName, ESize } from "../ui-icon";
 	import { EDropdownKinds } from "./_typings";
-
-	const contentRef = ref<null | HTMLDivElement>(null);
-	const accordionHeight = ref(0);
+	import { debounce } from "../../_utils/debounce";
 
 	const props = withDefaults(defineProps<{
 		header?: string;
@@ -75,17 +71,25 @@
 		subText?: string;
 		kind?: EDropdownKinds;
 		active?: boolean;
-
 	}>(), {
 		kind: EDropdownKinds.DEFAULT,
 	});
 
 	const isOpen = ref(props.active);
+	const contentWrapper = ref<HTMLElement>();
+	const height = ref("0");
+
+	function toggleAccordion() {
+		isOpen.value = !isOpen.value;
+	}
 
 	onMounted(()=>{
-		if (contentRef.value) {
-			const { height } = contentRef.value.getBoundingClientRect();
-			accordionHeight.value = height;
+		if (contentWrapper.value) {
+			const resizeObserver = new ResizeObserver(debounce(() => {
+				height.value = getComputedStyle(contentWrapper.value as HTMLElement).height;
+			}, 50));
+
+			resizeObserver.observe(contentWrapper.value);
 		}
 	});
 

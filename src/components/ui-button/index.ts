@@ -8,4 +8,3 @@ export { EButtonSizes, EButtonTypes } from "./_typings";
  */
 const deprecatedDefault = UiButton;
 export default deprecatedDefault;
-
