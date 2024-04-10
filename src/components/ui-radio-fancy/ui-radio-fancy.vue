@@ -19,38 +19,37 @@
 			class="
 				ui-radio-fancy__content
 				box-border
-				h-full
-				w-full
-				cursor-pointer rounded-xl
-				border
+				size-full
+				cursor-pointer
+				rounded-xl border
 				border-secondary-alt-500
 				bg-white
 				p-sm
 				before:absolute
 				before:-z-10
-
 				before:box-border
+
 				before:rounded-[16px]
 				before:bg-primary-300
 				hover:border-secondary-alt-700
 				peer-checked:border-transparent
-
 				peer-checked:shadow-selected-shadow
+
 				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
 				peer-checked:active:before:-bottom-xs
 				peer-checked:active:before:-left-xs
 				peer-checked:active:before:-right-xs
-
 				peer-checked:active:before:-top-xs
-				peer-focus:before:-bottom-xs
 
+				peer-focus:before:-bottom-xs
 				peer-focus:before:-left-xs
+
 				peer-focus:before:-right-xs
 				peer-focus:before:-top-xs
 				peer-active:before:-bottom-xxs
-
 				peer-active:before:-left-xxs
+
 				peer-active:before:-right-xxs
 				peer-active:before:-top-xxs
 			"

@@ -3,13 +3,13 @@
 		class="ui-icon"
 		:icon="iconName"
 		:class="[
-			size === ESize.XXS && 'h-xxs w-xxs',
-			size === ESize.XS && 'h-xs w-xs',
-			size === ESize.SM && 'h-sm w-sm',
-			size === ESize.MD && 'h-md w-md',
-			size === ESize.LG && 'h-lg w-lg',
-			size === ESize.XL && 'h-xl w-xl',
-			size === ESize.XXL && 'h-xxl w-xxl',
+			size === ESize.XXS && 'size-xxs',
+			size === ESize.XS && 'size-xs',
+			size === ESize.SM && 'size-sm',
+			size === ESize.MD && 'size-md',
+			size === ESize.LG && 'size-lg',
+			size === ESize.XL && 'size-xl',
+			size === ESize.XXL && 'size-xxl',
 		]"
 	/>
 </template>

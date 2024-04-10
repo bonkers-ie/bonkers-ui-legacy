@@ -22,7 +22,7 @@
 				:weight="ETextWeight.BOLD"
 				:size="textSize"
 				:text-transform="ETextTransform.UPPERCASE"
-				class="absolute left-0 top-0 flex h-full w-full items-center justify-center"
+				class="absolute left-0 top-0 flex size-full items-center justify-center"
 			>
 				ber
 			</ui-typography>
@@ -52,7 +52,7 @@
 				:weight="ETextWeight.BOLD"
 				:size="textSize"
 				:text-transform="ETextTransform.UPPERCASE"
-				class="absolute left-0 top-0 flex h-full w-full items-center justify-center"
+				class="absolute left-0 top-0 flex size-full items-center justify-center"
 			>
 				{{ berRankDictionary[+rank]?.text || berRankDictionary[0].text }}
 			</ui-typography>

@@ -27,7 +27,7 @@
 				<input
 					v-model="checkboxModel"
 					type="checkbox"
-					class="absolute h-0 w-0 appearance-none border-0"
+					class="absolute size-0 appearance-none border-0"
 					:value="value"
 				>
 

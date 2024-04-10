@@ -20,7 +20,7 @@
 		</div>
 
 		<div
-			class="absolute left-0 top-0 h-full w-full rounded-full"
+			class="absolute left-0 top-0 size-full rounded-full"
 			:class="[
 				(!kind || kind === EBadgeKind.PRIMARY) && 'bg-primary-600',
 

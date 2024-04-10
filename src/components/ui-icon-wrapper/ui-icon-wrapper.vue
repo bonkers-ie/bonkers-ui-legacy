@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="icon-wrapper relative grid h-fit w-fit place-items-center rounded-2xl"
+		class="icon-wrapper relative grid size-fit place-items-center rounded-2xl"
 		:class="[
 			kind === EIconWrapperTypes.PRIMARY && 'bg-primary text-white',
 			kind === EIconWrapperTypes.SECONDARY && 'bg-secondary-alt-200 text-black',

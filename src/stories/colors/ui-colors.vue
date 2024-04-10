@@ -23,7 +23,7 @@
 						class="grid"
 					>
 						<span
-							class="relative block h-xxl w-xxl rounded-full"
+							class="relative block size-xxl rounded-full"
 							:style="{
 								backgroundColor: value2
 							}"
@@ -42,7 +42,7 @@
 			</div>
 			<div v-else>
 				<span
-					class="relative block h-xxl w-xxl rounded-full"
+					class="relative block size-xxl rounded-full"
 					:style="{
 						backgroundColor: value
 					}"

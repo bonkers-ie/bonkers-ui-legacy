@@ -7,4 +7,3 @@ export { EDropdownKinds } from "./_typings.ts";
  */
 const deprecatedDefault = UiDropdown;
 export default deprecatedDefault;
-

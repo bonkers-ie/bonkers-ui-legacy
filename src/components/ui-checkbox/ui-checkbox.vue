@@ -24,8 +24,7 @@
 				ui-checkbox_custom
 				relative
 				flex
-				h-md
-				w-md
+				size-md
 				items-center
 				justify-center
 				rounded
