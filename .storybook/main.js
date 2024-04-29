@@ -5,6 +5,7 @@ export default {
 	"addons": [
 		"@storybook/addon-links",
 		"@storybook/addon-essentials",
+		'storybook-dark-mode'
 	],
 	framework: {
         name: "@storybook/vue3-vite",

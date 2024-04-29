@@ -24,7 +24,7 @@ async function run() {
 	const currentVersion = await new Response(currentVersionProc.stdout).text();
 
 	console.log("currrent version:", currentVersion.replace(/(\r\n|\n|\r)/gm, ""));
-	setVersionToJson(currentVersion);
+	await setVersionToJson(currentVersion);
 
 	const newVersionProc = Bun.spawn(["npm", "version","--no-git-tag-version", VERSION_TO_UPDATE], {
 		cwd: DIR_VARIABLE
@@ -33,9 +33,9 @@ async function run() {
 	const newVersion = await new Response(newVersionProc.stdout).text();
 	console.log("new version:", newVersion.replace(/(\r\n|\n|\r)/gm, ""));
 
-	setVersionToJson(newVersion);
+	await setVersionToJson(newVersion);
 
-	Bun.spawn(["npm", "set", "//registry.npmjs.org/:_authToken", process.env.NPM_AUTH_TOKEN]);
+	Bun.spawn(["npm", "set", "//registry.npmjs.org/:_authToken=", process.env.NPM_AUTH_TOKEN]);
 	Bun.spawn(["npm", "publish", "--verbose", DIR_VARIABLE]);
 	Bun.spawn(["git", "checkout", "package.json"]);
 	Bun.spawn(["git", "tag", newVersion]);
