@@ -30,12 +30,12 @@ async function run() {
 		cwd: DIR_VARIABLE
 	});
 
-	const newVersion = await new Response(newVersionProc.stdout).text();
-	console.log("new version:", newVersion.replace(/(\r\n|\n|\r)/gm, ""));
+	const newVersion = (await new Response(newVersionProc.stdout).text()).replace(/(\r\n|\n|\r)/gm, "");
+	console.log("new version:", newVersion);
 
 	await setVersionToJson(newVersion);
 
-	Bun.spawn(["npm", "set", "//registry.npmjs.org/:_authToken=", process.env.NPM_AUTH_TOKEN]);
+	Bun.spawn(["npm", "set", `//registry.npmjs.org/:_authToken=${process.env.NPM_AUTH_TOKEN}`]);
 	Bun.spawn(["npm", "publish", "--verbose", DIR_VARIABLE]);
 	Bun.spawn(["git", "checkout", "package.json"]);
 	Bun.spawn(["git", "tag", newVersion]);
