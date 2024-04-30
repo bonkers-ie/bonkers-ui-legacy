@@ -37,16 +37,20 @@ async function run() {
 
 	Bun.spawnSync(
 		[
-			`npm set //registry.npmjs.org/:_authToken=${Bun.env.NPM_AUTH_TOKEN}`,
-			"&&",
-			`npm publish --verbose ${DIR_VARIABLE}`,
-			"&&",
-			"git checkout package.json",
-			"&&",
-			`git tag ${newVersion}`,
-			"&&",
-			"git push --tags"
-		]);
+			`npm set //registry.npmjs.org/:_authToken=${Bun.env.NPM_AUTH_TOKEN} && npm publish --verbose ${DIR_VARIABLE}`,
+		],
+		{
+			onExit: (proc, exitCode, signalCode, error) => {
+				if (exitCode !== 0) {
+					throw new Error(`Failed to publish package: ${error}`);
+				}
+			},
+		}
+	);
+
+	Bun.spawnSync([
+		`git checkout package.json && git tag ${newVersion} && git push --tags`
+	]);
 }
 
 try {
