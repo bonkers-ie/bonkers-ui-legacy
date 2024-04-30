@@ -12,7 +12,7 @@ const setVersionToJson = async(version: string) => {
 };
 
 async function run() {
-	if (!process.env.NPM_AUTH_TOKEN) throw new Error("Merge-release requires NPM_AUTH_TOKEN");
+	if (!Bun.env.NPM_AUTH_TOKEN) throw new Error("Merge-release requires NPM_AUTH_TOKEN");
 	Bun.spawnSync(["bun", "./postbuild.ts"]);
 
 	const pkgFile = Bun.file(`${DIR_VARIABLE}/package.json`);
@@ -35,12 +35,22 @@ async function run() {
 
 	await setVersionToJson(newVersion);
 
-	Bun.spawn(["npm", "set", `//registry.npmjs.org/:_authToken=${process.env.NPM_AUTH_TOKEN}`]);
-	Bun.spawn(["npm", "publish", "--verbose", DIR_VARIABLE]);
-	Bun.spawn(["git", "checkout", "package.json"]);
-	Bun.spawn(["git", "tag", newVersion]);
-	Bun.spawn(["git", "push", "--tags"]);
+	Bun.spawnSync(
+		[
+			`npm set //registry.npmjs.org/:_authToken=${Bun.env.NPM_AUTH_TOKEN} && npm publish --verbose ${DIR_VARIABLE}`,
+		],
+		{
+			onExit: (proc, exitCode, signalCode, error) => {
+				if (exitCode !== 0) {
+					throw new Error(`Failed to publish package: ${error}`);
+				}
+			},
+		}
+	);
 
+	Bun.spawnSync([
+		`git checkout package.json && git tag ${newVersion} && git push --tags`
+	]);
 }
 
 try {
