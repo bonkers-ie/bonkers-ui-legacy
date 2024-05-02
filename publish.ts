@@ -1,6 +1,7 @@
 
 const DIR_VARIABLE = `${process.cwd()}/dist`;
 const VERSION_TO_UPDATE = "patch";
+import { spawnSync } from "child_process";
 
 const setVersionToJson = async(version: string) => {
 	const packageFile = Bun.file(`${DIR_VARIABLE}/package.json`);
@@ -12,7 +13,8 @@ const setVersionToJson = async(version: string) => {
 };
 
 async function run() {
-	if (!Bun.env.NPM_AUTH_TOKEN) throw new Error("Merge-release requires NPM_AUTH_TOKEN");
+	const NPM_AUTH_TOKEN = process.env.NPM_AUTH_TOKEN;
+	if (!NPM_AUTH_TOKEN) throw new Error("Merge-release requires NPM_AUTH_TOKEN");
 	Bun.spawnSync(["bun", "./postbuild.ts"]);
 
 	const pkgFile = Bun.file(`${DIR_VARIABLE}/package.json`);
@@ -35,18 +37,26 @@ async function run() {
 
 	await setVersionToJson(newVersion);
 
-	Bun.spawnSync(
-		[
-			`npm set //registry.npmjs.org/:_authToken=${Bun.env.NPM_AUTH_TOKEN} && npm publish --verbose ${DIR_VARIABLE}`,
-		],
-		{
-			onExit: (proc, exitCode, signalCode, error) => {
-				if (exitCode !== 0) {
-					throw new Error(`Failed to publish package: ${error}`);
-				}
-			},
+	try {
+		const setAuthTokenProcess = spawnSync("npm", ["set", `//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}`], {
+			stdio: "inherit"
+		});
+		if (setAuthTokenProcess.status !== 0) {
+			throw new Error(`Failed to set npm authentication token: ${setAuthTokenProcess.stderr.toString()}`);
 		}
-	);
+
+		const publishProcess = spawnSync("npm", ["publish", "--verbose", DIR_VARIABLE], {
+			stdio: "inherit"
+		});
+		if (publishProcess.status !== 0) {
+			throw new Error(`Failed to publish package: ${publishProcess.stderr.toString()}`);
+		}
+
+		console.log("Package published successfully!");
+	} catch (error) {
+		console.error(error.message);
+		process.exit(1); // Exit with non-zero code to indicate failure
+	}
 
 	Bun.spawnSync([
 		`git checkout package.json && git tag ${newVersion} && git push --tags`
