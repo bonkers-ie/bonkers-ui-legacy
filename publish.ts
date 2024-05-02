@@ -3,7 +3,7 @@ const DIR_VARIABLE = `${process.cwd()}/dist`;
 const VERSION_TO_UPDATE = "patch";
 import { spawnSync } from "child_process";
 
-const setVersionToJson = async(version: string) => {
+const setVersionToJson = async (version: string) => {
 	const packageFile = Bun.file(`${DIR_VARIABLE}/package.json`);
 	const json = await packageFile.json();
 
@@ -28,7 +28,7 @@ async function run() {
 	console.log("currrent version:", currentVersion.replace(/(\r\n|\n|\r)/gm, ""));
 	await setVersionToJson(currentVersion);
 
-	const newVersionProc = Bun.spawn(["npm", "version","--no-git-tag-version", VERSION_TO_UPDATE], {
+	const newVersionProc = Bun.spawn(["npm", "version", "--no-git-tag-version", VERSION_TO_UPDATE], {
 		cwd: DIR_VARIABLE
 	});
 
@@ -52,15 +52,29 @@ async function run() {
 			throw new Error(`Failed to publish package: ${publishProcess.stderr.toString()}`);
 		}
 
-		console.log("Package published successfully!");
+		const createTagProcess = spawnSync("git", ["tag", newVersion], {
+			stdio: "inherit"
+		});
+
+		if (createTagProcess.status !== 0) {
+			throw new Error(`Failed to create tag ${newVersion}: ${createTagProcess.stderr.toString()}`);
+		}
+
+		// Push the new tag to the remote repository
+		const pushTagProcess = spawnSync("git", ["push", "--tags"], {
+			stdio: "inherit"
+		});
+
+		if (pushTagProcess.status !== 0) {
+			throw new Error(`Failed to push tag ${newVersion} to the remote repository: ${pushTagProcess.stderr.toString()}`);
+		}
+
+		console.log(`Tag ${newVersion} has been created and pushed successfully!`);
+
 	} catch (error) {
 		console.error(error.message);
 		process.exit(1); // Exit with non-zero code to indicate failure
 	}
-
-	Bun.spawnSync([
-		`git checkout package.json && git tag ${newVersion} && git push --tags`
-	]);
 }
 
 try {
