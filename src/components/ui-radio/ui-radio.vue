@@ -88,19 +88,19 @@
 		transition: transform 0.2s ease-in-out;
 	}
 
-	input:checked+.ui-radio_custom .ui-radio__dot {
+	input:checked + .ui-radio_custom .ui-radio__dot {
 		transform: translate3d(-50%, -50%, 0) scale(1);
 	}
 
-	input:checked+.ui-radio_custom:hover .ui-radio__dot {
+	input:checked + .ui-radio_custom:hover .ui-radio__dot {
 		background-color: var(--color-primary-600);
 	}
 
-	input:checked:disabled+.ui-radio_custom {
+	input:checked:disabled + .ui-radio_custom {
 		border: 2px solid var(--color-primary-300);
 	}
 
-	input:checked:disabled+.ui-radio_custom .ui-radio__dot {
+	input:checked:disabled + .ui-radio_custom .ui-radio__dot {
 		background-color: var(--color-primary-300);
 	}
 </style>
