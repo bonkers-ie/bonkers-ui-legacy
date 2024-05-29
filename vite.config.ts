@@ -21,7 +21,7 @@ export default defineConfig({
 			staticImport: true,
 			insertTypesEntry: true,
 			include: ["src/**/*.ts", "src/**/*.vue"],
-			exclude: ["**/*.test.ts", "**/*.stories.ts", "src/_types/*"]
+			exclude: ["**/*.test.ts", "**/*.stories.ts"]
 		}),
 		vue()
 	],

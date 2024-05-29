@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d storybook-static",
     "typecheck": "tsc --noEmit && vue-tsc --noEmit",
     "test": "vitest run",
-    "pack": "cd dist && npm pack --pack-destination ../",
+    "pack": "bun postbuild.ts && cd dist && npm pack --pack-destination ../",
     "upgrade": "bun x npm-check-updates -ui",
     "i": "bun install --frozen-lockfile"
   },
