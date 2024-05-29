@@ -33,6 +33,11 @@ export default {
 			control: {
 				type: "text"
 			}
+		},
+		model: {
+			control: {
+				type: "boolean"
+			}
 		}
 	},
 	args: {
@@ -40,7 +45,8 @@ export default {
 		invertOrder: false,
 		alignCenter: false,
 		title: "title",
-		header: "header"
+		header: "header",
+		model: true
 	},
 } satisfies Meta<typeof UiToggle>;
 
@@ -58,7 +64,7 @@ export const Default = {
 			};
 		},
 		template: /*html*/`
-			<ui-toggle v-bind="args" v-model="modelValue" />
+			<ui-toggle v-bind="args" v-model="args.model" />
 		`,
 	})
 };
