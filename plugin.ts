@@ -101,7 +101,6 @@ export default plugin(
 		});
 	},
 	{
-		darkMode: "class",
 		theme: {
 			corePlugins: {
 				preflight: false,
