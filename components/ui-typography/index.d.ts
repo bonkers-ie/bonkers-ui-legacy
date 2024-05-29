@@ -1,7 +1,7 @@
-import { EColors } from '../../_types/colors';
-import { ETextAlign, ETypographySizes, ETextWeight, ETextTransform } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, Component, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiTypography } from './ui-typography.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, Component, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { ETextAlign, ETypographySizes, ETextWeight, ETextTransform } from './_typings';
+import { EColors } from '../../_types/colors';
 
 export { UiTypography };
 /**

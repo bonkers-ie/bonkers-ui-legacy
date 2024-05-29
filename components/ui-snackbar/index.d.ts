@@ -1,6 +1,6 @@
-import { ESnackbarTypes } from './_types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiSnackbar } from './ui-snackbar.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { ESnackbarTypes } from './_types';
 
 export { UiSnackbar };
 export { ESnackbarTypes } from './_types';

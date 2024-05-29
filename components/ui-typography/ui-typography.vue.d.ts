@@ -1,6 +1,6 @@
-import { EColors } from '../../_types/colors';
-import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from './_typings';
 import { Component, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from './_typings';
+import { EColors } from '../../_types/colors';
 
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
     align?: ETextAlign | undefined;

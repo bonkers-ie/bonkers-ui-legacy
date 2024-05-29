@@ -1,7 +1,7 @@
-import { TIconName } from '../ui-icon';
-import { EBadgeSize, EBadgeKind } from './_typings';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiBadge } from './ui-badge.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { EBadgeSize, EBadgeKind } from './_typings';
+import { TIconName } from '../ui-icon';
 
 export { UiBadge };
 /**

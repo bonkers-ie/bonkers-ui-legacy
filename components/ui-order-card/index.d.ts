@@ -1,7 +1,7 @@
-import { TIconName } from '../ui-icon';
-import { EOrderCardTypes } from './_types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiOrderCard } from './ui-order-card.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { EOrderCardTypes } from './_types';
+import { TIconName } from '../ui-icon';
 
 export { UiOrderCard };
 /**

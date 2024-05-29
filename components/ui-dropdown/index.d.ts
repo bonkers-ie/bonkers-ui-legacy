@@ -1,7 +1,7 @@
-import { TIconName } from '../ui-icon/_typings.ts';
-import { EDropdownKinds } from './_typings.ts';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiDropdown } from './ui-dropdown.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { EDropdownKinds } from './_typings.ts';
+import { TIconName } from '../ui-icon/_typings.ts';
 
 export { UiDropdown };
 export { EDropdownKinds } from './_typings.ts';

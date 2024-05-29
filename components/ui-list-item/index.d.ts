@@ -1,7 +1,7 @@
-import { TIconName } from '../ui-icon';
-import { EListItemSize, EListItemTypes, EListItemSpacing } from './_types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiListItem } from './ui-list-item.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { EListItemSize, EListItemTypes, EListItemSpacing } from './_types';
+import { TIconName } from '../ui-icon';
 
 export { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
 export { UiListItem };

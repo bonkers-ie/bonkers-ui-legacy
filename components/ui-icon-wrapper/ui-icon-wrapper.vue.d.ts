@@ -1,5 +1,5 @@
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 import { EIconWrapperSizes, EIconWrapperTypes } from './_typings';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
 type TProps = {
     kind?: EIconWrapperTypes;

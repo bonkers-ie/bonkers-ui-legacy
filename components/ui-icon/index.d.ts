@@ -1,7 +1,7 @@
-import { TIconName } from './_typings';
-import { ESize } from '../../_types/sizing';
-import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiIcon } from './ui-icon.vue';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+import { ESize } from '../../_types/sizing';
+import { TIconName } from './_typings';
 
 export { UiIcon };
 export { ESize } from '../../_types/sizing';

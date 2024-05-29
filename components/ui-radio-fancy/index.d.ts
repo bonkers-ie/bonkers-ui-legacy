@@ -1,7 +1,7 @@
-import { ERadioSizes } from './_typings';
-import { TIconName } from '../ui-icon';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiRadioFancy } from './ui-radio-fancy.vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { TIconName } from '../ui-icon';
+import { ERadioSizes } from './_typings';
 
 export { UiRadioFancy };
 /**

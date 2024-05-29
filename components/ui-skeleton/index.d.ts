@@ -1,6 +1,6 @@
-import { ESkeletonKind } from './_typings';
-import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
 import { default as UiSkeleton } from './ui-skeleton.vue';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+import { ESkeletonKind } from './_typings';
 
 export { UiSkeleton };
 /**

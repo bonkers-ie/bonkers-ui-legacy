@@ -1,6 +1,6 @@
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-import { ERadioSizes } from './_typings';
 import { TIconName } from '../ui-icon';
+import { ERadioSizes } from './_typings';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     modelValue: string | number | boolean;
