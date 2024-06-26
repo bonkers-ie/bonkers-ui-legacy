@@ -3,22 +3,27 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     min: number;
     max: number;
     current: number;
+    progressText?: string | undefined;
 }>, {
     min: number;
     max: number;
     current: number;
+    progressText: string;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     min: number;
     max: number;
     current: number;
+    progressText?: string | undefined;
 }>, {
     min: number;
     max: number;
     current: number;
+    progressText: string;
 }>>>, {
     min: number;
     max: number;
     current: number;
+    progressText: string;
 }, {}>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;

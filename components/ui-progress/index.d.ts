@@ -21,6 +21,10 @@ declare const deprecatedDefault: DefineComponent<{
         required: true;
         default: number;
     };
+    progressText: {
+        type: PropType<string>;
+        default: string;
+    };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<{
     min: {
         type: PropType<number>;
@@ -37,10 +41,15 @@ declare const deprecatedDefault: DefineComponent<{
         required: true;
         default: number;
     };
+    progressText: {
+        type: PropType<string>;
+        default: string;
+    };
 }>>, {
     min: number;
     max: number;
     current: number;
+    progressText: string;
 }, {}>;
 export default deprecatedDefault;
 //# sourceMappingURL=index.d.ts.map
