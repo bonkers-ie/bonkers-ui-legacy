@@ -6,7 +6,7 @@
 		<div
 			v-for="spacing in spacingKeys"
 			:key="spacing"
-			class="block"
+			class="border border-black p-md"
 		>
 			<div class="grid gap-sm">
 				<div>
@@ -23,10 +23,10 @@
 				</div>
 
 				<div
+					class="border border-black bg-primary-alt-400"
 					:style="{
 						width: spacings[spacing],
 						height: spacings[spacing],
-						border: '1px solid #ccc'
 					}"
 				/>
 			</div>
@@ -39,12 +39,4 @@
 	import { getCssVariableValue } from "../helper";
 
 	const spacingKeys = Object.keys(spacings) as Array<keyof typeof spacings>;
-
 </script>
-
-<style scoped>
-	.block {
-		border: 2px solid #ccc;
-		padding: 20px;
-	}
-</style>

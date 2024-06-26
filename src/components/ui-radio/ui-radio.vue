@@ -2,7 +2,7 @@
 	<label
 		class="ui-radio group grid cursor-pointer grid-flow-col"
 		:class="[
-			slots.default && 'items-center gap-xs',
+			slots.default && 'items-center gap-xxs',
 			(!justify || justify === EJustify.START) && 'justify-start',
 			justify === EJustify.END && 'justify-end',
 			justify === EJustify.AROUND && 'justify-around',
@@ -48,7 +48,7 @@
 						left-2/4
 						top-2/4
 						block
-						size-xs
+						size-xxs
 						rounded-full
 						bg-primary"
 			/>

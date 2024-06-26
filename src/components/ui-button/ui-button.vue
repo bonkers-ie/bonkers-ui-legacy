@@ -8,7 +8,7 @@
 			items-center
 			justify-center
 			whitespace-nowrap
-			rounded-lg
+			rounded-xl
 			font-bold
 			leading-none
 			"
@@ -40,7 +40,7 @@
 			kind === EButtonTypes.LINK && `hover:text-accent-alt-600 active:text-accent-alt-700
 				disabled:text-accent-alt-300 text-accent-alt`,
 			(!size || size === EButtonSizes.DEFAULT) && 'px-md py-sm',
-			size === EButtonSizes.SMALL && 'px-md py-xs',
+			size === EButtonSizes.SMALL && 'px-md py-xxs',
 			size === EButtonSizes.MEDIUM && 'p-sm',
 			size === EButtonSizes.LARGE && 'p-md',
 			($slots.default || $slots.postfix) && 'gap-sm',

@@ -18,10 +18,10 @@
 		<div
 			class="
 				ui-radio-fancy__content
+				rounded-xxxxl
 				box-border
 				size-full
-				cursor-pointer
-				rounded-xl border
+				cursor-pointer border
 				border-secondary-alt-500
 				bg-white
 				p-sm
@@ -37,21 +37,21 @@
 
 				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
-				peer-checked:active:before:-bottom-xs
-				peer-checked:active:before:-left-xs
-				peer-checked:active:before:-right-xs
-				peer-checked:active:before:-top-xs
+				peer-checked:active:before:-bottom-xxs
+				peer-checked:active:before:-left-xxs
+				peer-checked:active:before:-right-xxs
+				peer-checked:active:before:-top-xxs
 
-				peer-focus:before:-bottom-xs
-				peer-focus:before:-left-xs
+				peer-focus:before:-bottom-xxs
+				peer-focus:before:-left-xxs
 
-				peer-focus:before:-right-xs
-				peer-focus:before:-top-xs
-				peer-active:before:-bottom-xxs
-				peer-active:before:-left-xxs
+				peer-focus:before:-right-xxs
+				peer-focus:before:-top-xxs
+				peer-active:before:-bottom-xxxs
+				peer-active:before:-left-xxxs
 
-				peer-active:before:-right-xxs
-				peer-active:before:-top-xxs
+				peer-active:before:-right-xxxs
+				peer-active:before:-top-xxxs
 			"
 			:class="[
 				disabled
@@ -91,7 +91,7 @@
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
-				class="pt-xxs"
+				class="pt-xxxs"
 			>
 				<slot />
 			</ui-typography>

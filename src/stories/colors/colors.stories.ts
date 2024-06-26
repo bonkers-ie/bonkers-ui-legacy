@@ -5,11 +5,4 @@ export default {
 	component: UiColors,
 };
 
-const Template = () => ({
-	components: {
-		UiColors 
-	},
-	template: `<ui-colors/>`,
-});
-
-export const Colors = Template();
+export const Colors = {};

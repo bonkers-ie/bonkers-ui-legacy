@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-snackbar flex w-full justify-between rounded-lg p-sm shadow-md"
+		class="ui-snackbar flex w-full justify-between rounded-xl p-sm shadow-md"
 		:class="[
 			kind === ESnackbarTypes.DEFAULT && 'bg-white',
 			kind === ESnackbarTypes.PRIMARY && 'bg-primary text-white',

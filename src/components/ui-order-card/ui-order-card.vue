@@ -44,7 +44,7 @@
 
 		<ui-typography
 			v-if="$slots.footer"
-			class="rounded-b-lg py-sm text-white"
+			class="rounded-b-xl py-sm text-white"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'bg-primary-700',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-700'

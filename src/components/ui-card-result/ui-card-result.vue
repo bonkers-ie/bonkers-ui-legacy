@@ -2,11 +2,11 @@
 	<div class="ui-card-result">
 		<div
 			v-if="exclusiveText"
-			class="-mb-lg rounded-2xl bg-primary px-sm pb-lg"
+			class="-mb-xl rounded-2xl bg-primary px-sm pb-xl"
 			@click="exclusiveClickAction"
 		>
 			<ui-typography
-				class="py-xs"
+				class="py-xxs"
 				line-height
 				:size="ETypographySizes.XXS"
 				:kind="EColors.WHITE"
@@ -21,15 +21,15 @@
 			<div
 				class="
 				ui-card-result__header
-				m-xs
+				m-xxs
 				mb-sm
 				grid
 				items-center
 				justify-between
-				gap-xs
-				rounded-lg
+				gap-xxs
+				rounded-xl
 				bg-secondary-alt-200
-				p-xs
+				p-xxs
 			"
 			>
 				<ui-typography
@@ -53,11 +53,11 @@
 
 		<div
 			v-if="exclusiveTextBottom"
-			class="-mt-lg rounded-2xl border border-secondary-alt-400 bg-secondary-alt-200 px-sm pt-lg"
+			class="-mt-xl rounded-2xl border border-secondary-alt-400 bg-secondary-alt-200 px-sm pt-xl"
 			@click="exclusiveBottomClickAction"
 		>
 			<ui-typography
-				class="py-xs"
+				class="py-xxs"
 				:size="ETypographySizes.XXS"
 				:kind="EColors.SECONDARY"
 				:align="ETextAlign.CENTER"

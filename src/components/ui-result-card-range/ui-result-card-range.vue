@@ -20,7 +20,7 @@
 		/>
 		<ui-typography
 			v-if="title"
-			class="mb-xs"
+			class="mb-xxs"
 			:size="ETypographySizes.MD"
 			:weight="ETextWeight.SEMI_BOLD"
 			:align="ETextAlign.CENTER"

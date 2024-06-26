@@ -3,14 +3,14 @@
 		<slot name="heading">
 			<ui-typography
 				v-if="heading"
-				class="mb-xs"
+				class="mb-xxs"
 				:size="ETypographySizes.MD"
 			>
 				{{ heading }}
 			</ui-typography>
 		</slot>
 		<div
-			class="relative rounded-lg border border-secondary-alt-500 bg-white hover:border-secondary-alt-700"
+			class="relative rounded-xl border border-secondary-alt-500 bg-white hover:border-secondary-alt-700"
 			:class="[disabled && 'pointer-events-none border-secondary-alt-300 bg-secondary-alt-200']"
 		>
 			<select
@@ -53,7 +53,7 @@
 				v-if="subLabel"
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY_ALT"
-				class="mt-xs"
+				class="mt-xxs"
 			>
 				{{ subLabel }}
 			</ui-typography>

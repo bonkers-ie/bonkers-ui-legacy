@@ -1,10 +1,22 @@
 export enum ESize {
 	/**
+	 * auto
+	 */
+	AUTO = "auto",
+	/**
+	 * zero
+	 */
+	ZERO = "zero",
+	/**
 	 * 4px
+	 */
+	XXXS = "xxxs",
+	/**
+	 * 8px
 	 */
 	XXS = "xxs",
 	/**
-	 * 8px
+	 * 12px
 	 */
 	XS = "xs",
 	/**
@@ -16,15 +28,27 @@ export enum ESize {
 	 */
 	MD = "md",
 	/**
-	 * 40px
+	 * 32px
 	 */
 	LG = "lg",
 	/**
-	 * 80px
+	 * 40px
 	 */
 	XL = "xl",
 	/**
-	 * 120px
+	 * 48px
 	 */
 	XXL = "xxl",
+	/**
+	 * 64px
+	 */
+	XXXL = "xxxl",
+	/**
+	 * 80px
+	 */
+	XXXXL = "xxxxl",
+	/**
+	 * 120px
+	 */
+	XXXXXL = "xxxxxl",
 }

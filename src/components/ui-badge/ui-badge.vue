@@ -2,7 +2,7 @@
 	<div
 		class="ui-badge relative overflow-hidden text-white"
 	>
-		<div class="relative z-[1] flex content-center items-center gap-xxs px-xs py-xxs">
+		<div class="relative z-[1] flex content-center items-center gap-xxxs px-xxs py-xxxs">
 			<ui-icon
 				v-if="icon"
 				:size="ESize.SM"

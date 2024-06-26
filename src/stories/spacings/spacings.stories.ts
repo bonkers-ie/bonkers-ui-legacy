@@ -5,11 +5,4 @@ export default {
 	component: UiSpacings,
 };
 
-const Template = () => ({
-	components: {
-		UiSpacings 
-	},
-	template: `<ui-spacings/>`,
-});
-
-export const Spacings = Template();
+export const Spacings = {};

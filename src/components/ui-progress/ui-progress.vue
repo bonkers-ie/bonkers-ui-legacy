@@ -1,7 +1,7 @@
 <template>
 	<div class="ui-progress">
 		<div
-			class="relative h-xs w-full overflow-hidden rounded-lg bg-primary-200"
+			class="relative h-xxs w-full overflow-hidden rounded-xl bg-primary-200"
 		>
 			<div
 				class="
@@ -11,7 +11,7 @@
 					top-0
 					z-10
 					h-full
-					rounded-lg
+					rounded-xl
 					bg-primary-alt-700
 					transition-all
 					duration-300
@@ -27,7 +27,7 @@
 			:kind="EColors.PRIMARY_ALT_700"
 			:align="ETextAlign.RIGHT"
 			:weight="ETextWeight.SEMI_BOLD"
-			class="mt-xs"
+			class="mt-xxs"
 		>
 			{{ progressText }}
 		</ui-typography>

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-input-range relative box-content h-lg py-xs"
+		class="ui-input-range relative box-content h-xl py-xxs"
 	>
 		<input
 			ref="track"
@@ -14,11 +14,21 @@
 		>
 
 		<div
-			class="pointer-events-none absolute left-0 top-1/2 h-xs w-full -translate-y-1/2 rounded bg-secondary-alt"
+			class="
+				pointer-events-none
+				absolute
+				left-0
+				top-1/2
+				h-xxs
+				w-full
+				-translate-y-1/2
+				rounded
+				bg-secondary-alt
+			"
 		/>
 
 		<div
-			class="pointer-events-none absolute left-0 top-1/2 h-xs -translate-y-1/2 rounded bg-primary"
+			class="pointer-events-none absolute left-0 top-1/2 h-xxs -translate-y-1/2 rounded bg-primary"
 			:style="{
 				width: getPercentage + '%',
 			}"
@@ -30,7 +40,7 @@
 				pointer-events-none
 				absolute
 				box-content
-				size-xs
+				size-xxs
 				-translate-x-1/2
 				-translate-y-1/2
 				rounded-full

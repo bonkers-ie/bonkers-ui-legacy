@@ -8,7 +8,7 @@
 		<slot name="header">
 			<ui-typography
 				v-if="heading"
-				class="mb-xs"
+				class="mb-xxs"
 				:size="ETypographySizes.MD"
 				line-height
 			>
@@ -16,7 +16,7 @@
 			</ui-typography>
 		</slot>
 		<label
-			class="ui-input__wrapper flex w-full items-center gap-xs rounded-lg border bg-white p-sm"
+			class="ui-input__wrapper flex w-full items-center gap-xxs rounded-xl border bg-white p-sm"
 			:class="[
 				kind === EInputKinds.SECONDARY && 'border-secondary-alt-500 hover:border-secondary-alt-700',
 				kind === EInputKinds.PRIMARY && 'border-primary',
@@ -50,7 +50,7 @@
 				line-height
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY_ALT"
-				class="mt-xs"
+				class="mt-xxs"
 			>
 				{{ subLabel }}
 			</ui-typography>

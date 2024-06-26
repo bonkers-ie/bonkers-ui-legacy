@@ -43,7 +43,7 @@
 				<slot name="titleSlot">
 					<ui-typography
 						:kind="EColors.SECONDARY_400"
-						class="mb-xxs"
+						class="mb-xxxs"
 						line-height
 					>
 						{{ title }}
