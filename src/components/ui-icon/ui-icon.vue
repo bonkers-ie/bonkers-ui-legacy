@@ -9,6 +9,8 @@
 			size === ESize.SM && 'size-sm',
 			size === ESize.MD && 'size-md',
 			size === ESize.XL && 'size-xl',
+			size === ESize.XXL && 'size-xxl',
+			size === ESize.XXXL && 'size-xxxl',
 			size === ESize.XXXXL && 'size-xxxxl',
 			size === ESize.XXXXXL && 'size-xxxxxl',
 		]"

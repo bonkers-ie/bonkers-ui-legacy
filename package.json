@@ -34,6 +34,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@kalimahapps/eslint-plugin-tailwind": "^1.1.0",
     "@storybook/addon-essentials": "^8.1.4",
     "@storybook/addon-links": "^8.1.4",
     "@storybook/addons": "^7.6.17",

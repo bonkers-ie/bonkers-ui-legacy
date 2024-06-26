@@ -18,7 +18,8 @@ module.exports = {
 	parser: "vue-eslint-parser",
 	plugins: [
 		"tailwindcss",
-		"eslint-plugin-storybook"
+		"eslint-plugin-storybook",
+		"@kalimahapps/eslint-plugin-tailwind"
 	],
 	overrides: [
 		{
@@ -33,7 +34,16 @@ module.exports = {
 				indent: "off",
 				"@typescript-eslint/indent": ["error", "tab"],
 			}
-		}
+		},
+		{
+			files: ["*.json", "*.json5", "*.jsonc"],
+			parser: "jsonc-eslint-parser",
+			rules: {
+				"jsonc/indent": ["error",
+					"tab"
+				]
+			}
+		},
 	],
 	rules: {
 		indent: [
@@ -109,6 +119,15 @@ module.exports = {
 		"object-property-newline": "error",
 		"space-before-blocks": ["error", "always"],
 		"keyword-spacing": "error",
-		"key-spacing": "error"
+		"key-spacing": "error",
+		"multiline-ternary": ["error", "always-multiline"],
+		"operator-linebreak": ["error", "before"],
+		"@kalimahapps/tailwind/multiline": [
+			"warn",
+			{
+				"maxLen": 100,
+				"quotesOnNewLine": true
+			}
+		]
 	},
 };
