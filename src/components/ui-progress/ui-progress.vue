@@ -21,20 +21,33 @@
 				}"
 			/>
 		</div>
+
+		<ui-typography
+			v-if="progressText"
+			:kind="EColors.PRIMARY_ALT_700"
+			:align="ETextAlign.RIGHT"
+			:weight="ETextWeight.SEMI_BOLD"
+			class="mt-xs"
+		>
+			{{ progressText }}
+		</ui-typography>
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import { computed } from "vue";
+	import { UiTypography, EColors, ETextAlign, ETextWeight } from "../ui-typography";
 
 	const props = withDefaults(defineProps<{
 		min: number
 		max: number
 		current: number
+		progressText?: string
 	}>(),{
 		min: 0,
 		max: 100,
-		current: 0
+		current: 0,
+		progressText: ""
 	});
 
 	const filler = computed(() => {
