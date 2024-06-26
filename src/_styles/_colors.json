@@ -62,7 +62,11 @@
 	},
 	"accent-alt": {
 		"DEFAULT": "var(--color-accent-alt)",
-		"500": "var(--color-accent-alt-500)"
+		"300": "var(--color-accent-alt-300)",
+		"400": "var(--color-accent-alt-400)",
+		"500": "var(--color-accent-alt-500)",
+		"600": "var(--color-accent-alt-600)",
+		"700": "var(--color-accent-alt-700)"
 	},
 	"secondary-alt": {
 		"DEFAULT": "var(--color-secondary-alt)",

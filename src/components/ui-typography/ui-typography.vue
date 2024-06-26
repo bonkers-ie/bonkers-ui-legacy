@@ -62,7 +62,11 @@
 			kind === EColors.ACCENT_700 && 'text-accent-700',
 
 			kind === EColors.ACCENT_ALT && 'text-accent-alt',
+			kind === EColors.ACCENT_ALT_300 && 'text-accent-alt-300',
+			kind === EColors.ACCENT_ALT_400 && 'text-accent-alt-400',
 			kind === EColors.ACCENT_ALT_500 && 'text-accent-alt-500',
+			kind === EColors.ACCENT_ALT_600 && 'text-accent-alt-600',
+			kind === EColors.ACCENT_ALT_700 && 'text-accent-alt-700',
 
 			kind === EColors.SECONDARY_ALT && 'text-secondary-alt',
 			kind === EColors.SECONDARY_ALT_200 && 'text-secondary-alt-200',
