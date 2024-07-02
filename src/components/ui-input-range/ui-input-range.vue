@@ -24,11 +24,20 @@
 				-translate-y-1/2
 				rounded
 				bg-secondary-alt
-			"
+				"
 		/>
 
 		<div
-			class="pointer-events-none absolute left-0 top-1/2 h-xxs -translate-y-1/2 rounded bg-primary"
+			class="
+				pointer-events-none
+				absolute
+				left-0
+				top-1/2
+				h-xxs
+				-translate-y-1/2
+				rounded
+				bg-primary
+				"
 			:style="{
 				width: getPercentage + '%',
 			}"
@@ -46,7 +55,7 @@
 				rounded-full
 				border-white
 				bg-primary
-			"
+				"
 			:style="{left: getPercentage + '%'}"
 		/>
 	</div>

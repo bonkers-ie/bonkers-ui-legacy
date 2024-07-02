@@ -10,7 +10,14 @@
 			</ui-typography>
 		</slot>
 		<div
-			class="relative rounded-xl border border-secondary-alt-500 bg-white hover:border-secondary-alt-700"
+			class="
+				relative
+				rounded-xl
+				border
+				border-secondary-alt-500
+				bg-white
+				hover:border-secondary-alt-700
+				"
 			:class="[disabled && 'pointer-events-none border-secondary-alt-300 bg-secondary-alt-200']"
 		>
 			<select
@@ -26,7 +33,7 @@
 					italic
 					text-secondary-alt
 					outline-0
-				"
+					"
 			>
 				<slot />
 			</select>

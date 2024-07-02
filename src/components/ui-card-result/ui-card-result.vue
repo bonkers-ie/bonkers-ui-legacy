@@ -17,20 +17,30 @@
 			</ui-typography>
 		</div>
 
-		<div class="relative grid overflow-hidden rounded-2xl border border-secondary-alt-400 bg-white">
+		<div
+			class="
+				relative
+				grid
+				overflow-hidden
+				rounded-2xl
+				border
+				border-secondary-alt-400
+				bg-white
+				"
+		>
 			<div
 				class="
-				ui-card-result__header
-				m-xxs
-				mb-sm
-				grid
-				items-center
-				justify-between
-				gap-xxs
-				rounded-xl
-				bg-secondary-alt-200
-				p-xxs
-			"
+					ui-card-result__header
+					m-xxs
+					mb-sm
+					grid
+					items-center
+					justify-between
+					gap-xxs
+					rounded-xl
+					bg-secondary-alt-200
+					p-xxs
+					"
 			>
 				<ui-typography
 					v-if="header"
@@ -53,7 +63,15 @@
 
 		<div
 			v-if="exclusiveTextBottom"
-			class="-mt-xl rounded-2xl border border-secondary-alt-400 bg-secondary-alt-200 px-sm pt-xl"
+			class="
+				-mt-xl
+				rounded-2xl
+				border
+				border-secondary-alt-400
+				bg-secondary-alt-200
+				px-sm
+				pt-xl
+				"
 			@click="exclusiveBottomClickAction"
 		>
 			<ui-typography

@@ -15,7 +15,8 @@
 		>
 
 		<div
-			class="ui-plain-radio__content
+			class="
+				ui-plain-radio__content
 				rounded-xxxxl
 				box-border
 				grid
@@ -24,37 +25,34 @@
 				grid-flow-col
 				items-center
 				justify-start
-				gap-sm border
+				gap-sm
+				border
 				border-secondary-alt-500
 				bg-white
 				p-sm
 				before:absolute
 				before:-z-10
 				before:box-border
-
 				before:rounded-[16px]
 				before:bg-primary-300
 				hover:border-secondary-alt-700
 				peer-checked:border-transparent
 				peer-checked:shadow-selected-shadow
-
 				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
 				peer-checked:active:before:-bottom-xxs
 				peer-checked:active:before:-left-xxs
 				peer-checked:active:before:-right-xxs
 				peer-checked:active:before:-top-xxs
-
 				peer-focus:before:-bottom-xxs
 				peer-focus:before:-left-xxs
-
 				peer-focus:before:-right-xxs
 				peer-focus:before:-top-xxs
 				peer-active:before:-bottom-xxxs
 				peer-active:before:-left-xxxs
-
 				peer-active:before:-right-xxxs
-				peer-active:before:-top-xxxs"
+				peer-active:before:-top-xxxs
+				"
 			:class="disabled
 				&& 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled'"
 		>

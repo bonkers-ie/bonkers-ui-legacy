@@ -1,7 +1,16 @@
 
 <template>
 	<li
-		class="ui-list-item group relative grid grid-flow-col justify-start gap-xxs text-secondary"
+		class="
+			ui-list-item
+			group
+			relative
+			grid
+			grid-flow-col
+			justify-start
+			gap-xxs
+			text-secondary
+			"
 		:class="[
 			size === EListItemSize.SM && 'text-sm',
 			size === EListItemSize.MD && 'text-md',
@@ -21,7 +30,7 @@
 				-translate-x-2/4
 				bg-primary-300
 				group-last:hidden
-			"
+				"
 		/>
 
 		<slot name="icon">

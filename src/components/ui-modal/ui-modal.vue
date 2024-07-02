@@ -1,19 +1,20 @@
 <template>
 	<div
 		class="
-				ui-modal
-				max-height max-width
-				inset-0
-				z-10
-				flex
-				w-full
-				flex-col
-				items-center
-				overflow-y-scroll
-				rounded-2xl
-				bg-white
-				p-md
-				shadow-md
+			ui-modal
+			max-height
+			max-width
+			inset-0
+			z-10
+			flex
+			w-full
+			flex-col
+			items-center
+			overflow-y-scroll
+			rounded-2xl
+			bg-white
+			p-md
+			shadow-md
 			"
 		:class="[
 			modalSize === EModalSizes.SM &&'h-fit max-w-[24rem]',

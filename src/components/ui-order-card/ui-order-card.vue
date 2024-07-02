@@ -9,7 +9,15 @@
 		<ui-icon
 			:icon-name="iconName"
 			:size="ESize.LG"
-			class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-300"
+			class="
+				absolute
+				left-1/2
+				top-0
+				-translate-x-1/2
+				-translate-y-1/2
+				rounded-full
+				bg-primary-300
+				"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'text-white',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-white'

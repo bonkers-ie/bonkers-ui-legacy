@@ -38,19 +38,21 @@
 				peer-checked:hover:border-primary-600
 				peer-focus:shadow-border-primary
 				peer-disabled:border-secondary-alt-400
-				peer-disabled:bg-secondary-alt-200"
+				peer-disabled:bg-secondary-alt-200
+				"
 			:class="invertOrder && 'order-last'"
 		>
 			<span
 				class="
-						ui-radio__dot
-						absolute
-						left-2/4
-						top-2/4
-						block
-						size-xxs
-						rounded-full
-						bg-primary"
+					ui-radio__dot
+					absolute
+					left-2/4
+					top-2/4
+					block
+					size-xxs
+					rounded-full
+					bg-primary
+					"
 			/>
 		</span>
 		<slot />

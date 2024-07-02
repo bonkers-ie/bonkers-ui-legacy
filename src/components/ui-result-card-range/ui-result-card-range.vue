@@ -10,7 +10,9 @@
 			border-4
 			border-secondary-alt-300
 			bg-secondary-alt-200
-			p-md text-secondary-500"
+			p-md
+			text-secondary-500
+			"
 	>
 		<ui-icon
 			v-if="iconName"

@@ -16,7 +16,8 @@
 			focus:shadow-border-primary
 			active:bg-secondary-alt-200
 			disabled:pointer-events-none
-			disabled:bg-secondary-alt-200"
+			disabled:bg-secondary-alt-200
+			"
 		:disabled="disabled"
 	>
 		<span

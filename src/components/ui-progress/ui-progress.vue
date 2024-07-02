@@ -15,7 +15,7 @@
 					bg-primary-alt-700
 					transition-all
 					duration-300
-				"
+					"
 				:style="{
 					width: filler + '%'
 				}"
