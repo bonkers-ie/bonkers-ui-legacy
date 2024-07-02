@@ -2,27 +2,29 @@ import { Component, DefineComponent, ComponentOptionsMixin, PublicProps, Extract
 import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from './_typings';
 import { EColors } from '../../_types/colors';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
-    align?: ETextAlign | undefined;
-    size?: ETypographySizes | undefined;
-    kind?: EColors | undefined;
-    weight?: ETextWeight | undefined;
-    lineHeight?: boolean | undefined;
-    textTransform?: ETextTransform | undefined;
-    underline?: boolean | undefined;
-    is?: string | Component | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
-    align?: ETextAlign | undefined;
-    size?: ETypographySizes | undefined;
-    kind?: EColors | undefined;
-    weight?: ETextWeight | undefined;
-    lineHeight?: boolean | undefined;
-    textTransform?: ETextTransform | undefined;
-    underline?: boolean | undefined;
-    is?: string | Component | undefined;
-}>>>, {}, {}>, {
+declare function __VLS_template(): {
     default?(_: {}): any;
-}>;
+};
+declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
+    align?: ETextAlign;
+    size?: ETypographySizes;
+    kind?: EColors;
+    weight?: ETextWeight;
+    lineHeight?: boolean;
+    textTransform?: ETextTransform;
+    underline?: boolean;
+    is?: string | Component;
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+    align?: ETextAlign;
+    size?: ETypographySizes;
+    kind?: EColors;
+    weight?: ETextWeight;
+    lineHeight?: boolean;
+    textTransform?: ETextTransform;
+    underline?: boolean;
+    is?: string | Component;
+}>>>, {}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

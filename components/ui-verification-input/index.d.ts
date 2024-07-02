@@ -46,9 +46,9 @@ declare const deprecatedDefault: {
     }>> & {
         onOnFiled?: ((...args: any[]) => any) | undefined;
     }, {}, {}, {}, {}, {}>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     inputsCount: {
         type: PropType<number>;

@@ -35,9 +35,9 @@ declare const deprecatedDefault: {
     }>>, {}, {}, {}, {}, {
         origin: EBadgeOrigin;
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     origin: {
         type: PropType<EBadgeOrigin>;

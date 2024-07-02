@@ -49,9 +49,9 @@ declare const deprecatedDefault: {
         size: EIconWrapperSizes;
         kind: EIconWrapperTypes;
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EIconWrapperSizes>;

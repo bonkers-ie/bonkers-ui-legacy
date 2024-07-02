@@ -214,9 +214,9 @@ declare const deprecatedDefault: {
         focusHandler: (e: FocusEvent) => void;
         autocomplete: EAutocomplete;
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     type: {
         type: PropType<EInputType>;

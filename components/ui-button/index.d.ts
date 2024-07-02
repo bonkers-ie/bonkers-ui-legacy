@@ -77,9 +77,9 @@ declare const deprecatedDefault: {
         fullWidth: boolean;
         disabled: boolean;
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EButtonSizes>;

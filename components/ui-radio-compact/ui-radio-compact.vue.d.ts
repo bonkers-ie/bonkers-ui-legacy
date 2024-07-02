@@ -1,21 +1,23 @@
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
+declare function __VLS_template(): {
+    default?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
     modelValue: string | number | boolean;
     name: string;
     value: string | number | boolean;
-    disabled?: boolean | undefined;
+    disabled?: boolean;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
 }, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     modelValue: string | number | boolean;
     name: string;
     value: string | number | boolean;
-    disabled?: boolean | undefined;
+    disabled?: boolean;
 }>>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
-}, {}, {}>, {
-    default?(_: {}): any;
-}>;
+}, {}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

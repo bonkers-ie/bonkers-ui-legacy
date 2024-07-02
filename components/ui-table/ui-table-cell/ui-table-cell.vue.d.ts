@@ -1,16 +1,18 @@
 import { ETextAlign, ETextWeight } from '../../ui-typography';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<{
-    align?: ETextAlign | undefined;
-    weight?: ETextWeight | undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
-    align?: ETextAlign | undefined;
-    weight?: ETextWeight | undefined;
-}>>>, {}, {}>, {
+declare function __VLS_template(): {
     default?(_: {}): any;
     subtext?(_: {}): any;
-}>;
+};
+declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
+    align?: ETextAlign;
+    weight?: ETextWeight;
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+    align?: ETextAlign;
+    weight?: ETextWeight;
+}>>>, {}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

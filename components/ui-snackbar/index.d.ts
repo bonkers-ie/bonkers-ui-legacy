@@ -47,9 +47,9 @@ declare const deprecatedDefault: {
     }>>, {}, {}, {}, {}, {
         kind: ESnackbarTypes;
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     title: {
         type: PropType<string>;

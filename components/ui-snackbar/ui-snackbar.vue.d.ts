@@ -1,23 +1,25 @@
 import { ESnackbarTypes } from './_types';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+declare function __VLS_template(): {
+    default?(_: {}): any;
+    titleSlot?(_: {}): any;
+    articleSlot?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     title: string;
-    kind?: ESnackbarTypes | undefined;
+    kind?: ESnackbarTypes;
 }>, {
     kind: ESnackbarTypes;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     title: string;
-    kind?: ESnackbarTypes | undefined;
+    kind?: ESnackbarTypes;
 }>, {
     kind: ESnackbarTypes;
 }>>>, {
     kind: ESnackbarTypes;
-}, {}>, {
-    default?(_: {}): any;
-    titleSlot?(_: {}): any;
-    articleSlot?(_: {}): any;
-}>;
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

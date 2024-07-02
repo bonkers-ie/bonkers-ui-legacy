@@ -88,9 +88,9 @@ declare const deprecatedDefault: {
     }>> & {
         "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     }, {}, {}, {}, {}, {}>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     modelValue: {
         type: PropType<string | number | boolean>;

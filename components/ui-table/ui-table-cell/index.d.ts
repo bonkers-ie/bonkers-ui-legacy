@@ -36,9 +36,9 @@ declare const deprecatedDefault: {
             type: PropType<ETextWeight>;
         };
     }>>, {}, {}, {}, {}, {}>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     align: {
         type: PropType<ETextAlign>;

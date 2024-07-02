@@ -7,7 +7,12 @@ type TProps = {
     fullWidth?: boolean;
     disabled?: boolean;
 };
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
+declare function __VLS_template(): {
+    prefix?(_: {}): any;
+    default?(_: {}): any;
+    postfix?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TProps>, {
     kind: EButtonTypes;
     size: EButtonSizes;
     fullWidth: boolean;
@@ -22,11 +27,8 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     kind: EButtonTypes;
     fullWidth: boolean;
     disabled: boolean;
-}, {}>, {
-    prefix?(_: {}): any;
-    default?(_: {}): any;
-    postfix?(_: {}): any;
-}>;
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

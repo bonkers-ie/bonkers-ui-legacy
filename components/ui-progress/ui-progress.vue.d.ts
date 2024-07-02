@@ -3,7 +3,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     min: number;
     max: number;
     current: number;
-    progressText?: string | undefined;
+    progressText?: string;
 }>, {
     min: number;
     max: number;
@@ -13,7 +13,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
     min: number;
     max: number;
     current: number;
-    progressText?: string | undefined;
+    progressText?: string;
 }>, {
     min: number;
     max: number;

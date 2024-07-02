@@ -2,23 +2,25 @@ import { TIconName } from '../ui-icon';
 import { EOrderCardTypes } from './_types';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+declare function __VLS_template(): {
+    title?(_: {}): any;
+    textBody?(_: {}): any;
+    footer?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     iconName: TIconName;
-    kind?: EOrderCardTypes | undefined;
+    kind?: EOrderCardTypes;
 }>, {
     kind: EOrderCardTypes;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     iconName: TIconName;
-    kind?: EOrderCardTypes | undefined;
+    kind?: EOrderCardTypes;
 }>, {
     kind: EOrderCardTypes;
 }>>>, {
     kind: EOrderCardTypes;
-}, {}>, {
-    title?(_: {}): any;
-    textBody?(_: {}): any;
-    footer?(_: {}): any;
-}>;
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

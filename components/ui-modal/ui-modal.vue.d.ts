@@ -1,27 +1,29 @@
 import { EModalSizes } from './_typings';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    title?: string | undefined;
-    modalSize?: EModalSizes | undefined;
+declare function __VLS_template(): {
+    icon?(_: {}): any;
+    title?(_: {}): any;
+    default?(_: {}): any;
+    footer?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+    title?: string;
+    modalSize?: EModalSizes;
 }>, {
     title: undefined;
     modalSize: EModalSizes;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    title?: string | undefined;
-    modalSize?: EModalSizes | undefined;
+    title?: string;
+    modalSize?: EModalSizes;
 }>, {
     title: undefined;
     modalSize: EModalSizes;
 }>>>, {
     title: string;
     modalSize: EModalSizes;
-}, {}>, {
-    icon?(_: {}): any;
-    title?(_: {}): any;
-    default?(_: {}): any;
-    footer?(_: {}): any;
-}>;
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

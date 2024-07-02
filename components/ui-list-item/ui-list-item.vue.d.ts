@@ -1,14 +1,18 @@
 import { TIconName } from '../ui-icon';
 import { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { HTMLAttributes, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    icon?: TIconName | undefined;
-    title?: string | undefined;
-    kind?: EListItemTypes | undefined;
-    size?: EListItemSize | undefined;
-    spacing?: EListItemSpacing | undefined;
-    iconClass?: any;
+declare function __VLS_template(): {
+    icon?(_: {}): any;
+    default?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+    icon?: TIconName;
+    title?: string;
+    kind?: EListItemTypes;
+    size?: EListItemSize;
+    spacing?: EListItemSpacing;
+    iconClass?: HTMLAttributes["class"];
 }>, {
     kind: EListItemTypes;
     size: EListItemSize;
@@ -17,12 +21,12 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     icon: undefined;
     iconClass: string;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    icon?: TIconName | undefined;
-    title?: string | undefined;
-    kind?: EListItemTypes | undefined;
-    size?: EListItemSize | undefined;
-    spacing?: EListItemSpacing | undefined;
-    iconClass?: any;
+    icon?: TIconName;
+    title?: string;
+    kind?: EListItemTypes;
+    size?: EListItemSize;
+    spacing?: EListItemSpacing;
+    iconClass?: HTMLAttributes["class"];
 }>, {
     kind: EListItemTypes;
     size: EListItemSize;
@@ -36,11 +40,9 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     icon: TIconName;
     kind: EListItemTypes;
     spacing: EListItemSpacing;
-    iconClass: any;
-}, {}>, {
-    icon?(_: {}): any;
-    default?(_: {}): any;
-}>;
+    iconClass: HTMLAttributes["class"];
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

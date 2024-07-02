@@ -1,20 +1,26 @@
 import { EAutocomplete, EInputKinds, EInputType } from './_typings';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
 
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    placeholder?: string | undefined;
+declare function __VLS_template(): {
+    header?(_: {}): any;
+    "prefix-icon"?(_: {}): any;
+    "postfix-icon"?(_: {}): any;
+    subLabel?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+    placeholder?: string;
     modelValue: string | number;
-    disabled?: boolean | undefined;
-    kind?: EInputKinds | undefined;
-    heading?: string | undefined;
-    subLabel?: string | undefined;
-    type?: EInputType | undefined;
-    pattern?: string | undefined;
-    maxlength?: string | undefined;
-    minlength?: string | undefined;
-    focusHandler?: ((e: FocusEvent) => void) | undefined;
-    autocomplete?: EAutocomplete | undefined;
-    name?: string | undefined;
+    disabled?: boolean;
+    kind?: EInputKinds;
+    heading?: string;
+    subLabel?: string;
+    type?: EInputType;
+    pattern?: string;
+    maxlength?: string;
+    minlength?: string;
+    focusHandler?: (e: FocusEvent) => void;
+    autocomplete?: EAutocomplete;
+    name?: string;
 }>, {
     modelValue: string;
     placeholder: string;
@@ -32,19 +38,19 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
 }, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    placeholder?: string | undefined;
+    placeholder?: string;
     modelValue: string | number;
-    disabled?: boolean | undefined;
-    kind?: EInputKinds | undefined;
-    heading?: string | undefined;
-    subLabel?: string | undefined;
-    type?: EInputType | undefined;
-    pattern?: string | undefined;
-    maxlength?: string | undefined;
-    minlength?: string | undefined;
-    focusHandler?: ((e: FocusEvent) => void) | undefined;
-    autocomplete?: EAutocomplete | undefined;
-    name?: string | undefined;
+    disabled?: boolean;
+    kind?: EInputKinds;
+    heading?: string;
+    subLabel?: string;
+    type?: EInputType;
+    pattern?: string;
+    maxlength?: string;
+    minlength?: string;
+    focusHandler?: (e: FocusEvent) => void;
+    autocomplete?: EAutocomplete;
+    name?: string;
 }>, {
     modelValue: string;
     placeholder: string;
@@ -75,12 +81,8 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     minlength: string;
     focusHandler: (e: FocusEvent) => void;
     autocomplete: EAutocomplete;
-}, {}>, {
-    header?(_: {}): any;
-    "prefix-icon"?(_: {}): any;
-    "postfix-icon"?(_: {}): any;
-    subLabel?(_: {}): any;
-}>;
+}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

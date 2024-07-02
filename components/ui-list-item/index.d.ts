@@ -1,5 +1,5 @@
 import { default as UiListItem } from './ui-list-item.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, HTMLAttributes, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { EListItemSize, EListItemTypes, EListItemSpacing } from './_types';
 import { TIconName } from '../ui-icon';
 
@@ -65,7 +65,7 @@ declare const deprecatedDefault: {
         icon: TIconName;
         kind: EListItemTypes;
         spacing: EListItemSpacing;
-        iconClass: any;
+        iconClass: HTMLAttributes["class"];
     }, true, {}, {}, {
         P: {};
         B: {};
@@ -104,11 +104,11 @@ declare const deprecatedDefault: {
         icon: TIconName;
         kind: EListItemTypes;
         spacing: EListItemSpacing;
-        iconClass: any;
+        iconClass: HTMLAttributes["class"];
     }>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EListItemSize>;
@@ -140,7 +140,7 @@ declare const deprecatedDefault: {
     icon: TIconName;
     kind: EListItemTypes;
     spacing: EListItemSpacing;
-    iconClass: any;
+    iconClass: HTMLAttributes["class"];
 }, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         icon?(_: {}): any;

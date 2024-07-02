@@ -40,9 +40,9 @@ declare const deprecatedDefault: {
             type: PropType<EAlertTypes>;
         };
     }>>, {}, {}, {}, {}, {}>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     icon: {
         type: PropType<TIconName>;

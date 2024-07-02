@@ -2,7 +2,7 @@ import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, 
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     tabs: string[];
     modelValue: string;
-    name?: string | undefined;
+    name?: string;
 }>, {
     name: string;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
@@ -10,7 +10,7 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRunt
 }, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     tabs: string[];
     modelValue: string;
-    name?: string | undefined;
+    name?: string;
 }>, {
     name: string;
 }>>> & {

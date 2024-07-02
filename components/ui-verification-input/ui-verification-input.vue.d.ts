@@ -3,13 +3,15 @@ type TProps = {
     inputsCount: number;
     type?: "text";
 };
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToRuntimeProps<TProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+declare function __VLS_template(): {
+    button?(_: {}): any;
+};
+declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<TProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     onFiled: (...args: any[]) => void;
 }, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TProps>>> & {
     onOnFiled?: ((...args: any[]) => any) | undefined;
-}, {}, {}>, {
-    button?(_: {}): any;
-}>;
+}, {}, {}>;
+declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

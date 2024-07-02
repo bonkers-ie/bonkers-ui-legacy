@@ -36,9 +36,9 @@ declare const deprecatedDefault: {
             type: PropType<string>;
         };
     }>>, {}, {}, {}, {}, {}>;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
+    __isFragment?: never;
+    __isTeleport?: never;
+    __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     iconName: {
         type: PropType<TIconName>;
