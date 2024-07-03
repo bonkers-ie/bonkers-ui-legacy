@@ -7,7 +7,7 @@
 			'bg-warning-300 text-warning-700': color === EBadgeColor.WARNING,
 			'bg-accent-300 text-accent-700': color === EBadgeColor.ACCENT,
 			'bg-primary-300 text-primary-800': color === EBadgeColor.PRIMARYALT,
-			'bg-secondary-alt-300 text-secondary-300': color === EBadgeColor.SECONDARY,
+			'bg-white text-secondary-300 outline outline-1 outline-secondary-alt-300': color === EBadgeColor.SECONDARY,
 			'bg-accent-alt-500 text-secondary-700': color === EBadgeColor.ACCENTALT,
 			'rounded': kind === EBadgeKind.DEFAULT,
 			'rounded-full': kind === EBadgeKind.ROUNDED
