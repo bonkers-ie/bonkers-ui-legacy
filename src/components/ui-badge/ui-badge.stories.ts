@@ -1,6 +1,7 @@
 import UiBadge from "./ui-badge.vue";
 import type { Meta } from "@storybook/vue3";
-import { EBadgeColor, EBadgeKind, EBadgeSize } from "./_typings";
+import { EBadgeKind, EBadgeSize } from "./_typings";
+import { ICON_DEFAULT } from "../../CONSTANTS";
 
 export default {
 	title: "Components/ui-badge",
@@ -13,13 +14,13 @@ export default {
 			options: Object.values(EBadgeKind),
 			description: "The Element kinds",
 		},
-		color: {
-			control: {
-				type: "select"
-			},
-			options: Object.values(EBadgeColor),
-			description: "The Element color",
-		},
+		// color: {
+		// 	control: {
+		// 		type: "select"
+		// 	},
+		// 	options: Object.values(EBadgeColor),
+		// 	description: "The Element color",
+		// },
 		size: {
 			control: {
 				type: "select"
@@ -34,27 +35,14 @@ export default {
 		}
 	},
 	args: {
-		kind: EBadgeKind.DEFAULT,
-		color: EBadgeColor.PRIMARY,
+		kind: EBadgeKind.PRIMARY,
 		size: EBadgeSize.SMALL,
-		default: "hello"
+		default: "hello",
 	}
 } satisfies Meta<typeof UiBadge>;
 
 export const Default = {
-	render: (args) => ({
-		components: {
-			UiBadge
-		},
-		setup() {
-			return {
-				args,
-			};
-		},
-		template: /*html*/`
-			<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
-				{{args.default}}
-			</ui-badge>
-		`,
-	})
+	args: {
+		icon: ICON_DEFAULT,
+	},
 };
