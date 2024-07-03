@@ -9,8 +9,8 @@ export enum EBadgeKind {
 	ERROR = "error",
 	WARNING ="warning",
 	ACCENT = "accent",
-	PRIMARYALT = "primary-alt",
+	PRIMARY_ALT = "primary-alt",
 	SECONDARY = "secondary",
-	ACCENTALT = "accent-alt",
+	ACCENT_ALT = "accent-alt",
 
 }

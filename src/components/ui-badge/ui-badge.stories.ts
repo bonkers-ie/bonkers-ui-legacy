@@ -14,13 +14,6 @@ export default {
 			options: Object.values(EBadgeKind),
 			description: "The Element kinds",
 		},
-		// color: {
-		// 	control: {
-		// 		type: "select"
-		// 	},
-		// 	options: Object.values(EBadgeColor),
-		// 	description: "The Element color",
-		// },
 		size: {
 			control: {
 				type: "select"
@@ -32,17 +25,26 @@ export default {
 			control: {
 				type: "text"
 			}
-		}
+		},
+		rounded: {
+			control: {
+				type: "boolean"
+			},
+			description: "Rounded default",
+		},
 	},
 	args: {
 		kind: EBadgeKind.PRIMARY,
 		size: EBadgeSize.SMALL,
 		default: "hello",
+		rounded: false
+
 	}
 } satisfies Meta<typeof UiBadge>;
 
 export const Default = {
 	args: {
 		icon: ICON_DEFAULT,
+
 	},
 };
