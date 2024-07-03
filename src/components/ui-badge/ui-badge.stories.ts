@@ -1,6 +1,6 @@
 import UiBadge from "./ui-badge.vue";
 import type { Meta } from "@storybook/vue3";
-import { EBadgeKind, EBadgeSize } from "./_typings";
+import { EBadgeColor, EBadgeKind, EBadgeSize } from "./_typings";
 
 export default {
 	title: "Components/ui-badge",
@@ -12,6 +12,13 @@ export default {
 			},
 			options: Object.values(EBadgeKind),
 			description: "The Element kinds",
+		},
+		color: {
+			control: {
+				type: "select"
+			},
+			options: Object.values(EBadgeColor),
+			description: "The Element color",
 		},
 		size: {
 			control: {
@@ -27,7 +34,8 @@ export default {
 		}
 	},
 	args: {
-		kind: EBadgeKind.PRIMARY,
+		kind: EBadgeKind.DEFAULT,
+		color: EBadgeColor.PRIMARY,
 		size: EBadgeSize.SMALL,
 		default: "hello"
 	}

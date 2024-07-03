@@ -4,8 +4,18 @@ export enum EBadgeSize {
 	LARGE = "large",
 }
 
-export enum EBadgeKind {
+export enum EBadgeColor {
 	PRIMARY = "primary",
 	ERROR = "error",
+	WARNING ="warning",
 	ACCENT = "accent",
+	PRIMARYALT = "primary-alt",
+	SECONDARY = "secondary",
+	ACCENTALT = "accent-alt",
+
+}
+
+export enum EBadgeKind {
+	DEFAULT = "default",
+	ROUNDED = "rounded"
 }
