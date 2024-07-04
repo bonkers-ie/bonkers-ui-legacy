@@ -10,6 +10,7 @@ import * as UiCardResult from "./components/ui-card-result";
 import * as UiCardSimple from "./components/ui-card-simple";
 import * as UiCheckbox from "./components/ui-checkbox";
 import * as UiDropdown from "./components/ui-dropdown";
+import * as UiFeaturedCard from "./components/ui-featured-card";
 import * as UiIcon from "./components/ui-icon";
 import * as UiIconWrapper from "./components/ui-icon-wrapper";
 import * as UiInput from "./components/ui-input";
@@ -47,6 +48,7 @@ const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiCardSimple,
 	UiCheckbox,
 	UiDropdown,
+	UiFeaturedCard,
 	UiIcon,
 	UiIconWrapper,
 	UiInput,
@@ -97,6 +99,7 @@ export { UiCardResult } from "./components/ui-card-result";
 export { UiCardSimple } from "./components/ui-card-simple";
 export { UiCheckbox } from "./components/ui-checkbox";
 export { UiDropdown, EDropdownKinds } from "./components/ui-dropdown";
+export { UiFeaturedCard } from "./components/ui-featured-card";
 export { UiIcon, ESize } from "./components/ui-icon";
 export { UiIconWrapper, EIconWrapperTypes, EIconWrapperSizes } from "./components/ui-icon-wrapper";
 export { UiInput, EInputType, EInputKinds, EAutocomplete } from "./components/ui-input";
