@@ -14,12 +14,16 @@
 			p-sm
 			"
 	>
+		<img
+			src="./assets/broadband-providers.png"
+			alt="some image"
+		>
 		<slot name="titleSlot">
 			<ui-typography
 				:size="ETypographySizes.XS"
 				:align="ETextAlign.CENTER"
 				:weight="ETextWeight.SEMI_BOLD"
-				class=""
+				class="mt-xxs"
 				line-height
 			>
 				{{ title }}

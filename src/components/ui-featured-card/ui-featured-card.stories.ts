@@ -28,7 +28,7 @@ export default {
 	},
 	args: {
 		title: "Virgin Media - 500 Fibre Broadband, TV and Unlimited Irish Landline",
-		price: "77.00*",
+		price: "€77.00*",
 		description: "monthly",
 		specialOffer: false
 	}
