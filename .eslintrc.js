@@ -34,16 +34,7 @@ module.exports = {
 				indent: "off",
 				"@typescript-eslint/indent": ["error", "tab"],
 			}
-		},
-		{
-			files: ["*.json", "*.json5", "*.jsonc"],
-			parser: "jsonc-eslint-parser",
-			rules: {
-				"jsonc/indent": ["error",
-					"tab"
-				]
-			}
-		},
+		}
 	],
 	rules: {
 		indent: [
