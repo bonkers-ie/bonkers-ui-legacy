@@ -31,20 +31,13 @@ export default {
 				type: "boolean"
 			},
 			description: "Rounded default",
-		},
-	},
-	args: {
-		kind: EBadgeKind.PRIMARY,
-		size: EBadgeSize.SMALL,
-		default: "hello",
-		rounded: false
-
+		}
 	}
 } satisfies Meta<typeof UiBadge>;
 
 export const Default = {
 	args: {
 		icon: ICON_DEFAULT,
-
+		default: "hello"
 	},
 };
