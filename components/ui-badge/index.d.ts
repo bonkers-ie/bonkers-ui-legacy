@@ -11,24 +11,42 @@ declare const deprecatedDefault: {
     new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
-        };
-        kind: {
-            type: PropType<EBadgeKind>;
+            default: EBadgeSize;
         };
         icon: {
             type: PropType<TIconName>;
+            required: true;
+        };
+        kind: {
+            type: PropType<EBadgeKind>;
+            default: EBadgeKind;
+        };
+        rounded: {
+            type: PropType<boolean>;
+            default: boolean;
         };
     }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
-        };
-        kind: {
-            type: PropType<EBadgeKind>;
+            default: EBadgeSize;
         };
         icon: {
             type: PropType<TIconName>;
+            required: true;
         };
-    }>>, {}, true, {}, {}, {
+        kind: {
+            type: PropType<EBadgeKind>;
+            default: EBadgeKind;
+        };
+        rounded: {
+            type: PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {
+        size: EBadgeSize;
+        kind: EBadgeKind;
+        rounded: boolean;
+    }, true, {}, {}, {
         P: {};
         B: {};
         D: {};
@@ -38,28 +56,50 @@ declare const deprecatedDefault: {
     }, Readonly< ExtractPropTypes<{
         size: {
             type: PropType<EBadgeSize>;
-        };
-        kind: {
-            type: PropType<EBadgeKind>;
+            default: EBadgeSize;
         };
         icon: {
             type: PropType<TIconName>;
+            required: true;
         };
-    }>>, {}, {}, {}, {}, {}>;
+        kind: {
+            type: PropType<EBadgeKind>;
+            default: EBadgeKind;
+        };
+        rounded: {
+            type: PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {}, {}, {}, {}, {
+        size: EBadgeSize;
+        kind: EBadgeKind;
+        rounded: boolean;
+    }>;
     __isFragment?: never;
     __isTeleport?: never;
     __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
     size: {
         type: PropType<EBadgeSize>;
-    };
-    kind: {
-        type: PropType<EBadgeKind>;
+        default: EBadgeSize;
     };
     icon: {
         type: PropType<TIconName>;
+        required: true;
     };
-}>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {}, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
+    kind: {
+        type: PropType<EBadgeKind>;
+        default: EBadgeKind;
+    };
+    rounded: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+}>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {
+    size: EBadgeSize;
+    kind: EBadgeKind;
+    rounded: boolean;
+}, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
     $slots: {
         default?(_: {}): any;
     };
