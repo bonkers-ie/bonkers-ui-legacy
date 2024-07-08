@@ -56,7 +56,11 @@
 			v-if="specialOffer"
 			class="mb-xxs"
 		>
-			<ui-badge>
+			<ui-badge
+				:size="EBadgeSize.SMALL"
+				:kind="EBadgeKind.ACCENT_ALT"
+				rounded
+			>
 				Save €551.20 on first year
 			</ui-badge>
 		</div>
@@ -73,13 +77,14 @@
 <script lang="ts" setup>
 	import UiTypography, { ETextAlign, ETextWeight, ETypographySizes,EColors } from "../ui-typography";
 	import UiButton, { EButtonSizes } from "../ui-button";
-	import UiBadge from "../ui-badge";
+	import UiBadge,{ EBadgeKind,EBadgeSize } from "../ui-badge";
 
 	defineProps<{
 		title?: string;
 		price?: string;
 		description?: string;
 		specialOffer?: boolean;
+		image: string
 	}>();
 
 </script>

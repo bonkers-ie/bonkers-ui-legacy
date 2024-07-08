@@ -46,13 +46,12 @@
 	const props = withDefaults( defineProps<{
 		size?: EBadgeSize;
 		kind?: EBadgeKind;
-		icon: TIconName;
+		icon?: TIconName;
 		rounded?: boolean;
 	}>(), {
 		size: EBadgeSize.SMALL,
 		kind: EBadgeKind.PRIMARY,
-		rounded: false
-
+		rounded: false,
 	});
 
 	const slots = useSlots();

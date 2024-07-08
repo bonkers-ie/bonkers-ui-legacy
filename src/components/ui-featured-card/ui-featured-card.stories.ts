@@ -24,7 +24,7 @@ export default {
 			control: {
 				type: "boolean"
 			}
-		},
+		}
 	},
 	args: {
 		title: "Virgin Media - 500 Fibre Broadband, TV and Unlimited Irish Landline",
