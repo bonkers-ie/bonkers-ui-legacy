@@ -73,7 +73,7 @@ export const Featured = {
 		},
 		template: /*html*/ `
 
-		<div class="grid grid-cols-2 gap-xxs w-[512px]">
+		<div class="grid grid-cols-2 gap-xxs w-[448px]">
 			<ui-card-simple>
 				<div class="grid gap-xxs justify-items-center">
 					<div class="card-image w-xxxl h-xxxl bg-secondary-300"></div>
