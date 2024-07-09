@@ -8,7 +8,7 @@ declare function __VLS_template(): {
 declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     size?: EBadgeSize;
     kind?: EBadgeKind;
-    icon: TIconName;
+    icon?: TIconName;
     rounded?: boolean;
 }>, {
     size: EBadgeSize;
@@ -17,7 +17,7 @@ declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypeProp
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     size?: EBadgeSize;
     kind?: EBadgeKind;
-    icon: TIconName;
+    icon?: TIconName;
     rounded?: boolean;
 }>, {
     size: EBadgeSize;

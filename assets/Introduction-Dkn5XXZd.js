@@ -1,4 +1,4 @@
-import{j as e,M as r}from"./index-DMAXUssc.js";import{u as n}from"./index-CT3Yko9Q.js";import"./iframe-CqVJpK5g.js";import"../sb-preview/runtime.js";import"./index-CcisS4Rv.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";function i(o){const t={a:"a",code:"code",h1:"h1",p:"p",strong:"strong",...n(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Example/Introduction"}),`
+import{j as e,M as r}from"./index-D_RApcsU.js";import{u as n}from"./index-DBALb8eu.js";import"./iframe-ko_3BSy0.js";import"../sb-preview/runtime.js";import"./index-CcisS4Rv.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";function i(o){const t={a:"a",code:"code",h1:"h1",p:"p",strong:"strong",...n(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Example/Introduction"}),`
 `,e.jsx("style",{children:`
     .subheading {
       --mediumdark: '#999999';

@@ -15,7 +15,6 @@ declare const deprecatedDefault: {
         };
         icon: {
             type: PropType<TIconName>;
-            required: true;
         };
         kind: {
             type: PropType<EBadgeKind>;
@@ -32,7 +31,6 @@ declare const deprecatedDefault: {
         };
         icon: {
             type: PropType<TIconName>;
-            required: true;
         };
         kind: {
             type: PropType<EBadgeKind>;
@@ -60,7 +58,6 @@ declare const deprecatedDefault: {
         };
         icon: {
             type: PropType<TIconName>;
-            required: true;
         };
         kind: {
             type: PropType<EBadgeKind>;
@@ -85,7 +82,6 @@ declare const deprecatedDefault: {
     };
     icon: {
         type: PropType<TIconName>;
-        required: true;
     };
     kind: {
         type: PropType<EBadgeKind>;
