@@ -39,9 +39,9 @@
 <script lang="ts" setup>
 	import { computed, useSlots } from "vue";
 	import { EBadgeKind, EBadgeSize } from "./_typings";
-	import UiIcon, { type TIconName } from "../ui-icon";
+	import { type TIconName, UiIcon } from "../ui-icon";
 	import { ESize } from "../../_types/sizing";
-	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
+	import { UiTypography, ETypographySizes, ETextWeight } from "../ui-typography";
 
 	const props = withDefaults( defineProps<{
 		size?: EBadgeSize;

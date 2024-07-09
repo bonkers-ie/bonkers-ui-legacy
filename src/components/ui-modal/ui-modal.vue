@@ -10,6 +10,7 @@
 			w-full
 			flex-col
 			items-center
+			gap-md
 			overflow-y-scroll
 			rounded-2xl
 			bg-white
@@ -25,7 +26,6 @@
 	>
 		<div
 			v-if="$slots.icon"
-			class="mb-sm mt-md"
 		>
 			<slot name="icon" />
 		</div>
@@ -33,7 +33,6 @@
 		<slot name="title">
 			<ui-typography
 				v-if="title"
-				class="my-md"
 				:weight="ETextWeight.BOLD"
 				:align="ETextAlign.CENTER"
 				:size="ETypographySizes.LG"
@@ -48,7 +47,7 @@
 			:weight="ETextWeight.REGULAR"
 			:align="ETextAlign.CENTER"
 			line-height
-			class="mb-md w-full overflow-y-auto text-secondary"
+			class="w-full overflow-y-auto text-secondary"
 		>
 			<slot />
 		</ui-typography>

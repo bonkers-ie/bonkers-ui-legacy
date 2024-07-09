@@ -8,19 +8,17 @@
 				ui-skeleton-card__header
 				flex
 				items-center
-				justify-between
+				gap-xs
 				rounded-xl
 				bg-secondary-alt-200
 				p-xxs
 				"
 		>
-			<div class="flex w-full flex-col items-start">
+			<div class="grid grow gap-xxs">
 				<div
 					class="
 						ui-skeleton-card__content__text
-						my-xxs
 						h-md
-						w-full
 						rounded-md
 						bg-secondary-alt-300
 						"
@@ -35,14 +33,12 @@
 						"
 				/>
 			</div>
+
 			<div
 				class="
 					ui-skeleton-card__header__image
-					rounded-xxxxl
-					my-xxxs
-					ml-sm
-					h-xxxxl
-					w-xxxxxl
+					size-xxxl
+					rounded-lg
 					bg-secondary-alt-300
 					"
 			/>
@@ -110,33 +106,30 @@
 				"
 		/>
 	</div>
+
 	<div
 		v-else
-		class="ui-skeleton-menu mb-sm flex animate-pulse flex-row items-center justify-between"
+		class="ui-skeleton-card__header flex items-center gap-xs rounded-xl p-xxs"
 	>
-		<div
-			class="
-				ui-skeleton-menu__result-count
-				h-sm
-				w-full
-				max-w-xxxxxl
-				rounded-md
-				bg-secondary-alt-300
-				"
-		/>
-		<div class="ui-skeleton-menu__filters relative flex h-xl w-xxxxxl flex-row gap-x-sm">
+		<div class="grow">
 			<div
-				v-for="i in 2"
-				:key="i"
 				class="
-					ui-skeleton-menu__filters__item
-					relative
-					w-xxxxl
+					ui-skeleton-card__content__text
+					h-md
+					w-3/6
 					rounded-md
 					bg-secondary-alt-300
 					"
 			/>
 		</div>
+
+		<div
+			class="ui-skeleton-card__header__image size-xxl rounded-lg bg-secondary-alt-300"
+		/>
+
+		<div
+			class="ui-skeleton-card__header__image size-xxl rounded-lg bg-secondary-alt-300"
+		/>
 	</div>
 </template>
 

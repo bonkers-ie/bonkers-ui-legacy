@@ -13,19 +13,19 @@
 		<div
 			class="
 				ui-radio-compact_content
-				rounded-xxxxl
 				box-border
 				grid
 				cursor-pointer
 				items-center
 				justify-items-center
+				rounded-lg
 				border
 				border-secondary-alt-500
 				bg-white
 				before:absolute
 				before:-z-10
 				before:box-border
-				before:rounded-[16px]
+				before:rounded-2xl
 				before:bg-primary-300
 				hover:border-secondary-alt-700
 				peer-checked:border-transparent

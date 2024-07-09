@@ -14,10 +14,10 @@
 		<div
 			class="
 				ui-radio-fancy__content
-				rounded-xxxxl
 				box-border
 				size-full
 				cursor-pointer
+				rounded-lg
 				border
 				border-secondary-alt-500
 				bg-white
@@ -25,7 +25,7 @@
 				before:absolute
 				before:-z-10
 				before:box-border
-				before:rounded-[16px]
+				before:rounded-2xl
 				before:bg-primary-300
 				hover:border-secondary-alt-700
 				peer-checked:border-transparent
@@ -40,10 +40,10 @@
 				peer-focus:before:-left-xxs
 				peer-focus:before:-right-xxs
 				peer-focus:before:-top-xxs
-				peer-active:before:-bottom-xxxs
-				peer-active:before:-left-xxxs
-				peer-active:before:-right-xxxs
-				peer-active:before:-top-xxxs
+				peer-active:before:-bottom-xxs
+				peer-active:before:-left-xxs
+				peer-active:before:-right-xxs
+				peer-active:before:-top-xxs
 				"
 			:class="[
 				disabled

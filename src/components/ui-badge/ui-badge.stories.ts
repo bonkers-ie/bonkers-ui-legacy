@@ -1,4 +1,4 @@
-import UiBadge from "./ui-badge.vue";
+import { UiBadge } from "../ui-badge";
 import type { Meta } from "@storybook/vue3";
 import { EBadgeKind, EBadgeSize } from "./_typings";
 import { ICON_DEFAULT } from "../../CONSTANTS";
@@ -32,12 +32,12 @@ export default {
 			},
 			description: "Rounded default",
 		}
-	}
-} satisfies Meta<typeof UiBadge>;
-
-export const Default = {
+	},
 	args: {
 		icon: ICON_DEFAULT,
-		default: "hello"
+		default: "hello",
+		rounded: false
 	},
-};
+} satisfies Meta<typeof UiBadge>;
+
+export const Default = {};

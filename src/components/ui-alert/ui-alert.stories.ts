@@ -23,11 +23,8 @@ export default {
 	args: {
 		kind: EAlertTypes.PRIMARY,
 		default: "This is a default slot",
+		icon: ICON_DEFAULT,
 	}
 } satisfies Meta<typeof UiAlert>;
 
-export const Default = {
-	args: {
-		icon: ICON_DEFAULT,
-	},
-};
+export const Default = {};
