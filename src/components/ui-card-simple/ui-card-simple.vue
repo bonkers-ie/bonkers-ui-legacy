@@ -1,12 +1,20 @@
 <template>
 	<div
-		class="ui-card-simple rounded-3xl bg-white px-sm py-md shadow-md"
+		class="
+			ui-card-simple
+			grid
+			justify-items-center
+			gap-sm
+			rounded-3xl
+			bg-white
+			p-sm
+			shadow-md
+			"
 	>
 		<ui-typography
 			v-if="slots.title"
 			:weight="ETextWeight.BOLD"
 			:align="ETextAlign.CENTER"
-			class="pb-md"
 		>
 			<slot name="title" />
 		</ui-typography>
