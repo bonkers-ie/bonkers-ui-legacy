@@ -3,7 +3,7 @@ import bonkersPlugin from "./plugin";
 
 const config = {
 	content: [
-		"./src/**/*.{vue,js,ts,jsx,tsx}",
+		"./src/**/*.{vue,js,ts,jsx,tsx,stories.ts}",
 	],
 	plugins: [
 		bonkersPlugin
