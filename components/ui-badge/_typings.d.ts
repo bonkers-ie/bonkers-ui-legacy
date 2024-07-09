@@ -9,6 +9,7 @@ export declare enum EBadgeKind {
     WARNING = "warning",
     ACCENT = "accent",
     PRIMARY_ALT = "primary-alt",
-    SECONDARY = "secondary"
+    SECONDARY = "secondary",
+    ACCENT_ALT = "accent-alt"
 }
 //# sourceMappingURL=_typings.d.ts.map
