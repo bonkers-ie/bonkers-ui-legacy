@@ -1,6 +1,7 @@
 import UiProductCard from "./ui-product-card.vue";
 import type { Meta } from "@storybook/vue3";
 import { UiBadge, EBadgeKind } from "../ui-badge";
+import UiIcon from "../ui-icon/ui-icon.vue";
 
 export default {
 	title: "Components/ui-product-card",
@@ -13,7 +14,8 @@ export const Default = {
 	render: (args) => ({
 		components: {
 			UiProductCard,
-			UiBadge
+			UiBadge,
+			UiIcon
 		},
 		setup() {
 			return {
@@ -25,7 +27,9 @@ export const Default = {
 		<div class="grid grid-cols-2 gap-xxs h-[170px] w-[376px]">
 			<ui-product-card>
 				<template v-slot:cardIcon>
-					<div class="mb-sm size-xxxl justify-start rounded-full bg-primary"></div>
+					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+					</div>
 				</template>
 				<template v-slot:title>
 					Gas & Electricity
@@ -42,7 +46,9 @@ export const Default = {
 
 				<ui-product-card>
 					<template v-slot:cardIcon>
-						<div class="mb-sm size-xxxl justify-start rounded-full bg-primary"></div>
+						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+						</div>
 					</template>
 
 					<template v-slot:title>
@@ -72,7 +78,8 @@ export const Small = {
 	render: (args) => ({
 		components: {
 			UiProductCard,
-			UiBadge
+			UiBadge,
+			UiIcon
 		},
 		setup() {
 			return {
@@ -84,7 +91,9 @@ export const Small = {
 		<div class="grid grid-cols-2 gap-xxs h-[215] w-[282px]">
 			<ui-product-card>
 				<template v-slot:cardIcon>
-					<div class="mb-sm size-xxxl justify-start rounded-full bg-primary"></div>
+					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+					</div>
 				</template>
 				<template v-slot:title>
 					Gas & Electricity
@@ -101,7 +110,9 @@ export const Small = {
 
 				<ui-product-card>
 					<template v-slot:cardIcon>
-						<div class="mb-sm size-xxxl justify-start rounded-full bg-primary"></div>
+						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+						</div>
 					</template>
 
 					<template v-slot:title>
@@ -131,7 +142,8 @@ export const Large = {
 	render: (args) => ({
 		components: {
 			UiProductCard,
-			UiBadge
+			UiBadge,
+			UiIcon
 		},
 		setup() {
 			return {
@@ -143,7 +155,9 @@ export const Large = {
 		<div class="grid grid-cols-2 gap-xxs h-[145px] w-[450px]">
 			<ui-product-card class="p-sm">
 				<template v-slot:cardIcon>
-					<div class="mb-xxs size-xl justify-start rounded-full bg-primary"></div>
+					<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white"></ui-icon>
+					</div>
 				</template>
 				<template v-slot:title>
 					Gas & Electricity
@@ -160,7 +174,9 @@ export const Large = {
 
 				<ui-product-card class="p-sm">
 					<template v-slot:cardIcon>
-						<div class="mb-xxs size-xl justify-start rounded-full bg-primary"></div>
+						<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white"></ui-icon>
+						</div>
 					</template>
 
 					<template v-slot:title>
