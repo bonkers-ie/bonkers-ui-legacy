@@ -1,7 +1,8 @@
 import UiProductCard from "./ui-product-card.vue";
 import type { Meta } from "@storybook/vue3";
 import { UiBadge, EBadgeKind } from "../ui-badge";
-import UiIcon from "../ui-icon/ui-icon.vue";
+import { UiIcon } from "../ui-icon";
+import { ESize } from "../../_types/sizing";
 
 export default {
 	title: "Components/ui-product-card",
@@ -20,7 +21,8 @@ export const Default = {
 		setup() {
 			return {
 				args,
-				EBadgeKind
+				EBadgeKind,
+				ESize
 			};
 		},
 		template: /*html*/ `
@@ -28,7 +30,7 @@ export const Default = {
 			<ui-product-card>
 				<template v-slot:cardIcon>
 					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
 					</div>
 				</template>
 				<template v-slot:title>
@@ -47,7 +49,7 @@ export const Default = {
 				<ui-product-card>
 					<template v-slot:cardIcon>
 						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
 						</div>
 					</template>
 
@@ -84,7 +86,8 @@ export const Small = {
 		setup() {
 			return {
 				args,
-				EBadgeKind
+				EBadgeKind,
+				ESize
 			};
 		},
 		template: /*html*/ `
@@ -92,7 +95,7 @@ export const Small = {
 			<ui-product-card>
 				<template v-slot:cardIcon>
 					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
 					</div>
 				</template>
 				<template v-slot:title>
@@ -111,7 +114,7 @@ export const Small = {
 				<ui-product-card>
 					<template v-slot:cardIcon>
 						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-md left-md text-white"></ui-icon>
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
 						</div>
 					</template>
 
@@ -148,7 +151,8 @@ export const Large = {
 		setup() {
 			return {
 				args,
-				EBadgeKind
+				EBadgeKind,
+				ESize
 			};
 		},
 		template: /*html*/ `
@@ -156,7 +160,7 @@ export const Large = {
 			<ui-product-card class="p-sm">
 				<template v-slot:cardIcon>
 					<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white"></ui-icon>
+						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM" ></ui-icon>
 					</div>
 				</template>
 				<template v-slot:title>
@@ -175,7 +179,7 @@ export const Large = {
 				<ui-product-card class="p-sm">
 					<template v-slot:cardIcon>
 						<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white"></ui-icon>
+							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM"></ui-icon>
 						</div>
 					</template>
 
