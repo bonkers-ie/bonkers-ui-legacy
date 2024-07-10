@@ -26,8 +26,8 @@ export const Default = {
 			};
 		},
 		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs h-[170px] w-[376px]">
-			<ui-product-card>
+		<div class="grid grid-cols-2 gap-xxs w-[374px]">
+			<ui-product-card class="h-[170px]">
 				<template v-slot:cardIcon>
 					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
 						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
@@ -44,9 +44,8 @@ export const Default = {
 
 
 
-			<div class="relative h-[170px] w-[183px]">
-
-				<ui-product-card>
+			<div class="relative w-[183px]">
+				<ui-product-card class="h-[170px]">
 					<template v-slot:cardIcon>
 						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
 							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
@@ -91,8 +90,8 @@ export const Small = {
 			};
 		},
 		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs h-[215] w-[282px]">
-			<ui-product-card>
+		<div class="grid grid-cols-2 gap-xxs  w-[282px]">
+			<ui-product-card class="h-[215px]">
 				<template v-slot:cardIcon>
 					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
 						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
@@ -109,9 +108,8 @@ export const Small = {
 
 
 
-			<div class="relative h-[215] w-[136px]">
-
-				<ui-product-card>
+			<div class="relative  w-[136px]">
+			<ui-product-card class="h-[215px]">
 					<template v-slot:cardIcon>
 						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
 							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
@@ -156,8 +154,8 @@ export const Large = {
 			};
 		},
 		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs h-[145px] w-[450px]">
-			<ui-product-card class="p-sm">
+		<div class="grid grid-cols-2 gap-xxs w-[450px]">
+			<ui-product-card class="p-sm h-[145px]">
 				<template v-slot:cardIcon>
 					<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
 						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM" ></ui-icon>
@@ -174,9 +172,9 @@ export const Large = {
 
 
 
-			<div class="relative h-[145px] w-[220px]">
+			<div class="relative w-[220px]">
 
-				<ui-product-card class="p-sm">
+				<ui-product-card class="p-sm h-[145px]">
 					<template v-slot:cardIcon>
 						<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
 							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM"></ui-icon>
