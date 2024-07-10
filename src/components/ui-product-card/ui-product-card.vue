@@ -1,5 +1,5 @@
 <template>
-	<ui-card-simple class="relative h-[170px] w-[183px] py-md">
+	<ui-card-simple class="relative py-md">
 		<div>
 			<slot name="cardIcon" />
 			<ui-typography
