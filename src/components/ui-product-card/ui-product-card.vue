@@ -1,35 +1,66 @@
 <template>
-	<ui-card-simple class="relative py-md">
-		<div>
-			<slot name="cardIcon" />
-			<ui-typography
-				v-if="slots.title"
-				:size="ETypographySizes.MD"
-				:weight="ETextWeight.SEMI_BOLD"
-				:align="ETextAlign.LEFT"
-				class="mb-xxxs"
-				:line-height="true"
-			>
-				<slot name="title" />
-			</ui-typography>
+	<div
+		class="
+			relative
+			flex
+			flex-col
+			justify-between
+			gap-sm
+			rounded-2xl
+			border
+			border-secondary-alt-300
+			bg-white
+			px-xs
+			py-sm
+			"
+	>
+		<ui-badge
+			v-if="badgeText"
+			class="!absolute -top-xxs right-xs"
+			:kind="EBadgeKind.ACCENT_ALT"
+			rounded
+		>
+			{{ badgeText }}
+		</ui-badge>
+		<slot name="header" />
 
-			<ui-typography
-				v-if="slots.productsSubtitle"
-				:size="ETypographySizes.XS"
-				:align="ETextAlign.LEFT"
-				:kind="EColors.SECONDARY_300"
-			>
-				<slot name="productsSubtitle" />
-			</ui-typography>
+		<div class="grid gap-xxs">
+			<slot name="title">
+				<ui-typography
+					v-if="title"
+					:size="ETypographySizes.MD"
+					:weight="ETextWeight.SEMI_BOLD"
+					:align="ETextAlign.LEFT"
+					line-height
+				>
+					{{ title }}
+				</ui-typography>
+			</slot>
+
+			<slot name="subtitle">
+				<ui-typography
+					v-if="subtitle"
+					:size="ETypographySizes.XS"
+					:align="ETextAlign.LEFT"
+					:kind="EColors.SECONDARY_300"
+					line-height
+				>
+					{{ subtitle }}
+				</ui-typography>
+			</slot>
 		</div>
-	</ui-card-simple>
+	</div>
 </template>
 
 <script lang="ts" setup>
-	import UiCardSimple from "../ui-card-simple";
 	import UiTypography, { ETextWeight, ETextAlign, ETypographySizes, EColors } from "../ui-typography";
-	import { useSlots } from "vue";
+	import UiBadge, { EBadgeKind } from "../ui-badge";
 
-	const slots = useSlots();
+	defineProps<{
+		badgeText?: string
+
+		title?: string;
+		subtitle?: string;
+	}>();
 
 </script>

@@ -1,205 +1,85 @@
 import UiProductCard from "./ui-product-card.vue";
 import type { Meta } from "@storybook/vue3";
-import { UiBadge, EBadgeKind } from "../ui-badge";
 import { UiIcon } from "../ui-icon";
 import { ESize } from "../../_types/sizing";
 
 export default {
 	title: "Components/ui-product-card",
 	component: UiProductCard,
-	argTypes: {},
-	args: {},
+	argTypes: {
+		title: {
+			control: {
+				type: "text"
+			},
+			description: "The title text",
+		},
+		subtitle: {
+			control: {
+				type: "text"
+			},
+			description: "The subtitle text",
+		},
+	},
+	args: {
+		title: "This is a Title",
+		subtitle: "This is a Subtitle",
+	},
 } satisfies Meta<typeof UiProductCard>;
 
 export const Default = {
 	render: (args) => ({
 		components: {
 			UiProductCard,
-			UiBadge,
 			UiIcon
 		},
 		setup() {
 			return {
 				args,
-				EBadgeKind,
 				ESize
 			};
 		},
 		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs w-[374px]">
-			<ui-product-card class="h-[170px]">
-				<template v-slot:cardIcon>
-					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
+			<ui-product-card :title="args.title" :subtitle="args.subtitle">
+				<template v-slot:header>
+					<div class="rounded-full bg-primary p-sm flex w-fit text-white">
+						<ui-icon :icon-name="['far', 'face-smile']" :size="ESize.LG"></ui-icon>
 					</div>
 				</template>
-				<template v-slot:title>
-					Gas & Electricity
-				</template>
-
-				<template v-slot:productsSubtitle>
-					Dual & single fuel plans
-				</template>
 			</ui-product-card>
-
-
-
-			<div class="relative w-[183px]">
-				<ui-product-card class="h-[170px]">
-					<template v-slot:cardIcon>
-						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
-						</div>
-					</template>
-
-					<template v-slot:title>
-						Gas & Electricity
-					</template>
-
-					<template v-slot:productsSubtitle>
-						Dual & single fuel plans
-					</template>
-				</ui-product-card>
-				<div class="absolute right-sm -top-xs">
-					<ui-badge
-						:kind="EBadgeKind.ACCENT_ALT"
-						rounded
-					>
-						UP TO €586 OFF
-					</ui-badge>
-				</div>
-			</div>
-		</div>
-
 		`,
 	}),
 };
 
-export const Small = {
+export const Variants = {
 	render: (args) => ({
 		components: {
 			UiProductCard,
-			UiBadge,
 			UiIcon
 		},
 		setup() {
 			return {
 				args,
-				EBadgeKind,
 				ESize
 			};
 		},
 		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs  w-[282px]">
-			<ui-product-card class="h-[215px]">
-				<template v-slot:cardIcon>
-					<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
+		<div class="grid grid-cols-2 gap-xs w-[412px]">
+			<ui-product-card :title="args.title" :subtitle="args.subtitle">
+				<template v-slot:header>
+					<div class="rounded-full bg-primary p-sm flex w-fit text-white">
+						<ui-icon :icon-name="['far', 'face-smile']" :size="ESize.MD"></ui-icon>
 					</div>
-				</template>
-				<template v-slot:title>
-					Gas & Electricity
-				</template>
-
-				<template v-slot:productsSubtitle>
-					Dual & single fuel plans
 				</template>
 			</ui-product-card>
 
-
-
-			<div class="relative  w-[136px]">
-			<ui-product-card class="h-[215px]">
-					<template v-slot:cardIcon>
-						<div class="relative mb-sm size-xxxl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-sm left-sm text-white" :size="ESize.LG"></ui-icon>
-						</div>
-					</template>
-
-					<template v-slot:title>
-						Gas & Electricity
-					</template>
-
-					<template v-slot:productsSubtitle>
-						Dual & single fuel plans
-					</template>
-				</ui-product-card>
-				<div class="absolute right-sm -top-xs">
-					<ui-badge
-						:kind="EBadgeKind.ACCENT_ALT"
-						rounded
-					>
-						UP TO €586 OFF
-					</ui-badge>
-				</div>
-			</div>
-		</div>
-
-		`,
-	}),
-};
-
-export const Large = {
-	render: (args) => ({
-		components: {
-			UiProductCard,
-			UiBadge,
-			UiIcon
-		},
-		setup() {
-			return {
-				args,
-				EBadgeKind,
-				ESize
-			};
-		},
-		template: /*html*/ `
-		<div class="grid grid-cols-2 gap-xxs w-[450px]">
-			<ui-product-card class="p-sm h-[145px]">
-				<template v-slot:cardIcon>
-					<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
-						<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM" ></ui-icon>
+			<ui-product-card :title="args.title" :subtitle="args.subtitle" badgeText="UP TO €586 OFF">
+				<template v-slot:header>
+					<div class="rounded-full bg-primary p-xxs flex w-fit text-white">
+						<ui-icon :icon-name="['far', 'face-smile']" :size="ESize.MD"></ui-icon>
 					</div>
 				</template>
-				<template v-slot:title>
-					Gas & Electricity
-				</template>
-
-				<template v-slot:productsSubtitle>
-				Save on average €536* on your Gas & Electricity bills
-				</template>
 			</ui-product-card>
-
-
-
-			<div class="relative w-[220px]">
-
-				<ui-product-card class="p-sm h-[145px]">
-					<template v-slot:cardIcon>
-						<div class="relative mb-xxs size-xl justify-start rounded-full bg-primary">
-							<ui-icon :icon-name="['far', 'face-smile']" class="absolute top-xs left-xs text-white" :size="ESize.SM"></ui-icon>
-						</div>
-					</template>
-
-					<template v-slot:title>
-						Gas & Electricity
-					</template>
-
-					<template v-slot:productsSubtitle>
-					Save on average €536* on your Gas & Electricity bills
-					</template>
-				</ui-product-card>
-				<div class="absolute right-sm -top-xs">
-					<ui-badge
-						:kind="EBadgeKind.ACCENT_ALT"
-						rounded
-					>
-						UP TO €586 OFF
-					</ui-badge>
-				</div>
-			</div>
 		</div>
-
 		`,
 	}),
 };

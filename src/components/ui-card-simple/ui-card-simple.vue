@@ -1,15 +1,6 @@
 <template>
 	<div
-		class="
-			ui-card-simple
-			grid
-			justify-items-center
-			gap-sm
-			rounded-3xl
-			bg-white
-			p-sm
-			shadow-md
-			"
+		class="ui-card-simple relative grid gap-sm rounded-3xl bg-white p-sm shadow-md"
 	>
 		<ui-typography
 			v-if="slots.title"
