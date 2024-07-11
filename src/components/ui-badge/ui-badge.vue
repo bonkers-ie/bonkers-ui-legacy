@@ -8,7 +8,7 @@
 			'bg-warning-300 text-warning-700': kind === EBadgeKind.WARNING,
 			'bg-accent-300 text-accent-700': kind === EBadgeKind.ACCENT,
 			'bg-primary-300 text-primary-800': kind === EBadgeKind.PRIMARY_ALT,
-			'bg-white text-secondary-300 outline outline-1 outline-secondary-alt-300':
+			'bg-white text-secondary-300 ring-1 ring-secondary-alt-300':
 				kind === EBadgeKind.SECONDARY,
 			'bg-accent-alt-500 text-secondary-700': kind === EBadgeKind.ACCENT_ALT,
 			'rounded-full': rounded
