@@ -1,2 +1,1 @@
-import UiProductCard from "./ui-product-card.vue";
-export { UiProductCard };
+export { default as UiProductCard } from "./ui-product-card.vue";

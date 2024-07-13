@@ -35,6 +35,7 @@ import * as UiTabs from "./components/ui-tabs";
 import * as UiToggle from "./components/ui-toggle";
 import * as UiTypography from "./components/ui-typography";
 import * as UiVerificationInput from "./components/ui-verification-input";
+import * as UiProductCard from "./components/ui-product-card";
 
 const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiAlert,
@@ -55,6 +56,7 @@ const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiModal,
 	UiNotificationBadge,
 	UiOrderCard,
+	UiProductCard,
 	UiPlainRadio,
 	UiProgress,
 	UiRadio,
