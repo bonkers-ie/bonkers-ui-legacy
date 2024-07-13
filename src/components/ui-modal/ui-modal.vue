@@ -1,19 +1,21 @@
 <template>
 	<div
 		class="
-				ui-modal
-				max-height max-width
-				inset-0
-				z-10
-				flex
-				w-full
-				flex-col
-				items-center
-				overflow-y-scroll
-				rounded-2xl
-				bg-white
-				p-md
-				shadow-md
+			ui-modal
+			max-height
+			max-width
+			inset-0
+			z-10
+			flex
+			w-full
+			flex-col
+			items-center
+			gap-md
+			overflow-y-scroll
+			rounded-2xl
+			bg-white
+			p-md
+			shadow-md
 			"
 		:class="[
 			modalSize === EModalSizes.SM &&'h-fit max-w-[24rem]',
@@ -24,7 +26,6 @@
 	>
 		<div
 			v-if="$slots.icon"
-			class="mb-sm mt-md"
 		>
 			<slot name="icon" />
 		</div>
@@ -32,7 +33,6 @@
 		<slot name="title">
 			<ui-typography
 				v-if="title"
-				class="my-md"
 				:weight="ETextWeight.BOLD"
 				:align="ETextAlign.CENTER"
 				:size="ETypographySizes.LG"
@@ -47,7 +47,7 @@
 			:weight="ETextWeight.REGULAR"
 			:align="ETextAlign.CENTER"
 			line-height
-			class="mb-md w-full overflow-y-auto text-secondary"
+			class="w-full overflow-y-auto text-secondary"
 		>
 			<slot />
 		</ui-typography>

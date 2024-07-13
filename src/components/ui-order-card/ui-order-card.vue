@@ -9,7 +9,15 @@
 		<ui-icon
 			:icon-name="iconName"
 			:size="ESize.LG"
-			class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-300"
+			class="
+				absolute
+				left-1/2
+				top-0
+				-translate-x-1/2
+				-translate-y-1/2
+				rounded-full
+				bg-primary-300
+				"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'text-white',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-300 text-white'
@@ -44,7 +52,7 @@
 
 		<ui-typography
 			v-if="$slots.footer"
-			class="rounded-b-lg py-sm text-white"
+			class="rounded-b-xl py-sm text-white"
 			:class="[
 				kind === EOrderCardTypes.DEFAULT && 'bg-primary-700',
 				kind === EOrderCardTypes.WARNING && 'bg-warning-700'

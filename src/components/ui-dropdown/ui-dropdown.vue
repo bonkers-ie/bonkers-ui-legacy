@@ -2,13 +2,13 @@
 	<div
 		class="h-auto bg-white"
 		:class="{
-			'rounded-lg border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT
+			'rounded-xl border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT
 		}"
 	>
 		<div
 			class="flex items-center justify-between px-md py-sm"
 			:class="{
-				'rounded-lg border border-secondary': kind === EDropdownKinds.SECONDARY
+				'rounded-xl border border-secondary': kind === EDropdownKinds.SECONDARY
 			}"
 			@click="toggleAccordion"
 		>

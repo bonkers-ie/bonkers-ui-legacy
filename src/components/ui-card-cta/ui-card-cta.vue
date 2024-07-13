@@ -16,7 +16,8 @@
 			focus:shadow-border-primary
 			active:bg-secondary-alt-200
 			disabled:pointer-events-none
-			disabled:bg-secondary-alt-200"
+			disabled:bg-secondary-alt-200
+			"
 		:disabled="disabled"
 	>
 		<span
@@ -43,7 +44,7 @@
 				<slot name="titleSlot">
 					<ui-typography
 						:kind="EColors.SECONDARY_400"
-						class="mb-xxs"
+						class="mb-xxxs"
 						line-height
 					>
 						{{ title }}

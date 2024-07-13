@@ -18,7 +18,8 @@ module.exports = {
 	parser: "vue-eslint-parser",
 	plugins: [
 		"tailwindcss",
-		"eslint-plugin-storybook"
+		"eslint-plugin-storybook",
+		"@kalimahapps/eslint-plugin-tailwind"
 	],
 	overrides: [
 		{
@@ -109,6 +110,15 @@ module.exports = {
 		"object-property-newline": "error",
 		"space-before-blocks": ["error", "always"],
 		"keyword-spacing": "error",
-		"key-spacing": "error"
+		"key-spacing": "error",
+		"multiline-ternary": ["error", "always-multiline"],
+		"operator-linebreak": ["error", "before"],
+		"@kalimahapps/tailwind/multiline": [
+			"warn",
+			{
+				"maxLen": 100,
+				"quotesOnNewLine": true
+			}
+		]
 	},
 };

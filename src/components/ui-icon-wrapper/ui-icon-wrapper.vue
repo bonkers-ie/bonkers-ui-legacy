@@ -7,9 +7,9 @@
 			kind === EIconWrapperTypes.DEFAULT && 'border-2 border-primary bg-white text-primary ',
 
 			size === EIconWrapperSizes.DEFAULT && 'p-sm',
-			size === EIconWrapperSizes.SMALL && 'p-xs',
+			size === EIconWrapperSizes.SMALL && 'p-xxs',
 			size === EIconWrapperSizes.MEDIUM && 'icon-wrapper_offset-md p-md',
-			size === EIconWrapperSizes.LARGE && 'icon-wrapper_offset-lg p-lg',
+			size === EIconWrapperSizes.LARGE && 'icon-wrapper_offset-xl p-xl',
 		]"
 	>
 		<slot />
@@ -37,7 +37,7 @@
 		right: 4px;
 	}
 
-	.icon-wrapper_offset-lg :deep(.notification-badge) {
+	.icon-wrapper_offset-xl :deep(.notification-badge) {
 		top: 8px;
 		right: 8px;
 	}

@@ -14,10 +14,10 @@
 			font-bold
 			leading-none
 			text-white
-		"
+			"
 		:class="[
 			origin === EBadgeOrigin.DEFAULT && 'right-0 top-0',
-			origin === EBadgeOrigin.OFFSET_TOP_RIGHT && '-right-xxs -top-xxs',
+			origin === EBadgeOrigin.OFFSET_TOP_RIGHT && '-right-xxxs -top-xxxs',
 		]"
 	>
 		<slot />

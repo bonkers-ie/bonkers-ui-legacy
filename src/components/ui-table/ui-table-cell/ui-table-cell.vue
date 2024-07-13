@@ -12,7 +12,7 @@
 			v-if="$slots.subtext"
 			:size="ETypographySizes.XXS"
 			:weight="ETextWeight.SEMI_BOLD"
-			class="flex flex-col gap-xxs"
+			class="flex flex-col gap-xxxs"
 			:kind="EColors.PRIMARY_ALT_700"
 			:class="$slots.default && 'pt-sm'"
 		>

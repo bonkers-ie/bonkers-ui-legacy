@@ -78,7 +78,7 @@ export const Default = {
 
 				<template #default>
 					<div
-						class="flex gap-xs items-center mb-xs"
+						class="flex gap-xxs items-center mb-xxs"
 					>
 						<ui-icon
 							class="text-primary"
@@ -99,7 +99,7 @@ export const Default = {
 						/>
 					</div>
 
-					<div class="flex flex-wrap gap-xs mb-sm">
+					<div class="flex flex-wrap gap-xxs mb-sm">
 						<ui-badge
 							v-for="item in ['Free bank tranfers']"
 							:icon="['far', 'face-smile']"
@@ -119,7 +119,7 @@ export const Default = {
 					<ul>
 						<ui-list-item
 							v-for="item in 4"
-							class="mb-xxs items-center"
+							class="mb-xxxs items-center"
 							:key="item"
 							:icon="['far', 'face-smile']"
 							icon-class="text-secondary-alt"
@@ -145,7 +145,7 @@ export const Default = {
 							:size="ETypographySizes.XL"
 							:kind="EColors.SECONDARY"
 						>
-							<p class="mb-xxs">€1004.63</p>
+							<p class="mb-xxxs">€1004.63</p>
 							<ui-typography
 								:size="ETypographySizes.XS"
 								:kind="EColors.SECONDARY_400"

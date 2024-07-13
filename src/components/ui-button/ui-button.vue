@@ -1,6 +1,7 @@
 <template>
 	<button
-		class="ui-button
+		class="
+			ui-button
 			text-base
 			grid
 			touch-manipulation
@@ -8,7 +9,7 @@
 			items-center
 			justify-center
 			whitespace-nowrap
-			rounded-lg
+			rounded-xl
 			font-bold
 			leading-none
 			"
@@ -37,10 +38,10 @@
 				&& `border border-error text-error hover:border-transparent hover:bg-error-600
 					hover:text-white active:border-transparent active:bg-error-700
 					active:text-white disabled:border-error-300 disabled:text-error-300`,
-			kind === EButtonTypes.LINK && `hover:text-accent-alt-600 active:text-accent-alt-700
-				disabled:text-accent-alt-300 text-accent-alt`,
+			kind === EButtonTypes.LINK && `text-accent-alt hover:text-accent-alt-600
+				active:text-accent-alt-700 disabled:text-accent-alt-300`,
 			(!size || size === EButtonSizes.DEFAULT) && 'px-md py-sm',
-			size === EButtonSizes.SMALL && 'px-md py-xs',
+			size === EButtonSizes.SMALL && 'px-md py-xxs',
 			size === EButtonSizes.MEDIUM && 'p-sm',
 			size === EButtonSizes.LARGE && 'p-md',
 			($slots.default || $slots.postfix) && 'gap-sm',

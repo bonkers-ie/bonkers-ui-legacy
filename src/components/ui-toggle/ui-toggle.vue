@@ -31,7 +31,7 @@
 					:value="value"
 				>
 
-				<span class="ui-toggle__bg-block block h-md w-lg rounded-full bg-secondary-alt" />
+				<span class="ui-toggle__bg-block block h-md w-xl rounded-full bg-secondary-alt" />
 
 				<span class="ui-toggle__dot absolute top-0 block rounded-full bg-white">
 					<svg
@@ -118,7 +118,7 @@
 	}
 
 	.ui-toggle input:checked ~ .ui-toggle__dot {
-		transform: translate3d(calc(var(--lg) - 100% - 1px), -50%, 0);
+		transform: translate3d(calc(var(--xl) - 100% - 1px), -50%, 0);
 	}
 
 	.ui-toggle:hover input:checked ~ .ui-toggle__dot,

@@ -18,14 +18,14 @@
 
 <style scoped>
 	.ui-table-row ::v-deep(td:first-child) {
-		border-top-left-radius: var(--xs);
-		border-bottom-left-radius: var(--xs);
+		border-top-left-radius: var(--xxs);
+		border-bottom-left-radius: var(--xxs);
 		text-align: left;
 	}
 
 	.ui-table-row ::v-deep(td:last-child) {
-		border-top-right-radius: var(--xs);
-		border-bottom-right-radius: var(--xs);
+		border-top-right-radius: var(--xxs);
+		border-bottom-right-radius: var(--xxs);
 		text-align: right;
 	}
 </style>

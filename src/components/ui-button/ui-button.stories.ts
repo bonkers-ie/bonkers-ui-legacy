@@ -82,7 +82,9 @@ export const Primary = {
 						 :size="ESize.SM"
 					/>
 				</template>
-				${args.default}
+				<template #default>
+					${args.default}
+				</template>
 				<template #postfix v-if="args.postfix">
 					<ui-icon
 						:icon-name="['far', 'face-smile']"

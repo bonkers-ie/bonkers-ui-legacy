@@ -36,7 +36,7 @@ export const Default = {
 			};
 		},
 		template: /*html*/`
-			<div class="relative rounded-full bg-primary w-lg h-lg">
+			<div class="relative rounded-full bg-primary w-xl h-xl">
 				<ui-notification-badge :origin="args.origin">
 					{{args.default}}
 				</ui-notification-badge>

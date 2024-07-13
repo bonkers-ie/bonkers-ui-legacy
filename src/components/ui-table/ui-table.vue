@@ -1,7 +1,7 @@
 <template>
 	<table
 		:class="[
-			'ui-table rounded-lg',
+			'ui-table rounded-xl',
 			kind === ETableKind.SECONDARY && 'ui-table__secondary',
 			kind === ETableKind.SECONDARY_INVERTED && 'ui-table__secondary-inverted',
 		]"

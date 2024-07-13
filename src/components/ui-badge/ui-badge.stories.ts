@@ -1,6 +1,7 @@
-import UiBadge from "./ui-badge.vue";
+import { UiBadge } from "../ui-badge";
 import type { Meta } from "@storybook/vue3";
 import { EBadgeKind, EBadgeSize } from "./_typings";
+import { ICON_DEFAULT } from "../../CONSTANTS";
 
 export default {
 	title: "Components/ui-badge",
@@ -24,29 +25,19 @@ export default {
 			control: {
 				type: "text"
 			}
+		},
+		rounded: {
+			control: {
+				type: "boolean"
+			},
+			description: "Rounded default",
 		}
 	},
 	args: {
-		kind: EBadgeKind.PRIMARY,
-		size: EBadgeSize.SMALL,
-		default: "hello"
-	}
+		icon: ICON_DEFAULT,
+		default: "hello",
+		rounded: false
+	},
 } satisfies Meta<typeof UiBadge>;
 
-export const Default = {
-	render: (args) => ({
-		components: {
-			UiBadge
-		},
-		setup() {
-			return {
-				args,
-			};
-		},
-		template: /*html*/`
-			<ui-badge :icon="['far', 'face-smile']" v-bind="args" class="inline-flex">
-				{{args.default}}
-			</ui-badge>
-		`,
-	})
-};
+export const Default = {};

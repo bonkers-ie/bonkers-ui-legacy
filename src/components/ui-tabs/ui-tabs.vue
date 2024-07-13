@@ -6,7 +6,7 @@
 			class="rounded-full text-center"
 			:class="[tabsModel === tab && 'bg-white']"
 		>
-			<label class="block cursor-pointer px-md py-xs">
+			<label class="block cursor-pointer px-md py-xxs">
 				<input
 					v-model="tabsModel"
 					type="radio"

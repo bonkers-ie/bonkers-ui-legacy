@@ -1,12 +1,21 @@
 
 <template>
 	<li
-		class="ui-list-item group relative grid grid-flow-col justify-start gap-xs text-secondary"
+		class="
+			ui-list-item
+			group
+			relative
+			grid
+			grid-flow-col
+			justify-start
+			gap-xxs
+			text-secondary
+			"
 		:class="[
 			size === EListItemSize.SM && 'text-sm',
 			size === EListItemSize.MD && 'text-md',
 			spacing === EListItemSpacing.DEFAULT && 'pb-sm',
-			spacing === EListItemSpacing.COMPACT && 'pb-xs'
+			spacing === EListItemSpacing.COMPACT && 'pb-xxs'
 		]"
 	>
 		<div
@@ -14,14 +23,14 @@
 			class="
 				ui-list-item__line
 				absolute
-				left-xs
+				left-xxs
 				top-sm
 				h-full
-				w-xxs
+				w-xxxs
 				-translate-x-2/4
 				bg-primary-300
 				group-last:hidden
-			"
+				"
 		/>
 
 		<slot name="icon">
@@ -44,7 +53,7 @@
 
 			<ui-typography
 				v-if="$slots.default"
-				:class="[title && 'mt-xxs']"
+				:class="[title && 'mt-xxxs']"
 				:weight="ETextWeight.LIGHT"
 			>
 				<slot name="default" />

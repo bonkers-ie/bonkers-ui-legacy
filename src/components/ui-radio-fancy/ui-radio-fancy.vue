@@ -1,10 +1,6 @@
 <template>
 	<label
-		class="
-			ui-radio-fancy
-			relative
-
-		"
+		class="ui-radio-fancy relative"
 		:class="disabled && 'pointer-events-none'"
 	>
 		<input
@@ -21,38 +17,34 @@
 				box-border
 				size-full
 				cursor-pointer
-				rounded-xl border
+				rounded-lg
+				border
 				border-secondary-alt-500
 				bg-white
 				p-sm
 				before:absolute
 				before:-z-10
 				before:box-border
-
-				before:rounded-[16px]
+				before:rounded-2xl
 				before:bg-primary-300
 				hover:border-secondary-alt-700
 				peer-checked:border-transparent
 				peer-checked:shadow-selected-shadow
-
 				peer-checked:hover:shadow-border-selected
 				peer-checked:active:shadow-border-primary
-				peer-checked:active:before:-bottom-xs
-				peer-checked:active:before:-left-xs
-				peer-checked:active:before:-right-xs
-				peer-checked:active:before:-top-xs
-
-				peer-focus:before:-bottom-xs
-				peer-focus:before:-left-xs
-
-				peer-focus:before:-right-xs
-				peer-focus:before:-top-xs
+				peer-checked:active:before:-bottom-xxs
+				peer-checked:active:before:-left-xxs
+				peer-checked:active:before:-right-xxs
+				peer-checked:active:before:-top-xxs
+				peer-focus:before:-bottom-xxs
+				peer-focus:before:-left-xxs
+				peer-focus:before:-right-xxs
+				peer-focus:before:-top-xxs
 				peer-active:before:-bottom-xxs
 				peer-active:before:-left-xxs
-
 				peer-active:before:-right-xxs
 				peer-active:before:-top-xxs
-			"
+				"
 			:class="[
 				disabled
 					&& 'pointer-events-none border-secondary-alt-400 peer-checked:shadow-border-primary-disabled',
@@ -67,7 +59,7 @@
 				<ui-icon
 					:icon-name="iconName"
 					:size="ESize.MD"
-					class=" mb-md peer-checked:text-primary-500"
+					class="mb-md peer-checked:text-primary-500"
 					:class="[value === modelValue && 'text-primary',
 						disabled && 'text-secondary-alt-400',
 						disabled && value === modelValue && 'text-primary-300'
@@ -91,7 +83,7 @@
 			<ui-typography
 				:size="ETypographySizes.SM"
 				:kind="EColors.SECONDARY"
-				class="pt-xxs"
+				class="pt-xxxs"
 			>
 				<slot />
 			</ui-typography>
