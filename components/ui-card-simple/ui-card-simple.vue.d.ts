@@ -2,7 +2,7 @@ import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes }
 declare function __VLS_template(): {
     title?(_: {}): any;
     default?(_: {}): any;
-    footerSubtitle?(_: {}): any;
+    footer?(_: {}): any;
 };
 declare const __VLS_component: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<{}>>, {}, {}>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;

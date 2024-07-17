@@ -1,4 +1,4 @@
-import{d as f,u as C,o as s,c as b,a as e,b as d,w as g,e as o,f as u}from"./vue.esm-bundler-Bywgp341.js";import{E as S,c as p,U as y,_ as v,a as _,b as z}from"./index-CEd4KI44.js";import{_ as B,a as A}from"./ui-button-BLNXhkga.js";import{_ as w,E as D}from"./ui-badge-Cc0MW7Fd.js";import"./index-zc_atqq8.js";import"./ui-icon-BTwu2D6P.js";const I={class:"ui-card-simple relative grid gap-sm rounded-3xl bg-white p-sm shadow-md"},a=f({__name:"ui-card-simple",setup(i){const l=C();return(r,N)=>(s(),b("div",I,[e(l).title?(s(),d(e(y),{key:0,weight:e(S).BOLD,align:e(p).CENTER},{default:g(()=>[o(r.$slots,"title")]),_:3},8,["weight","align"])):u("",!0),o(r.$slots,"default"),e(l).footerSubtitle?(s(),d(e(y),{key:1,align:e(p).CENTER},{default:g(()=>[o(r.$slots,"footerSubtitle")]),_:3},8,["align"])):u("",!0)]))}});a.__docgenInfo={exportName:"default",displayName:"ui-card-simple",description:"",tags:{},slots:[{name:"title"},{name:"default"},{name:"footerSubtitle"}],sourceFiles:["/home/runner/work/bonkers-ui/bonkers-ui/src/components/ui-card-simple/ui-card-simple.vue"]};const W={title:"Components/ui-card-simple",component:a,argTypes:{default:{control:{type:"text"}}},args:{default:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}},n={render:i=>({components:{UiCardSimple:a},setup(){return{args:i}},template:`
+import{d as f,u as C,o as s,c as v,a as e,b as d,w as g,e as o,f as u}from"./vue.esm-bundler-Bywgp341.js";import{E as S,c as p,U as y,_,a as z,b}from"./index-CEd4KI44.js";import{_ as B,a as A}from"./ui-button-BLNXhkga.js";import{_ as w,E as D}from"./ui-badge-Cc0MW7Fd.js";import"./index-zc_atqq8.js";import"./ui-icon-BTwu2D6P.js";const I={class:"ui-card-simple relative grid gap-sm rounded-3xl border border-secondary-alt-300 bg-white p-sm"},a=f({__name:"ui-card-simple",setup(i){const l=C();return(r,N)=>(s(),v("div",I,[e(l).title?(s(),d(e(y),{key:0,weight:e(S).BOLD,align:e(p).CENTER},{default:g(()=>[o(r.$slots,"title")]),_:3},8,["weight","align"])):u("",!0),o(r.$slots,"default"),e(l).footer?(s(),d(e(y),{key:1,align:e(p).CENTER},{default:g(()=>[o(r.$slots,"footer")]),_:3},8,["align"])):u("",!0)]))}});a.__docgenInfo={exportName:"default",displayName:"ui-card-simple",description:"",tags:{},slots:[{name:"title"},{name:"default"},{name:"footer"}],sourceFiles:["/home/runner/work/bonkers-ui/bonkers-ui/src/components/ui-card-simple/ui-card-simple.vue"]};const W={title:"Components/ui-card-simple",component:a,argTypes:{default:{control:{type:"text"}}},args:{default:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}},n={render:i=>({components:{UiCardSimple:a},setup(){return{args:i}},template:`
 
             <ui-card-simple>
                 <template v-slot:title>
@@ -7,11 +7,11 @@ import{d as f,u as C,o as s,c as b,a as e,b as d,w as g,e as o,f as u}from"./vue
                 <p class="mb-md text-center">
                     {{args.default}}
                 </p>
-                <template v-slot:footerSubtitle>
+                <template v-slot:footer>
                     Type in or adjust the amount
                 </template>
             </ui-card-simple>
-        `})},t={render:i=>({components:{UiCardSimple:a,UiTypography:v,UiButton:B,UiBadge:w},setup(){return{args:i,ETextWeight:S,ETextAlign:p,ETypographySizes:_,EColors:z,EButtonSizes:A,EBadgeKind:D}},template:`
+        `})},t={render:i=>({components:{UiCardSimple:a,UiTypography:_,UiButton:B,UiBadge:w},setup(){return{args:i,ETextWeight:S,ETextAlign:p,ETypographySizes:z,EColors:b,EButtonSizes:A,EBadgeKind:D}},template:`
 
         <div class="grid grid-cols-2 gap-xxs w-[448px]">
             <ui-card-simple>
@@ -125,7 +125,7 @@ import{d as f,u as C,o as s,c as b,a as e,b as d,w as g,e as o,f as u}from"./vue
                 <p class="mb-md text-center">
                     {{args.default}}
                 </p>
-                <template v-slot:footerSubtitle>
+                <template v-slot:footer>
                     Type in or adjust the amount
                 </template>
             </ui-card-simple>

@@ -21,7 +21,7 @@ declare const deprecatedDefault: {
     $slots: {
         title?(_: {}): any;
         default?(_: {}): any;
-        footerSubtitle?(_: {}): any;
+        footer?(_: {}): any;
     };
 });
 export default deprecatedDefault;
