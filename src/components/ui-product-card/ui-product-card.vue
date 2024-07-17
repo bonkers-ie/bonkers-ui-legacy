@@ -22,6 +22,7 @@
 		>
 			{{ badgeText }}
 		</ui-badge>
+
 		<slot name="header" />
 
 		<div class="grid gap-xxs">
@@ -58,7 +59,6 @@
 
 	defineProps<{
 		badgeText?: string
-
 		title?: string;
 		subtitle?: string;
 	}>();
