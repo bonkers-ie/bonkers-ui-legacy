@@ -63,7 +63,8 @@
 
 	.ripple {
 		position: absolute;
-		will-change: transform, opacity;
+
+		/* will-change: transform, opacity; */
 		transform: translate3d(-50%, -50%, 0) scale(0);
 		mix-blend-mode: screen;
 		animation: ripple 1s ease-out forwards, fade 1s ease-out forwards;

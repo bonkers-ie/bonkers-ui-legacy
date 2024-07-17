@@ -1,6 +1,16 @@
 <template>
 	<div
-		class="ui-card-simple relative grid gap-sm rounded-3xl bg-white p-sm shadow-md"
+		class="
+			ui-card-simple
+			relative
+			grid
+			gap-sm
+			rounded-3xl
+			border
+			border-secondary-alt-300
+			bg-white
+			p-sm
+			"
 	>
 		<ui-typography
 			v-if="slots.title"
@@ -13,10 +23,10 @@
 		<slot />
 
 		<ui-typography
-			v-if="slots.footerSubtitle"
+			v-if="slots.footer"
 			:align="ETextAlign.CENTER"
 		>
-			<slot name="footerSubtitle" />
+			<slot name="footer" />
 		</ui-typography>
 	</div>
 </template>

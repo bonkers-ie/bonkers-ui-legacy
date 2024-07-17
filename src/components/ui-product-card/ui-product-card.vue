@@ -4,7 +4,6 @@
 			relative
 			flex
 			flex-col
-			justify-between
 			gap-sm
 			rounded-2xl
 			border
@@ -29,7 +28,7 @@
 				<ui-typography
 					v-if="title"
 					:size="ETypographySizes.MD"
-					:weight="ETextWeight.SEMI_BOLD"
+					:weight="ETextWeight.BOLD"
 					:align="ETextAlign.LEFT"
 					line-height
 				>
@@ -42,7 +41,7 @@
 					v-if="subtitle"
 					:size="ETypographySizes.XS"
 					:align="ETextAlign.LEFT"
-					:kind="EColors.SECONDARY_300"
+					:kind="EColors.SECONDARY_400"
 					line-height
 				>
 					{{ subtitle }}
