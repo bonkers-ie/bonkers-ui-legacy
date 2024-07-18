@@ -2,13 +2,14 @@
 	<div
 		class="flex-none overflow-hidden rounded-2xl border border-secondary-alt-300"
 	>
-		<div class="h-[100px] w-full bg-warning-400 object-cover" />
+		<slot />
+
 		<div class="relative grid gap-xxxs px-xs py-sm text-secondary-400">
 			<div
 				v-if="icon"
 				class="
 					absolute
-					-top-lg
+					-top-md
 					left-xs
 					flex
 					size-fit
@@ -21,13 +22,12 @@
 			>
 				<ui-icon
 					:icon-name="icon"
-					class="text-white"
-					:size="ESize.MD"
+					class="size-[20px] text-white"
 				/>
 			</div>
 			<ui-typography
 				:size="ETypographySizes.SM"
-				:weight="ETextWeight.SEMI_BOLD"
+				:weight="ETextWeight.BOLD"
 				line-height
 			>
 				{{ title }}
@@ -46,7 +46,6 @@
 <script lang="ts" setup>
 	import UiTypography, { ETextWeight, ETypographySizes } from "../ui-typography";
 	import UiIcon, { type TIconName } from "../ui-icon";
-	import { ESize } from "../../_types/sizing";
 
 	defineProps<{
 		icon?: TIconName
