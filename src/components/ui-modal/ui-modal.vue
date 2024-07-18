@@ -80,11 +80,11 @@
 </script>
 
 <style scoped>
-	.max-height{
+	.max-height {
 		max-height: calc(100vh - var(--md));
 	}
 
-	.max-width{
+	.max-width {
 		max-width: calc(100vw - var(--md));
 	}
 </style>
