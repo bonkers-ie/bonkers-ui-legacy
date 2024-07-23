@@ -1,8 +1,13 @@
 <template>
 	<div
-		class="flex-none overflow-hidden rounded-2xl border border-secondary-alt-300"
+		class="flex-none overflow-hidden rounded-2xl border border-secondary-alt-300 bg-white"
 	>
-		<slot />
+		<img
+			v-if="image"
+			class="h-[100px] w-full object-cover"
+			:src="image"
+			alt="Information"
+		>
 
 		<div class="relative grid gap-xxxs px-xs py-sm text-secondary-400">
 			<div
@@ -16,16 +21,20 @@
 					rounded-full
 					border-2
 					border-white
-					bg-primary
+					bg-gradient-to-b
+					from-primary
+					to-primary-alt
 					p-xxs
 					"
 			>
 				<ui-icon
 					:icon-name="icon"
-					class="size-[20px] text-white"
+					class="text-white"
 				/>
 			</div>
+
 			<ui-typography
+				v-if="title"
 				:size="ETypographySizes.SM"
 				:weight="ETextWeight.BOLD"
 				line-height
@@ -34,6 +43,7 @@
 			</ui-typography>
 
 			<ui-typography
+				v-if="description"
 				:size="ETypographySizes.XXS"
 				line-height
 			>
@@ -49,9 +59,9 @@
 
 	defineProps<{
 		icon?: TIconName
+		image?: string;
 		title?: string;
 		description?: string;
-
 	}>();
 
 </script>

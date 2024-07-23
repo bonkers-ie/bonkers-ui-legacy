@@ -2,6 +2,8 @@ import UiMediaCard from "./ui-media-card.vue";
 import type { Meta } from "@storybook/vue3";
 import { ICON_DEFAULT } from "../../CONSTANTS";
 
+const PLACEHOLDER_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/0/0d/Stock_Price_Listing_Numbers_on_a_Korean_Newspaper.jpg";
+
 export default {
 	title: "Components/ui-media-card",
 	component: UiMediaCard ,
@@ -22,28 +24,13 @@ export default {
 	args: {
 		title: "This is a Title",
 		description: "This is a Subtitle",
+		image: PLACEHOLDER_IMAGE,
+		icon: ICON_DEFAULT
 
 	},
 } satisfies Meta<typeof UiMediaCard >;
 
-export const Default = {
-	render: (args) => ({
-		components: {
-			UiMediaCard
-		},
-		setup() {
-			return {
-				args,
-				ICON_DEFAULT
-			};
-		},
-		template: /*html*/ `
-			<ui-media-card :title="args.title" :description="args.description" :icon="ICON_DEFAULT">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Stock_Price_Listing_Numbers_on_a_Korean_Newspaper.jpg" style="width: 100%; height: 100px;" />
-			</ui-media-card>
-		`,
-	}),
-};
+export const Default = {};
 
 export const Variant = {
 	render: (args) => ({
@@ -52,13 +39,15 @@ export const Variant = {
 		},
 		setup() {
 			return {
-				args
+				args,
+				PLACEHOLDER_IMAGE
 			};
 		},
 		template: /*html*/ `
-			<ui-media-card :title="args.title" :description="args.description" class="w-[172px]">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Stock_Price_Listing_Numbers_on_a_Korean_Newspaper.jpg" style="width: 100%; height: 100px;"/>
-			</ui-media-card>
+			<div class="grid gap-xxs w-[344px] grid-cols-2">
+				<ui-media-card :title="args.title" :icon="args.icon" :description="args.description" :image="PLACEHOLDER_IMAGE" />
+				<ui-media-card :title="args.title" description="Super long description Super long description Super long description Super long description Super long description Super long description Super long description" :image="PLACEHOLDER_IMAGE" />
+			</div>
 		`,
 	}),
 };
