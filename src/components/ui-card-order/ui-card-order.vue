@@ -2,9 +2,10 @@
 	<div
 		class="
 			relative
-			flex
+			grid
 			h-[183px]
-			justify-between
+			grid-cols-2
+			whitespace-nowrap
 			rounded-2xl
 			border
 			border-secondary-alt-300
@@ -13,16 +14,15 @@
 			"
 	>
 		<div class="flex">
-			<div
-				v-if="icon"
-				class="flex size-fit rounded-full border-2 border-white bg-primary p-xxs"
+			<ui-icon-wrapper
+				class="rounded-full"
+				:kind="EIconWrapperTypes.PRIMARY"
 			>
 				<ui-icon
 					:icon-name="icon"
-					class="text-white"
 					:size="ESize.MD"
 				/>
-			</div>
+			</ui-icon-wrapper>
 
 			<div class="ml-xxs">
 				<slot name="title">
@@ -46,12 +46,17 @@
 		</div>
 
 		<slot name="providersImage" />
+
+		<div class="mt-xxs flex flex-col">
+			<slot name="descriptions" />
+		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName } from "../ui-icon";
+	import UiIconWrapper, { EIconWrapperTypes } from "../ui-icon-wrapper";
 	import UiBadge, { EBadgeSize } from "../ui-badge";
 	import { ESize } from "../../_types/sizing";
 
