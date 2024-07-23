@@ -44,7 +44,7 @@ export const Default = {
 				<p class="mb-md text-center">
 					{{args.default}}
 				</p>
-				<template v-slot:footerSubtitle>
+				<template v-slot:footer>
 					Type in or adjust the amount
 				</template>
 			</ui-card-simple>

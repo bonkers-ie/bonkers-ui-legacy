@@ -21,11 +21,11 @@
 </script>
 
 <style scoped>
-	.ui-table__secondary::v-deep(tr:nth-child(odd)){
+	.ui-table__secondary::v-deep(tr:nth-child(odd)) {
 		background-color: var(--color-secondary-alt-200);
 	}
 
-	.ui-table__secondary-inverted::v-deep(tr:nth-child(even)){
+	.ui-table__secondary-inverted::v-deep(tr:nth-child(even)) {
 		background-color: var(--color-secondary-alt-200);
 	}
 </style>

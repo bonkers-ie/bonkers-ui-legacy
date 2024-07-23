@@ -24,7 +24,7 @@
 				ui-list-item__line
 				absolute
 				left-xxs
-				top-sm
+				top-xs
 				h-full
 				w-xxxs
 				-translate-x-2/4
@@ -37,7 +37,9 @@
 			<ui-icon
 				v-if="icon"
 				class="absolute left-0 bg-white"
-				:class="iconClass"
+				:class="[
+					iconClass, size === EListItemSize.SM ?'top-[-2px]': 'top-[-1px]'
+				]"
 				:icon-name="icon"
 				:size="ESize.SM"
 			/>
