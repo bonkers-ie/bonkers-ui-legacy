@@ -36,6 +36,7 @@ import * as UiToggle from "./components/ui-toggle";
 import * as UiTypography from "./components/ui-typography";
 import * as UiVerificationInput from "./components/ui-verification-input";
 import * as UiProductCard from "./components/ui-product-card";
+import * as UiMediaCard from "./components/ui-media-card";
 
 const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiAlert,
@@ -53,6 +54,7 @@ const Components: Record<string, ReturnType<typeof defineComponent>> = {
 	UiInput,
 	UiInputRange,
 	UiListItem,
+	UiMediaCard,
 	UiModal,
 	UiNotificationBadge,
 	UiOrderCard,
@@ -104,6 +106,7 @@ export { UiIconWrapper, EIconWrapperTypes, EIconWrapperSizes } from "./component
 export { UiInput, EInputType, EInputKinds, EAutocomplete } from "./components/ui-input";
 export { UiInputRange } from "./components/ui-input-range";
 export { UiListItem, EListItemTypes, EListItemSpacing, EListItemSize } from "./components/ui-list-item";
+export { UiMediaCard } from "./components/ui-media-card";
 export { UiModal, EModalSizes } from "./components/ui-modal";
 export { UiNotificationBadge, EBadgeOrigin } from "./components/ui-notification-badge";
 export { UiOrderCard } from "./components/ui-order-card";
