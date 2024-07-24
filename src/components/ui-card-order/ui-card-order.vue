@@ -1,10 +1,10 @@
 <template>
 	<div
 		class="
+			ui-card-order
 			relative
 			grid
-			h-[183px]
-			grid-cols-2
+			gap-xxs
 			whitespace-nowrap
 			rounded-2xl
 			border
@@ -13,7 +13,7 @@
 			p-sm
 			"
 	>
-		<div class="flex">
+		<div class="flex gap-xxs">
 			<ui-icon-wrapper
 				class="rounded-full"
 				:kind="EIconWrapperTypes.PRIMARY"
@@ -24,7 +24,7 @@
 				/>
 			</ui-icon-wrapper>
 
-			<div class="ml-xxs">
+			<div>
 				<slot name="title">
 					<ui-typography
 						v-if="title"
@@ -36,19 +36,35 @@
 					</ui-typography>
 				</slot>
 
-				<ui-badge
-					:size="EBadgeSize.SMALL"
-					:icon="icon"
-				>
-					{{ pillText }}
-				</ui-badge>
+				<slot name="subtitle" />
+			</div>
+
+			<div class="flex w-full justify-end">
+				<slot name="providersImage" />
 			</div>
 		</div>
 
-		<slot name="providersImage" />
+		<div class="grid">
+			<ui-typography
+				:size="ETypographySizes.XS"
+				:weight="ETextWeight.SEMI_BOLD"
+				line-height
+			>
+				<slot name="contentHeader">
+					{{ contentHeader }}
+				</slot>
+			</ui-typography>
 
-		<div class="mt-xxs flex flex-col">
-			<slot name="descriptions" />
+			<ui-typography
+				:size="ETypographySizes.XS"
+				line-height
+			>
+				<slot name="descriptions">
+					{{ description }}
+				</slot>
+			</ui-typography>
+
+			<slot name="footer" />
 		</div>
 	</div>
 </template>
@@ -57,13 +73,12 @@
 	import UiTypography, { ETypographySizes, ETextWeight } from "../ui-typography";
 	import UiIcon, { type TIconName } from "../ui-icon";
 	import UiIconWrapper, { EIconWrapperTypes } from "../ui-icon-wrapper";
-	import UiBadge, { EBadgeSize } from "../ui-badge";
 	import { ESize } from "../../_types/sizing";
 
 	defineProps<{
 		icon: TIconName;
 		title?: string;
-		pillText?: string;
-
+		contentHeader?: string;
+		description?: string;
 	}>();
 </script>

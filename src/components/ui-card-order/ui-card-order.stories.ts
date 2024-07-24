@@ -5,6 +5,7 @@ import { EColors } from "../../_types/colors";
 import { ESize } from "../../_types/sizing";
 import type { Meta } from "@storybook/vue3";
 import UiCardOrder from "./ui-card-order.vue";
+import { UiBadge, EBadgeSize } from "../ui-badge";
 
 export default {
 	title: "Components/ui-card-order",
@@ -16,17 +17,16 @@ export default {
 			},
 			description: "The title text",
 		},
-		pillText: {
+		contentHeader: {
 			control: {
 				type: "text"
 			},
-			description: "The pill text",
+			description: "The contentHeader text",
 		}
-
 	},
 	args: {
 		title: "Gas & Electricity",
-		pillText: "Electricity only"
+		contentHeader: "Electric Ireland - Smart EV 20%"
 	},
 } satisfies Meta<typeof UiCardOrder >;
 
@@ -35,6 +35,7 @@ export const Default = {
 		components: {
 			UiCardOrder,
 			UiTypography,
+			UiBadge,
 			UiIcon
 		},
 		setup() {
@@ -44,102 +45,52 @@ export const Default = {
 				ETypographySizes,
 				ETextWeight,
 				EColors,
-				ESize
+				ESize,
+				EBadgeSize
 			};
 		},
 		template: /*html*/ `
-			<ui-card-order :title="args.title" :icon="ICON_DEFAULT" :pillText="args.pillText">
+			<ui-card-order
+				:title="args.title"
+				:icon="ICON_DEFAULT"
+				:contentHeader="args.contentHeader"
+			>
+				<template v-slot:subtitle>
+					<ui-badge
+						:size="EBadgeSize.SMALL"
+						:icon="ICON_DEFAULT"
+					>
+						badge text
+					</ui-badge>
+				</template>
+
 				<template v-slot:providersImage >
-					<div class="card-image w-xxxl h-xxxl bg-secondary-300 rounded-lg flex justify-self-end"></div>
+					<div class="size-xxxl bg-secondary-300 rounded-lg" />
 				</template>
 
 				<template v-slot:descriptions>
-					<ui-typography :size='ETypographySizes.XS' :kind="EColors.SECONDARY_400" :weight='ETextWeight.BOLD' lineHeight >
-						Electric Ireland - Smart EV 20%
-					</ui-typography>
-					<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight >
-						Order Ref: RGPKM3
-					</ui-typography>
-					<div class="inline-flex">
-						<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight>
-							Start date: 03/04/24
-						</ui-typography>
+					<p>Order Ref: RGPKM3</p>
+					<p>Start date: 03/04/24 &bull; End date: 02/04/25</p>
+				</template>
+
+				<template v-slot:footer>
+					<ui-typography
+						underline
+						:size='ETypographySizes.XS'
+						:kind='EColors.PRIMARY_600'
+						:weight='ETextWeight.SEMI_BOLD'
+						lineHeight
+						class="flex items-center gap-xxs"
+					>
+						<span>See details</span>
+
 						<ui-icon
-							class="mx-xxs text-secondary-400 w-[8px]"
-							:icon-name="['far', 'face-smile']"/>
-						<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight>
-							End date: 02/04/25
-						</ui-typography>
-					</div>
-					<div class="inline-flex">
-						<ui-typography underline :size='ETypographySizes.XS' :kind='EColors.PRIMARY_600' :weight='ETextWeight.SEMI_BOLD' lineHeight class="mr-xxs">
-							See details
-						</ui-typography>
-						<ui-icon
-							:icon-name="['far', 'face-smile']"
-							class="text-primary-600 w-[12px]"
-							/>
-					</div>
+							:kind="EColors.PRIMARY_600"
+							:icon-name="ICON_DEFAULT"
+						/>
+					</ui-typography>
 				</template>
 			</ui-card-order>
-
-        `,
-	}),
-};
-
-export const Smallest = {
-	render: (args) => ({
-		components: {
-			UiCardOrder,
-			UiTypography,
-			UiIcon
-		},
-		setup() {
-			return {
-				args,
-				ICON_DEFAULT,
-				ETypographySizes,
-				ETextWeight,
-				EColors,
-				ESize
-			};
-		},
-		template: /*html*/ `
-			<ui-card-order :title="args.title" :icon="ICON_DEFAULT" :pillText="args.pillText" class="w-[288px]">
-				<template v-slot:providersImage >
-					<div class="card-image w-xxxl h-xxxl bg-secondary-300 rounded-lg flex justify-self-end"></div>
-				</template>
-
-				<template v-slot:descriptions>
-					<ui-typography :size='ETypographySizes.XS' :kind="EColors.SECONDARY_400" :weight='ETextWeight.BOLD' lineHeight >
-						Electric Ireland - Smart EV 20%
-					</ui-typography>
-					<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight >
-						Order Ref: RGPKM3
-					</ui-typography>
-					<div class="inline-flex">
-						<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight>
-							Start date: 03/04/24
-						</ui-typography>
-						<ui-icon
-							class="mx-xxs text-secondary-400 w-[8px]"
-							:icon-name="['far', 'face-smile']"/>
-						<ui-typography :size='ETypographySizes.XS' :kind='EColors.SECONDARY_400' lineHeight>
-							End date: 02/04/25
-						</ui-typography>
-					</div>
-					<div class="inline-flex">
-						<ui-typography underline :size='ETypographySizes.XS' :kind='EColors.PRIMARY_600' :weight='ETextWeight.SEMI_BOLD' lineHeight class="mr-xxs">
-							See details
-						</ui-typography>
-						<ui-icon
-							:icon-name="['far', 'face-smile']"
-							class="text-primary-600 w-[12px]"
-							/>
-					</div>
-				</template>
-			</ui-card-order>
-
-        `,
+		`,
 	}),
 };
