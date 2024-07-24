@@ -19,6 +19,7 @@ export { UiIconWrapper, EIconWrapperTypes, EIconWrapperSizes } from './component
 export { UiInput, EInputType, EInputKinds, EAutocomplete } from './components/ui-input';
 export { UiInputRange } from './components/ui-input-range';
 export { UiListItem, EListItemTypes, EListItemSpacing, EListItemSize } from './components/ui-list-item';
+export { UiMediaCard } from './components/ui-media-card';
 export { UiModal, EModalSizes } from './components/ui-modal';
 export { UiNotificationBadge, EBadgeOrigin } from './components/ui-notification-badge';
 export { UiOrderCard } from './components/ui-order-card';
