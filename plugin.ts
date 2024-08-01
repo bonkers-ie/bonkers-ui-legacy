@@ -4,6 +4,7 @@ import _colors from "./src/_styles/_colors.json";
 import _shadow from "./src/_styles/_shadow.json";
 import _spacing from "./src/_styles/_spacing.json";
 import _fontSizes from "./src/_styles/_font-sizes.json";
+import _backdropBlur from "./src/_styles/_backdropBlur.json";
 
 export default plugin(
 	({ addBase }) => {
@@ -103,7 +104,18 @@ export default plugin(
 				"--color-secondary-alt-500": "#949ab7",
 				"--color-secondary-alt-600": "#767b92",
 				"--color-secondary-alt-700": "#595c6e",
-				"--color-secondary-alt": "var(--color-secondary-alt-500)"
+				"--color-secondary-alt": "var(--color-secondary-alt-500)",
+
+				// backdrop blur
+				"--backdrop-blur-min": "0.5px",
+				"--backdrop-blur-xs": "2px",
+				"--backdrop-blur-sm": "4px",
+				"--backdrop-blur": "8px",
+				"--backdrop-blur-md": "12px",
+				"--backdrop-blur-lg": "16px",
+				"--backdrop-blur-xl": "24px",
+				"--backdrop-blur-2xl": "40px",
+
 			}
 
 		});
@@ -117,6 +129,7 @@ export default plugin(
 			spacing: _spacing,
 			boxShadow: _shadow,
 			fontSize: _fontSizes,
+			backdropBlur: _backdropBlur,
 			extend: {
 				minHeight: ({ theme }) => ({
 					...theme("spacing"),
