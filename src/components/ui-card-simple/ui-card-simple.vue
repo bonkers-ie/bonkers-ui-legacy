@@ -7,7 +7,7 @@
 			gap-sm
 			rounded-3xl
 			border
-			border-secondary-alt-300
+			border-secondary-alt-500
 			bg-white
 			p-sm
 			"
