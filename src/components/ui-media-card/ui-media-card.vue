@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex-none overflow-hidden rounded-2xl border border-secondary-alt-300 bg-white"
+		class="flex-none overflow-hidden rounded-2xl border border-secondary-alt-500 bg-white"
 	>
 		<img
 			v-if="image"
