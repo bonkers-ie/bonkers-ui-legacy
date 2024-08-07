@@ -1,6 +1,5 @@
 import { default as UiToggle } from './ui-toggle.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-
 export { UiToggle };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"

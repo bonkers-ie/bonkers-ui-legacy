@@ -1,7 +1,6 @@
 import { default as UiButton } from './ui-button.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { EButtonSizes, EButtonTypes } from './_typings';
-
 export { UiButton };
 export { EButtonSizes, EButtonTypes } from './_typings';
 /**

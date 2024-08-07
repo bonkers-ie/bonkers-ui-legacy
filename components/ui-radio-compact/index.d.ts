@@ -1,6 +1,5 @@
 import { default as UiRadioCompact } from './ui-radio-compact.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-
 /**
  * @deprecated The default should not be used at all (look at ui-radio-fancy compact)
  */

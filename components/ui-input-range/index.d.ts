@@ -1,6 +1,5 @@
 import { default as UiInputRange } from './ui-input-range.vue';
 import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
-
 export { UiInputRange };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"

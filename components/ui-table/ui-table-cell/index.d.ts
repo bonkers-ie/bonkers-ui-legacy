@@ -1,7 +1,6 @@
 import { default as UiTableCell } from './ui-table-cell.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../../vue/dist/vue.esm-bundler.js';
 import { ETextAlign, ETextWeight } from '..';
-
 export { UiTableCell };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"

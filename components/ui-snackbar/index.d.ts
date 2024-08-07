@@ -1,7 +1,6 @@
 import { default as UiSnackbar } from './ui-snackbar.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { ESnackbarTypes } from './_types';
-
 export { UiSnackbar };
 export { ESnackbarTypes } from './_types';
 /**
@@ -9,22 +8,22 @@ export { ESnackbarTypes } from './_types';
  */
 declare const deprecatedDefault: {
     new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
-        title: {
-            type: PropType<string>;
-            required: true;
-        };
         kind: {
             type: PropType<ESnackbarTypes>;
             default: ESnackbarTypes;
+        };
+        title: {
+            type: PropType<string>;
+            required: true;
         };
     }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
-        title: {
-            type: PropType<string>;
-            required: true;
-        };
         kind: {
             type: PropType<ESnackbarTypes>;
             default: ESnackbarTypes;
+        };
+        title: {
+            type: PropType<string>;
+            required: true;
         };
     }>>, {
         kind: ESnackbarTypes;
@@ -36,13 +35,13 @@ declare const deprecatedDefault: {
         M: {};
         Defaults: {};
     }, Readonly< ExtractPropTypes<{
-        title: {
-            type: PropType<string>;
-            required: true;
-        };
         kind: {
             type: PropType<ESnackbarTypes>;
             default: ESnackbarTypes;
+        };
+        title: {
+            type: PropType<string>;
+            required: true;
         };
     }>>, {}, {}, {}, {}, {
         kind: ESnackbarTypes;
@@ -51,13 +50,13 @@ declare const deprecatedDefault: {
     __isTeleport?: never;
     __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
-    title: {
-        type: PropType<string>;
-        required: true;
-    };
     kind: {
         type: PropType<ESnackbarTypes>;
         default: ESnackbarTypes;
+    };
+    title: {
+        type: PropType<string>;
+        required: true;
     };
 }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {
     kind: ESnackbarTypes;

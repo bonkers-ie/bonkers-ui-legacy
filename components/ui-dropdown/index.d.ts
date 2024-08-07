@@ -1,8 +1,7 @@
 import { default as UiDropdown } from './ui-dropdown.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
-import { EDropdownKinds } from './_typings.ts';
 import { TIconName } from '../ui-icon/_typings.ts';
-
+import { EDropdownKinds } from './_typings.ts';
 export { UiDropdown };
 export { EDropdownKinds } from './_typings.ts';
 /**
@@ -10,16 +9,16 @@ export { EDropdownKinds } from './_typings.ts';
  */
 declare const deprecatedDefault: {
     new (...args: any[]): CreateComponentPublicInstance<Readonly< ExtractPropTypes<{
-        header: {
-            type: PropType<string>;
+        iconName: {
+            type: PropType<TIconName>;
+            required: true;
         };
         kind: {
             type: PropType<EDropdownKinds>;
             default: EDropdownKinds;
         };
-        iconName: {
-            type: PropType<TIconName>;
-            required: true;
+        header: {
+            type: PropType<string>;
         };
         subText: {
             type: PropType<string>;
@@ -28,16 +27,16 @@ declare const deprecatedDefault: {
             type: PropType<boolean>;
         };
     }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, VNodeProps & AllowedComponentProps & ComponentCustomProps & Readonly< ExtractPropTypes<{
-        header: {
-            type: PropType<string>;
+        iconName: {
+            type: PropType<TIconName>;
+            required: true;
         };
         kind: {
             type: PropType<EDropdownKinds>;
             default: EDropdownKinds;
         };
-        iconName: {
-            type: PropType<TIconName>;
-            required: true;
+        header: {
+            type: PropType<string>;
         };
         subText: {
             type: PropType<string>;
@@ -55,16 +54,16 @@ declare const deprecatedDefault: {
         M: {};
         Defaults: {};
     }, Readonly< ExtractPropTypes<{
-        header: {
-            type: PropType<string>;
+        iconName: {
+            type: PropType<TIconName>;
+            required: true;
         };
         kind: {
             type: PropType<EDropdownKinds>;
             default: EDropdownKinds;
         };
-        iconName: {
-            type: PropType<TIconName>;
-            required: true;
+        header: {
+            type: PropType<string>;
         };
         subText: {
             type: PropType<string>;
@@ -79,16 +78,16 @@ declare const deprecatedDefault: {
     __isTeleport?: never;
     __isSuspense?: never;
 } & ComponentOptionsBase<Readonly< ExtractPropTypes<{
-    header: {
-        type: PropType<string>;
+    iconName: {
+        type: PropType<TIconName>;
+        required: true;
     };
     kind: {
         type: PropType<EDropdownKinds>;
         default: EDropdownKinds;
     };
-    iconName: {
-        type: PropType<TIconName>;
-        required: true;
+    header: {
+        type: PropType<string>;
     };
     subText: {
         type: PropType<string>;

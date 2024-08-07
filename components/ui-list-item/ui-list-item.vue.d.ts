@@ -1,12 +1,11 @@
 import { TIconName } from '../ui-icon';
 import { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
 import { HTMLAttributes, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
-
 declare function __VLS_template(): {
     icon?(_: {}): any;
     default?(_: {}): any;
 };
-declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<{
     icon?: TIconName;
     title?: string;
     kind?: EListItemTypes;
@@ -20,7 +19,7 @@ declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypeProp
     title: string;
     icon: undefined;
     iconClass: string;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
+}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<{
     icon?: TIconName;
     title?: string;
     kind?: EListItemTypes;
@@ -36,23 +35,14 @@ declare const __VLS_component: DefineComponent<__VLS_WithDefaults<__VLS_TypeProp
     iconClass: string;
 }>>>, {
     size: EListItemSize;
-    title: string;
     icon: TIconName;
     kind: EListItemTypes;
+    title: string;
     spacing: EListItemSpacing;
     iconClass: HTMLAttributes["class"];
 }, {}>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
-type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
-    [K in keyof T]-?: {} extends Pick<T, K> ? {
-        type: PropType<__VLS_NonUndefinedable<T[K]>>;
-    } : {
-        type: PropType<T[K]>;
-        required: true;
-    };
-};
 type __VLS_WithDefaults<P, D> = {
     [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
         default: D[K];
@@ -64,6 +54,15 @@ type __VLS_Prettify<T> = {
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {
         $slots: S;
+    };
+};
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToOption<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: PropType<T[K]>;
+        required: true;
     };
 };
 //# sourceMappingURL=ui-list-item.vue.d.ts.map

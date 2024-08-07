@@ -1,5 +1,4 @@
 import { App } from '../vue/dist/vue.esm-bundler.js';
-
 declare const BonkersUI: {
     install(app: App): void;
 };

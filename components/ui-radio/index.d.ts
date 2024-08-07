@@ -1,7 +1,6 @@
 import { default as UiRadio } from './ui-radio.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { EJustify } from '../../types';
-
 export { UiRadio };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"

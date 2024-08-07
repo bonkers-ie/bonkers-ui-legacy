@@ -2,7 +2,6 @@ import { default as UiListItem } from './ui-list-item.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, HTMLAttributes, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { EListItemSize, EListItemTypes, EListItemSpacing } from './_types';
 import { TIconName } from '../ui-icon';
-
 export { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
 export { UiListItem };
 /**
@@ -14,10 +13,6 @@ declare const deprecatedDefault: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
         };
-        title: {
-            type: PropType<string>;
-            default: string;
-        };
         icon: {
             type: PropType<TIconName>;
             default: undefined;
@@ -25,6 +20,10 @@ declare const deprecatedDefault: {
         kind: {
             type: PropType<EListItemTypes>;
             default: EListItemTypes;
+        };
+        title: {
+            type: PropType<string>;
+            default: string;
         };
         spacing: {
             type: PropType<EListItemSpacing>;
@@ -39,10 +38,6 @@ declare const deprecatedDefault: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
         };
-        title: {
-            type: PropType<string>;
-            default: string;
-        };
         icon: {
             type: PropType<TIconName>;
             default: undefined;
@@ -50,6 +45,10 @@ declare const deprecatedDefault: {
         kind: {
             type: PropType<EListItemTypes>;
             default: EListItemTypes;
+        };
+        title: {
+            type: PropType<string>;
+            default: string;
         };
         spacing: {
             type: PropType<EListItemSpacing>;
@@ -61,9 +60,9 @@ declare const deprecatedDefault: {
         };
     }>>, {
         size: EListItemSize;
-        title: string;
         icon: TIconName;
         kind: EListItemTypes;
+        title: string;
         spacing: EListItemSpacing;
         iconClass: HTMLAttributes["class"];
     }, true, {}, {}, {
@@ -78,10 +77,6 @@ declare const deprecatedDefault: {
             type: PropType<EListItemSize>;
             default: EListItemSize;
         };
-        title: {
-            type: PropType<string>;
-            default: string;
-        };
         icon: {
             type: PropType<TIconName>;
             default: undefined;
@@ -89,6 +84,10 @@ declare const deprecatedDefault: {
         kind: {
             type: PropType<EListItemTypes>;
             default: EListItemTypes;
+        };
+        title: {
+            type: PropType<string>;
+            default: string;
         };
         spacing: {
             type: PropType<EListItemSpacing>;
@@ -100,9 +99,9 @@ declare const deprecatedDefault: {
         };
     }>>, {}, {}, {}, {}, {
         size: EListItemSize;
-        title: string;
         icon: TIconName;
         kind: EListItemTypes;
+        title: string;
         spacing: EListItemSpacing;
         iconClass: HTMLAttributes["class"];
     }>;
@@ -114,10 +113,6 @@ declare const deprecatedDefault: {
         type: PropType<EListItemSize>;
         default: EListItemSize;
     };
-    title: {
-        type: PropType<string>;
-        default: string;
-    };
     icon: {
         type: PropType<TIconName>;
         default: undefined;
@@ -125,6 +120,10 @@ declare const deprecatedDefault: {
     kind: {
         type: PropType<EListItemTypes>;
         default: EListItemTypes;
+    };
+    title: {
+        type: PropType<string>;
+        default: string;
     };
     spacing: {
         type: PropType<EListItemSpacing>;
@@ -136,9 +135,9 @@ declare const deprecatedDefault: {
     };
 }>>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, {
     size: EListItemSize;
-    title: string;
     icon: TIconName;
     kind: EListItemTypes;
+    title: string;
     spacing: EListItemSpacing;
     iconClass: HTMLAttributes["class"];
 }, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {

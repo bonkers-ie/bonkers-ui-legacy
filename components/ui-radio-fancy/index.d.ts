@@ -2,7 +2,6 @@ import { default as UiRadioFancy } from './ui-radio-fancy.vue';
 import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
 import { TIconName } from '../ui-icon';
 import { ERadioSizes } from './_typings';
-
 export { UiRadioFancy };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
@@ -16,16 +15,16 @@ declare const deprecatedDefault: {
         disabled: {
             type: PropType<boolean>;
         };
+        name: {
+            type: PropType<string>;
+            required: true;
+        };
         modelValue: {
             type: PropType<string | number | boolean>;
             required: true;
         };
         value: {
             type: PropType<string | number | boolean>;
-            required: true;
-        };
-        name: {
-            type: PropType<string>;
             required: true;
         };
         radioSize: {
@@ -44,16 +43,16 @@ declare const deprecatedDefault: {
         disabled: {
             type: PropType<boolean>;
         };
+        name: {
+            type: PropType<string>;
+            required: true;
+        };
         modelValue: {
             type: PropType<string | number | boolean>;
             required: true;
         };
         value: {
             type: PropType<string | number | boolean>;
-            required: true;
-        };
-        name: {
-            type: PropType<string>;
             required: true;
         };
         radioSize: {
@@ -80,16 +79,16 @@ declare const deprecatedDefault: {
         disabled: {
             type: PropType<boolean>;
         };
+        name: {
+            type: PropType<string>;
+            required: true;
+        };
         modelValue: {
             type: PropType<string | number | boolean>;
             required: true;
         };
         value: {
             type: PropType<string | number | boolean>;
-            required: true;
-        };
-        name: {
-            type: PropType<string>;
             required: true;
         };
         radioSize: {
@@ -113,16 +112,16 @@ declare const deprecatedDefault: {
     disabled: {
         type: PropType<boolean>;
     };
+    name: {
+        type: PropType<string>;
+        required: true;
+    };
     modelValue: {
         type: PropType<string | number | boolean>;
         required: true;
     };
     value: {
         type: PropType<string | number | boolean>;
-        required: true;
-    };
-    name: {
-        type: PropType<string>;
         required: true;
     };
     radioSize: {

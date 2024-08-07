@@ -3,7 +3,7 @@ declare function __VLS_template(): {
     header?(_: {}): any;
     title?(_: {}): any;
 };
-declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
+declare const __VLS_component: DefineComponent<__VLS_TypePropsToOption<{
     header?: string;
     title?: string;
     modelValue: boolean | unknown[];
@@ -13,7 +13,7 @@ declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
     value?: string;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToOption<{
     header?: string;
     title?: string;
     modelValue: boolean | unknown[];
@@ -26,18 +26,18 @@ declare const __VLS_component: DefineComponent<__VLS_TypePropsToRuntimeProps<{
 }, {}, {}>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
+type __VLS_TypePropsToOption<T> = {
     [K in keyof T]-?: {} extends Pick<T, K> ? {
         type: PropType<__VLS_NonUndefinedable<T[K]>>;
     } : {
         type: PropType<T[K]>;
         required: true;
-    };
-};
-type __VLS_WithTemplateSlots<T, S> = T & {
-    new (): {
-        $slots: S;
     };
 };
 //# sourceMappingURL=ui-toggle.vue.d.ts.map
