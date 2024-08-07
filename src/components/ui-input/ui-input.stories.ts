@@ -14,6 +14,12 @@ export default {
 			},
 			description: "Placeholder",
 		},
+		subLabel: {
+			control: {
+				type: "text"
+			},
+			description: "sublabel",
+		},
 		kind: {
 			control: {
 				type: "select"
@@ -59,6 +65,7 @@ export default {
 	},
 	args: {
 		placeholder: "Placeholder",
+		subLabel: "sublabel",
 		kind: undefined,
 		disabled: false,
 		type: EInputType.TEXT,
