@@ -33,24 +33,7 @@
 
 				<span class="ui-toggle__bg-block block h-md w-xl rounded-full bg-secondary-alt" />
 
-				<span class="ui-toggle__dot absolute top-0 block rounded-full bg-white">
-					<svg
-						class="ui-toggle__check-icon absolute"
-						:class="disabled ? 'text-primary-300' : 'text-primary'"
-						width="16"
-						height="12"
-						viewBox="0 0 16 12"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M1 4.40106L6.60071 10.1135L15.1694 1.71245"
-							stroke="currentColor"
-							stroke-width="1.6"
-							stroke-linecap="round"
-						/>
-					</svg>
-				</span>
+				<span class="ui-toggle__dot absolute top-0 block rounded-full bg-white" />
 			</span>
 
 			<slot name="title">
@@ -102,15 +85,6 @@
 		transition: transform 0.2s ease-in-out;
 	}
 
-	.ui-toggle__check-icon {
-		top: 50%;
-		left: 50%;
-		transform: translate3d(-50%, -50%, 0);
-		stroke-dasharray: 70;
-		stroke-dashoffset: 70;
-		transition: stroke-dashoffset 0.2s ease-in-out;
-	}
-
 	.ui-toggle:hover .ui-toggle__dot,
 	.ui-toggle:active .ui-toggle__dot,
 	.ui-toggle:focus .ui-toggle__dot {
@@ -137,10 +111,6 @@
 
 	.ui-toggle input:checked ~ .ui-toggle__bg-block {
 		background-color: var(--color-primary);
-	}
-
-	.ui-toggle input:checked ~ .ui-toggle__dot .ui-toggle__check-icon {
-		stroke-dashoffset: 0;
 	}
 
 	.ui-toggle_disabled input:checked ~ .ui-toggle__bg-block {

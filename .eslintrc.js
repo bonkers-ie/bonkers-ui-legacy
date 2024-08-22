@@ -34,7 +34,7 @@ module.exports = {
 			rules: {
 				indent: "off",
 
-				'@stylistic/indent': ["error", "tab"],
+				"@stylistic/indent": ["error", "tab"],
 			}
 		}
 	],

@@ -1,6 +1,7 @@
 import UiCheckbox from "./ui-checkbox.vue";
 import { EJustify } from "../../_types/align";
 import type { Meta } from "@storybook/vue3";
+import { ECheckboxSizes } from "./_types";
 
 export default {
 	title: "Components/ui-checkbox",
@@ -13,6 +14,13 @@ export default {
 			},
 			options: Object.values(EJustify),
 			description: "The Element justify",
+		},
+		size: {
+			control: {
+				type: "select"
+			},
+			options: Object.values(ECheckboxSizes),
+			description: "The element size can be SM or MD (MD by default)"
 		},
 		invertOrder: {
 			control: {
@@ -46,23 +54,8 @@ export default {
 		invertOrder: false,
 		disabled: false,
 		modelValue: false,
+		size: ECheckboxSizes.MD
 	},
 } satisfies Meta<typeof UiCheckbox>;
 
-export const Default = {
-	render: (args) => ({
-		components: {
-			UiCheckbox
-		},
-		setup() {
-			return {
-				args,
-			};
-		},
-		template: /*html*/`
-			<ui-checkbox v-bind="args">
-				{{args.default}}
-			</ui-checkbox>
-		`,
-	})
-};
+export const Default = {};

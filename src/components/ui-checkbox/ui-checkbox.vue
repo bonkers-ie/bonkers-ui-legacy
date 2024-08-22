@@ -3,7 +3,7 @@
 		class="ui-checkbox grid cursor-pointer"
 		:class="[
 			slots.default && 'items-center gap-sm',
-			(!justify || justify === EJustify.START) && 'justify-start',
+			justify === EJustify.START && 'justify-start',
 			justify === EJustify.END && 'justify-end',
 			justify === EJustify.AROUND && 'justify-around',
 			justify === EJustify.BETWEEN && 'justify-between',
@@ -24,7 +24,6 @@
 				ui-checkbox_custom
 				relative
 				flex
-				size-md
 				items-center
 				justify-center
 				rounded
@@ -32,12 +31,18 @@
 				border-secondary-alt-500
 				hover:border-secondary-alt-700
 				"
-			:class="invertOrder && 'order-last'"
+			:class="{
+				'order-last': invertOrder,
+				'size-sm': size === ECheckboxSize.SM,
+				'size-md': size === ECheckboxSize.MD
+			}"
 		>
 			<svg
 				class="ui-checkbox__icon text-white"
-				width="16"
-				height="12"
+				:class="{
+					'size-sm': size === ECheckboxSize.MD,
+					'size-xs': size === ECheckboxSize.SM,
+				}"
 				viewBox="0 0 16 12"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -63,16 +68,23 @@
 <script lang="ts" setup>
 	import { useSlots, computed } from "vue";
 	import { EJustify } from "../../_types/align";
+	import { ECheckboxSizes as ECheckboxSize } from "./_types";
 
 	const slots = useSlots();
 
-	const props = defineProps<{
+	const props = withDefaults(defineProps<{
 		modelValue: boolean | unknown[];
 		justify?: EJustify;
 		invertOrder?: boolean;
 		disabled?: boolean;
 		value?: string;
-	}>();
+		size?: ECheckboxSize;
+	}>(), {
+		size: ECheckboxSize.MD,
+		disabled: false,
+		justify: EJustify.START,
+		invertOrder: false,
+	});
 
 	const emit = defineEmits(["update:modelValue"]);
 
@@ -102,45 +114,45 @@
 		transition: stroke-dashoffset 0.3s ease-in-out;
 	}
 
-	input + .ui-checkbox_custom:active {
+	input+.ui-checkbox_custom:active {
 		transition: background-color ease-in-out 0.1s;
 		background-color: var(--color-secondary-alt-200);
 	}
 
-	input + .ui-checkbox_custom:active,
-	input:focus + .ui-checkbox_custom {
-		box-shadow: var(--shadow-border-primary);
+	input+.ui-checkbox_custom:active,
+	input:focus+.ui-checkbox_custom {
+		box-shadow: var(--shadow-selected-disabled);
 	}
 
-	input:disabled + .ui-checkbox_custom {
+	input:disabled+.ui-checkbox_custom {
 		background-color: var(--color-secondary-alt-200);
 		border-color: var(--color-secondary-alt-400);
 	}
 
-	input:checked + .ui-checkbox_custom .ui-checkbox__icon {
+	input:checked+.ui-checkbox_custom .ui-checkbox__icon {
 		stroke-dashoffset: 0;
 	}
 
-	input:checked + .ui-checkbox_custom > svg {
+	input:checked+.ui-checkbox_custom>svg {
 		opacity: 1;
 	}
 
-	input:checked + .ui-checkbox_custom {
+	input:checked+.ui-checkbox_custom {
 		border-width: 0;
 		background-color: var(--color-primary);
 		transition: background-color ease-in-out 0.1s, border-width ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
 		animation: cb-pop 0.5s ease-in-out;
 	}
 
-	input:checked + .ui-checkbox_custom:hover {
+	input:checked+.ui-checkbox_custom:hover {
 		background-color: var(--color-primary-600);
 	}
 
-	input:checked + .ui-checkbox_custom:active {
+	input:checked+.ui-checkbox_custom:active {
 		background-color: var(--color-primary-700);
 	}
 
-	input:checked:disabled + .ui-checkbox_custom {
+	input:checked:disabled+.ui-checkbox_custom {
 		background-color: var(--color-primary-300);
 		border: 1px solid var(--color-primary-400);
 	}
