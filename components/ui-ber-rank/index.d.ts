@@ -12,7 +12,7 @@ declare const deprecatedDefault: DefineComponent<{
         default: EBerSize;
     };
     rank: {
-        type: PropType<number | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15">;
+        type: PropType<number | "0" | "2" | "1" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15">;
         required: true;
     };
 }, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<{
@@ -21,7 +21,7 @@ declare const deprecatedDefault: DefineComponent<{
         default: EBerSize;
     };
     rank: {
-        type: PropType<number | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15">;
+        type: PropType<number | "0" | "2" | "1" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15">;
         required: true;
     };
 }>>, {
