@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 declare const _default: DefineComponent<__VLS_TypePropsToOption<{
     modelValue: number;
     min: string | number;

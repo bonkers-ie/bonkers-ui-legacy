@@ -1,5 +1,5 @@
 import { default as UiCheckbox } from './ui-checkbox.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 import { ECheckboxSizes } from './_types';
 import { EJustify } from '../../types';
 export { UiCheckbox };

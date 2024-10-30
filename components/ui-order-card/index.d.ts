@@ -1,5 +1,5 @@
 import { default as UiOrderCard } from './ui-order-card.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 import { TIconName } from '../ui-icon';
 import { EOrderCardTypes } from './_types';
 export { UiOrderCard };

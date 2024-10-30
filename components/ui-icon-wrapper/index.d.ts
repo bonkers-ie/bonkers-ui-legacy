@@ -1,5 +1,5 @@
 import { default as UiIconWrapper } from './ui-icon-wrapper.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 import { EIconWrapperSizes, EIconWrapperTypes } from './_typings';
 export { UiIconWrapper };
 export { EIconWrapperTypes, EIconWrapperSizes } from './_typings';

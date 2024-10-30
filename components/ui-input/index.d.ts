@@ -1,5 +1,5 @@
 import { default as UiInput } from './ui-input.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 import { EInputType, EInputKinds, EAutocomplete } from './_typings';
 export { EInputType, EInputKinds, EAutocomplete } from './_typings';
 export { UiInput };

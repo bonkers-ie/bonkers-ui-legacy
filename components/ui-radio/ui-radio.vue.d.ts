@@ -1,5 +1,5 @@
 import { EJustify } from '../../_types/align';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 declare function __VLS_template(): {
     slots: {
         default?(_: {}): any;

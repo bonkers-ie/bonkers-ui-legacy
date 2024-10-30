@@ -1,5 +1,5 @@
 import { TBerPropNumber, TBerPropString, EBerSize } from './_types';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<{
     rank: TBerPropNumber | TBerPropString | number;
     size?: EBerSize;

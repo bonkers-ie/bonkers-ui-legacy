@@ -1,4 +1,4 @@
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from 'vue';
 declare function __VLS_template(): {
     slots: {
         title?(_: {}): any;

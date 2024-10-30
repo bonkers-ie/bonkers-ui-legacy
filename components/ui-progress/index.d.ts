@@ -1,5 +1,5 @@
 import { default as UiProgress } from './ui-progress.vue';
-import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from 'vue';
 export { UiProgress };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"

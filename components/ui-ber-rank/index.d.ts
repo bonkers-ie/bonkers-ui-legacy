@@ -1,5 +1,5 @@
 import { default as UiBerRank } from './ui-ber-rank.vue';
-import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, PropType, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from 'vue';
 import { EBerSize } from './_types';
 export { UiBerRank };
 export { EBerSize } from './_types';

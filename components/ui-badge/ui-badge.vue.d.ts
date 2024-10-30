@@ -1,6 +1,6 @@
 import { EBadgeKind, EBadgeSize } from './_typings';
 import { TIconName } from '../ui-icon';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 declare function __VLS_template(): {
     slots: {
         default?(_: {}): any;

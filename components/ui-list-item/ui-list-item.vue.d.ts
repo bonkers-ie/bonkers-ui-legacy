@@ -1,6 +1,6 @@
 import { TIconName } from '../ui-icon';
 import { EListItemTypes, EListItemSpacing, EListItemSize } from './_types';
-import { HTMLAttributes, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { HTMLAttributes, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 declare function __VLS_template(): {
     slots: {
         icon?(_: {}): any;

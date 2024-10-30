@@ -1,4 +1,4 @@
-import { Component, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from '../../../vue/dist/vue.esm-bundler.js';
+import { Component, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ETextAlign, ETextTransform, ETextWeight, ETypographySizes } from './_typings';
 import { EColors } from '../../_types/colors';
 declare function __VLS_template(): {

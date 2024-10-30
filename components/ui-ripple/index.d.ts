@@ -1,5 +1,5 @@
 import { default as UiRipple } from './ui-ripple.vue';
-import { CreateComponentPublicInstance, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from '../../../vue/dist/vue.esm-bundler.js';
+import { CreateComponentPublicInstance, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 export { UiRipple };
 /**
  * @deprecated The default should not be used - use named import as - import {[name]} from "ui/[name]"
