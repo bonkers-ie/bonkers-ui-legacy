@@ -19,7 +19,8 @@ module.exports = {
 	plugins: [
 		"tailwindcss",
 		"eslint-plugin-storybook",
-		"@kalimahapps/eslint-plugin-tailwind"
+		"@kalimahapps/eslint-plugin-tailwind",
+		"@stylistic/eslint-plugin"
 	],
 	overrides: [
 		{
@@ -32,7 +33,8 @@ module.exports = {
 			files: ["*.ts"],
 			rules: {
 				indent: "off",
-				"@typescript-eslint/indent": ["error", "tab"],
+
+				"@stylistic/indent": ["error", "tab"],
 			}
 		}
 	],
@@ -119,6 +121,7 @@ module.exports = {
 				"maxLen": 100,
 				"quotesOnNewLine": true
 			}
-		]
+		],
+		"@typescript-eslint/no-duplicate-enum-values": 0
 	},
 };

@@ -24,7 +24,7 @@
 				overflow-hidden
 				rounded-2xl
 				border
-				border-secondary-alt-400
+				border-secondary-alt-500
 				bg-white
 				"
 		>
@@ -67,7 +67,7 @@
 				-mt-xl
 				rounded-2xl
 				border
-				border-secondary-alt-400
+				border-secondary-alt-500
 				bg-secondary-alt-200
 				px-sm
 				pt-xl

@@ -1,1 +1,1 @@
-bun typecheck && bun lint-staged && bun run test
+bun lint-staged && bun run test

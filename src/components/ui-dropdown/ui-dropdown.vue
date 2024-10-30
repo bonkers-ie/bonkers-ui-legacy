@@ -2,7 +2,7 @@
 	<div
 		class="h-auto bg-white"
 		:class="{
-			'rounded-xl border border-secondary-alt-300': kind === EDropdownKinds.DEFAULT
+			'rounded-xl border border-secondary-alt-500': kind === EDropdownKinds.DEFAULT
 		}"
 	>
 		<div

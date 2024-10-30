@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div
-			class="backdrop-color fixed inset-0 z-0 backdrop-blur-sm transition-all"
+			class="backdrop-color fixed inset-0 z-0 backdrop-blur-min transition-all"
 		/>
 
 		<slot />
