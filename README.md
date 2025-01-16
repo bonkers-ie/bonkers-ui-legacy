@@ -1,4 +1,4 @@
-<h1 align="center">Bonkers-UI Design System</h1>  
+<h1 align="center">Bonkers-UI (Legacy) Design System</h1>  
 
 <br/>
 
@@ -7,19 +7,19 @@
 		<img width="300" src="https://web-assets.bonkers.ie/packs/static/logo/bonkers_logo-279f0cff5a9b71e3059a.svg">
 	</a>
 
-<h4>The Bonkers-UI design system used internally for consistent styling across platforms</h3>
+<h4>The Bonkers-UI (Legacy) design system used internally for consistent styling across platforms</h3>
 
 <br/>
 <br/>
 
 <div align="center">
-	<a href="https://bonkers-ie.github.io/bonkers-ui/"  target="_blank">  
-		<img alt="Bonkers storybook" src="https://img.shields.io/badge/Bonkers-UI-green.svg?logo=storybook" />  
+	<a href="https://bonkers-ie.github.io/bonkers-ui-legacy/"  target="_blank">  
+		<img alt="Bonkers storybook" src="https://img.shields.io/badge/Bonkers-UI-legacy-green.svg?logo=storybook" />  
 	</a>
-	<img src="https://img.shields.io/npm/v/bonkers-ui?color=green">
-	<img src="https://img.shields.io/npm/l/bonkers-ui">
-	<img src="https://img.shields.io/npm/dw/bonkers-ui">
-	<img src="https://img.badgesize.io/https:/unpkg.com/bonkers-ui/?label=Brotli%20size%3A%20JS&compression=brotli">
+	<img src="https://img.shields.io/npm/v/bonkers-ui-legacy?color=green">
+	<img src="https://img.shields.io/npm/l/bonkers-ui-legacy">
+	<img src="https://img.shields.io/npm/dw/bonkers-ui-legacy">
+	<img src="https://img.badgesize.io/https:/unpkg.com/bonkers-ui-legacy/?label=Brotli%20size%3A%20JS&compression=brotli">
 </div>
 </div>
 
@@ -50,14 +50,14 @@
 - Install the component library with your desired package manager.
 	- Insure `autoprefixer`, `postcss` and `tailwindcss` are installed
 
-- In your `tailwind.config.js`, add the Bonkers-UI tailwind plugin to your `plugins` array. *Note:* the content array should include the path to the Bonkers-UI source files once installed.
+- In your `tailwind.config.js`, add the Bonkers-UI (Legacy) tailwind plugin to your `plugins` array. *Note:* the content array should include the path to the Bonkers-UI (Legacy) source files once installed.
 
 ```js
-import bonkersUiConfig from "bonkers-ui/plugin";
+import bonkersUiConfig from "bonkers-ui-legacy/plugin";
 
 export default {
 	content: [
-		"./node_modules/bonkers-ui/**/*.{vue,js,ts,jsx,tsx}",
+		"./node_modules/bonkers-ui-legacy/**/*.{vue,js,ts,jsx,tsx}",
 	],
 	plugins: [ bonkersUiConfig ],	
 }
@@ -71,7 +71,7 @@ export default {
 @tailwind utilities;
 ```
 
-- Please ensure that your `tsconfig` file is configured with `moduleResolution` set to `Bundler` or `NodeNext` (depending on your project setup) to allow for the Bonkers-UI types to be resolved. Example:
+- Please ensure that your `tsconfig` file is configured with `moduleResolution` set to `Bundler` or `NodeNext` (depending on your project setup) to allow for the Bonkers-UI (Legacy) types to be resolved. Example:
 
 ```json
 {
@@ -105,7 +105,7 @@ export default {
 
 ```
 
-- Bonkers-UI has been successfully installed to your project, now import any components you need!
+- Bonkers-UI (Legacy) has been successfully installed to your project, now import any components you need!
 ```vue
 <template>
 	<div>
@@ -128,9 +128,9 @@ export default {
 </template>
 
 <script setup lang="ts">
-	import { UiButton, EButtonTypes, EButtonSizes } from "bonkers-ui";
-	import UiInput from "bonkers-ui/ui-input"; // Deprecated Import Method
-	import { EInputKinds } from "bonkers-ui/types";
+	import { UiButton, EButtonTypes, EButtonSizes } from "bonkers-ui-legacy";
+	import UiInput from "bonkers-ui-legacy/ui-input"; // Deprecated Import Method
+	import { EInputKinds } from "bonkers-ui-legacy/types";
 </script>
 ```
 
@@ -147,6 +147,6 @@ export default {
 - When you are ready to push just `merge`(not `rebase`) develop into the current branch 
 - Fix any merge conflicts that this creates
 - Next create pull request to develop (you can squash multiple commits when merging)
-- After the pull request is merged to develop you can see it in staging [https://bonkers-ie.github.io/bonkers-ui](https://bonkers-ie.github.io/bonkers-ui/?path=/docs/example-introduction--docs)
+- After the pull request is merged to develop you can see it in staging [https://bonkers-ie.github.io/bonkers-ui-legacy](https://bonkers-ie.github.io/bonkers-ui-legacy/?path=/docs/example-introduction--docs)
 - Only after test staging you can create a merge request from `develop` to `master`
 - After you merge to master, the patch version will upgrade x.x.^x and you can use this version in package
